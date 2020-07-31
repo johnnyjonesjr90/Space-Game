@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "GalaxyBusiness/1.0.0": {
+        "dependencies": {
+          "GalaticBusinessLibrary": "1.0.0"
+        },
+        "runtime": {
+          "GalaxyBusiness.dll": {}
+        }
+      },
+      "GalaticBusinessLibrary/1.0.0": {
+        "runtime": {
+          "GalaticBusinessLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GalaxyBusiness/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GalaticBusinessLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

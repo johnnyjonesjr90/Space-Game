@@ -1,0 +1,16 @@
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\bin\Release\netcoreapp3.1\SpaceMerchant.exe
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\bin\Release\netcoreapp3.1\SpaceMerchant.deps.json
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\bin\Release\netcoreapp3.1\SpaceMerchant.runtimeconfig.json
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\bin\Release\netcoreapp3.1\SpaceMerchant.runtimeconfig.dev.json
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\bin\Release\netcoreapp3.1\SpaceMerchant.dll
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\bin\Release\netcoreapp3.1\SpaceMerchant.pdb
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\bin\Release\netcoreapp3.1\SpaceMerchantLibrary.dll
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\bin\Release\netcoreapp3.1\SpaceMerchantLibrary.pdb
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\obj\Release\netcoreapp3.1\SpaceMerchant.csprojAssemblyReference.cache
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\obj\Release\netcoreapp3.1\SpaceMerchant.AssemblyInfoInputs.cache
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\obj\Release\netcoreapp3.1\SpaceMerchant.AssemblyInfo.cs
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\obj\Release\netcoreapp3.1\SpaceMerchant.csproj.CoreCompileInputs.cache
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\obj\Release\netcoreapp3.1\SpaceMerchant.csproj.CopyComplete
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\obj\Release\netcoreapp3.1\SpaceMerchant.dll
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\obj\Release\netcoreapp3.1\SpaceMerchant.pdb
+D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\obj\Release\netcoreapp3.1\SpaceMerchant.genruntimeconfig.cache

@@ -1,0 +1,18 @@
+C:\Users\Zack's Laptop\source\repos\GalaticBusinessLibrary\bin\Debug\netcoreapp3.1\GalaticBusinessLibrary.deps.json
+C:\Users\Zack's Laptop\source\repos\GalaticBusinessLibrary\bin\Debug\netcoreapp3.1\GalaticBusinessLibrary.dll
+C:\Users\Zack's Laptop\source\repos\GalaticBusinessLibrary\bin\Debug\netcoreapp3.1\GalaticBusinessLibrary.pdb
+C:\Users\Zack's Laptop\source\repos\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\GalaticBusinessLibrary.csprojAssemblyReference.cache
+C:\Users\Zack's Laptop\source\repos\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\GalaticBusinessLibrary.AssemblyInfoInputs.cache
+C:\Users\Zack's Laptop\source\repos\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\GalaticBusinessLibrary.AssemblyInfo.cs
+C:\Users\Zack's Laptop\source\repos\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\GalaticBusinessLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Zack's Laptop\source\repos\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\GalaticBusinessLibrary.dll
+C:\Users\Zack's Laptop\source\repos\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\GalaticBusinessLibrary.pdb
+C:\Users\Johnny\Documents\GitHub\Galactic_Business\GalaticBusinessLibrary\bin\Debug\netcoreapp3.1\GalaticBusinessLibrary.deps.json
+C:\Users\Johnny\Documents\GitHub\Galactic_Business\GalaticBusinessLibrary\bin\Debug\netcoreapp3.1\GalaticBusinessLibrary.dll
+C:\Users\Johnny\Documents\GitHub\Galactic_Business\GalaticBusinessLibrary\bin\Debug\netcoreapp3.1\GalaticBusinessLibrary.pdb
+C:\Users\Johnny\Documents\GitHub\Galactic_Business\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\GalaticBusinessLibrary.csprojAssemblyReference.cache
+C:\Users\Johnny\Documents\GitHub\Galactic_Business\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\GalaticBusinessLibrary.AssemblyInfoInputs.cache
+C:\Users\Johnny\Documents\GitHub\Galactic_Business\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\GalaticBusinessLibrary.AssemblyInfo.cs
+C:\Users\Johnny\Documents\GitHub\Galactic_Business\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\GalaticBusinessLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Johnny\Documents\GitHub\Galactic_Business\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\GalaticBusinessLibrary.dll
+C:\Users\Johnny\Documents\GitHub\Galactic_Business\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\GalaticBusinessLibrary.pdb
