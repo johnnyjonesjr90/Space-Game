@@ -281,7 +281,7 @@ namespace GalaticBusinessLibrary
         public string LarvisSelectionDisplay()
         {
 
-            string bp = $"3 - Otov (10)\n" +
+            string bp = $"2 - Otov (10)\n" +
                         $"5 - Aoclite (25)\n" +
                         $"6 - XaenidesStation (5)\n\n\n\n" +
                         $"Make Selection and Press Enter\n\n\n";

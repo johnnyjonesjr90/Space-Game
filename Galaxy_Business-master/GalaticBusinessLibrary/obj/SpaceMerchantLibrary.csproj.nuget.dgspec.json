@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MSSA\\Projects\\Space Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\SpaceMerchantLibrary.csproj": {}
+    "C:\\Users\\Johnny\\Documents\\GitHub\\Space-Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\SpaceMerchantLibrary.csproj": {}
   },
   "projects": {
-    "D:\\MSSA\\Projects\\Space Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\SpaceMerchantLibrary.csproj": {
+    "C:\\Users\\Johnny\\Documents\\GitHub\\Space-Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\SpaceMerchantLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MSSA\\Projects\\Space Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\SpaceMerchantLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Johnny\\Documents\\GitHub\\Space-Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\SpaceMerchantLibrary.csproj",
         "projectName": "SpaceMerchantLibrary",
-        "projectPath": "D:\\MSSA\\Projects\\Space Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\SpaceMerchantLibrary.csproj",
+        "projectPath": "C:\\Users\\Johnny\\Documents\\GitHub\\Space-Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\SpaceMerchantLibrary.csproj",
         "packagesPath": "C:\\Users\\Johnny\\.nuget\\packages\\",
-        "outputPath": "D:\\MSSA\\Projects\\Space Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\obj\\",
+        "outputPath": "C:\\Users\\Johnny\\Documents\\GitHub\\Space-Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "R:\\Microsoft\\Xamarin\\NuGet\\",

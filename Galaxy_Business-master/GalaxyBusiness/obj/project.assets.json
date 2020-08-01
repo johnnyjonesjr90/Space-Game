@@ -27,8 +27,8 @@
   "libraries": {
     "BasicAudio/2019.11.19.1": {
       "type": "project",
-      "path": "../../../BasicAudio-master/BasicAudio/BasicAudio.csproj",
-      "msbuildProject": "../../../BasicAudio-master/BasicAudio/BasicAudio.csproj"
+      "path": "../BasicAudio-master/BasicAudio/BasicAudio.csproj",
+      "msbuildProject": "../BasicAudio-master/BasicAudio/BasicAudio.csproj"
     },
     "SpaceMerchantLibrary/1.0.0": {
       "type": "project",
@@ -50,11 +50,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MSSA\\Projects\\Space Game\\Galaxy_Business-master\\GalaxyBusiness\\SpaceMerchant.csproj",
+      "projectUniqueName": "C:\\Users\\Johnny\\Documents\\GitHub\\Space-Game\\Galaxy_Business-master\\GalaxyBusiness\\SpaceMerchant.csproj",
       "projectName": "SpaceMerchant",
-      "projectPath": "D:\\MSSA\\Projects\\Space Game\\Galaxy_Business-master\\GalaxyBusiness\\SpaceMerchant.csproj",
+      "projectPath": "C:\\Users\\Johnny\\Documents\\GitHub\\Space-Game\\Galaxy_Business-master\\GalaxyBusiness\\SpaceMerchant.csproj",
       "packagesPath": "C:\\Users\\Johnny\\.nuget\\packages\\",
-      "outputPath": "D:\\MSSA\\Projects\\Space Game\\Galaxy_Business-master\\GalaxyBusiness\\obj\\",
+      "outputPath": "C:\\Users\\Johnny\\Documents\\GitHub\\Space-Game\\Galaxy_Business-master\\GalaxyBusiness\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "R:\\Microsoft\\Xamarin\\NuGet\\",
@@ -75,11 +75,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\MSSA\\Projects\\BasicAudio-master\\BasicAudio\\BasicAudio.csproj": {
-              "projectPath": "D:\\MSSA\\Projects\\BasicAudio-master\\BasicAudio\\BasicAudio.csproj"
+            "C:\\Users\\Johnny\\Documents\\GitHub\\Space-Game\\Galaxy_Business-master\\BasicAudio-master\\BasicAudio\\BasicAudio.csproj": {
+              "projectPath": "C:\\Users\\Johnny\\Documents\\GitHub\\Space-Game\\Galaxy_Business-master\\BasicAudio-master\\BasicAudio\\BasicAudio.csproj"
             },
-            "D:\\MSSA\\Projects\\Space Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\SpaceMerchantLibrary.csproj": {
-              "projectPath": "D:\\MSSA\\Projects\\Space Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\SpaceMerchantLibrary.csproj"
+            "C:\\Users\\Johnny\\Documents\\GitHub\\Space-Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\SpaceMerchantLibrary.csproj": {
+              "projectPath": "C:\\Users\\Johnny\\Documents\\GitHub\\Space-Game\\Galaxy_Business-master\\GalaticBusinessLibrary\\SpaceMerchantLibrary.csproj"
             }
           }
         }

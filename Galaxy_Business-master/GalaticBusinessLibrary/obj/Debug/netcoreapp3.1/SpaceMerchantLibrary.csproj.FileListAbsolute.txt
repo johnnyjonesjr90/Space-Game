@@ -7,3 +7,12 @@ D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\De
 D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\SpaceMerchantLibrary.csproj.CoreCompileInputs.cache
 D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\SpaceMerchantLibrary.dll
 D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\SpaceMerchantLibrary.pdb
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\bin\Debug\netcoreapp3.1\SpaceMerchantLibrary.deps.json
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\bin\Debug\netcoreapp3.1\SpaceMerchantLibrary.dll
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\bin\Debug\netcoreapp3.1\SpaceMerchantLibrary.pdb
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\SpaceMerchantLibrary.csprojAssemblyReference.cache
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\SpaceMerchantLibrary.AssemblyInfoInputs.cache
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\SpaceMerchantLibrary.AssemblyInfo.cs
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\SpaceMerchantLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\SpaceMerchantLibrary.dll
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Debug\netcoreapp3.1\SpaceMerchantLibrary.pdb

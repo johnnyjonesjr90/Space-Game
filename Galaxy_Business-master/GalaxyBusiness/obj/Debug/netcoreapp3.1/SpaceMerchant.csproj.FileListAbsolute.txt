@@ -16,3 +16,21 @@ D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\obj\Debug\netc
 D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\obj\Debug\netcoreapp3.1\SpaceMerchant.genruntimeconfig.cache
 D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\bin\Debug\netcoreapp3.1\BasicAudio.dll
 D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\bin\Debug\netcoreapp3.1\BasicAudio.pdb
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\obj\Debug\netcoreapp3.1\SpaceMerchant.dll
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\obj\Debug\netcoreapp3.1\SpaceMerchant.pdb
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\bin\Debug\netcoreapp3.1\SpaceMerchant.exe
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\bin\Debug\netcoreapp3.1\SpaceMerchant.deps.json
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\bin\Debug\netcoreapp3.1\SpaceMerchant.runtimeconfig.json
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\bin\Debug\netcoreapp3.1\SpaceMerchant.runtimeconfig.dev.json
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\bin\Debug\netcoreapp3.1\SpaceMerchant.dll
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\bin\Debug\netcoreapp3.1\SpaceMerchant.pdb
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\bin\Debug\netcoreapp3.1\BasicAudio.dll
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\bin\Debug\netcoreapp3.1\SpaceMerchantLibrary.dll
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\bin\Debug\netcoreapp3.1\BasicAudio.pdb
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\bin\Debug\netcoreapp3.1\SpaceMerchantLibrary.pdb
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\obj\Debug\netcoreapp3.1\SpaceMerchant.csprojAssemblyReference.cache
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\obj\Debug\netcoreapp3.1\SpaceMerchant.AssemblyInfoInputs.cache
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\obj\Debug\netcoreapp3.1\SpaceMerchant.AssemblyInfo.cs
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\obj\Debug\netcoreapp3.1\SpaceMerchant.csproj.CoreCompileInputs.cache
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\obj\Debug\netcoreapp3.1\SpaceMerchant.csproj.CopyComplete
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\obj\Debug\netcoreapp3.1\SpaceMerchant.genruntimeconfig.cache

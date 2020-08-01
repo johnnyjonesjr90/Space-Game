@@ -34,96 +34,97 @@ namespace GalaxyBusiness
             Enemy Federationscout = new Enemy { Attack = 400, Speed = 4, Hull = 400 };
             Battle battle = new Battle();
             InGameTime ingametime = new InGameTime {day= 12, month = 3, year = 2457};
+            NatotisMissions natotisMissions = new NatotisMissions();
         #endregion
         int exit = 0;
             menu.planetChoice = 6;
             double tryparse;
 
-            #region //Game Start
+//            #region //Game Start
 
-            
-            Console.WriteLine(@"
-                    ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
-                    ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
-                    ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
-                         ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
-                    ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
+
+//            Console.WriteLine(@"
+//                    ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
+//                    ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
+//                    ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
+//                         ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
+//                    ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
                                                                                                                   
-");
-            Console.WriteLine("\n\n\n\n\n\n\n Press Enter...");
-            var audioPlayer = new BasicAudio.AudioPlayer();
-            audioPlayer.Filename = @"D:\MSSA\Projects\Space Game\Galaxy_Business-master\GalaxyBusiness\WildWestVikings.wav";
-            audioPlayer.Play();
-            Console.ReadKey();
-            Console.Clear();
-            menu.StoryStart();
-            foreach (var character in menu.StoryStart())
-            {
-                Console.Write(character);
-                Thread.Sleep(10);
-            }
-            Console.ReadKey();
-            int exit01 = 0;
-            while (exit01 == 0)
-            {
-                Console.Clear();
-                Console.WriteLine(menu.ShipSelection());
-                string tempship = Console.ReadLine();
-                double.TryParse(tempship, out tryparse);
-                double shipselect = tryparse;
-                if (shipselect == 1)
-                {
-                    Zell.TotalCargo = 50;
-                    Zell.Fuel = 300;
-                    Zell.Hull = 200;
-                    Zell.Speed = 500;
-                    Zell.Credits = 2000;
-                    Console.Clear();
-                    Console.WriteLine(
-                        $"You purchased the Xaenides Cruiser : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-                        $"\n\n\n\n Press Enter...");
-                    Console.ReadKey();
-                    exit01 = 1;
-                }
+//");
+//            Console.WriteLine("\n\n\n\n\n\n\n Press Enter...");
+//            var audioPlayer = new BasicAudio.AudioPlayer();
+//            audioPlayer.Filename = @"C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\outer-space-warning.wav";
+//            audioPlayer.Play();
+//            Console.ReadKey();
+//            Console.Clear();
+//            menu.StoryStart();
+//            foreach (var character in menu.StoryStart())
+//            {
+//                Console.Write(character);
+//                Thread.Sleep(10);
+//            }
+//            Console.ReadKey();
+//            int exit01 = 0;
+//            while (exit01 == 0)
+//            {
+//                Console.Clear();
+//                Console.WriteLine(menu.ShipSelection());
+//                string tempship = Console.ReadLine();
+//                double.TryParse(tempship, out tryparse);
+//                double shipselect = tryparse;
+//                if (shipselect == 1)
+//                {
+//                    Zell.TotalCargo = 50;
+//                    Zell.Fuel = 300;
+//                    Zell.Hull = 200;
+//                    Zell.Speed = 500;
+//                    Zell.Credits = 2000;
+//                    Console.Clear();
+//                    Console.WriteLine(
+//                        $"You purchased the Xaenides Cruiser : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+//                        $"\n\n\n\n Press Enter...");
+//                    Console.ReadKey();
+//                    exit01 = 1;
+//                }
 
-                if (shipselect == 2)
-                {
-                    Zell.TotalCargo = 350;
-                    Zell.Fuel = 50;
-                    Zell.Hull = 300;
-                    Zell.Speed = 100;
-                    Zell.Credits = 5000;
-                    Console.Clear();
-                    Console.WriteLine(
-                        $"You purchased the Natotis Hauler : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-                        $"\n\n\n\n Press Enter...");
-                    Console.ReadKey();
-                    exit01 = 1;
-                }
+//                if (shipselect == 2)
+//                {
+//                    Zell.TotalCargo = 350;
+//                    Zell.Fuel = 50;
+//                    Zell.Hull = 300;
+//                    Zell.Speed = 100;
+//                    Zell.Credits = 5000;
+//                    Console.Clear();
+//                    Console.WriteLine(
+//                        $"You purchased the Natotis Hauler : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+//                        $"\n\n\n\n Press Enter...");
+//                    Console.ReadKey();
+//                    exit01 = 1;
+//                }
 
-                if (shipselect == 3)
-                {
-                    Zell.TotalCargo = 100;
-                    Zell.Fuel = 100;
-                    Zell.Hull = 200;
-                    Zell.Speed = 300;
-                    Zell.Credits = 8000;
-                    Console.Clear();
-                    Console.WriteLine(
-                        $"You decided to keep your ship: \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-                        $"\n\n\n\n Press Enter...");
-                    Console.ReadKey();
-                    exit01 = 1;
-                }
-            }
+//                if (shipselect == 3)
+//                {
+//                    Zell.TotalCargo = 100;
+//                    Zell.Fuel = 100;
+//                    Zell.Hull = 200;
+//                    Zell.Speed = 300;
+//                    Zell.Credits = 8000;
+//                    Console.Clear();
+//                    Console.WriteLine(
+//                        $"You decided to keep your ship: \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+//                        $"\n\n\n\n Press Enter...");
+//                    Console.ReadKey();
+//                    exit01 = 1;
+//                }
+//            }
 
-            #endregion
+//            #endregion
 
             double fuelchecker = 0;
             double exitt = 0;
             while (exit <= 0)
             {
-                ingametime.time(menu.planetChoice);
+                
                 if (Zell.Credits == 0 && Zell.Fuel == 0 || Zell.Credits == 0 && Zell.Cargo == 0)
                 {
                     Console.WriteLine(menu.GameOver());
@@ -133,18 +134,63 @@ namespace GalaxyBusiness
                 Console.Clear();
                 while (exitt == 0)
                 {
-                    Console.WriteLine($"You are currently on {menu.PlanetTranslation(menu.planetChoice)}\n\n Current Fuel: {Zell.Fuel}\n\n Press 99 to exit the game");
-                    Console.WriteLine($"\n\nGalactic Date: {ingametime.month}/{ingametime.day}/{ingametime.year}\n\n");
-                    Console.WriteLine($"{xaenidesStation.XaenidesStationSelectionDisplay()}");
-                    menu.planetChoice = Double.Parse(Console.ReadLine());
-                    exitt = 1;
+                    
+                    #region MyRegion
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine(@" =================================================================================");
+                    Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine(@" ||=============================================================================||");
+                    Console.WriteLine(@$" ||  Current System: Xaenides Station                                           ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine(@$" || {ingametime.day}/{ingametime.month}/{ingametime.year}                                                                   ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine(@" ||=============================================================================||");
+                    Console.WriteLine(@" ||=============================================================================||");
+                    Console.WriteLine(@$" || Current Fuel: {Zell.Fuel}                                                           ||");
+                    Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                         ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine($@" || 1 - Natotis (30)                                                            ||");
+                    Console.WriteLine(@" || 2 - Otov     (10)                                                           ||");
+                    Console.WriteLine(@" || 3 - Gelara   (15)                                                           ||");
+                    Console.WriteLine(@" || 4 - Larvis   (15)                                                           ||");
+                    Console.WriteLine(@" || 5 - Aoclite  (25)                                                           ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine(@" ||                                                                             ||");
+                    Console.WriteLine(@" ||=============================================================================||");
+                    Console.WriteLine(@" || Galaxy News Network [Vurik presence growing in surrounding galaxies some wo.||");
+                    Console.WriteLine(@" ||=============================================================================||");
+
+
+                    #endregion
+                    
+                    string tempvaluek = Console.ReadLine();
+                    double.TryParse(tempvaluek, out tryparse);
+                    if (tryparse==1){ menu.planetChoice = tryparse; exitt = 1; }
+                    if (tryparse == 2) { menu.planetChoice = tryparse; exitt = 1; }
+                    if (tryparse == 3) { menu.planetChoice = tryparse; exitt = 1; }
+                    if (tryparse == 4) { menu.planetChoice = tryparse; exitt = 1; }
+                    if (tryparse == 5) { menu.planetChoice = tryparse; exitt = 1; }
+                    
                     Console.Clear();
                 }
+                ingametime.time(menu.planetChoice);
                 switch (menu.planetChoice)
                 {
+                       
                     case 1://Natotis 
+
                         Zell.Fuel -= 30;
                         int exit1 = 0;
+                        
                         natotis.ItemCalculation();
                         #region //Ship interaction
                         Console.WriteLine(battle.ShipEmerges(battle.Battlechance(battlechance.Next(0, 100))));
@@ -361,7 +407,7 @@ namespace GalaxyBusiness
                                                                                
                             Console.Clear();
                             Console.WriteLine(natotis.Description());
-                            Console.WriteLine(@"                                                                        ..;===+.
+                            Console.WriteLine(@"                                                                                            
                                                                                                                     .:=iiiiii=+=
                                                                                                                  .=i))=;::+)i=+,
                                                                                                               ,=i);)I)))I):=i=;
@@ -581,13 +627,157 @@ namespace GalaxyBusiness
                                     #endregion
                                     break;
                                 case 3://Mission Board
+                                    int exitmission = 1;
+                                    while (exitmission == 1)
+                                    {
+                                        Console.WriteLine(natotisMissions.MissionBoard());
+                                        Console.ReadKey();
+
+                                        #region Mission graphic
+
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(
+                                            @" =========================================================================================");
+                                        Console.WriteLine(
+                                            @" ||                       Natotis Federation Assist Board                               ||");
+
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @$" ||  Current System: Natotis                                                            ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                ");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @$" ||                                                                                     || ");
+                                        if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                            natotisMissions.Mission001success == 3)
+                                        {
+                                            Console.WriteLine($"#1 -  {natotisMissions.Escort001advertisement()}");
+                                        }
+                                        if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                            natotisMissions.Mission001success ==2)
+                                        {
+                                            Console.WriteLine($"   #1 -  {natotisMissions.Escort001InProgress()}");
+                                        }
+
+                                        Console.WriteLine(
+                                            @$" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            $@" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine("\n\n\n Please choose a mission and press Enter or press 99 to exit..");
+                                        string tempvalu = Console.ReadLine();
+                                        double.TryParse(tempvalu, out tryparse);
+                                        double mission = tryparse;
+                                        if (mission == 99)
+                                        {
+                                            exitmission = 0;}
+                                        if (natotisMissions.Mission001success == 3)
+                                        {
+                                            if (mission == 1)
+                                            {
+                                                Console.Clear();
+                                                Console.WriteLine(natotisMissions.Escort001());
+                                                string tempvalu1 = Console.ReadLine();
+                                                Console.Clear();
+                                                double.TryParse(tempvalu1, out tryparse);
+                                                double mission2 = tryparse;
+                                                Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                                Console.ReadKey();
+                                                if (mission2 == 2)
+                                                {
+                                                    natotisMissions.Mission001success = 0;
+                                                }
+                                            }
+                                        }
+                                       
+                                        Console.Clear();
+
+                                        #endregion
+                                    }
 
                                     break;
                                 case 4://Back to Ship
                                     #region //BACK TO SHIP
-                                    Console.WriteLine($"You are currently on {menu.PlanetTranslation(menu.planetChoice)}\n\n Current Fuel: {Zell.Fuel}\n\n Press 99 to exit the game");
-                                    Console.WriteLine($"\n\nGalactic Date: {ingametime.month}/{ingametime.day}/{ingametime.year}\n\n");
-                                    Console.WriteLine(natotis.NatotisSelectionDisplay());
+                                    #region Navvi
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine(@" =================================================================================");
+                                    Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" ||  Current System: Natotis                                                   ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                                                   ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" || Current Fuel: {Zell.Fuel}                                                         ");
+                                    Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                    ");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||  2 - Otov (30)                                                              ||");
+                                    Console.WriteLine(@" ||  3 - Gelara (15)                                                            ||");
+                                    Console.WriteLine(@" ||  6 - XaenidesStation (5)                                                    ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" || Galaxy News Network [Smugglers are being noted in very high quantities in t.||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    #endregion
+                                    
                                     string Natotisexit = Console.ReadLine();
                                     if (double.TryParse(Natotisexit, out tryparse))
                                     {
@@ -1047,8 +1237,40 @@ namespace GalaxyBusiness
                                 case 3://Mission Board
                                     break;
                                 case 4://Back to Ship
-                                    Console.WriteLine($"You are currently on {menu.PlanetTranslation(menu.planetChoice)}\n\n Current Fuel: {Zell.Fuel}\n\n Press 99 to exit the game");
-                                    Console.WriteLine(otov.OtovSelectionDisplay());
+                                    #region MyRegion
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine(@" =================================================================================");
+                                    Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" ||  Current System: Ovov                                                      ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                                                   ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" || Current Fuel: {Zell.Fuel}                                                         ");
+                                    Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                    ");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||  1 - Natotis        (30)                                                    ||");
+                                    Console.WriteLine(@" ||  5 - Aoclite        (25)                                                    ||");
+                                    Console.WriteLine(@" ||  6 - XaenidesStation (5)                                                    ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" || Galaxy News Network [Vurik presence growing in surrounding galaxies some wo.||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    #endregion
                                     string tempvaluea = Console.ReadLine();
                                     if (double.TryParse(tempvaluea, out tryparse))
                                     {
@@ -1483,9 +1705,40 @@ namespace GalaxyBusiness
                                 case 3://Mission Board
                                     break;
                                 case 4://Back to Ship
-                                    Console.WriteLine($"You are currently on {menu.PlanetTranslation(menu.planetChoice)}\n\n Current Fuel: {Zell.Fuel}\n\n Press 99 to exit the game");
-                                    Console.WriteLine($"\n\nGalactic Date: {ingametime.month}/{ingametime.day}/{ingametime.year}\n\n");
-                                    Console.WriteLine(gelara.GelaraSelectionDisplay());
+                                    #region Navvi
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine(@" =================================================================================");
+                                    Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" ||  Current System: Gelara                                                    ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                                                   ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" || Current Fuel: {Zell.Fuel}                                                         ");
+                                    Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                    ");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||  2 - Natotis (30)                                                              ||");
+                                    Console.WriteLine(@" ||  3 - Larvis (15)                                                            ||");
+                                    Console.WriteLine(@" ||  6 - XaenidesStation (5)                                                    ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" || Galaxy News Network [Federation scouts have located the Laserous Gang Leade.||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    #endregion
                                     string tempvalueb = Console.ReadLine();
                                     if (double.TryParse(tempvalueb, out tryparse))
                                     {
@@ -1906,18 +2159,15 @@ namespace GalaxyBusiness
                                             break;
                                         case 9:
                                             Console.WriteLine(menu.NoSale());
-                                            //Zell.Neutronium += amount; otov.Neutronium.Qty -= amount;
-                                            //Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item), amount);
+                                            
                                             break;
                                         case 10:
                                             Console.WriteLine(menu.NoSale());
-                                            //Zell.Helium3 += amount; otov.Helium3.Qty -= amount;
-                                            //Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item), amount);
+                                            
                                             break;
                                         case 11:
                                             Console.WriteLine(menu.NoSale());
-                                            //Zell.DarkMatter += amount; otov.DarkMatter.Qty -= amount;
-                                            //Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item), amount);
+                                            
                                             break;
                                     }
                                     Zell.Credits += menu.PurchasePrice(larvis.ItemTranslation(item2), amount2);
@@ -1930,9 +2180,40 @@ namespace GalaxyBusiness
                                 case 3://Mission Board
                                     break;
                                 case 4://Back to Ship
-                                    Console.WriteLine($"You are currently on {menu.PlanetTranslation(menu.planetChoice)}\n\n Current Fuel: {Zell.Fuel}\n\n Press 99 to exit the game");
-                                    Console.WriteLine($"\n\nGalactic Date: {ingametime.month}/{ingametime.day}/{ingametime.year}\n\n");
-                                    Console.WriteLine(larvis.LarvisSelectionDisplay());
+                                    #region Navvi
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine(@" =================================================================================");
+                                    Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" ||  Current System: Larvis                                                    ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                                                   ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" || Current Fuel: {Zell.Fuel}                                                         ");
+                                    Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                    ");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||  2 - Otov (15)                                                              ||");
+                                    Console.WriteLine(@" ||  3 - Aoclite (25)                                                           ||");
+                                    Console.WriteLine(@" ||  6 - XaenidesStation (5)                                                    ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" || Galaxy News Network [Local elections have erupted into planet wide riots as.||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    #endregion
                                     string tempvaluec = Console.ReadLine();
                                     if (double.TryParse(tempvaluec, out tryparse))
                                     {
@@ -2369,9 +2650,40 @@ namespace GalaxyBusiness
                                 case 3://Mission Board
                                     break;
                                 case 4://Back to Ship
-                                    Console.WriteLine($"You are currently on {menu.PlanetTranslation(menu.planetChoice)}\n\n Current Fuel: {Zell.Fuel}\n\n Press 99 to exit the game");
-                                    Console.WriteLine($"\n\nGalactic Date: {ingametime.month}/{ingametime.day}/{ingametime.year}\n\n");
-                                    Console.WriteLine(aoclite.AocliteSelectionDisplay());
+                                    #region Navvi
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine(@" =================================================================================");
+                                    Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" ||  Current System: Aoclite                                                   ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                                                   ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" || Current Fuel: {Zell.Fuel}                                                         ");
+                                    Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                    ");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||  2 - Otov (30)                                                              ||");
+                                    Console.WriteLine(@" ||  4 - Larvis (15)                                                            ||");
+                                    Console.WriteLine(@" ||  6 - XaenidesStation (5)                                                    ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" || Galaxy News Network [New merchant tax coming in 2458.. is your business rea.||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    #endregion
                                     string tempvalued = Console.ReadLine();
                                     if (double.TryParse(tempvalued, out tryparse))
                                     {
@@ -2387,12 +2699,12 @@ namespace GalaxyBusiness
                                     Console.Clear();
                                     if (fuelchecker == 1)
                                     {
-                                        if (menu.planetChoice == 2 || menu.planetChoice == 3 || menu.planetChoice == 6 ||
+                                        if (menu.planetChoice == 2 || menu.planetChoice == 4 || menu.planetChoice == 6 ||
                                             menu.planetChoice == 99)
                                         {
                                             exitt = 1;
                                         }
-                                        else if (menu.planetChoice != 2 || menu.planetChoice != 3 || menu.planetChoice != 6 ||
+                                        else if (menu.planetChoice != 2 || menu.planetChoice != 4 || menu.planetChoice != 6 ||
                                                  menu.planetChoice != 99)
                                         {
                                             menu.planetChoice = 5;
@@ -2817,21 +3129,45 @@ namespace GalaxyBusiness
                                 case 3://Mission Board
                                     break;
                                 case 4://Back to Ship
-                                    Console.WriteLine($"You are currently on {menu.PlanetTranslation(menu.planetChoice)}\n\n Current Fuel: {Zell.Fuel}\n\n Press 99 to exit the game");
-                                    Console.WriteLine($"\n\nGalactic Date: {ingametime.month}/{ingametime.day}/{ingametime.year}\n\n");
-                                    Console.WriteLine(@"
-                                                                .                                            .
-                                                     *   .                  .              .        .   *          .
-                                                  .         .                     .       .           .      .        .
-                                                        o                             .                   .
-                                                         .              .                  .           .
-                                                          0     .
-                                                                 .          .                 ,                ,    ,
-                                                 .          \          .                         .
-                                                      .      \   ,
-                                                   .          o     .                 .                   .            .
-                                                     .         \                 ,             .                .");
-                                    Console.WriteLine(xaenidesStation.XaenidesStationSelectionDisplay());
+                                    #region MyRegion
+                                    #region Navvi
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine(@" =================================================================================");
+                                    Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" ||  Current System: Xaenides Station                                          ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                                                   ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" || Current Fuel: {Zell.Fuel}                                                         ");
+                                    Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                    ");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||  1 - Natotis (25)                                                           ||");
+                                    Console.WriteLine(@" ||  2 - Otov (30)                                                              ||");
+                                    Console.WriteLine(@" ||  3 - Gelara (15)                                                            ||");
+                                    Console.WriteLine(@" ||  4 - Larvis (15)                                                            ||");
+                                    Console.WriteLine(@" ||  5 - Aoclite (25)                                                           ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" || Galaxy News Network [Volcanoes in space?? Experts think this can be possibl.||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    #endregion
+
+
+                                    #endregion
+
                                     string tempvaluee = Console.ReadLine();
                                     if (double.TryParse(tempvaluee, out tryparse))
                                     {

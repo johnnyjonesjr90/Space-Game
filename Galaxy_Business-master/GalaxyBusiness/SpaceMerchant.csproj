@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\BasicAudio-master\BasicAudio\BasicAudio.csproj" />
+    <ProjectReference Include="..\BasicAudio-master\BasicAudio\BasicAudio.csproj" />
     <ProjectReference Include="..\GalaticBusinessLibrary\SpaceMerchantLibrary.csproj" />
   </ItemGroup>
 

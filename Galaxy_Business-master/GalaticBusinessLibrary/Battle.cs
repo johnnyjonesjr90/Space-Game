@@ -102,7 +102,7 @@ namespace SpaceMerchantLibrary
 
         public string ShipEngages(int Ship)
         {
-            string ShipEngages="";
+            string ShipEngages="test";
             if (Ship == 4)//Federation Flagship
             {
                 
@@ -113,7 +113,7 @@ namespace SpaceMerchantLibrary
                     ShipEngages = "\nEnemy Ship\n\n<<<Stop and submit to a security scan...if you do not have anything to hide this will be over quickly>>> ";
                     return ShipEngages;
                 }
-                if (dialog >= 4 && dialog >= 6)
+                if (dialog >= 4 && dialog <= 6)
                 {
                     ShipEngages = "\nEnemy Ship\n\n<<<Dock and submit to a contraband search>>>";
                     return ShipEngages;
@@ -134,7 +134,7 @@ namespace SpaceMerchantLibrary
                     ShipEngages = "\nEnemy Ship\n\n<<<We are patrolling this area... do not cause any trouble and we will not bother you>>> ";
                     return ShipEngages;
                 }
-                if (dialog >= 4 && dialog >= 6)
+                if (dialog >= 4 && dialog <= 6)
                 {
                     ShipEngages = "\nEnemy Ship\n\n<<<Dock and submit to a contraband search>>>";
                     return ShipEngages;
@@ -155,7 +155,7 @@ namespace SpaceMerchantLibrary
                     ShipEngages = "\nEnemy Ship\n\n<<<Youve crossed the wrong path... how about a 1500 credits and we dont take you for all youve got?>>> ";
                     return ShipEngages;
                 }
-                if (dialog >= 4 && dialog >= 6)
+                if (dialog >= 4 && dialog <= 6)
                 {
                     ShipEngages = "\nEnemy Ship\n\n<<<Theres a toll here.. 1500 credits...>>>";
                     return ShipEngages;
@@ -177,7 +177,7 @@ namespace SpaceMerchantLibrary
                     return ShipEngages;
                 }
 
-                if (dialog >= 4 && dialog >= 6)
+                if (dialog >= 4 && dialog <= 6)
                 {
                     ShipEngages = "\nEnemy Ship\n\n<<<I have some cargo you might be interested in...>>>";
                     return ShipEngages;
@@ -201,7 +201,7 @@ namespace SpaceMerchantLibrary
                     return ShipEngages;
                 }
 
-                if (dialog >= 4 && dialog >= 6)
+                if (dialog >= 4 && dialog <= 6)
                 {
                     ShipEngages = "\n\n\nAs you make your way into the system you have to work hard to avoid kids flying reckless\n" +
                                   "around the docking station... patrol is never around when you need them..";
