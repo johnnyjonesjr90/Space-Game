@@ -22,10 +22,30 @@ namespace GalaticBusinessLibrary
         public Item DarkMatter = new Item(0, 5) { BasePrice = 6000, BaseQty = 2, Weight = 50 };
         public string Description()
         {
-            string desc =
-                "Natotis is a sprawling planet that was the first to sign the peace treaty when the Vurik made peace with the \n" +
-                "Humans in the quadrant. It is known for its helium reserves";
-            return desc;
+            Random random = new Random();
+            int descrip = random.Next(1, 10);
+            if (descrip > 7)
+            {
+                string desc =
+                    "Natotis is a sprawling planet that was the first to sign the peace treaty when the Vurik made peace with the \n" +
+                    "Humans in the quadrant. It is known for its helium reserves";
+                return desc;
+            }
+
+            if (descrip <= 6 && descrip >= 3)
+            {
+                string desc =
+                    "Natotis' rings are the source of its inhabitant's power. It runs the risk of not having any rings if the farming \n" +
+                    "doesn't slow in the next three hundred years.";
+                return desc;
+            }
+            else
+            {
+                string desc = "The political climate on Natotis can be described as unstable, the peace treaty with the Vurik was one made\n" +
+                              "of necessity in order to stop the great loss of life during the great war of 2420. Many of those who remember\n" +
+                              "the war still want for revenge.";
+                return desc;
+            }
         }
         public string BuyWelcome()
         {

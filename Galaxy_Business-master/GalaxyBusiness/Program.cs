@@ -406,7 +406,14 @@ namespace GalaxyBusiness
                             #region  //Planet welcome dialog
                                                                                
                             Console.Clear();
-                            Console.WriteLine(natotis.Description());
+                            Console.WriteLine();
+                            Console.WriteLine(@" ███    ██  █████  ████████  ██████  ████████ ██ ███████ 
+████   ██ ██   ██    ██    ██    ██    ██    ██ ██      
+██ ██  ██ ███████    ██    ██    ██    ██    ██ ███████ 
+██  ██ ██ ██   ██    ██    ██    ██    ██    ██      ██ 
+██   ████ ██   ██    ██     ██████     ██    ██ ███████");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine(@"                                                                                            
                                                                                                                     .:=iiiiii=+=
                                                                                                                  .=i))=;::+)i=+,
@@ -443,7 +450,9 @@ namespace GalaxyBusiness
                                                     .;==i+::::=)i=;
                                                     ,+==iiiiii+,
                                                     `+=+++;`");
-                            Console.WriteLine();
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine($"{natotis.Description()}\n\n\n");
                             Console.ReadKey();
                             Console.WriteLine(menu.ShopDialog());
                             #endregion
@@ -581,43 +590,43 @@ namespace GalaxyBusiness
                                         
                                         case 2:
                                             Zell.Beryllium += amount2; natotis.Beryllium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
                                             break;
                                         case 3:
                                             Zell.Carbon += amount2; natotis.Carbon.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
                                             break;
                                         case 4:
                                             Zell.Thorium += amount2; natotis.Thorium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
                                             break;
                                         case 5:
                                             Zell.WaterIce += amount2; natotis.WaterIce.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
                                             break;
                                         case 6:
                                             Zell.Lead += amount2; natotis.Lead.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
                                             break;
                                         case 7:
                                             Zell.Aether += amount2; natotis.Aether.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
                                             break;
                                         case 8:
                                             Zell.Food += amount2; natotis.Food.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
                                             break;
                                         case 9:
                                             Zell.Neutronium += amount2; natotis.Neutronium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
                                             break;
                                         case 10:
                                             Zell.Helium3 += amount2; natotis.Helium3.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
                                             break;
                                         case 11:
                                             Zell.DarkMatter += amount2; natotis.DarkMatter.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(natotis.WeightTranslation(item2), amount2);
                                             break;
                                     }
                                     Zell.Credits += menu.PurchasePrice(natotis.ItemTranslation(item2), amount2);
@@ -630,6 +639,13 @@ namespace GalaxyBusiness
                                     int exitmission = 1;
                                     while (exitmission == 1)
                                     {
+                                        #region //Mission Endings
+                                        if (natotisMissions.Mission001success == 1 || natotisMissions.Mission001success == 0)
+                                        {
+                                            Console.WriteLine(natotisMissions.Escort001Ends(natotisMissions.Mission001success));
+                                        }
+
+                                        #endregion
                                         Console.WriteLine(natotisMissions.MissionBoard());
                                         Console.ReadKey();
 
@@ -1185,43 +1201,43 @@ namespace GalaxyBusiness
                                     {
                                         case 2:
                                             Zell.Beryllium += amount2; otov.Beryllium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(otov.WeightTranslation(item2), amount2);
                                             break;
                                         case 3:
                                             Zell.Carbon += amount2; otov.Carbon.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(otov.WeightTranslation(item2), amount2);
                                             break;
                                         case 4:
                                             Zell.Thorium += amount2; otov.Thorium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(otov.WeightTranslation(item2), amount2);
                                             break;
                                         case 5:
                                             Zell.WaterIce += amount2; otov.WaterIce.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(otov.WeightTranslation(item2), amount2);
                                             break;
                                         case 6:
                                             Zell.Lead += amount2; otov.Lead.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(otov.WeightTranslation(item2), amount2);
                                             break;
                                         case 7:
                                             Zell.Aether += amount2; otov.Aether.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(otov.WeightTranslation(item2), amount2);
                                             break;
                                         case 8:
                                             Zell.Food += amount2; otov.Food.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(otov.WeightTranslation(item2), amount2);
                                             break;
                                         case 9:
                                             Zell.Neutronium += amount2; otov.Neutronium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(otov.WeightTranslation(item2), amount2);
                                             break;
                                         case 10:
                                             Zell.Helium3 += amount2; otov.Helium3.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(otov.WeightTranslation(item2), amount2);
                                             break;
                                         case 11:
                                             Zell.DarkMatter += amount2; otov.DarkMatter.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(otov.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(otov.WeightTranslation(item2), amount2);
                                             break;
                                         case 12:
                                             Zell.TotalCargo += 100;
@@ -1655,31 +1671,31 @@ namespace GalaxyBusiness
                                     {
                                         case 2:
                                             Zell.Beryllium += amount2; gelara.Beryllium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
                                             break;
                                         case 3:
                                             Zell.Carbon += amount2; gelara.Carbon.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
                                             break;
                                         case 4:
                                             Zell.Thorium += amount2; gelara.Thorium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
                                             break;
                                         case 5:
                                             Zell.WaterIce += amount2; gelara.WaterIce.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
                                             break;
                                         case 6:
                                             Zell.Lead += amount2; gelara.Lead.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
                                             break;
                                         case 7:
                                             Zell.Aether += amount2; gelara.Aether.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
                                             break;
                                         case 8:
                                             Zell.Food += amount2; gelara.Food.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
                                             break;
                                         case 9:
                                             Console.WriteLine(menu.NoSale());
@@ -2131,31 +2147,31 @@ namespace GalaxyBusiness
                                     {
                                         case 2:
                                             Zell.Beryllium += amount2; larvis.Beryllium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
                                             break;
                                         case 3:
                                             Zell.Carbon += amount2; larvis.Carbon.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
                                             break;
                                         case 4:
                                             Zell.Thorium += amount2; larvis.Thorium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
                                             break;
                                         case 5:
                                             Zell.WaterIce += amount2; larvis.WaterIce.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
                                             break;
                                         case 6:
                                             Zell.Lead += amount2; larvis.Lead.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
                                             break;
                                         case 7:
                                             Zell.Aether += amount2; larvis.Aether.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
                                             break;
                                         case 8:
                                             Zell.Food += amount2; larvis.Food.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
                                             break;
                                         case 9:
                                             Console.WriteLine(menu.NoSale());
@@ -2601,43 +2617,43 @@ namespace GalaxyBusiness
                                     {
                                         case 2:
                                             Zell.Beryllium += amount2; aoclite.Beryllium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
                                             break;
                                         case 3:
                                             Zell.Carbon += amount2; aoclite.Carbon.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
                                             break;
                                         case 4:
                                             Zell.Thorium += amount2; aoclite.Thorium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
                                             break;
                                         case 5:
                                             Zell.WaterIce += amount2; aoclite.WaterIce.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
                                             break;
                                         case 6:
                                             Zell.Lead += amount2; aoclite.Lead.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
                                             break;
                                         case 7:
                                             Zell.Aether += amount2; aoclite.Aether.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
                                             break;
                                         case 8:
                                             Zell.Food += amount2; aoclite.Food.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
                                             break;
                                         case 9:
                                             Zell.Neutronium += amount2; aoclite.Neutronium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
                                             break;
                                         case 10:
                                             Zell.Helium3 += amount2; aoclite.Helium3.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
                                             break;
                                         case 11:
                                             Zell.DarkMatter += amount2; aoclite.DarkMatter.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
                                             break;
                                     }
                                     Zell.Credits += menu.PurchasePrice(aoclite.ItemTranslation(item2), amount2);
@@ -3082,43 +3098,43 @@ namespace GalaxyBusiness
                                     {
                                         case 2:
                                             Zell.Beryllium += amount2; xaenidesStation.Beryllium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
                                             break;
                                         case 3:
                                             Zell.Carbon += amount2; xaenidesStation.Carbon.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
                                             break;
                                         case 4:
                                             Zell.Thorium += amount2; xaenidesStation.Thorium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
                                             break;
                                         case 5:
                                             Zell.WaterIce += amount2; xaenidesStation.WaterIce.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
                                             break;
                                         case 6:
                                             Zell.Lead += amount2; xaenidesStation.Lead.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
                                             break;
                                         case 7:
                                             Zell.Aether += amount2; xaenidesStation.Aether.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
                                             break;
                                         case 8:
                                             Zell.Food += amount2; xaenidesStation.Food.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
                                             break;
                                         case 9:
                                             Zell.Neutronium += amount2; xaenidesStation.Neutronium.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
                                             break;
                                         case 10:
                                             Zell.Helium3 += amount2; xaenidesStation.Helium3.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
                                             break;
                                         case 11:
                                             Zell.DarkMatter += amount2; xaenidesStation.DarkMatter.Qty -= amount2;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
                                             break;
                                     }
                                     Zell.Credits += menu.PurchasePrice(xaenidesStation.ItemTranslation(item2), amount2);
@@ -3199,6 +3215,14 @@ namespace GalaxyBusiness
                         break;
                     case 7:
                         Console.WriteLine(Zell.InventoryDisplay());
+
+                        #region 
+                        if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                            natotisMissions.Mission001success == 2)
+                        {
+                            Console.WriteLine($"\n\n   #1 -  {natotisMissions.Escort001InProgress()}");
+                        }
+                        #endregion
                         Console.ReadKey();
                         break;
                     case 99:

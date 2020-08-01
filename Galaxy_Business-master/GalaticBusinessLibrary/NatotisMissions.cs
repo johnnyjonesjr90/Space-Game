@@ -15,7 +15,7 @@ namespace SpaceMerchantLibrary
             return board;
         }
         //3 is not opened,2 is in progress  1 is mission success, 0 is mission failed.
-        public int Mission001success = 2;
+        public int Mission001success = 3;
         #region //ESCORT MISSION 001
         public string Escort001advertisement()
         {
@@ -56,24 +56,30 @@ namespace SpaceMerchantLibrary
             return answer;
         }
 
-        public string Escort001B(int result)
+        public string Escort001Ends(int result)
         {
             string answer2="test";
             if (result == 1)//Pass
             {
-                answer2 = "\n\nThank you for getting my friend home safely. You know those pesky political activist always get in the way.";
+                answer2 = "Mission ['Need a coworker escorted to the ACL system'] PASSED\n\nThank you for getting my friend home safely. You know those pesky political activist always get in the way.";
                 return answer2;
             }
 
             if (result == 2)//Fail
             {
-                answer2 = "\n\nThank you for nothing, I guess dont hire a merchant to do a pirates job...";
+                answer2 = "Mission ['Need a coworker escorted to the ACL system'] FAILED\n\nThank you for nothing, I guess dont hire a merchant to do a pirates job...";
                 return answer2;
             }
 
             return answer2;
         }
 
-#endregion
+        #endregion
+
+        #region //
+
+        
+
+        #endregion
     }
 }

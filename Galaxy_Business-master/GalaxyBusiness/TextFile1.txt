@@ -4,6 +4,8 @@ Player attributes
 Battle system
 Active planets
 Mission system-
-	--Delivery
+	--Delivery/Escort
+	--Assasination
+	--Fetch quests
 	--
 
