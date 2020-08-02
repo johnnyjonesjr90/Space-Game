@@ -14,7 +14,7 @@ namespace SpaceMerchantLibrary
                            "tolerated.";
             return board;
         }
-        //3 is not opened,2 is in progress  1 is mission success, 0 is mission failed.
+        //3 is not opened,2 is in progress  1 is mission success, 0 is mission failed, 4 Declined
         public int Mission001success = 3;
         #region //ESCORT MISSION 001
         public string Escort001advertisement()
@@ -38,13 +38,14 @@ namespace SpaceMerchantLibrary
 
         public string Escort001A(double response)
         {
-            string answer = "test";
+            string answer = "";
             if (response == 1)//Yes
             {
                 answer = "\n\nThank you very much. I hope you travel will be safe!!....... By the way he is a wanted man but that should be a problem....\n\n" +
                          "A very nervous man gets meets you and you exchange an awkward conversation about the trip and he was very concerned if you \n" +
                          "were a Xenocrat or not. You ignore the conversation and tell him where your ship is. HE said he will stay there until your \n" +
                          "business is complete on this planet.";
+                Mission001success = 2;
                 return answer;
             }
             if (response == 2)//NO
@@ -58,7 +59,7 @@ namespace SpaceMerchantLibrary
 
         public string Escort001Ends(int result)
         {
-            string answer2="test";
+            string answer2="";
             if (result == 1)//Pass
             {
                 answer2 = "Mission ['Need a coworker escorted to the ACL system'] PASSED\n\nThank you for getting my friend home safely. You know those pesky political activist always get in the way.";
@@ -74,6 +75,14 @@ namespace SpaceMerchantLibrary
             return answer2;
         }
 
+        public string Excort001DropOff()
+        {
+            string dropoff =
+                "You get off the ship and head to the Assist lounge to find several large groups of people sitting on the floor with signs. They are all chanting 'Freedom, rights, liberty'\n" +
+                "as soon as they see you and your guest they run over and dump a tub of green liquid on his head. One of the protestors scream ' You Skruk! you voted against the Vurik rights\n" +
+                "bill, now where are my children supposed to go to school?'";
+            return dropoff;
+        }
         #endregion
 
         #region //

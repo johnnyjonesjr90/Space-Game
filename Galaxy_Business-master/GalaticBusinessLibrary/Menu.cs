@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Xml.Serialization;
 
 namespace GalaticBusinessLibrary
@@ -151,8 +152,17 @@ namespace GalaticBusinessLibrary
             string win = "After purchasing the larges station in the region you sit back while it makes you richer...";
             return win;
         }
+        public string ThrustersCharging()
+        {
+            string win = "Thrusters Charging Please wait...";
+            return win;
+        }
+        public string ThrustersCharged()
+        {
+            string win = "Thrusters Charged, Please Press Enter for Slip Space Jump...";
+            return win;
+        }
 
-        
 
 
 

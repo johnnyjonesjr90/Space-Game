@@ -40,85 +40,85 @@ namespace GalaxyBusiness
             menu.planetChoice = 6;
             double tryparse;
 
-//            #region //Game Start
+            #region //Game Start
 
 
-//            Console.WriteLine(@"
-//                    ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
-//                    ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
-//                    ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
-//                         ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
-//                    ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
+            Console.WriteLine(@"
+                    ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
+                    ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
+                    ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
+                         ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
+                    ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
                                                                                                                   
-//");
-//            Console.WriteLine("\n\n\n\n\n\n\n Press Enter...");
-//            var audioPlayer = new BasicAudio.AudioPlayer();
-//            audioPlayer.Filename = @"C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\outer-space-warning.wav";
-//            audioPlayer.Play();
-//            Console.ReadKey();
-//            Console.Clear();
-//            menu.StoryStart();
-//            foreach (var character in menu.StoryStart())
-//            {
-//                Console.Write(character);
-//                Thread.Sleep(10);
-//            }
-//            Console.ReadKey();
-//            int exit01 = 0;
-//            while (exit01 == 0)
-//            {
-//                Console.Clear();
-//                Console.WriteLine(menu.ShipSelection());
-//                string tempship = Console.ReadLine();
-//                double.TryParse(tempship, out tryparse);
-//                double shipselect = tryparse;
-//                if (shipselect == 1)
-//                {
-//                    Zell.TotalCargo = 50;
-//                    Zell.Fuel = 300;
-//                    Zell.Hull = 200;
-//                    Zell.Speed = 500;
-//                    Zell.Credits = 2000;
-//                    Console.Clear();
-//                    Console.WriteLine(
-//                        $"You purchased the Xaenides Cruiser : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-//                        $"\n\n\n\n Press Enter...");
-//                    Console.ReadKey();
-//                    exit01 = 1;
-//                }
+");
+            Console.WriteLine("\n\n\n\n\n\n\n Press Enter...");
+            //var audioPlayer = new BasicAudio.AudioPlayer();
+            //audioPlayer.Filename = @"C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\outer-space-warning.wav";
+            //audioPlayer.Play();
+            Console.ReadKey();
+            Console.Clear();
+            menu.StoryStart();
+            foreach (var character in menu.StoryStart())
+            {
+                Console.Write(character);
+                Thread.Sleep(10);
+            }
+            Console.ReadKey();
+            int exit01 = 0;
+            while (exit01 == 0)
+            {
+                Console.Clear();
+                Console.WriteLine(menu.ShipSelection());
+                string tempship = Console.ReadLine();
+                double.TryParse(tempship, out tryparse);
+                double shipselect = tryparse;
+                if (shipselect == 1)
+                {
+                    Zell.TotalCargo = 50;
+                    Zell.Fuel = 300;
+                    Zell.Hull = 200;
+                    Zell.Speed = 500;
+                    Zell.Credits = 2000;
+                    Console.Clear();
+                    Console.WriteLine(
+                        $"You purchased the Xaenides Cruiser : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+                        $"\n\n\n\n Press Enter...");
+                    Console.ReadKey();
+                    exit01 = 1;
+                }
 
-//                if (shipselect == 2)
-//                {
-//                    Zell.TotalCargo = 350;
-//                    Zell.Fuel = 50;
-//                    Zell.Hull = 300;
-//                    Zell.Speed = 100;
-//                    Zell.Credits = 5000;
-//                    Console.Clear();
-//                    Console.WriteLine(
-//                        $"You purchased the Natotis Hauler : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-//                        $"\n\n\n\n Press Enter...");
-//                    Console.ReadKey();
-//                    exit01 = 1;
-//                }
+                if (shipselect == 2)
+                {
+                    Zell.TotalCargo = 350;
+                    Zell.Fuel = 50;
+                    Zell.Hull = 300;
+                    Zell.Speed = 100;
+                    Zell.Credits = 5000;
+                    Console.Clear();
+                    Console.WriteLine(
+                        $"You purchased the Natotis Hauler : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+                        $"\n\n\n\n Press Enter...");
+                    Console.ReadKey();
+                    exit01 = 1;
+                }
 
-//                if (shipselect == 3)
-//                {
-//                    Zell.TotalCargo = 100;
-//                    Zell.Fuel = 100;
-//                    Zell.Hull = 200;
-//                    Zell.Speed = 300;
-//                    Zell.Credits = 8000;
-//                    Console.Clear();
-//                    Console.WriteLine(
-//                        $"You decided to keep your ship: \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-//                        $"\n\n\n\n Press Enter...");
-//                    Console.ReadKey();
-//                    exit01 = 1;
-//                }
-//            }
+                if (shipselect == 3)
+                {
+                    Zell.TotalCargo = 100;
+                    Zell.Fuel = 100;
+                    Zell.Hull = 200;
+                    Zell.Speed = 300;
+                    Zell.Credits = 8000;
+                    Console.Clear();
+                    Console.WriteLine(
+                        $"You decided to keep your ship: \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+                        $"\n\n\n\n Press Enter...");
+                    Console.ReadKey();
+                    exit01 = 1;
+                }
+            }
 
-//            #endregion
+            #endregion
 
             double fuelchecker = 0;
             double exitt = 0;
@@ -171,20 +171,31 @@ namespace GalaxyBusiness
 
 
                     #endregion
-                    
-                    string tempvaluek = Console.ReadLine();
+
+                    Console.WriteLine();
+                    Console.Write("> ");string tempvaluek = Console.ReadLine();
                     double.TryParse(tempvaluek, out tryparse);
                     if (tryparse==1){ menu.planetChoice = tryparse; exitt = 1; }
                     if (tryparse == 2) { menu.planetChoice = tryparse; exitt = 1; }
                     if (tryparse == 3) { menu.planetChoice = tryparse; exitt = 1; }
                     if (tryparse == 4) { menu.planetChoice = tryparse; exitt = 1; }
                     if (tryparse == 5) { menu.planetChoice = tryparse; exitt = 1; }
-                    
+
+                    Console.WriteLine(menu.ThrustersCharging());
+                    ShowSimplePercentage();
+                    int milliseconds = 600;
+                    Thread.Sleep(milliseconds);
+                    Console.WriteLine();
+                    Console.WriteLine(menu.ThrustersCharged());
+                    Console.ReadKey();
                     Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
                 ingametime.time(menu.planetChoice);
+                Console.ForegroundColor = ConsoleColor.White;
                 switch (menu.planetChoice)
                 {
+                       
                        
                     case 1://Natotis 
 
@@ -643,6 +654,9 @@ namespace GalaxyBusiness
                                         if (natotisMissions.Mission001success == 1 || natotisMissions.Mission001success == 0)
                                         {
                                             Console.WriteLine(natotisMissions.Escort001Ends(natotisMissions.Mission001success));
+                                            Console.ReadKey();
+                                            Console.Clear();
+
                                         }
 
                                         #endregion
@@ -726,7 +740,7 @@ namespace GalaxyBusiness
                                         Console.WriteLine(
                                             @" ||=====================================================================================||");
                                         Console.WriteLine("\n\n\n Please choose a mission and press Enter or press 99 to exit..");
-                                        string tempvalu = Console.ReadLine();
+                                        Console.Write(">"); string tempvalu = Console.ReadLine();
                                         double.TryParse(tempvalu, out tryparse);
                                         double mission = tryparse;
                                         if (mission == 99)
@@ -746,7 +760,7 @@ namespace GalaxyBusiness
                                                 Console.ReadKey();
                                                 if (mission2 == 2)
                                                 {
-                                                    natotisMissions.Mission001success = 0;
+                                                    natotisMissions.Mission001success = 4;
                                                 }
                                             }
                                         }
@@ -755,7 +769,7 @@ namespace GalaxyBusiness
 
                                         #endregion
                                     }
-
+                                    Console.ForegroundColor = ConsoleColor.White;
                                     break;
                                 case 4://Back to Ship
                                     #region //BACK TO SHIP
@@ -822,7 +836,16 @@ namespace GalaxyBusiness
                                             exitt = 0;
                                         }
                                     }
+                                    Console.WriteLine(menu.ThrustersCharging());
+                                    ShowSimplePercentage();
+                                    int milliseconds = 600;
+                                    Thread.Sleep(milliseconds);
+                                    Console.WriteLine();
+                                    Console.WriteLine(menu.ThrustersCharged());
+                                    Console.ReadKey();
+                                    Console.Clear();
                                     exit1 = 1;
+                                    Console.ForegroundColor = ConsoleColor.White;
                                     #endregion
                                     break;
                                 case 5:
@@ -1054,7 +1077,14 @@ namespace GalaxyBusiness
 
 
                             Console.Clear();                            
-                            Console.WriteLine($"\n\n{otov.OtovDesc()}\n\n"); 
+                            
+                            Console.WriteLine(@" ██████  ████████  ██████      ██    ██ 
+                                ██    ██    ██    ██    ██     ██    ██ 
+                                ██    ██    ██    ██    ██     ██    ██ 
+                                ██    ██    ██    ██    ██      ██  ██  
+                                ██████     ██     ██████        ████   ");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine(@"                .                                            .
                                                      *   .                  .              .        .   *          .
                                                   .         .                     .       .           .      .        .
@@ -1077,6 +1107,9 @@ namespace GalaxyBusiness
                                                    /\^   ^  ^    ^                  ^^ ^  '\ ^          ^       ---
                                                          --           -            --  -      -         ---  __       ^
                                                    --  __                      ___--  ^  ^                         --  __");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine($"\n{otov.OtovDesc()}\n\n");
                             Console.ReadKey();
                             Console.WriteLine($"\n{menu.ShopDialog()}");
                             #endregion 
@@ -1315,6 +1348,14 @@ namespace GalaxyBusiness
                                             exitt = 0;
                                         }
                                     }
+                                    Console.WriteLine(menu.ThrustersCharging());
+                                    ShowSimplePercentage();
+                                    int milliseconds = 600;
+                                    Thread.Sleep(milliseconds);
+                                    Console.WriteLine();
+                                    Console.WriteLine(menu.ThrustersCharged());
+                                    Console.ReadKey();
+                                    Console.Clear();
                                     exit2 = 1;
                                     break;
                                 case 5:
@@ -1546,8 +1587,14 @@ namespace GalaxyBusiness
                         {
                             #region  //Planet welcome dialog
                             Console.Clear();
-                            Console.WriteLine($"\n\n{gelara.Description()}\n\n");
-                            Console.WriteLine(@"                             ;::;
+                            Console.WriteLine(@" ██████  ███████ ██       █████  ██████   █████  
+██       ██      ██      ██   ██ ██   ██ ██   ██ 
+██   ███ █████   ██      ███████ ██████  ███████ 
+██    ██ ██      ██      ██   ██ ██   ██ ██   ██ 
+ ██████  ███████ ███████ ██   ██ ██   ██ ██   ██ ");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine(@"                                  
                                                                          ::: =,;
                                                                      ;;=;;=== M
                                                         ,=YVRMBBMMR=,   :i=
@@ -1567,6 +1614,10 @@ namespace GalaxyBusiness
                                                   :VMM               .,,,,,,,,,,,,:,,,::;;=
                                                  ,;VBM                 .,,,,,,,,,,,,,:,::
                                                  ,,==                      `,,,,,,,   ");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+                            Console.WriteLine($"\n\n{gelara.Description()}\n\n");
                             Console.ReadKey();
                             Console.WriteLine($"\n{menu.ShopDialog()}");
                             #endregion 
@@ -1783,6 +1834,14 @@ namespace GalaxyBusiness
                                             exitt = 0;
                                         }
                                     }
+                                    Console.WriteLine(menu.ThrustersCharging());
+                                    ShowSimplePercentage();
+                                    int milliseconds = 600;
+                                    Thread.Sleep(milliseconds);
+                                    Console.WriteLine();
+                                    Console.WriteLine(menu.ThrustersCharged());
+                                    Console.ReadKey();
+                                    Console.Clear();
                                     exit3 = 1;
                                     break;
                                 case 5:
@@ -2014,36 +2073,47 @@ namespace GalaxyBusiness
                         {
                             #region  //Planet welcome dialog
                             Console.Clear();
+                            Console.WriteLine(@"██       █████  ██████  ██    ██ ██ ███████ 
+██      ██   ██ ██   ██ ██    ██ ██ ██      
+██      ███████ ██████  ██    ██ ██ ███████ 
+██      ██   ██ ██   ██  ██  ██  ██      ██ 
+███████ ██   ██ ██   ██   ████   ██ ███████ ");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine(@"               #@@@#&@@@@@@@@%@@@@@@%%@@@@                          
+                                                                                                   .&(%@&&@%@@@@#@@@@@@%@@@@@@@%#@@@@@@@@*                    
+                                                                                               .%%&&%@&#@@@@@@@#@@%/&@%%@@@@@@@@@@@%@@@@@@@@@.                
+                                                                                             (%/&%@&@@@(@@@&#@@@@@@&%(#(@@@@@@@@@@@@@@#@@@@@@@@@/             
+                                                                                          (##%&%&&@@@@@&@@&@@@@@@@@%@@@(*@@&(#@@@@@@&#%(&@@@@%((@@@           
+                                                                                        //%(&%&@&@@@@@@##@@##@@@#@@@@@@@@/@@#%@&&@@@@@@@@@%@@@%(@@@&@.        
+                                                                                        **(#%%%&@@@@@@@%@@@@@@@@@&@@@@@@@@@/&&@@@@#@@@@@@@@@@@/*/#%@@@@&@       
+                                                                                     ,((#%#&&@@@@@@@@#@@@@@@@@#@@@@###((/*,&@@@@@@%@@@@@@@@@@@@((*&@@@@@@&     
+                                                                                    //(%&%&%@@@@@@@(@#@@@@@@&%@@@@@@@@@@@@@/#@@@@@%&@@@@@@@@&(*@*@/&&@@@@&@    
+                                                                                   **%(%#%&@@@@@@#@@@@%@#&@@@@@@@@@@@@@@@@//(@@@@@@(#/&@@@@@@@@@@*%,*/%#/%@@   
+                                                                                  **((#%(%@&@@@%@@@@@@@&@@@@@@@@@@@@@@@@@@@/**(##@@&/@@@@@@@@@@@@(/#.%.(@@@@@  
+                                                                                 ,/((%#%&&&&&@(@@@@&&@@@&@@@@@@@@@@@@@@@@@@#((@@@@@@@*@@@@@@@@*&@@@@@#@(@@@@@# 
+                                                                                 */###%%&&@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@&(@@*&@*#/&@##,(@@@@@((@@@@@@@/@@@@@@& 
+                                                                                .*(*(#%&%@&@&#@@@@@@@@@&@@@@@@&@@@@(&@@@@@@@%./@@@@@@@@@@//,&@@&@@@@@@@#@@@@@%*
+                                                                                ,/*(#%#&&&&@@@@@@@@@@@@&@@#/%%@@@@@@@@@@@@@@@@#,@@@@@@&@@,@@@@@@@@@@@@@(@@@@@#&
+                                                                                ,*/(###%&&&&@@@@@@@#(%&%@@@@@@@@@@*@@@@@@@@@@@@&.%@@@@&/@&.*@@@@@@@@@@@&(@@@(%%
+                                                                                */*/##%%&&&@&@@@/#@@@@@&#@@@@@@@@&@@(@@@@@@@@@@@@,*@@&*@@@@@#*&@@@@@@@@&,/%@(#&
+                                                                                 ,*/###&%&&&@@%@@@&@@@@@@@@@&@@@@@@@@@@&@@@@@@@@@@(*.&@@@@@@@@@/&@@@@@*@@@@@(#,
+                                                                                 ,*///###&%&&(@&@@@@(@@@@@@/@@@@@%@@@@@@#@@@@@@@@@%*&@@@@@@@@@@@@/&*&@&(@@@@%% 
+                                                                                  **/((###%%&&@@@@@@@%#@@@@@@@##(&@@@@@@#@(&@@@@@/@@@@@&@@@@@@@%/@/@@@@@@/@#@, 
+                                                                                  ,,/*#####%&&@@@@@@@@@&(%@@@@@@@@(@@@@@@@@@@@@@&.@@@@@@@@@@@&/@@@#@@@@@@@#@(  
+                                                                                   .,,/#(#%%%@&&@@@@@@#@@&@@@@@@@@@@(@@@@@@@@@@@/*@@@@@@@&*(#@@@@@%%@@@@@@(%   
+                                                                                    .(*/(((%&%#@&@&@&%@@@@@#@@@@@@@@@@(@@@@@@@@&.@,*/#@@@@@#@@@@@@&%@@@(/&/    
+                                                                                       ,///###%%%%#@&@@@@@@@@@@#@@@@@@@@@@(@@&(/%@@@@@@@@@%/@@@@@@@@&,%@@&      
+                                                                                       ./,,(#%#&%%&@&@@@@@@@@@@@@&@@@@@@@*@@@&&/@@@@@@@@@*@@&**%@@@@(#&(       
+                                                                                         ,,**(%##%%(&@@@&@@@@@@@@@%(@@@(@@@@@@@@@@@@&/@@(@@@@@@@@@%&%#         
+                                                                                             ///&(%#%%%&&&@&/@@@@@@@&@@@&@@@@@@@@@@@@@@@@(@@@@@@@%&/*           
+                                                                                               ,(/#(%#%%&%@&&&@@(@@@@@@@@@@#@@@@@@@@@@@%*@@@@@%(@%              
+                                                                                                   ((#/##%&%&&@&@@&#&@@@@%#@@@#@@&@@@@@&@*&@&&,                 
+                                                                                                       //*((#(%#%#&&&@%&&%&&@@#@@@@%/@&@@@                      
+                                                                                                            /**/%#%&&&#%(/%@@%(#%@# ");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n\n{larvis.Description()}\n\n");
-                            Console.WriteLine(@"     x  .--------------.
-                                                    .---'  o        .    `---.
-                                                 .-'    .    O  .         .   `-.
-                                              .-'     @@@@@@       .             `-.
-                                            .'@@   @@@@@@@@@@@       @@@@@@@   .    `.
-                                          .'@@@  @@@@@@@@@@@@@@     @@@@@@@@@         `.
-                                         /@@@  o @@@@@@@@@@@@@@     @@@@@@@@@     O     \
-                                        /        @@@@@@@@@@@@@@  @   @@@@@@@@@ @@     .  \
-                                       /@  o      @@@@@@@@@@@   .  @@  @@@@@@@@@@@     @@ \
-                                      /@@@      .   @@@@@@ o       @  @@@@@@@@@@@@@ o @@@@ \
-                                     /@@@@@                  @ .      @@@@@@@@@@@@@@  @@@@@ \
-                                     |@@@@@    O    `.-./  .        .  @@@@@@@@@@@@@   @@@  |
-                                    / @@@@@        --`-'       o        @@@@@@@@@@@ @@@    . \
-                                    |@ @@@@ .  @  @    `    @            @@      . @@@@@@    |
-                                    |   @@                         o    @@   .     @@@@@@    |
-                                    |  .     @   @ @       o              @@   o   @@@@@@.   |
-                                    \     @    @       @       .-.       @@@@       @@@      /
-                                     |  @    @  @              `-'     . @@@@     .    .    |
-                                     \ .  o       @  @@@@  .              @@  .           . /
-                                      \      @@@    @@@@@@       .                   o     /
-                                       \    @@@@@   @@\@@    /        O          .        /
-                                        \ o  @@@       \ \  /  __        .   .     .--.  /
-                                         \      .     . \.-.---                   `--'  /
-                                          `.             `-'      .                   .'
-                                            `.    o     / | `           O     .     .'
-                                              `-.      /  |        o             .-'
-                                                 `-.          .         .     .-'
-                                                    `---.        .       .---'
-                                                         `--------------'");
                             Console.ReadKey();
                             Console.WriteLine($"\n{menu.ShopDialog()}");
                             #endregion 
@@ -2258,6 +2328,14 @@ namespace GalaxyBusiness
                                             exitt = 0;
                                         }
                                     }
+                                    Console.WriteLine(menu.ThrustersCharging());
+                                    ShowSimplePercentage();
+                                    int milliseconds = 600;
+                                    Thread.Sleep(milliseconds);
+                                    Console.WriteLine();
+                                    Console.WriteLine(menu.ThrustersCharged());
+                                    Console.ReadKey();
+                                    Console.Clear();
                                     exit4 = 1;
                                     break;
                                 case 5:
@@ -2491,8 +2569,47 @@ namespace GalaxyBusiness
 
 
                             Console.Clear();
+                            Console.WriteLine(@" █████   ██████   ██████ ██      ██ ████████ ███████ 
+██   ██ ██    ██ ██      ██      ██    ██    ██      
+███████ ██    ██ ██      ██      ██    ██    █████   
+██   ██ ██    ██ ██      ██      ██    ██    ██      
+██   ██  ██████   ██████ ███████ ██    ██    ███████ ");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine(@"          ########*****(((##                              
+                                                                                                         #####################*((((((((%#                       
+                                                                                                    *(#############################((((((((%%                   
+                                                                                                ,***********(#########################((((((((%%/               
+                                                                                              ##########(**********#######################(((((((%%             
+                                                                                          *####################*********###################(((((((%%#          
+                                                                                        ,***********(###############*********(################(((((#%%(        
+                                                                                       ********************/#############********###############(((((%%%       
+                                                                                      .***************************############******((#############((((%%%#     
+                                                                                      *****%%%%%%%%%%%%***************############***((((###########((((%%%#    
+                                                                                     *****%%%%%%%%%%%%%%%%%***************############((((((##########(((%%%#   
+                                                                                     *******%%%%%%%%%%%%%%%%%%****************(###########((((((#########((%%%   
+                                                                                    **********%%%%%%%%%%%%%%%%********************###########(((((#########%%%#  
+                                                                                    ##************(##%%#*****************************##########(((((#######%%%%  
+                                                                                    ########******************************************((##########((((######%%%  
+                                                                                    (##################********************************(((((#########((((####%%%/ 
+                                                                                     #############################/********************(((((((#########(((##%%%%  
+                                                                                     #####################################*************((((((((((########(((%%%%  
+                                                                                     ,*************############################********(((((((((((((######((%%%#  
+                                                                                       *******************##########################***/(((((((((((((((#####%%%%   
+                                                                                       ***********************#########################(((((((((((((((((###%%%    
+                                                                                        **************************#########################(((((((((((((((%%%     
+                                                                                         *****************************########################(((((((((((%%#      
+                                                                                          .*******************************#######################((((((%%%(       
+                                                                                            *********************************######################(((%%#         
+                                                                                               **********************************/###################%%(           
+                                                                                                  **********************************(#############%%%              
+                                                                                                    ******************************((((#########%%                 
+                                                                                                          ************************(((((((((##%%                     
+                                                                                                               .*****************(((((((##                          
+                                                                                                                      ************## ");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n\n{aoclite.Description()}\n\n");
-                            Console.WriteLine(@"");
                             Console.ReadKey();
                             Console.WriteLine($"\n{menu.ShopDialog()}");
                             #endregion 
@@ -2664,6 +2781,118 @@ namespace GalaxyBusiness
 
                                     break;
                                 case 3://Mission Board
+                                    int exitmission = 1;
+                                    while (exitmission == 1)
+                                    {
+                                        #region //Mission Endings
+                                        if (natotisMissions.Mission001success==2)
+                                        {
+                                            Console.WriteLine(natotisMissions.Excort001DropOff());
+                                            Console.WriteLine("\n\n Mission Escort coworker to ACL Passed");
+                                            Console.ReadKey();
+                                            Console.Clear();
+                                        }
+
+                                        #endregion
+                                        Console.WriteLine(natotisMissions.MissionBoard());
+                                        Console.ReadKey();
+
+                                        #region Mission graphic
+
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(
+                                            @" =========================================================================================");
+                                        Console.WriteLine(
+                                            @" ||                       Aoclite Federation Assist Board                                ||");
+
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @$" ||  Current System: Natotis                                                            ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                ");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @$" ||                                                                                     || ");
+                                        Console.WriteLine(
+                                            @$" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            $@" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine("\n\n\n Please choose a mission and press Enter or press 99 to exit..");
+                                        Console.Write(">"); string tempvalu = Console.ReadLine();
+                                        double.TryParse(tempvalu, out tryparse);
+                                        double mission = tryparse;
+                                        if (mission == 99)
+                                        {
+                                            exitmission = 0;
+                                        }
+                                        if (natotisMissions.Mission001success == 3)
+                                        {
+                                            if (mission == 1)
+                                            {
+                                                Console.Clear();
+                                                Console.WriteLine(natotisMissions.Escort001());
+                                                string tempvalu1 = Console.ReadLine();
+                                                Console.Clear();
+                                                double.TryParse(tempvalu1, out tryparse);
+                                                double mission2 = tryparse;
+                                                Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                                Console.ReadKey();
+                                                if (mission2 == 2)
+                                                {
+                                                    natotisMissions.Mission001success = 0;
+                                                }
+                                            }
+                                        }
+
+                                        Console.Clear();
+
+                                        #endregion
+                                    }
                                     break;
                                 case 4://Back to Ship
                                     #region Navvi
@@ -2728,6 +2957,14 @@ namespace GalaxyBusiness
                                             exitt = 0;
                                         }
                                     }
+                                    Console.WriteLine(menu.ThrustersCharging());
+                                    ShowSimplePercentage();
+                                    int milliseconds = 600;
+                                    Thread.Sleep(milliseconds);
+                                    Console.WriteLine();
+                                    Console.WriteLine(menu.ThrustersCharged());
+                                    Console.ReadKey();
+                                    Console.Clear();
                                     exit5 = 1;
                                     break;
                                 case 5:
@@ -2966,8 +3203,48 @@ namespace GalaxyBusiness
 
 
                             Console.Clear();
+                            Console.WriteLine(@"██   ██  █████  ███████ ███    ██ ██ ██████  ███████ ███████     ███████ ████████  █████  ████████ ██  ██████  ███    ██ 
+ ██ ██  ██   ██ ██      ████   ██ ██ ██   ██ ██      ██          ██         ██    ██   ██    ██    ██ ██    ██ ████   ██ 
+  ███   ███████ █████   ██ ██  ██ ██ ██   ██ █████   ███████     ███████    ██    ███████    ██    ██ ██    ██ ██ ██  ██ 
+ ██ ██  ██   ██ ██      ██  ██ ██ ██ ██   ██ ██           ██          ██    ██    ██   ██    ██    ██ ██    ██ ██  ██ ██ 
+██   ██ ██   ██ ███████ ██   ████ ██ ██████  ███████ ███████     ███████    ██    ██   ██    ██    ██  ██████  ██   ████ ");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine(@"             ,(&@@%(,                                                
+                /@@@@@@@@@@@@@@@@@@@@@@@@(                                      
+             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.                                
+          ,@@@@@@@@@@@@.           #@@@@@@@@@@@@@@@#                            
+         @@@@@@@@@.     ,@@*              (@@@@@@@@@@@@,    ./,                 
+        @@@@@@@@         .@@@                  &@@@@@#    ,@@@@@@@@             
+       @@@@@@@/            &@@&                        @   @@@@@@@@@@           
+      *@@@@@@#               @@@.                   ,@@@@   &@@@@@@@@@          
+      &@@@@@@.  @@@@.         *@@@                &@@@@@@@(   .@@@@@@@          
+      &@@@@@@     ,@@@@@        @@@#           ,@@@@@@@@@@@@@,                  
+      #@@@@@@.        *@@@@&      @@@        @@@@@@@@@@@@@@@@@@@@    &.         
+       @@@@@@#            (@@@@#   /@@(   ,@@@@@@@@@@@@@@@@@@@#   .@@@@@        
+       %@@@@@@                %@@@@/     /@@@@@@@@@@@@@@@@@@.     @@@@@@@#      
+        @@@@@@@                      ,@   @@@@@@@@@@@@@@@%         #@@@@@@@     
+         @@@@@@@                   &@@@@   *@@@@@@@@@@@.             @@@@@@@    
+          @@@@@@@                 #@@@@@@@    (@@@@@%                 @@@@@@@.  
+           @@@@@@@*           &@   &@@@@@@@@&                          @@@@@@@  
+            &@@@@@@@       *@@@@@.   @@@@@@@@@@%   .@@(                 @@@@@@@ 
+             .@@@@@@@%   #@@@@@@@@@,    (@@@@.   &*  %@@@@*             ,@@@@@@(
+               #@@@@@@@(   %@@@@@@@@@@%         ,@@@     @@@@@,          @@@@@@@                
+                 @@@@@@@@%   ,@@@@@@@@@@.         &@@%      ,@@@@&       (@@@@@@
+                   &@@@@@@@@    %@@@@%              @@@.        *@@@@%   (@@@@@@
+               &@(   (@@@@@@@@&    .                 *@@@           (@   @@@@@@@
+             (@@@@@&    @@@@@@@@@&                     @@@#             /@@@@@@@
+          &  .@@@@@@@@.   *@@@@@@@@@@*                  .@@@           (@@@@@@@ 
+       *@@@&   @@@@@@@@@@    *@@@@@@@@@@@#                (@@@       .@@@@@@@@  
+      &@@@@@@.   (@@@@@@@        @@@@@@@@@@@@@@/                  (@@@@@@@@@@   
+  *@   @@@@@@@@@                     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     
+*@@@@   %@@@@@@@@@@@                     .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                         
+*@@@@@%    @@@@@@%                              .@@@@@@@@@@@@@@@@@@.            
+ *@@@@@@@%                                                                      
+   ,@@@@@@@@%  ");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n\n{xaenidesStation.Description()}\n\n {xaenidesStation.Tax()}");
-                            Console.WriteLine(@" ");
                             Console.ReadKey();
                             Console.WriteLine($"\n{menu.ShopDialog()}");
                             #endregion 
@@ -3200,6 +3477,14 @@ namespace GalaxyBusiness
                                     {
                                         exitt = 1;
                                     }
+                                    Console.WriteLine(menu.ThrustersCharging());
+                                    ShowSimplePercentage();
+                                    int milliseconds = 600;
+                                    Thread.Sleep(milliseconds);
+                                    Console.WriteLine();
+                                    Console.WriteLine(menu.ThrustersCharged());
+                                    Console.ReadKey();
+                                    Console.Clear();
                                     exit6 = 1;
                                     break;
                                 case 5:
@@ -3250,8 +3535,18 @@ namespace GalaxyBusiness
             
 
         }
+        static void ShowSimplePercentage()
+        {
+            for (int i = 0; i <= 100; i++)
+            {
+                Console.Write($"\rProgress: {i}%   ");
+                Thread.Sleep(25);
+            }
 
-        
+            Console.Write("\rDone!          ");
+        }
+
+
 
     }
 }
