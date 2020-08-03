@@ -29,6 +29,16 @@ namespace GalaticBusinessLibrary
             string menu = "Welcome to Otov please browse our wares. {Press 99 to Exit} ";
             return menu;
         }
+        public string XigowOptions()
+        {
+            string menu = $"Welcome to the Otov's Capital City of Xigow\n\n" +
+                          $"1 - Warehouse District\n" +
+                          $"2 - Technology District\n" +
+                          $"3 - Cantina\n" +
+                          $"4 - Senate Building\n" +
+                          $"99 - Exit";
+            return menu;
+        }
         public override void ItemCalculation()
         {
 

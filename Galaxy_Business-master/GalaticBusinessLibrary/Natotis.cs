@@ -50,9 +50,38 @@ namespace GalaticBusinessLibrary
         public string BuyWelcome()
         {
 
-            string menu = $"Welcome to Natotis please browse our wares.";
+            string menu = $"Welcome to the Natotis Station Goods transfer please use the automated transaction module.\n" +
+                          $"Please note not all Items are available at all times..\n" +
+                          $"Please report any malfunctions to Ex:91708421 on your Touch Pad... Thank You..\n" +
+                          $"Press 99 to exit";
             return menu;
         }
+        public string SellWelcome()
+        {
+
+            string menu = $"Welcome to the Natotis Station Goods transfer please use the automated transaction module.\n" +
+                          $"All transfers are final\n" +
+                          $"Please report any malfunctions to Ex:91708421 on your Touch Pad... Thank You..\n" +
+                          $"Press 99 to exit";
+            return menu;
+        }
+
+        public string ZhulOptions()
+        {
+            string menu = $"Welcome to the Natotis' Great Capital City of Zhul!\n\n" +
+                          $"1 - Warehouse District\n" +
+                          $"2 - Technology District\n" +
+                          $"3 - Cantina\n" +
+                          $"4 - Senate Building\n" +
+                          $"99 - Exit";
+            return menu;
+        }
+
+        #region Items
+
+        
+
+       
         public override void ItemCalculation()
         {
 
@@ -394,8 +423,8 @@ namespace GalaticBusinessLibrary
                         $"Make Selection and Press Enter\n\n\n";
             return bp;
         }
+        #endregion
 
-        
 
 
 

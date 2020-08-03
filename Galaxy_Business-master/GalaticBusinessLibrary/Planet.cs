@@ -31,7 +31,8 @@ namespace GalaticBusinessLibrary
         }
         public string planetSize { get; set; }
         public string planetName { get; set; }
-        
+        public int PoliticalStatus { get; set; }
+
         public virtual string BuyWelcome(string planet)
         {
             

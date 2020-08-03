@@ -4,17 +4,21 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Xml.Serialization;
+using System.IO;
+
 
 namespace GalaticBusinessLibrary
 {
     public class Menu
     {
         public double planetChoice { get; set; }
-        
+
+
         
 
         public string StoryStart()
         {
+            
             string selection = "" +
                                "\n\nYou worked for a small merchant for years, being his co-pilot and accompanying him on his trips\n" +
                                "throughout the galaxy. He treated you well and encouraged you to seek out your own adventure. But\n" +
@@ -61,9 +65,14 @@ namespace GalaticBusinessLibrary
             if (planetChoice == 6 && shipFuel < 5) { travel = 0; return travel; }
             return travel;
         }
+        public string PlanetDialog()
+        {
+            string dialog = "1 - MarketPlace \n2 - Travel to the Capital City  \n3 - Mission Board \n4 - Return to Ship \n5 - Inventory";
+            return dialog;
+        }
         public string ShopDialog()
         {
-            string dialog = "1 - Buy \n2 - Sell \n3 - Mission Board \n4 - Return to Ship \n5 - Inventory";
+            string dialog = "1 - Buy \n2 - Sell \n99 - Exit";
             return dialog;
         }
         public double PurchasePrice(double cost, double qty)
@@ -161,6 +170,31 @@ namespace GalaticBusinessLibrary
         {
             string win = "Thrusters Charged, Please Press Enter for Slip Space Jump...";
             return win;
+        }
+
+        public string Occupation(int membership)
+        {
+            if (membership == 1)
+            {
+                string occ = "Federation Member";
+                return occ;
+            }
+            if (membership ==2)
+            {
+                string occ = "AT WAR";
+                return occ;
+            }
+            if (membership == 3)
+            {
+                string occ = "Vurik Colony";
+                return occ;
+            }
+            else
+            {
+                string occ = "Independant Colony";
+                return occ;
+            }
+
         }
 
 
