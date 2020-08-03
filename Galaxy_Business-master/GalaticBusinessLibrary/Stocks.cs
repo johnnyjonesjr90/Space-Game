@@ -6,5 +6,6 @@ namespace SpaceMerchantLibrary
 {
     class Stocks
     {
+       
     }
 }

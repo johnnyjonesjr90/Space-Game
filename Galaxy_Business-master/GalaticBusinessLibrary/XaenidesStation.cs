@@ -83,7 +83,7 @@ namespace GalaticBusinessLibrary
         }
         public string DithSellprice()
         {
-            string dp = $"Item # 1 Dilithium - {Dilithium.SalePrice()} {Dilithium.Price:0}"; 
+            string dp = $"Item # 1 Dilithium - {Dilithium.SalePrice()} {Dilithium.SellPrice:0}"; 
             return dp; 
         }
         public override int BerylliumAvail()
@@ -103,7 +103,7 @@ namespace GalaticBusinessLibrary
         public  string BeryllSellprice()
         {
 
-            string bp = $"Item # 2 Beryllium - {Beryllium.SalePrice()} {Beryllium.Price:0}";
+            string bp = $"Item # 2 Beryllium - {Beryllium.SalePrice()} {Beryllium.SellPrice:0}";
             return bp;
         }
 
@@ -125,7 +125,7 @@ namespace GalaticBusinessLibrary
         public string CarbonSellprice()
         {
 
-            string bp = $"Item # 3 Carbon - {Carbon.SalePrice()} {Carbon.Price:0}";
+            string bp = $"Item # 3 Carbon - {Carbon.SalePrice()} {Carbon.SellPrice:0}";
             return bp;
         }
         public int ThoriumAvail()
@@ -145,7 +145,7 @@ namespace GalaticBusinessLibrary
         public string ThoriumSellprice()
         {
 
-            string bp = $"Item # 4 Thorium - {Thorium.SalePrice()} {Thorium.Price:0}";
+            string bp = $"Item # 4 Thorium - {Thorium.SalePrice()} {Thorium.SellPrice:0}";
             return bp;
         }
         public int WaterIceAvail()
@@ -165,7 +165,7 @@ namespace GalaticBusinessLibrary
         public string WaterIceSellprice()
         {
 
-            string bp = $"Item # 5 WaterIce - {WaterIce.SalePrice()} {WaterIce.Price:0}";
+            string bp = $"Item # 5 WaterIce - {WaterIce.SalePrice()} {WaterIce.SellPrice:0}";
             return bp;
         }
         public int LeadAvail()
@@ -185,7 +185,7 @@ namespace GalaticBusinessLibrary
         public string LeadSellprice()
         {
 
-            string bp = $"Item # 6 Lead - {Lead.SalePrice()} {Lead.Price:0}";
+            string bp = $"Item # 6 Lead - {Lead.SalePrice()} {Lead.SellPrice:0}";
             return bp;
         }
         public int AetherAvail()
@@ -205,7 +205,7 @@ namespace GalaticBusinessLibrary
         public string AetherSellprice()
         {
 
-            string bp = $"Item # 7 Aether - {Aether.SalePrice()} {Aether.Price:0}";
+            string bp = $"Item # 7 Aether - {Aether.SalePrice()} {Aether.SellPrice:0}";
             return bp;
         }
         public int FoodAvail()
@@ -225,7 +225,7 @@ namespace GalaticBusinessLibrary
         public string FoodSellprice()
         {
 
-            string bp = $"Item # 8 Food - {Food.SalePrice()} {Food.Price:0}";
+            string bp = $"Item # 8 Food - {Food.SalePrice()} {Food.SellPrice:0}";
             return bp;
         }
 
@@ -246,7 +246,7 @@ namespace GalaticBusinessLibrary
         public string NeutroniumSellprice()
         {
 
-            string bp = $"Item # 9 Neutronium - {Neutronium.SalePrice()} {Neutronium.Price:0}";
+            string bp = $"Item # 9 Neutronium - {Neutronium.SalePrice()} {Neutronium.SellPrice:0}";
             return bp;
         }
         public int Helium3Avail()
@@ -266,7 +266,7 @@ namespace GalaticBusinessLibrary
         public string Helium3Sellprice()
         {
 
-            string bp = $"Item # 10 Helium3 - {Helium3.SalePrice()} {Helium3.Price:0}";
+            string bp = $"Item # 10 Helium3 - {Helium3.SalePrice()} {Helium3.SellPrice:0}";
             return bp;
         }
         public int DarkMatterAvail()
@@ -286,7 +286,7 @@ namespace GalaticBusinessLibrary
         public string DarkMatterSellprice()
         {
 
-            string bp = $"Item # 11 DarkMatter - {DarkMatter.SalePrice()} {DarkMatter.Price:0}";
+            string bp = $"Item # 11 DarkMatter - {DarkMatter.SalePrice()} {DarkMatter.SellPrice:0}";
             return bp;
         }
         public string StationSellprice()

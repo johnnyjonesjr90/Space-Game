@@ -204,10 +204,8 @@ namespace GalaxyBusiness
                        
                        
                     case 1://Natotis 
-
                         Zell.Fuel -= 30;
                         int exit1 = 0;
-                        
                         natotis.ItemCalculation();
                         #region //Ship interaction
                         Console.WriteLine(battle.ShipEmerges(battle.Battlechance(battlechance.Next(0, 100))));
@@ -508,6 +506,12 @@ namespace GalaxyBusiness
                                             case 1: //Buy
 
                                                 #region //BUY
+                                                Console.WriteLine(
+                                                    @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
 
                                                 Console.WriteLine(natotis.BuyWelcome());
                                                 Console.ReadLine();
@@ -667,11 +671,17 @@ namespace GalaxyBusiness
                                             case 2: //Sell
 
                                                 #region //SELL
+                                                Console.WriteLine(
+                                                    @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
 
                                                 Console.WriteLine($"{natotis.SellWelcome()}\n\n");
                                                 Console.ReadLine();
                                                 Console.WriteLine(
-                                                    $"Current Prices:\n\n{natotis.DithSellprice()} \n {natotis.Beryllprice()} \n {natotis.CarbonSellprice()} \n {natotis.ThoriumSellprice()} \n " +
+                                                    $"Current Prices:\n\n{natotis.DithSellprice()} \n {natotis.BeryllSellprice()} \n {natotis.CarbonSellprice()} \n {natotis.ThoriumSellprice()} \n " +
                                                     $"{natotis.WaterIceSellprice()} \n {natotis.LeadSellprice()} \n {natotis.AetherSellprice()} \n {natotis.FoodSellprice()} \n {natotis.NeutroniumSellprice()} \n {natotis.Helium3Sellprice()} \n " +
                                                     $"{natotis.DarkMatterSellprice()}");
                                                 Console.WriteLine($"\n\nYour Inventory:\n\n {Zell.InventoryDisplay()}");
@@ -1354,6 +1364,13 @@ namespace GalaxyBusiness
                                                 #region Buy
 
                                                 Console.Clear();
+                                                Console.WriteLine(
+                                                    @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+
                                                 Console.WriteLine($"{otov.BuyWelcome()}\n\n");
                                                 Console.ReadLine();
 
@@ -1490,9 +1507,12 @@ namespace GalaxyBusiness
                                             case 2:
 
                                                 #region Sell
-
-
-
+                                                Console.WriteLine(
+                                                    @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
 
                                                 Console.WriteLine($"{otov.BuyWelcome()}\n\n");
                                                 Console.ReadLine();
@@ -2017,148 +2037,225 @@ namespace GalaxyBusiness
                             switch (choice)
                             {
                                 case 1://Buy
-                                    #region Buy
-                                    Console.WriteLine($"{gelara.BuyWelcome()}\n\n");
-                                    Console.ReadLine();
-                                    Console.Clear();
-                                    #region Item sale Methods
-                                    Console.WriteLine($"Credits: {Zell.Credits}\n\n");
-                                    Console.WriteLine(gelara.Dithprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(gelara.Beryllprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(gelara.Carbonprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(gelara.Thoriumprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(gelara.WaterIceprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(gelara.Leadprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(gelara.Aetherprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(gelara.Foodprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(menu.NewShip());
-                                    #endregion
-                                    Console.Write("\n\nWhat would you like to purchase?:"); double item = Convert.ToInt32(Console.ReadLine());
-                                    Console.WriteLine();
-                                    if (gelara.QtyTranslation(item) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); }
-                                    else if (gelara.QtyTranslation(item) == 99) { break; }
-                                    Console.Write("\n\nHow many?:"); int amount = Convert.ToInt32(Console.ReadLine());
-                                    if (menu.PurchasePrice(gelara.ItemTranslation(item), amount) > Zell.Credits)
-                                    { Console.WriteLine(menu.NotEnoughCredits()); Console.ReadLine(); break; }
-                                    Console.Clear();
-                                    Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(gelara.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(gelara.WeightTranslation(item), amount):0}");
-                                    #region  //Math to reduce Qty and raise cargo
-                                    switch (item)
+                                    int marketexit1 = 0;
+                                    while (marketexit1 == 0)
                                     {
-                                        case 1:
-                                            Zell.Fuel += amount; gelara.Dilithium.Qty -= amount;
-                                            break;
-                                        case 2:
-                                            Zell.Beryllium += amount; gelara.Beryllium.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item), amount);
-                                            break;
-                                        case 3:
-                                            Zell.Carbon += amount; gelara.Carbon.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item), amount);
-                                            break;
-                                        case 4:
-                                            Zell.Thorium += amount; gelara.Thorium.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item), amount);
-                                            break;
-                                        case 5:
-                                            Zell.WaterIce += amount; gelara.WaterIce.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item), amount);
-                                            break;
-                                        case 6:
-                                            Zell.Lead += amount; gelara.Lead.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item), amount);
-                                            break;
-                                        case 7:
-                                            Zell.Aether += amount; gelara.Aether.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item), amount);
-                                            break;
-                                        case 8:
-                                            Zell.Food += amount; gelara.Food.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item), amount);
-                                            break;
-                                        case 12:
-                                            Zell.TotalCargo += 100;
-                                            break;
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine($"\n\n{menu.ShopDialog()}");
+                                        Console.Write("> ");
+                                        string tempvalueo = Console.ReadLine();
+                                        double.TryParse(tempvalueo, out tryparse);
+                                        double Marketgelara = tryparse;
+                                        switch (Marketgelara)
+                                        {
+                                            case 1: //buy
+
+                                                #region Buy
+
+                                                Console.WriteLine($"{gelara.BuyWelcome()}\n\n");
+                                                Console.ReadLine();
+                                                Console.Clear();
+
+                                                #region Item sale Methods
+
+                                                Console.WriteLine($"Credits: {Zell.Credits}\n\n");
+                                                Console.WriteLine(gelara.Dithprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(gelara.Beryllprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(gelara.Carbonprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(gelara.Thoriumprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(gelara.WaterIceprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(gelara.Leadprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(gelara.Aetherprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(gelara.Foodprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(menu.NewShip());
+
+                                                #endregion
+
+                                                Console.Write("\n\nWhat would you like to purchase?:");
+                                                double item = Convert.ToInt32(Console.ReadLine());
+                                                Console.WriteLine();
+                                                if (gelara.QtyTranslation(item) == 0)
+                                                {
+                                                    Console.WriteLine(menu.OutofStock());
+                                                    Console.ReadKey();
+                                                }
+                                                else if (gelara.QtyTranslation(item) == 99)
+                                                {
+                                                    break;
+                                                }
+
+                                                Console.Write("\n\nHow many?:");
+                                                int amount = Convert.ToInt32(Console.ReadLine());
+                                                if (menu.PurchasePrice(gelara.ItemTranslation(item), amount) >
+                                                    Zell.Credits)
+                                                {
+                                                    Console.WriteLine(menu.NotEnoughCredits());
+                                                    Console.ReadLine();
+                                                    break;
+                                                }
+
+                                                Console.Clear();
+                                                Console.WriteLine(
+                                                    $"\n\nSale total is : ${menu.PurchasePrice(gelara.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(gelara.WeightTranslation(item), amount):0}");
+
+                                                #region //Math to reduce Qty and raise cargo
+
+                                                switch (item)
+                                                {
+                                                    case 1:
+                                                        Zell.Fuel += amount;
+                                                        gelara.Dilithium.Qty -= amount;
+                                                        break;
+                                                    case 2:
+                                                        Zell.Beryllium += amount;
+                                                        gelara.Beryllium.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 3:
+                                                        Zell.Carbon += amount;
+                                                        gelara.Carbon.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 4:
+                                                        Zell.Thorium += amount;
+                                                        gelara.Thorium.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 5:
+                                                        Zell.WaterIce += amount;
+                                                        gelara.WaterIce.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 6:
+                                                        Zell.Lead += amount;
+                                                        gelara.Lead.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 7:
+                                                        Zell.Aether += amount;
+                                                        gelara.Aether.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 8:
+                                                        Zell.Food += amount;
+                                                        gelara.Food.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(gelara.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 12:
+                                                        Zell.TotalCargo += 100;
+                                                        break;
+                                                }
+
+                                                Zell.Credits -= menu.PurchasePrice(gelara.ItemTranslation(item),
+                                                    amount);
+
+                                                #endregion
+
+                                                Console.WriteLine(
+                                                    $"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
+                                                Console.WriteLine(Zell.InventoryDisplay());
+                                                Console.ReadLine();
+                                                Console.Clear();
+
+                                                #endregion
+
+                                                break;
+                                            case 2:
+                                                #region Sell
+
+
+
+
+                                                Console.WriteLine($"{gelara.BuyWelcome()}\n\n");
+                                                Console.ReadLine();
+                                                Console.WriteLine($"Current Prices:\n\n{gelara.DithSellprice()} \n {gelara.Beryllprice()} \n {gelara.CarbonSellprice()} \n {gelara.ThoriumSellprice()} \n " +
+                                                                  $"{gelara.WaterIceSellprice()} \n {gelara.LeadSellprice()} \n {gelara.AetherSellprice()} \n {gelara.FoodSellprice()}");
+                                                Console.WriteLine($"\n\nYour Inventory:\n\n {Zell.InventoryDisplay()}");
+                                                Console.Write("\n\nWhat would you like to sell?:"); double item2 = Convert.ToInt32(Console.ReadLine());
+                                                if (gelara.QtyTranslation(item2) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); break; }
+                                                else if (gelara.QtyTranslation(item2) == 99) { break; }
+                                                Console.Write("\n\nHow many?:"); int amount2 = Convert.ToInt32(Console.ReadLine());
+                                                Console.Clear();
+                                                if (Zell.ItemTranslation(item2) - amount2 < 0) { Console.WriteLine(menu.NotEnoughItems()); Console.ReadKey(); break; }
+                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(gelara.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(gelara.WeightTranslation(item2), amount2):0}");
+                                                switch (item2)
+                                                {
+                                                    case 2:
+                                                        Zell.Beryllium += amount2; gelara.Beryllium.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 3:
+                                                        Zell.Carbon += amount2; gelara.Carbon.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 4:
+                                                        Zell.Thorium += amount2; gelara.Thorium.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 5:
+                                                        Zell.WaterIce += amount2; gelara.WaterIce.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 6:
+                                                        Zell.Lead += amount2; gelara.Lead.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 7:
+                                                        Zell.Aether += amount2; gelara.Aether.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 8:
+                                                        Zell.Food += amount2; gelara.Food.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 9:
+                                                        Console.WriteLine(menu.NoSale());
+                                                        break;
+                                                    case 10:
+                                                        Console.WriteLine(menu.NoSale());
+                                                        break;
+                                                    case 11:
+                                                        Console.WriteLine(menu.NoSale());
+                                                        break;
+                                                }
+                                                Zell.Credits += menu.PurchasePrice(gelara.ItemTranslation(item2), amount2);
+                                                Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
+                                                Console.WriteLine(Zell.InventoryDisplay());
+                                                Console.ReadKey();
+                                                #endregion
+                                                break;
+                                        }
                                     }
-                                    Zell.Credits -= menu.PurchasePrice(gelara.ItemTranslation(item), amount);
-                                    #endregion
-                                    Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
-                                    Console.WriteLine(Zell.InventoryDisplay());
-                                    Console.ReadLine();
-                                    Console.Clear();
-                                    #endregion
+
                                     break;
+                                    
                                 case 2://Sell
-                                    #region Sell
-
                                     
-
-                                    
-                                    Console.WriteLine($"{gelara.BuyWelcome()}\n\n");
-                                    Console.ReadLine();
-                                    Console.WriteLine($"Current Prices:\n\n{gelara.DithSellprice()} \n {gelara.Beryllprice()} \n {gelara.CarbonSellprice()} \n {gelara.ThoriumSellprice()} \n " +
-                                                      $"{gelara.WaterIceSellprice()} \n {gelara.LeadSellprice()} \n {gelara.AetherSellprice()} \n {gelara.FoodSellprice()}");
-                                    Console.WriteLine($"\n\nYour Inventory:\n\n {Zell.InventoryDisplay()}");
-                                    Console.Write("\n\nWhat would you like to sell?:"); double item2 = Convert.ToInt32(Console.ReadLine());
-                                    if (gelara.QtyTranslation(item2) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); break; }
-                                    else if (gelara.QtyTranslation(item2) == 99) { break; }
-                                    Console.Write("\n\nHow many?:"); int amount2 = Convert.ToInt32(Console.ReadLine());
-                                    Console.Clear();
-                                    if (Zell.ItemTranslation(item2) - amount2 < 0) { Console.WriteLine(menu.NotEnoughItems()); Console.ReadKey(); break; }
-                                    Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(gelara.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(gelara.WeightTranslation(item2), amount2):0}");
-                                    switch (item2)
-                                    {
-                                        case 2:
-                                            Zell.Beryllium += amount2; gelara.Beryllium.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 3:
-                                            Zell.Carbon += amount2; gelara.Carbon.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 4:
-                                            Zell.Thorium += amount2; gelara.Thorium.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 5:
-                                            Zell.WaterIce += amount2; gelara.WaterIce.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 6:
-                                            Zell.Lead += amount2; gelara.Lead.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 7:
-                                            Zell.Aether += amount2; gelara.Aether.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 8:
-                                            Zell.Food += amount2; gelara.Food.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(gelara.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 9:
-                                            Console.WriteLine(menu.NoSale());
-                                           break;
-                                        case 10:
-                                            Console.WriteLine(menu.NoSale());
-                                            break;
-                                        case 11:
-                                            Console.WriteLine(menu.NoSale());
-                                           break;
-                                    }
-                                    Zell.Credits += menu.PurchasePrice(gelara.ItemTranslation(item2), amount2);
-                                    Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
-                                    Console.WriteLine(Zell.InventoryDisplay());
-                                    Console.ReadKey();
-                                    #endregion
                                     break;
                                 case 3://Mission Board
                                     break;

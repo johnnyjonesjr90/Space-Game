@@ -22,6 +22,7 @@ namespace GalaticBusinessLibrary
         public double Weight { get; set; }
         public double BaseQty { get; set; }
         public double Price { get; set; }
+        public double SellPrice { get; set; }
         public double BasePrice { get; set; }
         public int ItemAvailability;
         public int Availability (int chanceofOccurance)
@@ -80,32 +81,32 @@ namespace GalaticBusinessLibrary
            
             if (this.Qty >= (this.BaseQty * 0) && this.Qty <= (this.BaseQty * .24))
             {
-                this.Price = this.BasePrice * 2.00;
+                this.SellPrice = this.BasePrice * 1.70;
 
             }
             else if (this.Qty >= (this.BaseQty * .25) && this.Qty <= (this.BaseQty * .49))
             {
-                this.Price = this.BasePrice * 1.60;
+                this.SellPrice = this.BasePrice * 1.60;
             }
             else if (this.Qty >= (this.BaseQty * .50) && this.Qty <= (this.BaseQty * .74))
             {
-                this.Price = this.BasePrice * 1.40;
+                this.SellPrice = this.BasePrice * 1.40;
             }
             else if (this.Qty >= (this.BaseQty * .75) && this.Qty <= (this.BaseQty * .99))
             {
-                this.Price = this.BasePrice * 1.25;
+                this.SellPrice = this.BasePrice * 1.25;
             }
             else if (this.Qty >= (this.BaseQty * 1) && this.Qty <= (this.BaseQty * 1.24))
             {
-                this.Price = this.BasePrice * 1.20;
+                this.SellPrice = this.BasePrice * 1.20;
             }
             else if (this.Qty >= (this.BaseQty * 1.25) && this.Qty <= (this.BaseQty * 1.49))
             {
-                this.Price = this.BasePrice * 1.05;
+                this.SellPrice = this.BasePrice * 1.05;
             }
             else if (this.Qty >= (this.BaseQty * 1.50))
             {
-                this.Price = this.BasePrice * .90;
+                this.SellPrice = this.BasePrice * .90;
             }
 
             //might work if the below is placed in sell.

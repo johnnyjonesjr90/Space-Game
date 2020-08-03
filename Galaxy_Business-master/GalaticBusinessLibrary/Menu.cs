@@ -67,7 +67,7 @@ namespace GalaticBusinessLibrary
         }
         public string PlanetDialog()
         {
-            string dialog = "1 - MarketPlace \n2 - Travel to the Capital City  \n3 - Mission Board \n4 - Return to Ship \n5 - Inventory \n 6 - Stock Market";
+            string dialog = "1 - MarketPlace \n2 - Travel to the Capital City  \n3 - Mission Board \n4 - Return to Ship \n5 - Inventory \n6 - Stock Market";
             return dialog;
         }
         public string ShopDialog()
