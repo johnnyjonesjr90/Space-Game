@@ -1056,6 +1056,9 @@ namespace GalaxyBusiness
                                         Console.WriteLine($"Weapons: {Zell.Weapons}");}
                                     Console.ReadKey();
                                     break;
+                                case 6:
+                                    StockMarket();
+                                    break;
                             }
 
 
@@ -1323,7 +1326,7 @@ namespace GalaxyBusiness
                             switch (choice)
                             {
 
-                                case 1://Buy
+                                case 1://Marketplace
                                     int marketexit1=0;
                                     while (marketexit1==0)
                                     {
@@ -2235,6 +2238,9 @@ namespace GalaxyBusiness
                                 case 5:
                                     Console.WriteLine(Zell.InventoryDisplay());
                                     Console.ReadKey();
+                                    break;
+                                case 6:
+                                    StockMarket();
                                     break;
                             }
 
@@ -3956,7 +3962,7 @@ namespace GalaxyBusiness
             }
 
 
-
+           
 
 
 
