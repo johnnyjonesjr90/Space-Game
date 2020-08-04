@@ -35,90 +35,98 @@ namespace GalaxyBusiness
             Battle battle = new Battle();
             InGameTime ingametime = new InGameTime {day= 12, month = 3, year = 2457};
             NatotisMissions natotisMissions = new NatotisMissions();
-        #endregion
-        int exit = 0;
+            //Companyies
+            Stocks stock = new Stocks();
+            Companies Zhul = new Companies { companyName = "Zhul Shuttle Co.", stockPrice = 75, symbol = "ZZZL", percentChange = 0};
+            Companies Epsolon = new Companies { companyName = "Epsolon Motor Co.", stockPrice = 175, symbol = "EMC", percentChange = 0};
+            Companies CrudeHelium = new Companies { companyName = "Crude Helium", stockPrice = 3000, symbol = "CLL", percentChange = 0};
+            Companies TabletRetailers = new Companies { companyName = "Tablet Retailers", stockPrice = 16, symbol = "TRKL", percentChange = 0};
+            Companies Valkyrie = new Companies { companyName = "Valkyrie Intelligence", stockPrice = 201, symbol = "VLG", percentChange = 0};
+
+            #endregion
+            int exit = 0;
             menu.planetChoice = 6;
             double tryparse;
 
-            #region //Game Start
+//            #region //Game Start
 
 
-            Console.WriteLine(@"
-                    ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
-                    ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
-                    ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
-                         ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
-                    ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
+//            Console.WriteLine(@"
+//                    ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
+//                    ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
+//                    ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
+//                         ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
+//                    ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
                                                                                                                   
-");
-            Console.WriteLine("\n\n\n\n\n\n\n Press Enter...");
-            var audioPlayer = new BasicAudio.AudioPlayer();
-            audioPlayer.Filename = @"C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\outer-space-warning.wav";
-            audioPlayer.Play();
-            Console.ReadKey();
-            Console.Clear();
-            menu.StoryStart();
-            foreach (var character in menu.StoryStart())
-            {
-                Console.Write(character);
-                Thread.Sleep(10);
-            }
-            Console.ReadKey();
-            int exit01 = 0;
-            while (exit01 == 0)
-            {
-                Console.Clear();
-                Console.WriteLine(menu.ShipSelection());
-                string tempship = Console.ReadLine();
-                double.TryParse(tempship, out tryparse);
-                double shipselect = tryparse;
-                if (shipselect == 1)
-                {
-                    Zell.TotalCargo = 50;
-                    Zell.Fuel = 300;
-                    Zell.Hull = 200;
-                    Zell.Speed = 500;
-                    Zell.Credits = 2000;
-                    Console.Clear();
-                    Console.WriteLine(
-                        $"You purchased the Xaenides Cruiser : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-                        $"\n\n\n\n Press Enter...");
-                    Console.ReadKey();
-                    exit01 = 1;
-                }
+//");
+//            Console.WriteLine("\n\n\n\n\n\n\n Press Enter...");
+//            var audioPlayer = new BasicAudio.AudioPlayer();
+//            audioPlayer.Filename = @"C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\outer-space-warning.wav";
+//            audioPlayer.Play();
+//            Console.ReadKey();
+//            Console.Clear();
+//            menu.StoryStart();
+//            foreach (var character in menu.StoryStart())
+//            {
+//                Console.Write(character);
+//                Thread.Sleep(10);
+//            }
+//            Console.ReadKey();
+//            int exit01 = 0;
+//            while (exit01 == 0)
+//            {
+//                Console.Clear();
+//                Console.WriteLine(menu.ShipSelection());
+//                string tempship = Console.ReadLine();
+//                double.TryParse(tempship, out tryparse);
+//                double shipselect = tryparse;
+//                if (shipselect == 1)
+//                {
+//                    Zell.TotalCargo = 50;
+//                    Zell.Fuel = 300;
+//                    Zell.Hull = 200;
+//                    Zell.Speed = 500;
+//                    Zell.Credits = 2000;
+//                    Console.Clear();
+//                    Console.WriteLine(
+//                        $"You purchased the Xaenides Cruiser : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+//                        $"\n\n\n\n Press Enter...");
+//                    Console.ReadKey();
+//                    exit01 = 1;
+//                }
 
-                if (shipselect == 2)
-                {
-                    Zell.TotalCargo = 350;
-                    Zell.Fuel = 50;
-                    Zell.Hull = 300;
-                    Zell.Speed = 100;
-                    Zell.Credits = 5000;
-                    Console.Clear();
-                    Console.WriteLine(
-                        $"You purchased the Natotis Hauler : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-                        $"\n\n\n\n Press Enter...");
-                    Console.ReadKey();
-                    exit01 = 1;
-                }
+//                if (shipselect == 2)
+//                {
+//                    Zell.TotalCargo = 350;
+//                    Zell.Fuel = 50;
+//                    Zell.Hull = 300;
+//                    Zell.Speed = 100;
+//                    Zell.Credits = 5000;
+//                    Console.Clear();
+//                    Console.WriteLine(
+//                        $"You purchased the Natotis Hauler : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+//                        $"\n\n\n\n Press Enter...");
+//                    Console.ReadKey();
+//                    exit01 = 1;
+//                }
 
-                if (shipselect == 3)
-                {
-                    Zell.TotalCargo = 100;
-                    Zell.Fuel = 100;
-                    Zell.Hull = 200;
-                    Zell.Speed = 300;
-                    Zell.Credits = 8000;
-                    Console.Clear();
-                    Console.WriteLine(
-                        $"You decided to keep your ship: \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-                        $"\n\n\n\n Press Enter...");
-                    Console.ReadKey();
-                    exit01 = 1;
-                }
-            }
+//                if (shipselect == 3)
+//                {
+//                    Zell.TotalCargo = 100;
+//                    Zell.Fuel = 100;
+//                    Zell.Hull = 200;
+//                    Zell.Speed = 300;
+//                    Zell.Credits = 8000;
+//                    Console.Clear();
+//                    Console.WriteLine(
+//                        $"You decided to keep your ship: \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+//                        $"\n\n\n\n Press Enter...");
+//                    Console.ReadKey();
+//                    exit01 = 1;
+//                }
+//            }
 
-            #endregion
+//            #endregion
 
             double fuelchecker = 0;
             double exitt = 0;
@@ -142,7 +150,7 @@ namespace GalaxyBusiness
                     Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine(@" ||=============================================================================||");
-                    Console.WriteLine(@$" ||  Current System: Xaenides Station                                           ||");
+                    Console.WriteLine(@$" ||  Current System: Xaenides 2c                                               ||");
                     Console.WriteLine(@" ||                                                                             ||");
                     Console.WriteLine(@" ||                                                                             ||");
                     Console.WriteLine(@$" || {ingametime.day}/{ingametime.month}/{ingametime.year}                                                                   ||");
@@ -164,7 +172,7 @@ namespace GalaxyBusiness
                     Console.WriteLine(@" ||                                                                             ||");
                     Console.WriteLine(@" ||                                                                             ||");
                     Console.WriteLine(@" ||                                                                             ||");
-                    Console.WriteLine(@" || 8 - AZGUAN STOCK SYSTEM                                                     ||");
+                    Console.WriteLine(@" ||                                                                             ||");
                     Console.WriteLine(@" ||                                                                             ||");
                     Console.WriteLine(@" ||=============================================================================||");
                     Console.WriteLine(@" || Galaxy News Network [Vurik presence growing in surrounding galaxies some wo.||");
@@ -181,8 +189,8 @@ namespace GalaxyBusiness
                     if (tryparse == 3) { menu.planetChoice = tryparse; exitt = 1; }
                     if (tryparse == 4) { menu.planetChoice = tryparse; exitt = 1; }
                     if (tryparse == 5) { menu.planetChoice = tryparse; exitt = 1; }
-                    if (tryparse == 8) { menu.planetChoice = tryparse; exitt = 1; }
-                    
+                    if (tryparse == 0) { menu.planetChoice = 6; exitt = 1; }
+
                     if (tryparse == 1 || tryparse == 2 || tryparse == 3 || tryparse == 4 || tryparse == 5)
                     {
                         Console.WriteLine(menu.ThrustersCharging());
@@ -213,7 +221,7 @@ namespace GalaxyBusiness
                         Console.Clear();
                         Console.WriteLine($"\n  {battle.ShipEngages(battle.shipChoice)}");
                         Console.WriteLine(battle.PlayerConfronts(battle.shipChoice));
-                        int confront = Int32.Parse(Console.ReadLine());
+                         int confront = Int32.Parse(Console.ReadLine());
                         Console.Clear();
                         Console.WriteLine(battle.ShipResponds(battle.shipChoice,confront,Zell.Speed,Zell.Hull,Zell.Attack,Zell.Weapons,Zell.Credits));
                         Console.ReadLine();
@@ -484,6 +492,7 @@ namespace GalaxyBusiness
                                     int marketexit = 0;
                                     while (marketexit == 0)
                                     {
+                                        Console.Clear();
                                         Console.WriteLine();
                                         Console.WriteLine(
                                             @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
@@ -549,6 +558,9 @@ namespace GalaxyBusiness
                                                 string tempvalue1 = Console.ReadLine();
                                                 double.TryParse(tempvalue1, out tryparse);
                                                 double item = tryparse;
+                                                if (item == 99)
+                                                {
+                                                    break;}
                                                 if (natotis.QtyTranslation(item) == 0)
                                                 {
                                                     Console.WriteLine(menu.OutofStock());
@@ -671,6 +683,7 @@ namespace GalaxyBusiness
                                             case 2: //Sell
 
                                                 #region //SELL
+                                                Console.Clear();
                                                 Console.WriteLine(
                                                     @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
 ████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
@@ -1001,7 +1014,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                    ");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
-                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||  0 - Stay on Planet                                                         ||");
                                     Console.WriteLine(@" ||  2 - Otov (30)                                                              ||");
                                     Console.WriteLine(@" ||  3 - Gelara (15)                                                            ||");
                                     Console.WriteLine(@" ||  6 - XaenidesStation (5)                                                    ||");
@@ -1034,6 +1047,11 @@ namespace GalaxyBusiness
                                     Console.Clear();
                                     if (fuelchecker == 1)
                                     {
+                                        if (menu.planetChoice == 0)
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.White;
+                                            break;
+                                        }
                                         if (menu.planetChoice == 2 || menu.planetChoice == 3 || menu.planetChoice == 6 ||
                                             menu.planetChoice == 99)
                                         {
@@ -1714,7 +1732,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                    ");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
-                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||  0 - Return to Otov                                                         ||");
                                     Console.WriteLine(@" ||  1 - Natotis        (30)                                                    ||");
                                     Console.WriteLine(@" ||  5 - Aoclite        (25)                                                    ||");
                                     Console.WriteLine(@" ||  6 - XaenidesStation (5)                                                    ||");
@@ -1746,6 +1764,11 @@ namespace GalaxyBusiness
                                     Console.Clear();
                                     if (fuelchecker == 1)
                                     {
+                                        if (menu.planetChoice == 0)
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.White;
+                                            break;
+                                        }
                                         if (menu.planetChoice == 1 || menu.planetChoice == 3 || menu.planetChoice == 6 ||
                                             menu.planetChoice == 99)
                                         {
@@ -2277,7 +2300,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                    ");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
-                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||  0 - Return to Gelara                                                       ||");
                                     Console.WriteLine(@" ||  2 - Natotis (30)                                                              ||");
                                     Console.WriteLine(@" ||  3 - Larvis (15)                                                            ||");
                                     Console.WriteLine(@" ||  6 - XaenidesStation (5)                                                    ||");
@@ -2309,6 +2332,11 @@ namespace GalaxyBusiness
                                     Console.Clear();
                                     if (fuelchecker == 1)
                                     {
+                                        if (menu.planetChoice == 0)
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.White;
+                                            break;
+                                        }
                                         if (menu.planetChoice == 2 || menu.planetChoice == 3 || menu.planetChoice == 6 ||
                                             menu.planetChoice == 99)
                                         {
@@ -2774,7 +2802,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                    ");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
-                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||  0 - Return to Larvis                                                       ||");
                                     Console.WriteLine(@" ||  2 - Otov (15)                                                              ||");
                                     Console.WriteLine(@" ||  3 - Aoclite (25)                                                           ||");
                                     Console.WriteLine(@" ||  6 - XaenidesStation (5)                                                    ||");
@@ -2806,6 +2834,11 @@ namespace GalaxyBusiness
                                     Console.Clear();
                                     if (fuelchecker == 1)
                                     {
+                                        if (menu.planetChoice == 0)
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.White;
+                                            break;
+                                        }
                                         if (menu.planetChoice == 2 || menu.planetChoice == 3 || menu.planetChoice == 6 ||
                                             menu.planetChoice == 99)
                                         {
@@ -3403,7 +3436,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                    ");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
-                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||  0 - Return to Aoclite                                                      ||");
                                     Console.WriteLine(@" ||  2 - Otov (30)                                                              ||");
                                     Console.WriteLine(@" ||  4 - Larvis (15)                                                            ||");
                                     Console.WriteLine(@" ||  6 - XaenidesStation (5)                                                    ||");
@@ -3435,6 +3468,11 @@ namespace GalaxyBusiness
                                     Console.Clear();
                                     if (fuelchecker == 1)
                                     {
+                                        if (menu.planetChoice == 0)
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.White;
+                                            break;
+                                        }
                                         if (menu.planetChoice == 2 || menu.planetChoice == 4 || menu.planetChoice == 6 ||
                                             menu.planetChoice == 99)
                                         {
@@ -3484,7 +3522,7 @@ namespace GalaxyBusiness
                         Console.Clear();
                         Console.WriteLine($"\n" + battle.ShipEngages(battle.shipChoice));
                         Console.WriteLine(battle.PlayerConfronts(battle.shipChoice));
-                        int confront5 = Int32.Parse(Console.ReadLine());
+                        int confront5 = Int32.Parse(Console.ReadLine());   //try parse
                         Console.Clear();
                         Console.WriteLine(battle.ShipResponds(battle.shipChoice, confront5, Zell.Speed, Zell.Hull, Zell.Attack, Zell.Weapons, Zell.Credits));
                         Console.ReadKey();
@@ -3904,6 +3942,7 @@ namespace GalaxyBusiness
                                             Zell.DarkMatter += amount2; xaenidesStation.DarkMatter.Qty -= amount2;
                                             Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
                                             break;
+                                        //Add station
                                     }
                                     Zell.Credits += menu.PurchasePrice(xaenidesStation.ItemTranslation(item2), amount2);
                                     Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
@@ -3930,7 +3969,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@$" || Current Fuel: {Zell.Fuel}                                                         ");
                                     Console.WriteLine(@$" || Credit Ledger: {Zell.Credits}                                                    ");
                                     Console.WriteLine(@" ||                                                                             ||");
-                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||  0 - Return to Station                                                      ||");
                                     Console.WriteLine(@" ||  1 - Natotis (25)                                                           ||");
                                     Console.WriteLine(@" ||  2 - Otov (30)                                                              ||");
                                     Console.WriteLine(@" ||  3 - Gelara (15)                                                            ||");
@@ -3966,6 +4005,11 @@ namespace GalaxyBusiness
                                     }
                                     if (fuelchecker == 1)
                                     {
+                                        if (menu.planetChoice == 0)
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.White;
+                                            break;
+                                        }
                                         exitt = 1;
                                     }
                                     Console.WriteLine(menu.ThrustersCharging());
@@ -4021,41 +4065,42 @@ namespace GalaxyBusiness
             }
 
 
+
             void StockMarket()
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine(@" =================================================================================");
-                Console.WriteLine(@" ||                             AZGUAN STOCK SYSTEM                             ||");
+                Console.WriteLine(@" =================================================================================================================");
+                Console.WriteLine(@" ||                             AZGUAN STOCK SYSTEM                                                               ||");
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine(@" ||=============================================================================||");
-                Console.WriteLine(@$" ||  Amount Invested:                                                           ||");
-                Console.WriteLine(@" ||   Total Return:                                                             ||");
-                Console.WriteLine(@" ||                                                                             ||");
+                Console.WriteLine(@" ||===============================================================================================================||");
+                Console.WriteLine(@$" ||  Amount Invested:                                                                                            ||");
+                Console.WriteLine(@" ||   Total Return:                                                                                               ||");
+                Console.WriteLine(@" ||                                                                                                               ||");
                 Console.WriteLine(@$" || {ingametime.day}/{ingametime.month}/{ingametime.year}                                                                   ||");
-                Console.WriteLine(@" ||                                                                             ||");
-                Console.WriteLine(@" ||=============================================================================||");
-                Console.WriteLine(@" ||=============================================================================||");
-                Console.WriteLine(@" || Symbol     Company               Price                  Percentage          ||");
-                Console.WriteLine(@$" ||                                                                             ||");
-                Console.WriteLine(@" || ZZZL  [Zhul Shuttle Co.]         75 Credits                +0.2             ||");
-                Console.WriteLine(@" ||                                                                             ||");
-                Console.WriteLine(@" || EMC  [Epsolon Motor Co.]         175 Credits                -4.1            ||");
-                Console.WriteLine($@" ||                                                                             ||");
-                Console.WriteLine(@" || CLL  [Crude Helium]              3000 Credits              +0.0             ||");
-                Console.WriteLine(@" ||                                                                             ||");
-                Console.WriteLine(@" || TRKL  [Tablet Retailers.]         16 Credits                -10.4           ||");
-                Console.WriteLine(@" ||                                                                             ||");
-                Console.WriteLine(@" ||                                                                             ||");
-                Console.WriteLine(@" ||                                                                             ||");
-                Console.WriteLine(@" ||                                                                             ||");
-                Console.WriteLine(@" ||                                                                             ||");
-                Console.WriteLine(@" ||                                                                             ||");
-                Console.WriteLine(@" ||                                                                             ||");
-                Console.WriteLine(@" ||                                                                             ||");
-                Console.WriteLine(@" ||=============================================================================||");
-                Console.WriteLine(@" || GNN [What does the Vurik treaty mean for fuel prices in outer colonies?Expe.||");
-                Console.WriteLine(@" ||=============================================================================||");
+                Console.WriteLine(@" ||                                                                                                               ||");
+                Console.WriteLine(@" ||===============================================================================================================||");
+                Console.WriteLine(@" ||===============================================================================================================||");
+                Console.WriteLine(@"     Symbol                   Company                           Price                       Percentage          ");
+                Console.WriteLine(@$"  ==============================================================================================================                                                                             ");
+                Console.WriteLine($@"    ZZZL                 Zhul Shuttle Co.                    {Zhul.stockPrice=stock.PriceGen(Zhul.stockPrice)}                                                        ");
+                Console.WriteLine($@"                                                                                                                      ");
+                Console.WriteLine($@"    EMC                  Epsolon Motor Co.                                                                             ");
+                Console.WriteLine($@"                                                                                                                      ");
+                Console.WriteLine($@"    CCL                  Crude Helium                                                                                                        ");
+                Console.WriteLine($@"                                                                                                                       ");
+                Console.WriteLine($@"    TRKL                 Tablet Retailers                                                              ");
+                Console.WriteLine($@"                                                                              ");
+                Console.WriteLine($@"    VLG                  Valkyrie Intelligence                                                         ");
+                Console.WriteLine(@"                                                                              ");
+                Console.WriteLine(@"                                                                              ");
+                Console.WriteLine(@"                                                                              ");
+                Console.WriteLine(@"                                                                              ");
+                Console.WriteLine(@"                                                                              ");
+                Console.WriteLine(@" ||===============================================================================================================||");
+                Console.WriteLine(@" || GNN [What does the Vurik treaty mean for fuel prices in outer colonies? Experts believe Helium prices will fal||");
+                Console.WriteLine(@" ||===============================================================================================================||");
                 Console.ReadKey();
+                
             }
 
 

@@ -38,6 +38,9 @@ namespace GalaticBusinessLibrary
             string menu = "Xaenides Station imposes a 300 credit convenience tax... ";
             return menu;
         }
+        
+
+        #region MyRegion
         public override void ItemCalculation()
         {
 
@@ -63,28 +66,48 @@ namespace GalaticBusinessLibrary
             Helium3.SellCalculation();
             DarkMatter.SellCalculation();
             DarkMatter.BuyCalculation();
-
-
+            dithavail = DilithiumAvail();
+            Beryllavail = BerylliumAvail();
+            Carbonavail = CarbonAvail();
+            Thoriumavail = ThoriumAvail();
+            WaterIceavail = WaterIceAvail();
+            Leadavail = LeadAvail();
+            Aetheravail = AetherAvail();
+            Foodavail = FoodAvail();
+            Neutroniumavail = NeutroniumAvail();
+            Helium3avail = Helium3Avail();
+            DarkMatteravail = DarkMatterAvail();
         }
-        #region
+
         public override int DilithiumAvail()
         {
             Random itemchance = new Random();
-            int dithavail = Dilithium.Availability(itemchance.Next(9, 10));
+            int dithavail = Dilithium.Availability(itemchance.Next(0, 10));
             return dithavail;
         }
-        public override string Dithprice()
-        {
-            int avail = DilithiumAvail();
-            string dp="Failed Method";
-            if (avail == 1) { dp = $"Item # 1 Dilithium - {Dilithium.SalePrice()} {Dilithium.Price:0}    {Dilithium.SaleQty()} {Dilithium.Qty}/ {Dilithium.BaseQty}    {Dilithium.SaleWeight()} {Dilithium.Weight}"; return dp; }
-            else if (avail == 0) { Dilithium.Price = 0; Dilithium.Qty = 0; dp = $"Item # 1 Dilithium -{Dilithium.SalePrice()} {Dilithium.Price:0}    {Dilithium.SaleQty()} {Dilithium.Qty = 0}/{Dilithium.BaseQty}    {Dilithium.SaleWeight()} {Dilithium.Weight}"; return dp; }
-            return dp;
-        }
+
         public string DithSellprice()
         {
-            string dp = $"Item # 1 Dilithium - {Dilithium.SalePrice()} {Dilithium.SellPrice:0}"; 
-            return dp; 
+            string dp = $"Item # 1 Dilithium - {Dilithium.SalePrice()} {Dilithium.SellPrice:0}";
+            return dp;
+        }
+        public int dithavail { get; set; }
+        public override string Dithprice()
+        {
+
+            string dp = "Failed Method";
+            if (dithavail == 1) { dp = $"Item # 1 Dilithium (Fuel) - {Dilithium.SalePrice()} {Dilithium.Price:0}    {Dilithium.SaleQty()} {Dilithium.Qty}/ {Dilithium.BaseQty}    {Dilithium.SaleWeight()} {Dilithium.Weight}"; return dp; }
+            else if (dithavail == 0) { Dilithium.Price = 0; Dilithium.Qty = 0; dp = $"Item # 1 Dilithium -{Dilithium.SalePrice()} {Dilithium.Price:0}    {Dilithium.SaleQty()} {Dilithium.Qty = 0}/{Dilithium.BaseQty}    {Dilithium.SaleWeight()} {Dilithium.Weight}"; return dp; }
+            return dp;
+        }
+        public int Beryllavail { get; set; }
+        public override string Beryllprice()
+        {
+
+            string bp = "Failed Method";
+            if (Beryllavail == 1) { bp = $"Item # 2 Beryllium - {Beryllium.SalePrice()} {Beryllium.Price:0}    {Beryllium.SaleQty()} {this.Beryllium.Qty}/ {Beryllium.BaseQty}    {Beryllium.SaleWeight()} {Beryllium.Weight}"; return bp; }
+            else if (Beryllavail == 0) { Beryllium.Price = 0; Beryllium.Qty = 0; bp = $"Item # 2 Beryllium - {Beryllium.SalePrice()} {Beryllium.Price:0}    {Beryllium.SaleQty()} {Beryllium.Qty = 0}/{Beryllium.BaseQty}    {Beryllium.SaleWeight()} {Beryllium.Weight}"; return bp; }
+            return bp;
         }
         public override int BerylliumAvail()
         {
@@ -92,22 +115,13 @@ namespace GalaticBusinessLibrary
             int berylavail = Beryllium.Availability(itemchance.Next(9, 10));
             return berylavail;
         }
-        public override string Beryllprice()
-        {
-            int avail = BerylliumAvail();
-            string bp="Failed Method";
-            if (avail == 1) { bp = $"Item # 2 Beryllium - {Beryllium.SalePrice()} {Beryllium.Price:0}    {Beryllium.SaleQty()} {this.Beryllium.Qty}/ {Beryllium.BaseQty}    {Beryllium.SaleWeight()} {Beryllium.Weight}"; return bp; }
-            else if (avail == 0) { Beryllium.Price = 0; Beryllium.Qty = 0; bp = $"Item # 2 Beryllium - {Beryllium.SalePrice()} {Beryllium.Price:0}    {Beryllium.SaleQty()} {Beryllium.Qty = 0}/{Beryllium.BaseQty}    {Beryllium.SaleWeight()} {Beryllium.Weight}"; return bp; }
-                return bp;
-        }
-        public  string BeryllSellprice()
+        public string BeryllSellprice()
         {
 
             string bp = $"Item # 2 Beryllium - {Beryllium.SalePrice()} {Beryllium.SellPrice:0}";
             return bp;
         }
-
-
+        public int Carbonavail { get; set; }
         public int CarbonAvail()
         {
             Random itemchance = new Random();
@@ -116,10 +130,10 @@ namespace GalaticBusinessLibrary
         }
         public string Carbonprice()
         {
-            int avail = CarbonAvail();
+
             string bp = "Failed Method";
-            if (avail == 1) { bp = $"Item # 3 Carbon - {Carbon.SalePrice()} {Carbon.Price:0}    {Carbon.SaleQty()} {this.Carbon.Qty}/ {Carbon.BaseQty}    {Carbon.SaleWeight()} {Carbon.Weight}"; return bp; }
-            else if (avail == 0) { Carbon.Price = 0; Carbon.Qty = 0; bp = $"Item # 3 Carbon - {Carbon.SalePrice()} {Carbon.Price:0}    {Carbon.SaleQty()} {Carbon.Qty = 0}/{Carbon.BaseQty}    {Carbon.SaleWeight()} {Carbon.Weight}"; return bp; }
+            if (Carbonavail == 1) { bp = $"Item # 3 Carbon - {Carbon.SalePrice()} {Carbon.Price:0}    {Carbon.SaleQty()} {this.Carbon.Qty}/ {Carbon.BaseQty}    {Carbon.SaleWeight()} {Carbon.Weight}"; return bp; }
+            else if (Carbonavail == 0) { Carbon.Price = 0; Carbon.Qty = 0; bp = $"Item # 3 Carbon - {Carbon.SalePrice()} {Carbon.Price:0}    {Carbon.SaleQty()} {Carbon.Qty = 0}/{Carbon.BaseQty}    {Carbon.SaleWeight()} {Carbon.Weight}"; return bp; }
             return bp;
         }
         public string CarbonSellprice()
@@ -128,6 +142,7 @@ namespace GalaticBusinessLibrary
             string bp = $"Item # 3 Carbon - {Carbon.SalePrice()} {Carbon.SellPrice:0}";
             return bp;
         }
+        public int Thoriumavail { get; set; }
         public int ThoriumAvail()
         {
             Random itemchance = new Random();
@@ -136,10 +151,10 @@ namespace GalaticBusinessLibrary
         }
         public string Thoriumprice()
         {
-            int avail = ThoriumAvail();
+            int Thoriumavail = ThoriumAvail();
             string bp = "Failed Method";
-            if (avail == 1) { bp = $"Item # 4 Thorium - {Thorium.SalePrice()} {Thorium.Price:0}    {Thorium.SaleQty()} {this.Thorium.Qty}/ {Thorium.BaseQty}    {Thorium.SaleWeight()} {Thorium.Weight}"; return bp; }
-            else if (avail == 0) { Thorium.Price = 0; Thorium.Qty = 0; bp = $"Item # 4 Thorium - {Thorium.SalePrice()} {Thorium.Price:0}    {Thorium.SaleQty()} {Thorium.Qty = 0}/{Thorium.BaseQty}    {Thorium.SaleWeight()} {Thorium.Weight}"; return bp; }
+            if (Thoriumavail == 1) { bp = $"Item # 4 Thorium - {Thorium.SalePrice()} {Thorium.Price:0}    {Thorium.SaleQty()} {this.Thorium.Qty}/ {Thorium.BaseQty}    {Thorium.SaleWeight()} {Thorium.Weight}"; return bp; }
+            else if (Thoriumavail == 0) { Thorium.Price = 0; Thorium.Qty = 0; bp = $"Item # 4 Thorium - {Thorium.SalePrice()} {Thorium.Price:0}    {Thorium.SaleQty()} {Thorium.Qty = 0}/{Thorium.BaseQty}    {Thorium.SaleWeight()} {Thorium.Weight}"; return bp; }
             return bp;
         }
         public string ThoriumSellprice()
@@ -148,6 +163,7 @@ namespace GalaticBusinessLibrary
             string bp = $"Item # 4 Thorium - {Thorium.SalePrice()} {Thorium.SellPrice:0}";
             return bp;
         }
+        public int WaterIceavail { get; set; }
         public int WaterIceAvail()
         {
             Random itemchance = new Random();
@@ -156,10 +172,10 @@ namespace GalaticBusinessLibrary
         }
         public string WaterIceprice()
         {
-            int avail = WaterIceAvail();
+
             string bp = "Failed Method";
-            if (avail == 1) { bp = $"Item # 5 WaterIce - {WaterIce.SalePrice()} {WaterIce.Price:0}    {WaterIce.SaleQty()} {this.WaterIce.Qty}/ {WaterIce.BaseQty}    {WaterIce.SaleWeight()} {WaterIce.Weight}"; return bp; }
-            else if (avail == 0) { WaterIce.Price = 0; WaterIce.Qty = 0; bp = $"Item # 5 WaterIce - {WaterIce.SalePrice()} {WaterIce.Price:0}    {WaterIce.SaleQty()} {WaterIce.Qty = 0}/{WaterIce.BaseQty}    {WaterIce.SaleWeight()} {WaterIce.Weight}"; return bp; }
+            if (WaterIceavail == 1) { bp = $"Item # 5 WaterIce - {WaterIce.SalePrice()} {WaterIce.Price:0}    {WaterIce.SaleQty()} {this.WaterIce.Qty}/ {WaterIce.BaseQty}    {WaterIce.SaleWeight()} {WaterIce.Weight}"; return bp; }
+            else if (WaterIceavail == 0) { WaterIce.Price = 0; WaterIce.Qty = 0; bp = $"Item # 5 WaterIce - {WaterIce.SalePrice()} {WaterIce.Price:0}    {WaterIce.SaleQty()} {WaterIce.Qty = 0}/{WaterIce.BaseQty}    {WaterIce.SaleWeight()} {WaterIce.Weight}"; return bp; }
             return bp;
         }
         public string WaterIceSellprice()
@@ -168,6 +184,7 @@ namespace GalaticBusinessLibrary
             string bp = $"Item # 5 WaterIce - {WaterIce.SalePrice()} {WaterIce.SellPrice:0}";
             return bp;
         }
+        public int Leadavail { get; set; }
         public int LeadAvail()
         {
             Random itemchance = new Random();
@@ -188,6 +205,7 @@ namespace GalaticBusinessLibrary
             string bp = $"Item # 6 Lead - {Lead.SalePrice()} {Lead.SellPrice:0}";
             return bp;
         }
+        public int Aetheravail { get; set; }
         public int AetherAvail()
         {
             Random itemchance = new Random();
@@ -196,10 +214,10 @@ namespace GalaticBusinessLibrary
         }
         public string Aetherprice()
         {
-            int avail = AetherAvail();
+
             string bp = "Failed Method";
-            if (avail == 1) { bp = $"Item # 7 Aether - {Aether.SalePrice()} {Aether.Price:0}    {Aether.SaleQty()} {this.Aether.Qty}/ {Aether.BaseQty}    {Aether.SaleWeight()} {Aether.Weight}"; return bp; }
-            else if (avail == 0) { Aether.Price = 0; Aether.Qty = 0; bp = $"Item # 7 Aether - {Aether.SalePrice()} {Aether.Price:0}    {Aether.SaleQty()} {Aether.Qty = 0}/{Aether.BaseQty}    {Aether.SaleWeight()} {Aether.Weight}"; return bp; }
+            if (Aetheravail == 1) { bp = $"Item # 7 Aether - {Aether.SalePrice()} {Aether.Price:0}    {Aether.SaleQty()} {this.Aether.Qty}/ {Aether.BaseQty}    {Aether.SaleWeight()} {Aether.Weight}"; return bp; }
+            else if (Aetheravail == 0) { Aether.Price = 0; Aether.Qty = 0; bp = $"Item # 7 Aether - {Aether.SalePrice()} {Aether.Price:0}    {Aether.SaleQty()} {Aether.Qty = 0}/{Aether.BaseQty}    {Aether.SaleWeight()} {Aether.Weight}"; return bp; }
             return bp;
         }
         public string AetherSellprice()
@@ -208,6 +226,7 @@ namespace GalaticBusinessLibrary
             string bp = $"Item # 7 Aether - {Aether.SalePrice()} {Aether.SellPrice:0}";
             return bp;
         }
+        public int Foodavail { get; set; }
         public int FoodAvail()
         {
             Random itemchance = new Random();
@@ -216,10 +235,10 @@ namespace GalaticBusinessLibrary
         }
         public string Foodprice()
         {
-            int avail = FoodAvail();
+
             string bp = "Failed Method";
-            if (avail == 1) { bp = $"Item # 8 Food - {Food.SalePrice()} {Food.Price:0}    {Food.SaleQty()} {this.Food.Qty}/ {Food.BaseQty}    {Food.SaleWeight()} {Food.Weight}"; return bp; }
-            else if (avail == 0) { Food.Price = 0; Food.Qty = 0; bp = $"Item # 8 Food - {Food.SalePrice()} {Food.Price:0}    {Food.SaleQty()} {Food.Qty = 0}/{Food.BaseQty}    {Food.SaleWeight()} {Food.Weight}"; return bp; }
+            if (Foodavail == 1) { bp = $"Item # 8 Food - {Food.SalePrice()} {Food.Price:0}    {Food.SaleQty()} {this.Food.Qty}/ {Food.BaseQty}    {Food.SaleWeight()} {Food.Weight}"; return bp; }
+            else if (Foodavail == 0) { Food.Price = 0; Food.Qty = 0; bp = $"Item # 8 Food - {Food.SalePrice()} {Food.Price:0}    {Food.SaleQty()} {Food.Qty = 0}/{Food.BaseQty}    {Food.SaleWeight()} {Food.Weight}"; return bp; }
             return bp;
         }
         public string FoodSellprice()
@@ -228,7 +247,7 @@ namespace GalaticBusinessLibrary
             string bp = $"Item # 8 Food - {Food.SalePrice()} {Food.SellPrice:0}";
             return bp;
         }
-
+        public int Neutroniumavail { get; set; }
         public int NeutroniumAvail()
         {
             Random itemchance = new Random();
@@ -237,10 +256,10 @@ namespace GalaticBusinessLibrary
         }
         public string Neutroniumprice()
         {
-            int avail = NeutroniumAvail();
+
             string bp = "Failed Method";
-            if (avail == 1) { bp = $"Item # 9 Neutronium - {Neutronium.SalePrice()} {Neutronium.Price:0}    {Neutronium.SaleQty()} {this.Neutronium.Qty}/ {Neutronium.BaseQty}    {Neutronium.SaleWeight()} {Neutronium.Weight}"; return bp; }
-            else if (avail == 0) { Neutronium.Price = 0; Neutronium.Qty = 0; bp = $"Item # 9 Neutronium - {Neutronium.SalePrice()} {Neutronium.Price:0}    {Neutronium.SaleQty()} {Neutronium.Qty = 0}/{Neutronium.BaseQty}    {Neutronium.SaleWeight()} {Neutronium.Weight}"; return bp; }
+            if (Neutroniumavail == 1) { bp = $"Item # 9 Neutronium - {Neutronium.SalePrice()} {Neutronium.Price:0}    {Neutronium.SaleQty()} {this.Neutronium.Qty}/ {Neutronium.BaseQty}    {Neutronium.SaleWeight()} {Neutronium.Weight}"; return bp; }
+            else if (Neutroniumavail == 0) { Neutronium.Price = 0; Neutronium.Qty = 0; bp = $"Item # 9 Neutronium - {Neutronium.SalePrice()} {Neutronium.Price:0}    {Neutronium.SaleQty()} {Neutronium.Qty = 0}/{Neutronium.BaseQty}    {Neutronium.SaleWeight()} {Neutronium.Weight}"; return bp; }
             return bp;
         }
         public string NeutroniumSellprice()
@@ -249,6 +268,7 @@ namespace GalaticBusinessLibrary
             string bp = $"Item # 9 Neutronium - {Neutronium.SalePrice()} {Neutronium.SellPrice:0}";
             return bp;
         }
+        public int Helium3avail { get; set; }
         public int Helium3Avail()
         {
             Random itemchance = new Random();
@@ -257,10 +277,10 @@ namespace GalaticBusinessLibrary
         }
         public string Helium3price()
         {
-            int avail = Helium3Avail();
+
             string bp = "Failed Method";
-            if (avail == 1) { bp = $"Item # 10 Helium3 - {Helium3.SalePrice()} {Helium3.Price:0}    {Helium3.SaleQty()} {this.Helium3.Qty}/ {Helium3.BaseQty}    {Helium3.SaleWeight()} {Helium3.Weight}"; return bp; }
-            else if (avail == 0) { Helium3.Price = 0; Helium3.Qty = 0; bp = $"Item # 10 Helium3 - {Helium3.SalePrice()} {Helium3.Price:0}    {Helium3.SaleQty()} {Helium3.Qty = 0}/{Helium3.BaseQty}    {Helium3.SaleWeight()} {Helium3.Weight}"; return bp; }
+            if (Helium3avail == 1) { bp = $"Item # 10 Helium3 - {Helium3.SalePrice()} {Helium3.Price:0}    {Helium3.SaleQty()} {this.Helium3.Qty}/ {Helium3.BaseQty}    {Helium3.SaleWeight()} {Helium3.Weight}"; return bp; }
+            else if (Helium3avail == 0) { Helium3.Price = 0; Helium3.Qty = 0; bp = $"Item # 10 Helium3 - {Helium3.SalePrice()} {Helium3.Price:0}    {Helium3.SaleQty()} {Helium3.Qty = 0}/{Helium3.BaseQty}    {Helium3.SaleWeight()} {Helium3.Weight}"; return bp; }
             return bp;
         }
         public string Helium3Sellprice()
@@ -269,6 +289,7 @@ namespace GalaticBusinessLibrary
             string bp = $"Item # 10 Helium3 - {Helium3.SalePrice()} {Helium3.SellPrice:0}";
             return bp;
         }
+        public int DarkMatteravail { get; set; }
         public int DarkMatterAvail()
         {
             Random itemchance = new Random();
@@ -277,10 +298,10 @@ namespace GalaticBusinessLibrary
         }
         public string DarkMatterprice()
         {
-            int avail = DarkMatterAvail();
+
             string bp = "Failed Method";
-            if (avail == 1) { bp = $"Item # 11 DarkMatter - {DarkMatter.SalePrice()} {DarkMatter.Price:0}    {DarkMatter.SaleQty()} {this.DarkMatter.Qty}/ {DarkMatter.BaseQty}    {DarkMatter.SaleWeight()} {DarkMatter.Weight} \n\n (Illegal in some systems)"; return bp; }
-            else if (avail == 0) { DarkMatter.Price = 0; DarkMatter.Qty = 0; bp = $"Item # 11 DarkMatter - {DarkMatter.SalePrice()} {DarkMatter.Price:0}    {DarkMatter.SaleQty()} {DarkMatter.Qty = 0}/{DarkMatter.BaseQty}    {DarkMatter.SaleWeight()} {DarkMatter.Weight}"; return bp; }
+            if (DarkMatteravail == 1) { bp = $"Item # 11 DarkMatter - {DarkMatter.SalePrice()} {DarkMatter.Price:0}    {DarkMatter.SaleQty()} {this.DarkMatter.Qty}/ {DarkMatter.BaseQty}    {DarkMatter.SaleWeight()} {DarkMatter.Weight}\n\n (Illegal in some systems)"; return bp; }
+            else if (DarkMatteravail == 0) { DarkMatter.Price = 0; DarkMatter.Qty = 0; bp = $"Item # 11 DarkMatter - {DarkMatter.SalePrice()} {DarkMatter.Price:0}    {DarkMatter.SaleQty()} {DarkMatter.Qty = 0}/{DarkMatter.BaseQty}    {DarkMatter.SaleWeight()} {DarkMatter.Weight}"; return bp; }
             return bp;
         }
         public string DarkMatterSellprice()
@@ -292,7 +313,7 @@ namespace GalaticBusinessLibrary
         public string StationSellprice()
         {
 
-            string bp = $"Item # 11 Xaenides Station - 100,000";
+            string bp = $"Item # 12 DarkMatter - {DarkMatter.SalePrice()} 5,000,000 credits";
             return bp;
         }
         #endregion
