@@ -22,7 +22,7 @@ namespace GalaxyBusiness
             #region //Instatiated Objects
             Random battlechance = new Random();
             Menu menu = new Menu();
-            Ship Zell = new Ship { Beryllium = 0, Aether =0, Carbon= 0, DarkMatter =0, Food = 0, Helium3 = 0, Lead = 0, Neutronium = 0, Thorium = 0, WaterIce = 0 };
+            Ship Zell = new Ship { Beryllium = 0, Aether =0, Carbon= 0, DarkMatter =0, Food = 0, Helium3 = 0, Lead = 0, Neutronium = 0, Thorium = 0, WaterIce = 0, Weapons = 0};
             Natotis natotis = new Natotis();
             Gelara gelara = new Gelara();
             Aoclite aoclite = new Aoclite();
@@ -235,7 +235,7 @@ namespace GalaxyBusiness
 
                             if (confront == 1)
                             {
-                                if (Zell.DarkMatter < 0)
+                                if (Zell.DarkMatter <= 0)
                                 {
                                     
                                     Zell.Fuel -= 20;
@@ -313,7 +313,7 @@ namespace GalaxyBusiness
 
                             if (confront == 1)
                             {
-                                if (Zell.DarkMatter < 0)
+                                if (Zell.DarkMatter <= 0)
                                 {
 
                                     Zell.Fuel -= 20;
@@ -595,7 +595,7 @@ namespace GalaxyBusiness
 
                                                 Console.Clear();
                                                 Console.WriteLine(
-                                                    $"\n\nSale total is : ${menu.PurchasePrice(natotis.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(natotis.WeightTranslation(item), amount):0}");
+                                                    $"\n\nSale total is : ${menu.PurchasePrice(natotis.ItemTranslation(item), amount):C}  Weight:{menu.TotalCargo(natotis.WeightTranslation(item), amount):C}");
 
                                                 #region //Math to reduce Qty and raise cargo
 
@@ -730,7 +730,7 @@ namespace GalaxyBusiness
                                                 }
 
                                                 Console.WriteLine(
-                                                    $"\n\nSale total is : ${menu.PurchasePrice(natotis.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(natotis.WeightTranslation(item2), amount2):0}");
+                                                    $"\n\nSale total is : ${menu.PurchasePrice(natotis.ItemTranslation(item2), amount2):C}  Weight:{menu.TotalCargo(natotis.WeightTranslation(item2), amount2):C}");
                                                 switch (item2)
                                                 {
 
@@ -1352,11 +1352,11 @@ namespace GalaxyBusiness
 
                             Console.Clear();                            
                             
-                            Console.WriteLine(@" ██████  ████████  ██████      ██    ██ 
-                                ██    ██    ██    ██    ██     ██    ██ 
-                                ██    ██    ██    ██    ██     ██    ██ 
-                                ██    ██    ██    ██    ██      ██  ██  
-                                ██████     ██     ██████        ████   ");
+                            Console.WriteLine(@" ██████  ████████  ██████  ██    ██ 
+██    ██    ██    ██    ██ ██    ██ 
+██    ██    ██    ██    ██ ██    ██ 
+██    ██    ██    ██    ██  ██  ██  
+ ██████     ██     ██████    ████  ");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine(@"                .                                            .
@@ -1486,7 +1486,7 @@ namespace GalaxyBusiness
                                                 }
                                                 Console.Clear();
                                                 Console.WriteLine(
-                                                    $"\n\nSale total is : ${menu.PurchasePrice(otov.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(otov.WeightTranslation(item), amount):0}");
+                                                    $"\n\nSale total is : ${menu.PurchasePrice(otov.ItemTranslation(item), amount):C}  Weight:{menu.TotalCargo(otov.WeightTranslation(item), amount):C}");
 
                                                 #region //Math to reduce Qty and raise cargo
 
@@ -1609,7 +1609,7 @@ namespace GalaxyBusiness
                                                 }
 
                                                 Console.WriteLine(
-                                                    $"\n\nSale total is : ${menu.PurchasePrice(otov.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(otov.WeightTranslation(item2), amount2):0}");
+                                                    $"\n\nSale total is : ${menu.PurchasePrice(otov.ItemTranslation(item2), amount2):C}  Weight:{menu.TotalCargo(otov.WeightTranslation(item2), amount2):C}");
                                                 switch (item2)
                                                 {
                                                     case 2:
@@ -1756,6 +1756,158 @@ namespace GalaxyBusiness
                                     }
                                     break;
                                 case 3://Mission Board
+                                    int exitmission = 1;
+                                    while (exitmission == 1)
+                                    {
+                                        #region //Mission Endings
+                                        //if (natotisMissions.Mission001success == 1 || natotisMissions.Mission001success == 0)
+                                        //{
+                                        //    Console.WriteLine(natotisMissions.Escort001Ends(natotisMissions.Mission001success));
+                                        //    Console.ReadKey();
+                                        //    Console.Clear();
+
+                                        //}
+
+                                        #endregion
+                                        //Console.WriteLine(natotisMissions.MissionBoard());  //Add board desc
+                                        Console.ReadKey();
+
+                                        #region Mission graphic
+
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(
+                                            @" =========================================================================================");
+                                        Console.WriteLine(
+                                            @" ||                           Otov Mission Board                                         ||");
+
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @$" ||  Current System: Natotis                                                            ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                ");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @$" ||                                                                                     || ");
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission001success == 3)
+                                        //{
+                                        //    Console.WriteLine($"#1 -  {natotisMissions.Escort001advertisement()}");
+                                        //}
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission001success == 2)
+                                        //{
+                                        //    Console.WriteLine($"   #1 -  {natotisMissions.Escort001InProgress()}");
+                                        //}
+
+                                        Console.WriteLine(
+                                            @$" ||                                                                                     ||");
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission002success == 3)
+                                        //{
+                                        //    Console.WriteLine($"#2 -  {natotisMissions.Delivery002advertisement()}");
+                                        //}
+                                        //if (ingametime.month == 5 && ingametime.day <= 1 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission002success == 2)
+                                        //{
+                                        //    Console.WriteLine($"   #2 -  {natotisMissions.Delivery002InProgress()}");
+                                        //}
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            $@" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine("\n\n\n No missions available... press Enter or press 99 to exit..");
+                                        Console.Write(">"); string tempvalu = Console.ReadLine();
+                                        double.TryParse(tempvalu, out tryparse);
+                                        double mission = tryparse;
+                                        if (mission == 99)
+                                        {
+                                            exitmission = 0;
+                                        }
+                                        //if (natotisMissions.Mission001success == 3)
+                                        //{
+                                        //    if (mission == 1)
+                                        //    {
+                                        //        Console.Clear();
+                                        //        Console.WriteLine(natotisMissions.Escort001());
+                                        //        string tempvalu1 = Console.ReadLine();
+                                        //        Console.Clear();
+                                        //        double.TryParse(tempvalu1, out tryparse);
+                                        //        double mission2 = tryparse;
+                                        //        Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                        //        Console.ReadKey();
+                                        //        if (mission2 == 2)
+                                        //        {
+                                        //            natotisMissions.Mission001success = 4;
+                                        //        }
+                                        //    }
+                                        //}
+                                        //if (natotisMissions.Mission002success == 3)
+                                        //{
+                                        //    if (mission == 1)
+                                        //    {
+                                        //        Console.Clear();
+                                        //        Console.WriteLine(natotisMissions.Escort001());
+                                        //        string tempvalu1 = Console.ReadLine();
+                                        //        Console.Clear();
+                                        //        double.TryParse(tempvalu1, out tryparse);
+                                        //        double mission2 = tryparse;
+                                        //        Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                        //        Console.ReadKey();
+                                        //        if (mission2 == 2)
+                                        //        {
+                                        //            natotisMissions.Mission002success = 4;
+                                        //        }
+                                        //    }
+                                        //}
+
+                                        Console.Clear();
+
+                                        #endregion
+                                    }
+                                    Console.ForegroundColor = ConsoleColor.White;
                                     break;
                                 case 4://Back to Ship
                                     #region MyRegion
@@ -2136,6 +2288,18 @@ namespace GalaxyBusiness
                                             case 1: //buy
 
                                                 #region Buy
+                                                Console.Clear();
+                                                Console.WriteLine();
+                                                Console.WriteLine(
+                                                    @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
                                                 Console.WriteLine($"{gelara.BuyWelcome()}\n\n");
                                                 Console.ReadLine();
@@ -2193,7 +2357,7 @@ namespace GalaxyBusiness
                                                 }
                                                 Console.Clear();
                                                 Console.WriteLine(
-                                                    $"\n\nSale total is : ${menu.PurchasePrice(gelara.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(gelara.WeightTranslation(item), amount):0}");
+                                                    $"\n\nSale total is : ${menu.PurchasePrice(gelara.ItemTranslation(item), amount):C}  Weight:{menu.TotalCargo(gelara.WeightTranslation(item), amount):C}");
 
                                                 #region //Math to reduce Qty and raise cargo
 
@@ -2266,10 +2430,18 @@ namespace GalaxyBusiness
                                                 break;
                                             case 2:
                                                 #region Sell
-
-
-
-
+                                                Console.Clear();
+                                                Console.WriteLine();
+                                                Console.WriteLine(
+                                                    @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                                 Console.WriteLine($"{gelara.BuyWelcome()}\n\n");
                                                 Console.ReadLine();
                                                 Console.WriteLine($"Current Prices:\n\n{gelara.DithSellprice()} \n {gelara.Beryllprice()} \n {gelara.CarbonSellprice()} \n {gelara.ThoriumSellprice()} \n " +
@@ -2281,7 +2453,7 @@ namespace GalaxyBusiness
                                                 Console.Write("\n\nHow many?:"); int amount2 = Convert.ToInt32(Console.ReadLine());
                                                 Console.Clear();
                                                 if (Zell.ItemTranslation(item2) - amount2 < 0) { Console.WriteLine(menu.NotEnoughItems()); Console.ReadKey(); break; }
-                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(gelara.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(gelara.WeightTranslation(item2), amount2):0}");
+                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(gelara.ItemTranslation(item2), amount2):C}  Weight:{menu.TotalCargo(gelara.WeightTranslation(item2), amount2):C}");
                                                 switch (item2)
                                                 {
                                                     case 2:
@@ -2336,10 +2508,220 @@ namespace GalaxyBusiness
 
                                     break;
                                     
-                                case 2://Sell
-                                    
+                                case 2://Capital City
+                                    int xigowexit = 0;
+                                    while (xigowexit == 0)
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            @" █████  ██████  ██████  ██ ██████  ██ ████████ ██   ██ 
+██   ██ ██   ██ ██   ██ ██ ██   ██ ██    ██    ██   ██ 
+███████ ██████  ██████  ██ ██████  ██    ██    ███████ 
+██   ██ ██   ██ ██   ██ ██ ██   ██ ██    ██    ██   ██ 
+██   ██ ██████  ██   ██ ██ ██   ██ ██    ██    ██   ██ ");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine($"\n\n{gelara.AbririthOptions()}");
+                                        string tempvalue01 = Console.ReadLine();
+                                        double.TryParse(tempvalue01, out tryparse);
+                                        double XChoice = tryparse;
+                                        switch (XChoice)
+                                        {
+                                            case 1: //Warehouse
+                                                Console.WriteLine(
+                                                    "Warehouse district is large and contains with many factories");
+                                                Console.ReadKey();
+                                                Console.WriteLine(
+                                                    "This area will have corporate espionage missions and sabatoge missions");
+                                                Console.ReadKey();
+                                                break;
+                                            case 2: //Technology District
+                                                Console.WriteLine(
+                                                    "The technology District is where much of the research and business takes place on Natotis..");
+                                                Console.ReadKey();
+                                                Console.WriteLine(
+                                                    "The technology District will have missions where you can invest money and collect later on.like a stock market ");
+                                                Console.ReadKey();
+                                                break;
+                                            case 3: //Cantina
+                                                Console.WriteLine(
+                                                    "The Makiwi Cantina is a small bar the plays host to many world travellers");
+                                                Console.ReadKey();
+                                                Console.WriteLine(
+                                                    "The Cantina will host more illegal missions unlike the normal mission board.");
+                                                Console.ReadKey();
+                                                break;
+                                            case 4: //Senate Building
+                                                Console.WriteLine(
+                                                    "Natotis is the Federatrions political stronghold in the area. This makes the Natotis Senate\n" +
+                                                    "one of the most inportant locations in this system cluster.");
+                                                Console.ReadKey();
+                                                Console.WriteLine(
+                                                    "This will have some of the 'story missions' and possibly where you can become and envoy.");
+                                                Console.ReadKey();
+                                                break;
+                                            case 99:
+                                                xigowexit = 1;
+                                                break;
+                                        }
+                                    }
                                     break;
                                 case 3://Mission Board
+                                    int exitmission = 1;
+                                    while (exitmission == 1)
+                                    {
+                                        #region //Mission Endings
+                                        //if (natotisMissions.Mission001success == 1 || natotisMissions.Mission001success == 0)
+                                        //{
+                                        //    Console.WriteLine(natotisMissions.Escort001Ends(natotisMissions.Mission001success));
+                                        //    Console.ReadKey();
+                                        //    Console.Clear();
+
+                                        //}
+
+                                        #endregion
+                                        //Console.WriteLine(natotisMissions.MissionBoard());  //Add board desc
+                                        Console.ReadKey();
+
+                                        #region Mission graphic
+
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(
+                                            @" =========================================================================================");
+                                        Console.WriteLine(
+                                            @" ||                           Gelara Federal Assist Board                                ||");
+
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @$" ||  Current System: Natotis                                                            ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                ");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @$" ||                                                                                     || ");
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission001success == 3)
+                                        //{
+                                        //    Console.WriteLine($"#1 -  {natotisMissions.Escort001advertisement()}");
+                                        //}
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission001success == 2)
+                                        //{
+                                        //    Console.WriteLine($"   #1 -  {natotisMissions.Escort001InProgress()}");
+                                        //}
+
+                                        Console.WriteLine(
+                                            @$" ||                                                                                     ||");
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission002success == 3)
+                                        //{
+                                        //    Console.WriteLine($"#2 -  {natotisMissions.Delivery002advertisement()}");
+                                        //}
+                                        //if (ingametime.month == 5 && ingametime.day <= 1 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission002success == 2)
+                                        //{
+                                        //    Console.WriteLine($"   #2 -  {natotisMissions.Delivery002InProgress()}");
+                                        //}
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            $@" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine("\n\n\n No missions available... press Enter or press 99 to exit..");
+                                        Console.Write(">"); string tempvalu = Console.ReadLine();
+                                        double.TryParse(tempvalu, out tryparse);
+                                        double mission = tryparse;
+                                        if (mission == 99)
+                                        {
+                                            exitmission = 0;
+                                        }
+                                        //if (natotisMissions.Mission001success == 3)
+                                        //{
+                                        //    if (mission == 1)
+                                        //    {
+                                        //        Console.Clear();
+                                        //        Console.WriteLine(natotisMissions.Escort001());
+                                        //        string tempvalu1 = Console.ReadLine();
+                                        //        Console.Clear();
+                                        //        double.TryParse(tempvalu1, out tryparse);
+                                        //        double mission2 = tryparse;
+                                        //        Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                        //        Console.ReadKey();
+                                        //        if (mission2 == 2)
+                                        //        {
+                                        //            natotisMissions.Mission001success = 4;
+                                        //        }
+                                        //    }
+                                        //}
+                                        //if (natotisMissions.Mission002success == 3)
+                                        //{
+                                        //    if (mission == 1)
+                                        //    {
+                                        //        Console.Clear();
+                                        //        Console.WriteLine(natotisMissions.Escort001());
+                                        //        string tempvalu1 = Console.ReadLine();
+                                        //        Console.Clear();
+                                        //        double.TryParse(tempvalu1, out tryparse);
+                                        //        double mission2 = tryparse;
+                                        //        Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                        //        Console.ReadKey();
+                                        //        if (mission2 == 2)
+                                        //        {
+                                        //            natotisMissions.Mission002success = 4;
+                                        //        }
+                                        //    }
+                                        //}
+
+                                        Console.Clear();
+
+                                        #endregion
+                                    }
+                                    Console.ForegroundColor = ConsoleColor.White;
                                     break;
                                 case 4://Back to Ship
                                     #region Navvi
@@ -2801,7 +3183,7 @@ namespace GalaxyBusiness
 
                                                 Console.Clear();
                                                 Console.WriteLine(
-                                                    $"\n\nSale total is : ${menu.PurchasePrice(larvis.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(larvis.WeightTranslation(item), amount):0}");
+                                                    $"\n\nSale total is : ${menu.PurchasePrice(larvis.ItemTranslation(item), amount):C}  Weight:{menu.TotalCargo(larvis.WeightTranslation(item), amount):C}");
 
                                                 #region //Math to reduce Qty and raise cargo
 
@@ -2914,7 +3296,7 @@ namespace GalaxyBusiness
                                                 }
 
                                                 Console.WriteLine(
-                                                    $"\n\nSale total is : ${menu.PurchasePrice(larvis.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(larvis.WeightTranslation(item2), amount2):0}");
+                                                    $"\n\nSale total is : ${menu.PurchasePrice(larvis.ItemTranslation(item2), amount2):C}  Weight:{menu.TotalCargo(larvis.WeightTranslation(item2), amount2):C}");
                                                 switch (item2)
                                                 {
                                                     case 2:
@@ -2996,16 +3378,16 @@ namespace GalaxyBusiness
                                         Console.Clear();
                                         Console.WriteLine();
                                         Console.WriteLine(
-                                            @"███████ ██   ██ ██    ██ ██           ██████ ██ ████████ ██    ██ 
-   ███  ██   ██ ██    ██ ██          ██      ██    ██     ██  ██  
-  ███   ███████ ██    ██ ██          ██      ██    ██      ████   
- ███    ██   ██ ██    ██ ██          ██      ██    ██       ██    
-███████ ██   ██  ██████  ███████      ██████ ██    ██       ██ ");
+                                            @" ██████  ███    ██ ████████ ██████   ██████  ██████  ████████ 
+██    ██ ████   ██    ██    ██   ██ ██    ██ ██   ██    ██    
+██    ██ ██ ██  ██    ██    ██████  ██    ██ ██████     ██    
+██    ██ ██  ██ ██    ██    ██      ██    ██ ██   ██    ██    
+ ██████  ██   ████    ██    ██       ██████  ██   ██    ██   ");
                                         Console.WriteLine(
                                             "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                         Console.WriteLine(
                                             "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                                        Console.WriteLine($"\n\n{natotis.ZhulOptions()}");
+                                        Console.WriteLine($"\n\n{larvis.OntportOptions()}");
                                         string tempvalue01 = Console.ReadLine();
                                         double.TryParse(tempvalue01, out tryparse);
                                         double zhulChoice = tryparse;
@@ -3021,7 +3403,7 @@ namespace GalaxyBusiness
                                                 break;
                                             case 2: //Technology District
                                                 Console.WriteLine(
-                                                    "The technology District is where much of the research and business takes place on Natotis..");
+                                                    "The technology District is where much of the research and business takes place on Larvis..");
                                                 Console.ReadKey();
                                                 Console.WriteLine(
                                                     "The technology District will have missions where you can invest money and collect later on.like a stock market ");
@@ -3037,8 +3419,7 @@ namespace GalaxyBusiness
                                                 break;
                                             case 4: //Senate Building
                                                 Console.WriteLine(
-                                                    "Natotis is the Federatrions political stronghold in the area. This makes the Natotis Senate\n" +
-                                                    "one of the most inportant locations in this system cluster.");
+                                                    "Larvis senate building will house the planets political structure.");
                                                 Console.ReadKey();
                                                 Console.WriteLine(
                                                     "This will have some of the 'story missions' and possibly where you can become and envoy.");
@@ -3050,8 +3431,159 @@ namespace GalaxyBusiness
                                         }
                                     }
                                     break;
-                                    break;
                                 case 3://Mission Board
+                                    int exitmission = 1;
+                                    while (exitmission == 1)
+                                    {
+                                        #region //Mission Endings
+                                        //if (natotisMissions.Mission001success == 1 || natotisMissions.Mission001success == 0)
+                                        //{
+                                        //    Console.WriteLine(natotisMissions.Escort001Ends(natotisMissions.Mission001success));
+                                        //    Console.ReadKey();
+                                        //    Console.Clear();
+
+                                        //}
+
+                                        #endregion
+                                        //Console.WriteLine(natotisMissions.MissionBoard());  //Add board desc
+                                        Console.ReadKey();
+
+                                        #region Mission graphic
+
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(
+                                            @" =========================================================================================");
+                                        Console.WriteLine(
+                                            @" ||                           Larvis Mission Board                                       ||");
+
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @$" ||  Current System: Natotis                                                            ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                ");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @$" ||                                                                                     || ");
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission001success == 3)
+                                        //{
+                                        //    Console.WriteLine($"#1 -  {natotisMissions.Escort001advertisement()}");
+                                        //}
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission001success == 2)
+                                        //{
+                                        //    Console.WriteLine($"   #1 -  {natotisMissions.Escort001InProgress()}");
+                                        //}
+
+                                        Console.WriteLine(
+                                            @$" ||                                                                                     ||");
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission002success == 3)
+                                        //{
+                                        //    Console.WriteLine($"#2 -  {natotisMissions.Delivery002advertisement()}");
+                                        //}
+                                        //if (ingametime.month == 5 && ingametime.day <= 1 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission002success == 2)
+                                        //{
+                                        //    Console.WriteLine($"   #2 -  {natotisMissions.Delivery002InProgress()}");
+                                        //}
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            $@" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine("\n\n\n No missions available... press Enter or press 99 to exit..");
+                                        Console.Write(">"); string tempvalu = Console.ReadLine();
+                                        double.TryParse(tempvalu, out tryparse);
+                                        double mission = tryparse;
+                                        if (mission == 99)
+                                        {
+                                            exitmission = 0;
+                                        }
+                                        //if (natotisMissions.Mission001success == 3)
+                                        //{
+                                        //    if (mission == 1)
+                                        //    {
+                                        //        Console.Clear();
+                                        //        Console.WriteLine(natotisMissions.Escort001());
+                                        //        string tempvalu1 = Console.ReadLine();
+                                        //        Console.Clear();
+                                        //        double.TryParse(tempvalu1, out tryparse);
+                                        //        double mission2 = tryparse;
+                                        //        Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                        //        Console.ReadKey();
+                                        //        if (mission2 == 2)
+                                        //        {
+                                        //            natotisMissions.Mission001success = 4;
+                                        //        }
+                                        //    }
+                                        //}
+                                        //if (natotisMissions.Mission002success == 3)
+                                        //{
+                                        //    if (mission == 1)
+                                        //    {
+                                        //        Console.Clear();
+                                        //        Console.WriteLine(natotisMissions.Escort001());
+                                        //        string tempvalu1 = Console.ReadLine();
+                                        //        Console.Clear();
+                                        //        double.TryParse(tempvalu1, out tryparse);
+                                        //        double mission2 = tryparse;
+                                        //        Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                        //        Console.ReadKey();
+                                        //        if (mission2 == 2)
+                                        //        {
+                                        //            natotisMissions.Mission002success = 4;
+                                        //        }
+                                        //    }
+                                        //}
+
+                                        Console.Clear();
+
+                                        #endregion
+                                    }
+                                    Console.ForegroundColor = ConsoleColor.White;
                                     break;
                                 case 4://Back to Ship
                                     #region Navvi
@@ -3445,10 +3977,18 @@ namespace GalaxyBusiness
                                         {
                                             case 1:
                                                 #region BUY
-
-
-
-
+                                                Console.Clear();
+                                                Console.WriteLine();
+                                                Console.WriteLine(
+                                                    @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                                 Console.WriteLine($"{aoclite.BuyWelcome()}\n\n");
                                                 Console.ReadLine();
 
@@ -3492,7 +4032,7 @@ namespace GalaxyBusiness
                                                     break;
                                                 }
                                                 Console.Clear();
-                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(aoclite.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(aoclite.WeightTranslation(item), amount):0}");
+                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(aoclite.ItemTranslation(item), amount):C}  Weight:{menu.TotalCargo(aoclite.WeightTranslation(item), amount):C}");
                                                 #region  //Math to reduce Qty and raise cargo
                                                 switch (item)
                                                 {
@@ -3569,7 +4109,7 @@ namespace GalaxyBusiness
                                                 Console.Write("\n\nHow many?:"); int amount2 = Convert.ToInt32(Console.ReadLine());
                                                 Console.Clear();
                                                 if (Zell.ItemTranslation(item2) - amount2 < 0) { Console.WriteLine(menu.NotEnoughItems()); Console.ReadKey(); break; }
-                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(aoclite.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(aoclite.WeightTranslation(item2), amount2):0}");
+                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(aoclite.ItemTranslation(item2), amount2):C}  Weight:{menu.TotalCargo(aoclite.WeightTranslation(item2), amount2):C}");
                                                 switch (item2)
                                                 {
                                                     case 2:
@@ -3628,25 +4168,80 @@ namespace GalaxyBusiness
                                    
                                     break;
                                 case 2://Capital City
-                                    
-                                   
-
+                                    int zhulexit = 0;
+                                    while (zhulexit == 0)
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            @"  ██████  ██████   ██████  ███    ██ ██ 
+██    ██ ██   ██ ██    ██ ████   ██ ██ 
+██    ██ ██████  ██    ██ ██ ██  ██ ██ 
+██    ██ ██   ██ ██    ██ ██  ██ ██ ██ 
+ ██████  ██   ██  ██████  ██   ████ ██    ");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine($"\n\n{aoclite.OroniOptions()}");
+                                        string tempvalue01 = Console.ReadLine();
+                                        double.TryParse(tempvalue01, out tryparse);
+                                        double zhulChoice = tryparse;
+                                        switch (zhulChoice)
+                                        {
+                                            case 1: //Warehouse
+                                                Console.WriteLine(
+                                                    "Warehouse district is large and contains with many factories");
+                                                Console.ReadKey();
+                                                Console.WriteLine(
+                                                    "This area will have corporate espionage missions and sabatoge missions");
+                                                Console.ReadKey();
+                                                break;
+                                            case 2: //Technology District
+                                                Console.WriteLine(
+                                                    "The technology District is where much of the research and business takes place on Aoclite..");
+                                                Console.ReadKey();
+                                                Console.WriteLine(
+                                                    "The technology District will have missions where you can invest money and collect later on.like a stock market ");
+                                                Console.ReadKey();
+                                                break;
+                                            case 3: //Cantina
+                                                Console.WriteLine(
+                                                    "The Aoclite Guest Cantina is a small bar the plays host to many world travellers");
+                                                Console.ReadKey();
+                                                Console.WriteLine(
+                                                    "The Cantina will host more illegal missions unlike the normal mission board.");
+                                                Console.ReadKey();
+                                                break;
+                                            case 4: //Senate Building
+                                                Console.WriteLine(
+                                                    "Larvis senate building will house the planets political structure.");
+                                                Console.ReadKey();
+                                                Console.WriteLine(
+                                                    "This will have some of the 'story missions' and possibly where you can become and envoy.");
+                                                Console.ReadKey();
+                                                break;
+                                            case 99:
+                                                zhulexit = 1;
+                                                break;
+                                        }
+                                    }
                                     break;
                                 case 3://Mission Board
                                     int exitmission = 1;
                                     while (exitmission == 1)
                                     {
                                         #region //Mission Endings
-                                        if (natotisMissions.Mission001success==2)
-                                        {
-                                            Console.WriteLine(natotisMissions.Excort001DropOff());
-                                            Console.WriteLine("\n\n Mission Escort coworker to ACL Passed");
-                                            Console.ReadKey();
-                                            Console.Clear();
-                                        }
+                                        //if (natotisMissions.Mission001success == 1 || natotisMissions.Mission001success == 0)
+                                        //{
+                                        //    Console.WriteLine(natotisMissions.Escort001Ends(natotisMissions.Mission001success));
+                                        //    Console.ReadKey();
+                                        //    Console.Clear();
+
+                                        //}
 
                                         #endregion
-                                        Console.WriteLine(natotisMissions.MissionBoard());
+                                        //Console.WriteLine(natotisMissions.MissionBoard());  //Add board desc
                                         Console.ReadKey();
 
                                         #region Mission graphic
@@ -3655,7 +4250,7 @@ namespace GalaxyBusiness
                                         Console.WriteLine(
                                             @" =========================================================================================");
                                         Console.WriteLine(
-                                            @" ||                       Aoclite Federation Assist Board                                ||");
+                                            @" ||                           Aoclite Federal Assist Board                               ||");
 
                                         Console.ForegroundColor = ConsoleColor.Green;
                                         Console.WriteLine(
@@ -3676,8 +4271,29 @@ namespace GalaxyBusiness
                                             @" ||=====================================================================================||");
                                         Console.WriteLine(
                                             @$" ||                                                                                     || ");
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission001success == 3)
+                                        //{
+                                        //    Console.WriteLine($"#1 -  {natotisMissions.Escort001advertisement()}");
+                                        //}
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission001success == 2)
+                                        //{
+                                        //    Console.WriteLine($"   #1 -  {natotisMissions.Escort001InProgress()}");
+                                        //}
+
                                         Console.WriteLine(
                                             @$" ||                                                                                     ||");
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission002success == 3)
+                                        //{
+                                        //    Console.WriteLine($"#2 -  {natotisMissions.Delivery002advertisement()}");
+                                        //}
+                                        //if (ingametime.month == 5 && ingametime.day <= 1 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission002success == 2)
+                                        //{
+                                        //    Console.WriteLine($"   #2 -  {natotisMissions.Delivery002InProgress()}");
+                                        //}
                                         Console.WriteLine(
                                             @" ||                                                                                     ||");
                                         Console.WriteLine(
@@ -3714,7 +4330,7 @@ namespace GalaxyBusiness
                                             @" ||                                                                                     ||");
                                         Console.WriteLine(
                                             @" ||=====================================================================================||");
-                                        Console.WriteLine("\n\n\n Please choose a mission and press Enter or press 99 to exit..");
+                                        Console.WriteLine("\n\n\n No missions available... press Enter or press 99 to exit..");
                                         Console.Write(">"); string tempvalu = Console.ReadLine();
                                         double.TryParse(tempvalu, out tryparse);
                                         double mission = tryparse;
@@ -3722,29 +4338,48 @@ namespace GalaxyBusiness
                                         {
                                             exitmission = 0;
                                         }
-                                        if (natotisMissions.Mission001success == 3)
-                                        {
-                                            if (mission == 1)
-                                            {
-                                                Console.Clear();
-                                                Console.WriteLine(natotisMissions.Escort001());
-                                                string tempvalu1 = Console.ReadLine();
-                                                Console.Clear();
-                                                double.TryParse(tempvalu1, out tryparse);
-                                                double mission2 = tryparse;
-                                                Console.WriteLine(natotisMissions.Escort001A(mission2));
-                                                Console.ReadKey();
-                                                if (mission2 == 2)
-                                                {
-                                                    natotisMissions.Mission001success = 0;
-                                                }
-                                            }
-                                        }
+                                        //if (natotisMissions.Mission001success == 3)
+                                        //{
+                                        //    if (mission == 1)
+                                        //    {
+                                        //        Console.Clear();
+                                        //        Console.WriteLine(natotisMissions.Escort001());
+                                        //        string tempvalu1 = Console.ReadLine();
+                                        //        Console.Clear();
+                                        //        double.TryParse(tempvalu1, out tryparse);
+                                        //        double mission2 = tryparse;
+                                        //        Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                        //        Console.ReadKey();
+                                        //        if (mission2 == 2)
+                                        //        {
+                                        //            natotisMissions.Mission001success = 4;
+                                        //        }
+                                        //    }
+                                        //}
+                                        //if (natotisMissions.Mission002success == 3)
+                                        //{
+                                        //    if (mission == 1)
+                                        //    {
+                                        //        Console.Clear();
+                                        //        Console.WriteLine(natotisMissions.Escort001());
+                                        //        string tempvalu1 = Console.ReadLine();
+                                        //        Console.Clear();
+                                        //        double.TryParse(tempvalu1, out tryparse);
+                                        //        double mission2 = tryparse;
+                                        //        Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                        //        Console.ReadKey();
+                                        //        if (mission2 == 2)
+                                        //        {
+                                        //            natotisMissions.Mission002success = 4;
+                                        //        }
+                                        //    }
+                                        //}
 
                                         Console.Clear();
 
                                         #endregion
                                     }
+                                    Console.ForegroundColor = ConsoleColor.White;
                                     break;
                                 case 4://Back to Ship
                                     #region Navvi
@@ -4145,9 +4780,18 @@ namespace GalaxyBusiness
                                         {
                                             case 1:
                                                 #region //BUY
-
-
-
+                                                Console.Clear();
+                                                Console.WriteLine();
+                                                Console.WriteLine(
+                                                    @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
                                                 Console.WriteLine($"{xaenidesStation.BuyWelcome()}\n\n");
                                                 Console.ReadLine();
@@ -4193,7 +4837,7 @@ namespace GalaxyBusiness
                                                     break;
                                                 }
                                                 Console.Clear();
-                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(xaenidesStation.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount):0}");
+                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(xaenidesStation.ItemTranslation(item), amount):C}  Weight:{menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount):C}");
                                                 #region  //Math to reduce Qty and raise cargo
                                                 switch (item)
                                                 {
@@ -4258,10 +4902,19 @@ namespace GalaxyBusiness
                                                 #endregion
                                                 break;
                                             case 2:
-                                                #region MyRegion
-
-
-
+                                                #region //SELL
+                                                Console.Clear();
+                                                Console.WriteLine();
+                                                Console.WriteLine(
+                                                    @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
                                                 Console.WriteLine($"{xaenidesStation.BuyWelcome()}\n\n");
                                                 Console.ReadLine();
@@ -4275,7 +4928,7 @@ namespace GalaxyBusiness
                                                 Console.Write("\n\nHow many?:"); int amount2 = Convert.ToInt32(Console.ReadLine());
                                                 Console.Clear();
                                                 if (Zell.ItemTranslation(item2) - amount2 < 0) { Console.WriteLine(menu.NotEnoughItems()); Console.ReadKey(); break; }
-                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(xaenidesStation.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2):0}");
+                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(xaenidesStation.ItemTranslation(item2), amount2):C}  Weight:{menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2):C}");
                                                 switch (item2)
                                                 {
                                                     case 2:
@@ -4335,10 +4988,206 @@ namespace GalaxyBusiness
                                    
                                     break;
                                 case 2://Merchants Lounge
-
-                                 
+                                    int zhulexit = 0;
+                                    while (zhulexit == 0)
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            @"  ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████     ██       ██████  ██    ██ ███    ██  ██████  ███████ 
+████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██        ██      ██    ██ ██    ██ ████   ██ ██       ██      
+██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██        ██      ██    ██ ██    ██ ██ ██  ██ ██   ███ █████   
+██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██        ██      ██    ██ ██    ██ ██  ██ ██ ██    ██ ██      
+██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██        ███████  ██████   ██████  ██   ████  ██████  ███████     ");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine($"\n\n{xaenidesStation.LoungeOptions()}");
+                                        string tempvalue01 = Console.ReadLine();
+                                        double.TryParse(tempvalue01, out tryparse);
+                                        double zhulChoice = tryparse;
+                                        switch (zhulChoice)
+                                        {
+                                            case 1: //Warehouse
+                                                Console.WriteLine(
+                                                    "Under Construction");
+                                                Console.ReadKey();
+                                                break;
+                                            case 2: //Technology District
+                                                Console.WriteLine(
+                                                    "Under Construction");
+                                                Console.ReadKey();
+                                                break;
+                                            case 3: //Cantina
+                                                Console.WriteLine(
+                                                    "Under Construction");
+                                                Console.ReadKey();
+                                                break;
+                                            case 4: //Senate Building
+                                                Console.WriteLine(
+                                                    "Under Construction");
+                                                Console.ReadKey();
+                                                break;
+                                            case 99:
+                                                zhulexit = 1;
+                                                break;
+                                        }
+                                    }
                                     break;
                                 case 3://Mission Board
+                                    int exitmission = 1;
+                                    while (exitmission == 1)
+                                    {
+                                        #region //Mission Endings
+                                        //if (natotisMissions.Mission001success == 1 || natotisMissions.Mission001success == 0)
+                                        //{
+                                        //    Console.WriteLine(natotisMissions.Escort001Ends(natotisMissions.Mission001success));
+                                        //    Console.ReadKey();
+                                        //    Console.Clear();
+
+                                        //}
+
+                                        #endregion
+                                        //Console.WriteLine(natotisMissions.MissionBoard());  //Add board desc
+                                        Console.ReadKey();
+
+                                        #region Mission graphic
+
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(
+                                            @" =========================================================================================");
+                                        Console.WriteLine(
+                                            @" ||                   Xaenides Station Board for those who need Help                     ||");
+
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @$" ||  Current System: Natotis                                                            ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                ");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine(
+                                            @$" ||                                                                                     || ");
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission001success == 3)
+                                        //{
+                                        //    Console.WriteLine($"#1 -  {natotisMissions.Escort001advertisement()}");
+                                        //}
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission001success == 2)
+                                        //{
+                                        //    Console.WriteLine($"   #1 -  {natotisMissions.Escort001InProgress()}");
+                                        //}
+
+                                        Console.WriteLine(
+                                            @$" ||                                                                                     ||");
+                                        //if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission002success == 3)
+                                        //{
+                                        //    Console.WriteLine($"#2 -  {natotisMissions.Delivery002advertisement()}");
+                                        //}
+                                        //if (ingametime.month == 5 && ingametime.day <= 1 && ingametime.year == 2457 &&
+                                        //    natotisMissions.Mission002success == 2)
+                                        //{
+                                        //    Console.WriteLine($"   #2 -  {natotisMissions.Delivery002InProgress()}");
+                                        //}
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            $@" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||                                                                                     ||");
+                                        Console.WriteLine(
+                                            @" ||=====================================================================================||");
+                                        Console.WriteLine("\n\n\n No missions available... press Enter or press 99 to exit..");
+                                        Console.Write(">"); string tempvalu = Console.ReadLine();
+                                        double.TryParse(tempvalu, out tryparse);
+                                        double mission = tryparse;
+                                        if (mission == 99)
+                                        {
+                                            exitmission = 0;
+                                        }
+                                        //if (natotisMissions.Mission001success == 3)
+                                        //{
+                                        //    if (mission == 1)
+                                        //    {
+                                        //        Console.Clear();
+                                        //        Console.WriteLine(natotisMissions.Escort001());
+                                        //        string tempvalu1 = Console.ReadLine();
+                                        //        Console.Clear();
+                                        //        double.TryParse(tempvalu1, out tryparse);
+                                        //        double mission2 = tryparse;
+                                        //        Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                        //        Console.ReadKey();
+                                        //        if (mission2 == 2)
+                                        //        {
+                                        //            natotisMissions.Mission001success = 4;
+                                        //        }
+                                        //    }
+                                        //}
+                                        //if (natotisMissions.Mission002success == 3)
+                                        //{
+                                        //    if (mission == 1)
+                                        //    {
+                                        //        Console.Clear();
+                                        //        Console.WriteLine(natotisMissions.Escort001());
+                                        //        string tempvalu1 = Console.ReadLine();
+                                        //        Console.Clear();
+                                        //        double.TryParse(tempvalu1, out tryparse);
+                                        //        double mission2 = tryparse;
+                                        //        Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                        //        Console.ReadKey();
+                                        //        if (mission2 == 2)
+                                        //        {
+                                        //            natotisMissions.Mission002success = 4;
+                                        //        }
+                                        //    }
+                                        //}
+
+                                        Console.Clear();
+
+                                        #endregion
+                                    }
+                                    Console.ForegroundColor = ConsoleColor.White;
                                     break;
                                 case 4://Back to Ship
 
@@ -4487,7 +5336,7 @@ namespace GalaxyBusiness
                     Console.WriteLine(
                         $@"     Credits: {Zell.Credits}                                                                                               ");
                     Console.WriteLine(
-                        @$"    Galactic Date: {ingametime.day}/{ingametime.month}/{ingametime.year}                                                                   ");
+                        @$"    Galactic Date: {ingametime.month}/{ingametime.day}/{ingametime.year}                                                                   ");
                     Console.WriteLine(
                         @"                                                                                                                  ");
                     Console.WriteLine(
@@ -4598,7 +5447,7 @@ namespace GalaxyBusiness
 
                             Zell.Credits -= (amount * item);
                             Console.WriteLine(
-                                $"\n\nSale total is : ${menu.PurchasePrice(ItemTranslation(item), amount):0}");
+                                $"\n\nSale total is : ${menu.PurchasePrice(ItemTranslation(item), amount):C}");
                             stock.AmountInvested += menu.PurchasePrice(ItemTranslation(item), amount);
                             Console.ReadKey();
                             break;
@@ -4659,7 +5508,7 @@ namespace GalaxyBusiness
 
                             Zell.Credits += (amount1 * item2);
                             Console.WriteLine(
-                                $"\n\nSale total is : ${menu.PurchasePrice(ItemTranslation(item2), amount1):0}");
+                                $"\n\nSale total is : ${menu.PurchasePrice(ItemTranslation(item2), amount1):C}");
                             stock.AmountInvested -= menu.PurchasePrice(ItemTranslation(item2), amount1);
                             Console.ReadKey();
                             break;

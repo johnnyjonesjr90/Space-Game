@@ -52,6 +52,7 @@ namespace SpaceMerchantLibrary
 
         public double PriceGen(double stock)
         {
+            
             double newprice = 50;
             Random stockprice = new Random();
             #region //Normal Stocks
@@ -122,22 +123,22 @@ namespace SpaceMerchantLibrary
 
         public double stockFallMidMid(double price)
         {
-            price -= (price * .11);
+            price -= (price * .10);
             return price;
         }
         public double stockFallHigh(double price)
         {
-            price -= (price * .20);
+            price -= (price * .15);
             return price;
         }
         public double stockFallHighMid(double price)
         {
-            price -= (price * .31);
+            price -= (price * .21);
             return price;
         }
         public double stockFallHighHigh(double price)
         {
-            price -= (price * .40);
+            price -= (price * .35);
             return price;
         }
 
@@ -155,22 +156,22 @@ namespace SpaceMerchantLibrary
 
         public double stockraiseMidMid(double price)
         {
-            price += (price * .11);
+            price += (price * .10);
             return price;
         }
         public double stockraiseHigh(double price)
         {
-            price += (price * .20);
+            price += (price * .15);
             return price;
         }
         public double stockraiseHighMid(double price)
         {
-            price += (price * .31);
+            price += (price * .21);
             return price;
         }
         public double stockraiseHighHigh(double price)
         {
-            price += (price * .40);
+            price += (price * .30);
             return price;
         }
 

@@ -13,7 +13,7 @@ namespace SpaceMerchantLibrary
 
         public int Battlechance(int chance)
         {
-            
+            chance = 87;
             if (chance >= 85)
             {
                 chance = 4;
@@ -305,7 +305,7 @@ namespace SpaceMerchantLibrary
                 }
                 if (input == 3)
                 {
-                    if (contraband < 0)
+                    if (contraband == 0)
                     {
                         ShipEngages =
                             "\nEnemy Ship\n\n<<<You check out, stay out of trouble>>> ";
@@ -448,7 +448,7 @@ namespace SpaceMerchantLibrary
 
                 if (input == 1)
                 {
-                    if (contraband < 0)
+                    if (contraband == 0)
                     {
                         ShipEngages =
                             "\n\n\n<<<Lucky for you, you check out. But we will take some fuel for our time>>> \n\n\n 20 Fuel lost.\n\n\n Press Enter...";
@@ -478,7 +478,7 @@ namespace SpaceMerchantLibrary
                 }
                 if (input == 3)
                 {
-                    if (contraband < 0)
+                    if (contraband == 0)
                     {
                         ShipEngages =
                             "\n\n\nThe Starship pulls forward, and in a storm of electricity, jumps into hyperspace... ";
