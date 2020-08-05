@@ -412,12 +412,12 @@ namespace GalaxyBusiness
                         }
                         if (battle.shipChoice == 1) //smuggler
                         {
-                            if (confront == 4)
+                            if (confront == 3)
                             {
                                 Zell.Weapons += 1;
-                                Zell.Cargo += 15;
+                                Zell.Credits -= 500;
                             }
-                            
+
                         }
 
 
@@ -1053,7 +1053,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||  0 - Stay on Planet                                                         ||");
-                                    Console.WriteLine(@" ||  2 - Otov (30)                                                              ||");
+                                    Console.WriteLine(@" ||  2 - Otov (15)                                                              ||");
                                     Console.WriteLine(@" ||  3 - Gelara (15)                                                            ||");
                                     Console.WriteLine(@" ||  6 - XaenidesStation (5)                                                    ||");
                                     Console.WriteLine(@" ||  99 = Exit Game                                                             ||");
@@ -1332,10 +1332,10 @@ namespace GalaxyBusiness
                         }
                         if (battle.shipChoice == 1) //smuggler
                         {
-                            if (confront1 == 4)
+                            if (confront1 == 3)
                             {
                                 Zell.Weapons += 1;
-                                Zell.Cargo += 15;
+                                Zell.Credits -= 500;
                             }
 
                         }
@@ -1384,7 +1384,7 @@ namespace GalaxyBusiness
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n{otov.OtovDesc()}\n\n");
-                            Console.WriteLine($"\n{menu.ShopDialog()}");
+                            Console.WriteLine($"\n{menu.PlanetDialog()}");
                             #endregion 
                             string tempvalue = Console.ReadLine();
                             double.TryParse(tempvalue, out tryparse);
@@ -2056,10 +2056,10 @@ namespace GalaxyBusiness
                         }
                         if (battle.shipChoice == 1) //smuggler
                         {
-                            if (confront2 == 4)
+                            if (confront2 == 3)
                             {
                                 Zell.Weapons += 1;
-                                Zell.Cargo += 15;
+                                Zell.Credits -= 500;
                             }
 
                         }
@@ -2105,7 +2105,7 @@ namespace GalaxyBusiness
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
                             Console.WriteLine($"\n\n{gelara.Description()}\n\n");
-                            Console.WriteLine($"\n{menu.ShopDialog()}");
+                            Console.WriteLine($"\n{menu.PlanetDialog()}");
                             #endregion 
                             int choice = Convert.ToInt32(Console.ReadLine());
                             Console.Clear();
@@ -2640,10 +2640,10 @@ namespace GalaxyBusiness
                         }
                         if (battle.shipChoice == 1) //smuggler
                         {
-                            if (confront3 == 4)
+                            if (confront3 == 3)
                             {
                                 Zell.Weapons += 1;
-                                Zell.Cargo += 15;
+                                Zell.Credits -= 500;
                             }
 
                         }
@@ -2699,7 +2699,7 @@ namespace GalaxyBusiness
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n\n{larvis.Description()}\n\n");
-                            Console.WriteLine($"\n{menu.ShopDialog()}");
+                            Console.WriteLine($"\n{menu.PlanetDialog()}");
                             #endregion 
                             int choice = Convert.ToInt32(Console.ReadLine());
                             Console.Clear();
@@ -3352,10 +3352,10 @@ namespace GalaxyBusiness
                         }
                         if (battle.shipChoice == 1) //smuggler
                         {
-                            if (confront4 == 4)
+                            if (confront4 == 3)
                             {
                                 Zell.Weapons += 1;
-                                Zell.Cargo += 15;
+                                Zell.Credits -= 500;
                             }
 
                         }
@@ -3413,7 +3413,7 @@ namespace GalaxyBusiness
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n\n{aoclite.Description()}\n\n");
-                            Console.WriteLine($"\n{menu.ShopDialog()}");
+                            Console.WriteLine($"\n{menu.PlanetDialog()}");
                             #endregion 
                             int choice = Convert.ToInt32(Console.ReadLine());
                             Console.Clear();
@@ -4050,10 +4050,10 @@ namespace GalaxyBusiness
                         }
                         if (battle.shipChoice == 1) //smuggler
                         {
-                            if (confront5 == 4)
+                            if (confront5 == 3)
                             {
                                 Zell.Weapons += 1;
-                                Zell.Cargo += 15;
+                                Zell.Credits -= 500;
                             }
 
                         }
@@ -4112,7 +4112,7 @@ namespace GalaxyBusiness
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n\n{xaenidesStation.Description()}\n\n {xaenidesStation.Tax()}");
-                            Console.WriteLine($"\n{menu.ShopDialog()}");
+                            Console.WriteLine($"\n{menu.PlanetDialog()}");
                             #endregion 
                             int choice = Convert.ToInt32(Console.ReadLine());
                             Console.Clear();
@@ -4421,6 +4421,9 @@ namespace GalaxyBusiness
                                     Console.WriteLine(Zell.InventoryDisplay());
                                     Console.ReadKey();
                                     break;
+                                case 6:
+                                    StockMarket();
+                                    break;
                             }
 
 
@@ -4462,54 +4465,59 @@ namespace GalaxyBusiness
             {
                 int exit = 0;
                 while (exit == 0)
-               {
+                {
+                    double totalreturn = stock.TotalReturn(stock.ZhulReturn(Zhul.stockPrice, Zhul.qty),
+                        stock.EpsolonReturn(Epsolon.stockPrice, Epsolon.qty),
+                        stock.CrudeReturn(CrudeHelium.stockPrice, CrudeHelium.qty),
+                        stock.TabletReturn(TabletRetailers.stockPrice, TabletRetailers.qty),
+                        stock.ValkyrieReturn(Valkyrie.stockPrice, Valkyrie.qty))- stock.AmountInvested;
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(
-                        @" =================================================================================================================");
+                        @" ||===============================================================================================================||");
                     Console.WriteLine(
                         @" ||                                               AZGUAN STOCK SYSTEM                                             ||");
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(
                         @" ||===============================================================================================================||");
                     Console.WriteLine(
-                        @$" ||  Amount Invested:                                                                                            ||");
+                        $@"     Total Invested: {stock.AmountInvested}                                                                          ");
                     Console.WriteLine(
-                        @" ||   Total Return:                                                                                               ||");
+                        $@"     Total Return:  {totalreturn}                                                                                             ");
                     Console.WriteLine(
-                        @" ||                                                                                                               ||");
+                        $@"     Credits: {Zell.Credits}                                                                                               ");
                     Console.WriteLine(
-                        @$" || Galactic Date: {ingametime.day}/{ingametime.month}/{ingametime.year}                                                                   ");
+                        @$"    Galactic Date: {ingametime.day}/{ingametime.month}/{ingametime.year}                                                                   ");
                     Console.WriteLine(
-                        @" ||                                                                                                               ||");
-                    Console.WriteLine(
-                        @" ||===============================================================================================================||");
+                        @"                                                                                                                  ");
                     Console.WriteLine(
                         @" ||===============================================================================================================||");
                     Console.WriteLine(
-                        @"     #      Symbol                                      Company                           Price             Qty                   ");
+                        @" ||===============================================================================================================||");
                     Console.WriteLine(
-                        @$"  ==============================================================================================================                                                                             ");
+                        @" ||  #      Symbol                                      Company                           Price             Qty   ||                ");
                     Console.WriteLine(
-                        $@"    1       ZZZL                                   Zhul Shuttle Co.                        {Zhul.stockPrice}                {Zhul.qty}                          ");
+                        @$" ||===============================================================================================================||                                                                             ");
                     Console.WriteLine(
-                        $@"                                                                                                                      ");
+                        $@"    1       ZZZL                                   Zhul Shuttle Co.                        {Zhul.stockPrice:C}                                          ");
                     Console.WriteLine(
-                        $@"    2       EMC                                    Epsolon Motor Co.                       {Epsolon.stockPrice}            {Epsolon.qty}                                    ");
+                        $@"                                                                                                           {Zhul.qty}           ");
                     Console.WriteLine(
-                        $@"                                                                                                                      ");
+                        $@"    2       EMC                                    Epsolon Motor Co.                       {Epsolon.stockPrice:C}                                                ");
                     Console.WriteLine(
-                        $@"    3       CCL                                     Crude Helium                           {CrudeHelium.stockPrice}              {CrudeHelium.qty}                                                                 ");
+                        $@"                                                                                                           {Epsolon.qty}          ");
                     Console.WriteLine(
-                        $@"                                                                                                                       ");
+                        $@"    3       CCL                                     Crude Helium                           {CrudeHelium.stockPrice:C}                                                                               ");
                     Console.WriteLine(
-                        $@"    4       TRKL                                   Tablet Retailers                        {TabletRetailers.stockPrice}               {TabletRetailers.qty}                                  ");
+                        $@"                                                                                                           {CrudeHelium.qty}           ");
                     Console.WriteLine(
-                        $@"                                                                                                                       ");
+                        $@"    4       TRKL                                   Tablet Retailers                        {TabletRetailers.stockPrice:C}                                                 ");
                     Console.WriteLine(
-                        $@"    5       VLG                                    Valkyrie Intelligence                   {Valkyrie.stockPrice}              {Valkyrie.qty}                    ");
+                        $@"                                                                                                           {TabletRetailers.qty}            ");
                     Console.WriteLine(
-                        @"                                                                              ");
+                        $@"    5       VLG                                    Valkyrie Intelligence                   {Valkyrie.stockPrice:C}                                  ");
+                    Console.WriteLine(
+                        $@"                                                                                                            {Valkyrie.qty} ");
                     Console.WriteLine( 
                         @"                                                                              ");
                     Console.WriteLine(
@@ -4526,7 +4534,7 @@ namespace GalaxyBusiness
                         @" ||===============================================================================================================||");
                     
                     Console.WriteLine(
-                        "Welcome to the AZGUAN STOCK SYSTEM run by the Federation Financial Department (FFD). Stock prices are recalculated every Galactic Day. \n" +
+                        "\nWelcome to the AZGUAN STOCK SYSTEM run by the Federation Financial Department (FFD). Stock prices are recalculated every Galactic Day. \n" +
                         "Please select one of the following options:\n\n" +
                         "1 - Buy \n\n" +
                         "2 - Sell \n\n" +
@@ -4537,6 +4545,7 @@ namespace GalaxyBusiness
                     switch (choice)
                     {
                         case 1:
+                            Console.WriteLine();
                             Console.WriteLine(stock.StockChoice());
                             string temp = Console.ReadLine();
                             double.TryParse(temp, out tryparse);
@@ -4567,6 +4576,7 @@ namespace GalaxyBusiness
                             {
                                 case 1:
                                     Zhul.qty += amount;
+                                    
                                     break;
                                 case 2:
                                     Epsolon.qty += amount;
@@ -4581,6 +4591,7 @@ namespace GalaxyBusiness
                                     Valkyrie.qty += amount;
                                     break;
                                 case 99:
+                                    exit = 1;
                                     break;
 
                             }
@@ -4588,8 +4599,11 @@ namespace GalaxyBusiness
                             Zell.Credits -= (amount * item);
                             Console.WriteLine(
                                 $"\n\nSale total is : ${menu.PurchasePrice(ItemTranslation(item), amount):0}");
+                            stock.AmountInvested += menu.PurchasePrice(ItemTranslation(item), amount);
+                            Console.ReadKey();
                             break;
                         case 2:
+                            Console.WriteLine();
                             Console.WriteLine("\n\nWhat would you like to sell?:");
                             string tempvalue3 = Console.ReadLine();
                             double.TryParse(tempvalue3, out tryparse);
@@ -4638,6 +4652,7 @@ namespace GalaxyBusiness
                                     Valkyrie.qty -= amount1;
                                     break;
                                 case 99:
+                                    exit = 1;
                                     break;
 
                             }
@@ -4645,12 +4660,15 @@ namespace GalaxyBusiness
                             Zell.Credits += (amount1 * item2);
                             Console.WriteLine(
                                 $"\n\nSale total is : ${menu.PurchasePrice(ItemTranslation(item2), amount1):0}");
+                            stock.AmountInvested -= menu.PurchasePrice(ItemTranslation(item2), amount1);
                             Console.ReadKey();
                             break;
                         case 99:
+                            exit = 1;
                             break;
                     }
                 }
+                Console.ForegroundColor = ConsoleColor.White;
             }
 
             void StockGen()

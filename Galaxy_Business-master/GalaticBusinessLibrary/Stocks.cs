@@ -6,6 +6,43 @@ namespace SpaceMerchantLibrary
 {
     public class Stocks
     {
+        Companies Zhul = new Companies { companyName = "Zhul Shuttle Co.", stockPrice = 75, symbol = "ZZZL", percentChange = 0 };
+        Companies Epsolon = new Companies { companyName = "Epsolon Motor Co.", stockPrice = 175, symbol = "EMC", percentChange = 0 };
+        Companies CrudeHelium = new Companies { companyName = "Crude Helium", stockPrice = 3000, symbol = "CLL", percentChange = 0 };
+        Companies TabletRetailers = new Companies { companyName = "Tablet Retailers", stockPrice = 16, symbol = "TRKL", percentChange = 0 };
+        Companies Valkyrie = new Companies { companyName = "Valkyrie Intelligence", stockPrice = 201, symbol = "VLG", percentChange = 0 };
+        public double AmountInvested { get; set; }
+
+        public double TotalReturn(double zhul, double epsolon, double crude, double tablet, double valkyrie)
+        {
+            double total = zhul + epsolon + crude + tablet + valkyrie;
+            return total;
+        }
+        public double ZhulReturn(double Zhulprice, double ZhulAmount)
+        {
+            double total =ZhulAmount* Zhulprice;
+            return total;
+        }
+        public double EpsolonReturn(double price, double Amount)
+        {
+            double total = Amount * price;
+            return total;
+        }
+        public double CrudeReturn(double price, double Amount)
+        {
+            double total = Amount * price;
+            return total;
+        }
+        public double TabletReturn(double price, double Amount)
+        {
+            double total = Amount * price;
+            return total;
+        }
+        public double ValkyrieReturn(double price, double Amount)
+        {
+            double total = Amount * price;
+            return total;
+        }
         //Natotis Companies
         public string StockChoice()
         {

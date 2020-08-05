@@ -11,5 +11,6 @@ namespace SpaceMerchantLibrary
         public string companyName { get; set; }
         public string symbol { get; set; }
         public double qty { get; set; }
+
     }
 }

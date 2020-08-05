@@ -13,7 +13,7 @@ namespace SpaceMerchantLibrary
 
         public int Battlechance(int chance)
         {
-            chance = 0;
+            
             if (chance >= 85)
             {
                 chance = 4;
@@ -157,7 +157,7 @@ namespace SpaceMerchantLibrary
                 }
                 if (dialog >= 4 && dialog <= 6)
                 {
-                    ShipEngages = "\nEnemy Ship\n\n<<<Theres a toll here.. 1500 credits...>>>";
+                    ShipEngages = "\nEnemy Ship\n\n<<<Theres a toll here.. 500 credits...>>>";
                     return ShipEngages;
                 }
                 if (dialog < 4)
@@ -405,7 +405,7 @@ namespace SpaceMerchantLibrary
 
                 if (input == 3)
                 {
-                    ShipEngages = "\n\n\n<<<1 - Weapons   Price: 500   Weight: 15>>>";
+                    ShipEngages = "\n\n\n<<<Item # 1 - Weapons   Price: 500   Weight: 0>>>\n\n Choose Item and Press Enter";
                     return ShipEngages;
                 }
                 
@@ -438,6 +438,7 @@ namespace SpaceMerchantLibrary
             return ShipEngages;
         }
 
+        public int Weapons = 0;
         public string ConflictResult(int Ship, int input,double contraband, double credits, double speed, double hull, double attack)
         {
             string ShipEngages = "";
@@ -608,10 +609,11 @@ namespace SpaceMerchantLibrary
                     return ShipEngages;
                 }
 
-                if (input == 4)
+                if (input == 3)
                 {
-                    
+                    Weapons = 1;
                     ShipEngages = "\n\n\nYou purchased Black market cargo, dont get caught with it on your ship...";
+
                     return ShipEngages;
                 }
                 else return ShipEngages;
@@ -635,7 +637,7 @@ namespace SpaceMerchantLibrary
                 if (input == 3)
                 {
 
-                    ShipEngages = "\n\n\nOnce everythign is finished, you head planet side towards the warehouse district. ";
+                    ShipEngages = "\n\n\nOnce everything is finished, you head planet side towards the warehouse district. ";
                     return ShipEngages;
                 }
                 else return ShipEngages;

@@ -20,7 +20,7 @@ namespace GalaticBusinessLibrary
         private Item _Food = new Item() { Weight = 2 };
         private Item _DarkMatter = new Item() { Weight = 50 };
         private Item _Zuronium = new Item() {Weight = 40, Price = 2000};
-        private Item _Weapons = new Item() {Weight = 15, Price = 900};
+        private Item _Weapons = new Item() {Weight = 15, Price = 900, Qty = 0};
         public int location;
         public string name;
         public double TotalCargo = 100;
@@ -40,7 +40,7 @@ namespace GalaticBusinessLibrary
         public double Food { get; set; }
         public double DarkMatter { get; set; }
         public double Zuronium { get; set; }
-        public double Weapons { get; set; }
+        public double Weapons = 0;
         public string InventoryDisplay()
         {
             string display = $"" +
