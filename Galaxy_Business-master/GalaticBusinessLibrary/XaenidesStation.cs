@@ -8,7 +8,7 @@ namespace GalaticBusinessLibrary
 {
     public class XaenidesStation : Planet
     {
-        public Item Dilithium = new Item() {Qty = 10000, Price = 200, BaseQty=10000, Weight = 1};
+        public Item Dilithium = new Item() {Qty = 3000, Price = 200, BaseQty=10000, Weight = 1};
         public Item Beryllium = new Item(10, 1000) { BaseQty = 900, BasePrice = 150, Weight = 5};
         public Item Carbon = new Item(50 ,250) { BasePrice= 250, Weight = 2};
         public Item Neutronium = new Item(0, 5) {BaseQty = 3, BasePrice=2500, Weight = 25};
@@ -313,7 +313,7 @@ namespace GalaticBusinessLibrary
         public string StationSellprice()
         {
 
-            string bp = $"Item # 12 DarkMatter - {DarkMatter.SalePrice()} 5,000,000 credits";
+            string bp = $"Item # 13 Purchase Xaenides Station- {DarkMatter.SalePrice()} 5,000,000 credits";
             return bp;
         }
         #endregion
@@ -344,7 +344,7 @@ namespace GalaticBusinessLibrary
             if (input == 12)
             { return 5000; }
             if (input == 13)
-            { return 100000; }
+            { return 5000000; }
             return input;
         }
         public override double WeightTranslation(double input)
@@ -399,6 +399,12 @@ namespace GalaticBusinessLibrary
             { return Helium3.Qty; }
             if (input2 == 11)
             { return DarkMatter.Qty; }
+
+            if (input2 == 12||input2 ==13)
+            {
+                return 1;
+            }
+
             else
             {
                 double none = 0;

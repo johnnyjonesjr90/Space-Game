@@ -344,7 +344,7 @@ namespace GalaticBusinessLibrary
             if (input == 11)
             { return DarkMatter.Price; }
             if (input == 12)
-            { return 10000; }
+            { return 5000; }
             return input;
         }
         public override double WeightTranslation(double input)
@@ -399,6 +399,10 @@ namespace GalaticBusinessLibrary
             { return Helium3.Qty; }
             if (input2 == 11)
             { return DarkMatter.Qty; }
+            if (input2 == 12)
+            {
+                return 1;
+            }
             else
             {
                 double none = 0;

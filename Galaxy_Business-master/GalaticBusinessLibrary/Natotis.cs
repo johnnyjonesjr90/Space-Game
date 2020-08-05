@@ -123,7 +123,7 @@ namespace GalaticBusinessLibrary
         public override int DilithiumAvail()
         {
             Random itemchance = new Random();
-            int dithavail = Dilithium.Availability(itemchance.Next(0, 10));
+            int dithavail = Dilithium.Availability(itemchance.Next(4, 10));
             return dithavail;
         }
 
@@ -153,7 +153,7 @@ namespace GalaticBusinessLibrary
         public override int BerylliumAvail()
         {
             Random itemchance = new Random();
-            int berylavail = Beryllium.Availability(itemchance.Next(9, 10));
+            int berylavail = Beryllium.Availability(itemchance.Next(3, 10));
             return berylavail;
         }
         public string BeryllSellprice()
@@ -375,9 +375,9 @@ namespace GalaticBusinessLibrary
             { return Helium3.Price; }
             if (input == 11)
             { return DarkMatter.Price; }
-            return input;
+            
             if (input == 12)
-            { return 7000; }
+            { return 5000; }
             return input;
         }
         public override double WeightTranslation(double input)
@@ -431,10 +431,18 @@ namespace GalaticBusinessLibrary
             if (input2 == 10)
             { return Helium3.Qty; }
             if (input2 == 11)
-            { return DarkMatter.Qty; }
-            else{  double none= 0;
-                return none;
+            {
+                return DarkMatter.Qty;
             }
+            if (input2 == 12)
+            {
+                return 1;
+            }
+            else return 0;
+
+            //else{  double none= 0;
+            //    return none;
+            //}
         }
         
         public string NatotisSelectionDisplay()

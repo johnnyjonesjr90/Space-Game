@@ -374,6 +374,10 @@ namespace GalaticBusinessLibrary
             { return Aether.Qty; }
             if (input2 == 8)
             { return Food.Qty; }
+            if (input2 == 12 )
+            {
+                return 1;
+            }
             else
             {
                 double none = 0;

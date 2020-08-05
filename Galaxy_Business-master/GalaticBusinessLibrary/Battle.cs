@@ -340,7 +340,7 @@ namespace SpaceMerchantLibrary
                 }
                 if (input == 3)
                 {
-                    if (contraband < 0)
+                    if (contraband <= 0)
                     {
                         ShipEngages =
                             "\nEnemy Ship\n\n<<<You check out, stay out of trouble>>> ";
@@ -504,7 +504,7 @@ namespace SpaceMerchantLibrary
 
                 if (input == 1)
                 {
-                    if (contraband < 0)
+                    if (contraband <= 0)
                     {
                         ShipEngages =
                             "\n\n\n<<<Lucky for you, you check out. But we will take some fuel for our time>>> \n\n\n 10 Fuel lost.\n\n\n Press Enter...";
@@ -534,7 +534,7 @@ namespace SpaceMerchantLibrary
                 }
                 if (input == 3)
                 {
-                    if (contraband < 0)
+                    if (contraband <= 0)
                     {
                         ShipEngages =
                             "\n\n\nThe Starship pulls forward, and shortly you see a flash as the ship blows up a small vessel. \n\n" +
@@ -542,7 +542,7 @@ namespace SpaceMerchantLibrary
                         return ShipEngages;
                     }
 
-                    if (contraband > 0 && credits < 15000)
+                    if (contraband > 0 && credits <= 15000)
                     {
                         ShipEngages =
                             "\n\n\n<<<You have illegal cargo, unfortunate for you, you dont have enough for the fine... Enjoy prison..>>> \n\n\n" +
@@ -551,7 +551,7 @@ namespace SpaceMerchantLibrary
                             " thank you, you head off to continue your journey. Unfortunately your cargo was sold off to maintain your ship...";
                         return ShipEngages;
                     }
-                    if (contraband > 0 && credits > 15000)
+                    if (contraband > 0 && credits >= 15000)
                         ShipEngages = "\n\n\nYou were fined 5% of your bankroll...";
                 }
             }
@@ -645,7 +645,12 @@ namespace SpaceMerchantLibrary
             else return ShipEngages;
         }
 
-
+        public int brokenShip()
+        {
+            Random rando = new Random();
+            int chance = rando.Next(0, 15);
+            return chance;
+        }
 
 
     }

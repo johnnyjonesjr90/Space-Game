@@ -81,16 +81,16 @@ namespace GalaticBusinessLibrary
            
             if (this.Qty >= (this.BaseQty * 0) && this.Qty <= (this.BaseQty * .24))
             {
-                this.SellPrice = (this.BasePrice * .90) * 1.70;
+                this.SellPrice = (this.BasePrice  * 1.30);
 
             }
             else if (this.Qty >= (this.BaseQty * .25) && this.Qty <= (this.BaseQty * .49))
             {
-                this.SellPrice = (this.BasePrice * .90) * 1.60;
+                this.SellPrice = (this.BasePrice * .90) * 1.35;
             }
             else if (this.Qty >= (this.BaseQty * .50) && this.Qty <= (this.BaseQty * .74))
             {
-                this.SellPrice = (this.BasePrice * .80) * 1.40;
+                this.SellPrice = (this.BasePrice * .80) * 1.30;
             }
             else if (this.Qty >= (this.BaseQty * .75) && this.Qty <= (this.BaseQty * .99))
             {
@@ -98,15 +98,15 @@ namespace GalaticBusinessLibrary
             }
             else if (this.Qty >= (this.BaseQty * 1) && this.Qty <= (this.BaseQty * 1.24))
             {
-                this.SellPrice = (this.BasePrice * .80) * 1.10;
+                this.SellPrice = (this.BasePrice * .80) * 1.00;
             }
             else if (this.Qty >= (this.BaseQty * 1.25) && this.Qty <= (this.BaseQty * 1.49))
             {
-                this.SellPrice = (this.BasePrice * .75) * 1.05;
+                this.SellPrice = (this.BasePrice * .75) * 0.90;
             }
             else if (this.Qty >= (this.BaseQty * 1.50))
             {
-                this.SellPrice = (this.BasePrice * .70) * .90;
+                this.SellPrice = (this.BasePrice * .70) * .80;
             }
 
             //might work if the below is placed in sell.

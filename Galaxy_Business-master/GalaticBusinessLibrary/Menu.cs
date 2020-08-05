@@ -64,6 +64,7 @@ namespace GalaticBusinessLibrary
             if (planetChoice == 5 && shipFuel < 25) { travel = 0; return travel; }
             if (planetChoice == 6 && shipFuel < 5) { travel = 0; return travel; }
             return travel;
+
         }
         public string PlanetDialog()
         {
