@@ -13,15 +13,35 @@ namespace GalaticBusinessLibrary
         public Item Carbon = new Item(50, 250) { BasePrice = 250, Weight = 2 };        
         public Item Thorium = new Item(50, 250) { BasePrice = 250, Weight = 10 };        
         public Item WaterIce = new Item(0, 150) { BasePrice = 500, BaseQty = 75, Weight = 1 };
-        public Item Lead = new Item(0, 20) { BasePrice = 500, BaseQty = 10, Weight = 25 };
+        public Item Lead = new Item(0, 80) { BasePrice = 500, BaseQty = 60, Weight = 25 };
         public Item Aether = new Item(5, 15) { BasePrice = 750, BaseQty = 9, Weight = 5 };
         public Item Food = new Item(0, 150) { BasePrice = 50, Weight = 2 };
         
         public string OtovDesc()
         {
-            string desc =
-                "Otov is a small farm colony that has a significant Lead supply on its moons..";
-            return desc;
+            Random random = new Random();
+            int descrip = random.Next(1, 10);
+            if (descrip > 7)
+            {
+                string desc =
+                    "Otov is a small farm colony that has a significant Lead supply on its moons.. Unfortunately, after the war many of it's\n" +
+                    "mining facilities have been taken over by the Federation.";
+                return desc;
+            }
+
+            if (descrip <= 6 && descrip >= 3)
+            {
+                string desc =
+                    "Otov is a temperate planet. Many of the plants seen on the planet have been transplanted in order to maintain the species.";
+                return desc;
+            }
+            else
+            {
+                string desc = "Otov is one of the few Vurik planets that were not touched during the great war. This may have something to do with its\n" +
+                              "small number of developed cities compared to it's neighbors.";
+                return desc;
+            }
+            
         }
         public string BuyWelcome()
         {
@@ -34,7 +54,7 @@ namespace GalaticBusinessLibrary
             string menu = $"Welcome to the Otov's Capital City of Xigow\n\n" +
                           $"1 - Warehouse District\n" +
                           $"2 - Technology District\n" +
-                          $"3 - Cantina\n" +
+                          $"3 - Tavern\n" +
                           $"4 - Senate Building\n" +
                           $"99 - Exit";
             return menu;

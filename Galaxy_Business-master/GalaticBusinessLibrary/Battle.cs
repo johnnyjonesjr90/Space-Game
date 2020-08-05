@@ -29,7 +29,7 @@ namespace SpaceMerchantLibrary
                 chance = 2;
                 return chance;
             }
-            if (chance >= 0 && chance <= 50)
+            if (chance >= 20 && chance <= 50)
             {
                 chance = 1;
                 return chance;

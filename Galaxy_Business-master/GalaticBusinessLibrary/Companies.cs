@@ -10,5 +10,6 @@ namespace SpaceMerchantLibrary
         public double percentChange { get; set; }
         public string companyName { get; set; }
         public string symbol { get; set; }
+        public double qty { get; set; }
     }
 }

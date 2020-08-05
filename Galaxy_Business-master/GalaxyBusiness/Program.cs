@@ -162,7 +162,7 @@ namespace GalaxyBusiness
                     Console.WriteLine(@" ||                                                                             ||");
                     Console.WriteLine(@" ||                                                                             ||");
                     Console.WriteLine(@" ||                                                                             ||");
-                    Console.WriteLine($@" || 1 - Natotis (30)                                                            ||");
+                    Console.WriteLine($@" || 1 - Natotis  (30)                                                            ||");
                     Console.WriteLine(@" || 2 - Otov     (10)                                                           ||");
                     Console.WriteLine(@" || 3 - Gelara   (15)                                                           ||");
                     Console.WriteLine(@" || 4 - Larvis   (15)                                                           ||");
@@ -182,7 +182,8 @@ namespace GalaxyBusiness
                     #endregion
 
                     Console.WriteLine();
-                    Console.Write("> ");string tempvaluek = Console.ReadLine();
+                    Console.Write("> ");
+                    string tempvaluek = Console.ReadLine();
                     double.TryParse(tempvaluek, out tryparse);
                     if (tryparse==1){ menu.planetChoice = tryparse; exitt = 1; }
                     if (tryparse == 2) { menu.planetChoice = tryparse; exitt = 1; }
@@ -209,12 +210,11 @@ namespace GalaxyBusiness
                 Console.ForegroundColor = ConsoleColor.White;
                 switch (menu.planetChoice)
                 {
-                       
-                       
                     case 1://Natotis 
                         Zell.Fuel -= 30;
                         int exit1 = 0;
                         natotis.ItemCalculation();
+                        StockGen();
                         #region //Ship interaction
                         Console.WriteLine(battle.ShipEmerges(battle.Battlechance(battlechance.Next(0, 100))));
                         Console.ReadKey();
@@ -477,7 +477,6 @@ namespace GalaxyBusiness
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"{natotis.Description()}\n\n\n");
-                            Console.ReadKey();
                             Console.WriteLine(menu.PlanetDialog());
                             #endregion
 
@@ -527,7 +526,7 @@ namespace GalaxyBusiness
 
                                                 #region Item sale list
 
-                                                Console.WriteLine($"Credits: {Zell.Credits}\n\n");
+                                                Console.WriteLine($"Credits: {Zell.Credits}\n\n Cargo:{Zell.Cargo} / {Zell.TotalCargo}\n\n");
                                                 Console.WriteLine($"\n{natotis.Dithprice()}");
                                                 Console.WriteLine(menu.SeperationLine());
                                                 Console.WriteLine($"{natotis.Beryllprice()}\n");
@@ -587,6 +586,11 @@ namespace GalaxyBusiness
                                                     Console.WriteLine(menu.NotEnoughCredits());
                                                     Console.ReadLine();
                                                     break;
+                                                }
+                                                if (xaenidesStation.ItemTranslation(item) - amount < 0)
+                                                {
+                                                    Console.WriteLine(menu.OutofStock()); Console.ReadKey();
+                                                    break;  // sees if your purchase will put the store into negative stock
                                                 }
 
                                                 Console.Clear();
@@ -927,6 +931,16 @@ namespace GalaxyBusiness
 
                                         Console.WriteLine(
                                             @$" ||                                                                                     ||");
+                                        if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                            natotisMissions.Mission002success == 3)
+                                        {
+                                            Console.WriteLine($"#2 -  {natotisMissions.Delivery002advertisement()}");
+                                        }
+                                        if (ingametime.month == 5 && ingametime.day <= 1 && ingametime.year == 2457 &&
+                                            natotisMissions.Mission002success == 2)
+                                        {
+                                            Console.WriteLine($"   #2 -  {natotisMissions.Delivery002InProgress()}");
+                                        }
                                         Console.WriteLine(
                                             @" ||                                                                                     ||");
                                         Console.WriteLine(
@@ -988,7 +1002,25 @@ namespace GalaxyBusiness
                                                 }
                                             }
                                         }
-                                       
+                                        if (natotisMissions.Mission002success == 3)
+                                        {
+                                            if (mission == 1)
+                                            {
+                                                Console.Clear();
+                                                Console.WriteLine(natotisMissions.Escort001());
+                                                string tempvalu1 = Console.ReadLine();
+                                                Console.Clear();
+                                                double.TryParse(tempvalu1, out tryparse);
+                                                double mission2 = tryparse;
+                                                Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                                Console.ReadKey();
+                                                if (mission2 == 2)
+                                                {
+                                                    natotisMissions.Mission002success = 4;
+                                                }
+                                            }
+                                        }
+
                                         Console.Clear();
 
                                         #endregion
@@ -998,6 +1030,12 @@ namespace GalaxyBusiness
                                 case 4://Back to Ship
                                     #region //BACK TO SHIP
                                     #region Navvi
+                                    Console.WriteLine(@"███    ██  █████  ██    ██ ██    ██ ██     ███████ ██    ██ ███████ ████████ ███████ ███    ███ 
+████   ██ ██   ██ ██    ██ ██    ██ ██     ██       ██  ██  ██         ██    ██      ████  ████ 
+██ ██  ██ ███████ ██    ██ ██    ██ ██     ███████   ████   ███████    ██    █████   ██ ████ ██ 
+██  ██ ██ ██   ██  ██  ██   ██  ██  ██          ██    ██         ██    ██    ██      ██  ██  ██ 
+██   ████ ██   ██   ████     ████   ██     ███████    ██    ███████    ██    ███████ ██      ██ ");
+                                    Console.WriteLine("\n\n");
                                     Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine(@" =================================================================================");
                                     Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
@@ -1097,6 +1135,7 @@ namespace GalaxyBusiness
                         Zell.Fuel -= 15;
                         int exit2 = 0;
                         otov.ItemCalculation();
+                        StockGen();
                         #region //Ship interaction
                         Console.WriteLine(battle.ShipEmerges(battle.Battlechance(battlechance.Next(0, 100))));
                         Console.ReadKey();
@@ -1345,7 +1384,6 @@ namespace GalaxyBusiness
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n{otov.OtovDesc()}\n\n");
-                            Console.ReadKey();
                             Console.WriteLine($"\n{menu.ShopDialog()}");
                             #endregion 
                             string tempvalue = Console.ReadLine();
@@ -1394,6 +1432,7 @@ namespace GalaxyBusiness
 
                                                 #region Items for sale list
 
+                                                Console.WriteLine($"Credits: {Zell.Credits}\n\n Cargo:{Zell.Cargo} / {Zell.TotalCargo}\n\n");
                                                 Console.WriteLine(otov.Dithprice());
                                                 Console.WriteLine(menu.SeperationLine());
                                                 Console.WriteLine(otov.Beryllprice());
@@ -1440,7 +1479,11 @@ namespace GalaxyBusiness
                                                     Console.ReadLine();
                                                     break;
                                                 }
-
+                                                if (otov.ItemTranslation(item) - amount < 0)
+                                                {
+                                                    Console.WriteLine(menu.OutofStock()); Console.ReadKey();
+                                                    break;
+                                                }
                                                 Console.Clear();
                                                 Console.WriteLine(
                                                     $"\n\nSale total is : ${menu.PurchasePrice(otov.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(otov.WeightTranslation(item), amount):0}");
@@ -1716,6 +1759,12 @@ namespace GalaxyBusiness
                                     break;
                                 case 4://Back to Ship
                                     #region MyRegion
+                                    Console.WriteLine(@"███    ██  █████  ██    ██ ██    ██ ██     ███████ ██    ██ ███████ ████████ ███████ ███    ███ 
+████   ██ ██   ██ ██    ██ ██    ██ ██     ██       ██  ██  ██         ██    ██      ████  ████ 
+██ ██  ██ ███████ ██    ██ ██    ██ ██     ███████   ████   ███████    ██    █████   ██ ████ ██ 
+██  ██ ██ ██   ██  ██  ██   ██  ██  ██          ██    ██         ██    ██    ██      ██  ██  ██ 
+██   ████ ██   ██   ████     ████   ██     ███████    ██    ███████    ██    ███████ ██      ██ ");
+                                    Console.WriteLine("\n\n");
                                     Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine(@" =================================================================================");
                                     Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
@@ -1796,6 +1845,9 @@ namespace GalaxyBusiness
                                     Console.WriteLine(Zell.InventoryDisplay());
                                     Console.ReadKey();
                                     break;
+                                case 6:
+                                    StockMarket();
+                                    break;
                             }
 
 
@@ -1807,6 +1859,7 @@ namespace GalaxyBusiness
                         Zell.Fuel -= 10;
                         int exit3 = 0;
                         gelara.ItemCalculation();
+                        StockGen();
                         #region //Ship interaction
                         Console.WriteLine(battle.ShipEmerges(battle.Battlechance(battlechance.Next(0, 100))));
                         Console.ReadKey();
@@ -2052,14 +2105,13 @@ namespace GalaxyBusiness
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
                             Console.WriteLine($"\n\n{gelara.Description()}\n\n");
-                            Console.ReadKey();
                             Console.WriteLine($"\n{menu.ShopDialog()}");
                             #endregion 
                             int choice = Convert.ToInt32(Console.ReadLine());
                             Console.Clear();
                             switch (choice)
                             {
-                                case 1://Buy
+                                case 1://Marketplace
                                     int marketexit1 = 0;
                                     while (marketexit1 == 0)
                                     {
@@ -2091,7 +2143,7 @@ namespace GalaxyBusiness
 
                                                 #region Item sale Methods
 
-                                                Console.WriteLine($"Credits: {Zell.Credits}\n\n");
+                                                Console.WriteLine($"Credits: {Zell.Credits}\n\n Cargo:{Zell.Cargo} / {Zell.TotalCargo}\n\n");
                                                 Console.WriteLine(gelara.Dithprice());
                                                 Console.WriteLine(menu.SeperationLine());
                                                 Console.WriteLine(gelara.Beryllprice());
@@ -2134,7 +2186,11 @@ namespace GalaxyBusiness
                                                     Console.ReadLine();
                                                     break;
                                                 }
-
+                                                if (gelara.ItemTranslation(item) - amount < 0)
+                                                {
+                                                    Console.WriteLine(menu.OutofStock()); Console.ReadKey();
+                                                    break;
+                                                }
                                                 Console.Clear();
                                                 Console.WriteLine(
                                                     $"\n\nSale total is : ${menu.PurchasePrice(gelara.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(gelara.WeightTranslation(item), amount):0}");
@@ -2272,6 +2328,9 @@ namespace GalaxyBusiness
                                                 Console.ReadKey();
                                                 #endregion
                                                 break;
+                                            case 3:
+                                                marketexit1 = 1;
+                                                break;
                                         }
                                     }
 
@@ -2284,6 +2343,12 @@ namespace GalaxyBusiness
                                     break;
                                 case 4://Back to Ship
                                     #region Navvi
+                                    Console.WriteLine(@"███    ██  █████  ██    ██ ██    ██ ██     ███████ ██    ██ ███████ ████████ ███████ ███    ███ 
+████   ██ ██   ██ ██    ██ ██    ██ ██     ██       ██  ██  ██         ██    ██      ████  ████ 
+██ ██  ██ ███████ ██    ██ ██    ██ ██     ███████   ████   ███████    ██    █████   ██ ████ ██ 
+██  ██ ██ ██   ██  ██  ██   ██  ██  ██          ██    ██         ██    ██    ██      ██  ██  ██ 
+██   ████ ██   ██   ████     ████   ██     ███████    ██    ███████    ██    ███████ ██      ██ ");
+                                    Console.WriteLine("\n\n");
                                     Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine(@" =================================================================================");
                                     Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
@@ -2378,6 +2443,7 @@ namespace GalaxyBusiness
                         Zell.Fuel -= 15;
                         int exit4 = 0;
                         larvis.ItemCalculation();
+                        StockGen();
                         #region //Ship interaction
                         Console.WriteLine(battle.ShipEmerges(battle.Battlechance(battlechance.Next(0, 100))));
                         Console.ReadKey();
@@ -2633,159 +2699,368 @@ namespace GalaxyBusiness
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n\n{larvis.Description()}\n\n");
-                            Console.ReadKey();
                             Console.WriteLine($"\n{menu.ShopDialog()}");
                             #endregion 
                             int choice = Convert.ToInt32(Console.ReadLine());
                             Console.Clear();
                             switch (choice)
                             {
-                                case 1://Buy
-
-                                    Console.WriteLine($"{larvis.BuyWelcome()}\n\n");
-                                    Console.ReadLine();
-                                    #region Item sale list
-                                    Console.WriteLine($"Credits: {Zell.Credits}\n\n");
-                                    Console.WriteLine(larvis.Dithprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(larvis.Beryllprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(larvis.Carbonprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(larvis.Thoriumprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(larvis.WaterIceprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(larvis.Leadprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(larvis.Aetherprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(larvis.Foodprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(menu.NewShip());
-                                    #endregion
-                                    Console.Write("\n\nWhat would you like to purchase?:"); double item = Convert.ToInt32(Console.ReadLine());
-                                    Console.WriteLine();
-                                    if (larvis.QtyTranslation(item) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); }
-                                    else if (larvis.QtyTranslation(item) == 99) { break; }
-                                    Console.Write("\n\nHow many?:"); int amount = Convert.ToInt32(Console.ReadLine());
-                                    if (menu.PurchasePrice(larvis.ItemTranslation(item), amount) > Zell.Credits)
-                                    { Console.WriteLine(menu.NotEnoughCredits()); Console.ReadLine(); break; }
-                                    Console.Clear();
-                                    Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(larvis.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(larvis.WeightTranslation(item), amount):0}");
-                                    #region  //Math to reduce Qty and raise cargo
-                                    switch (item)
+                                case 1://Marketplace
+                                    int marketexit = 0;
+                                    while (marketexit == 0)
                                     {
-                                        case 1:
-                                            Zell.Fuel += amount; larvis.Dilithium.Qty -= amount;
-                                            break;
-                                        case 2:
-                                            Zell.Beryllium += amount; larvis.Beryllium.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item), amount);
-                                            break;
-                                        case 3:
-                                            Zell.Carbon += amount; larvis.Carbon.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item), amount);
-                                            break;
-                                        case 4:
-                                            Zell.Thorium += amount; larvis.Thorium.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item), amount);
-                                            break;
-                                        case 5:
-                                            Zell.WaterIce += amount; larvis.WaterIce.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item), amount);
-                                            break;
-                                        case 6:
-                                            Zell.Lead += amount; larvis.Lead.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item), amount);
-                                            break;
-                                        case 7:
-                                            Zell.Aether += amount; larvis.Aether.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item), amount);
-                                            break;
-                                        case 8:
-                                            Zell.Food += amount; larvis.Food.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item), amount);
-                                            break;
-                                        case 12:
-                                            Zell.TotalCargo += 100;
-                                            break;
+                                        Console.Clear();
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine($"\n\n{menu.ShopDialog()}");
+                                        Console.Write("> ");
+                                        string tempvalue0 = Console.ReadLine();
+                                        double.TryParse(tempvalue0, out tryparse);
+                                        Console.Clear();
+                                        double commerceChoice = tryparse;
+                                        switch (commerceChoice)
+                                        {
+                                            case 1:
+                                                #region //Buy
+                                                Console.WriteLine(
+                                                    @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+                                                Console.WriteLine($"{larvis.BuyWelcome()}\n\n");
+                                                Console.ReadLine();
+
+                                                #region Item sale list
+
+                                                Console.WriteLine(
+                                                    $"Credits: {Zell.Credits}\n\n Cargo:{Zell.Cargo} / {Zell.TotalCargo}\n\n");
+                                                Console.WriteLine(larvis.Dithprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(larvis.Beryllprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(larvis.Carbonprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(larvis.Thoriumprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(larvis.WaterIceprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(larvis.Leadprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(larvis.Aetherprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(larvis.Foodprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(menu.NewShip());
+
+                                                #endregion
+
+                                                Console.Write("\n\nWhat would you like to purchase?:");
+                                                double item = Convert.ToInt32(Console.ReadLine());
+                                                Console.WriteLine();
+                                                if (larvis.QtyTranslation(item) == 0)
+                                                {
+                                                    Console.WriteLine(menu.OutofStock());
+                                                    Console.ReadKey();
+                                                }
+                                                else if (larvis.QtyTranslation(item) == 99)
+                                                {
+                                                    break;
+                                                }
+
+                                                Console.Write("\n\nHow many?:");
+                                                int amount = Convert.ToInt32(Console.ReadLine());
+                                                if (menu.PurchasePrice(larvis.ItemTranslation(item), amount) >
+                                                    Zell.Credits)
+                                                {
+                                                    Console.WriteLine(menu.NotEnoughCredits());
+                                                    Console.ReadLine();
+                                                    break;
+                                                }
+
+                                                if (larvis.ItemTranslation(item) - amount < 0)
+                                                {
+                                                    Console.WriteLine(menu.OutofStock());
+                                                    Console.ReadKey();
+                                                    break;
+                                                }
+
+                                                Console.Clear();
+                                                Console.WriteLine(
+                                                    $"\n\nSale total is : ${menu.PurchasePrice(larvis.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(larvis.WeightTranslation(item), amount):0}");
+
+                                                #region //Math to reduce Qty and raise cargo
+
+                                                switch (item)
+                                                {
+                                                    case 1:
+                                                        Zell.Fuel += amount;
+                                                        larvis.Dilithium.Qty -= amount;
+                                                        break;
+                                                    case 2:
+                                                        Zell.Beryllium += amount;
+                                                        larvis.Beryllium.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 3:
+                                                        Zell.Carbon += amount;
+                                                        larvis.Carbon.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 4:
+                                                        Zell.Thorium += amount;
+                                                        larvis.Thorium.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 5:
+                                                        Zell.WaterIce += amount;
+                                                        larvis.WaterIce.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 6:
+                                                        Zell.Lead += amount;
+                                                        larvis.Lead.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 7:
+                                                        Zell.Aether += amount;
+                                                        larvis.Aether.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 8:
+                                                        Zell.Food += amount;
+                                                        larvis.Food.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(larvis.WeightTranslation(item),
+                                                            amount);
+                                                        break;
+                                                    case 12:
+                                                        Zell.TotalCargo += 100;
+                                                        break;
+                                                }
+
+                                                Zell.Credits -= menu.PurchasePrice(larvis.ItemTranslation(item),
+                                                    amount);
+
+                                                #endregion
+
+                                                Console.WriteLine(
+                                                    $"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
+                                                Console.WriteLine(Zell.InventoryDisplay());
+                                                Console.ReadLine();
+                                                Console.Clear();
+
+                                                #endregion
+                                                break;
+                                            case 2:
+                                                #region //Sell
+                                                Console.WriteLine(
+                                                    @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+                                                Console.WriteLine($"{larvis.BuyWelcome()}\n\n");
+                                                Console.ReadLine();
+                                                Console.WriteLine(
+                                                    $"Current Prices:\n\n{larvis.DithSellprice()} \n {larvis.Beryllprice()} \n {larvis.CarbonSellprice()} \n {larvis.ThoriumSellprice()} \n " +
+                                                    $"{larvis.WaterIceSellprice()} \n {larvis.LeadSellprice()} \n {larvis.AetherSellprice()} \n {larvis.FoodSellprice()}");
+                                                Console.WriteLine($"\n\nYour Inventory:\n\n {Zell.InventoryDisplay()}");
+                                                Console.Write("\n\nWhat would you like to sell?:");
+                                                double item2 = Convert.ToInt32(Console.ReadLine());
+                                                if (larvis.QtyTranslation(item2) == 0)
+                                                {
+                                                    Console.WriteLine(menu.OutofStock());
+                                                    Console.ReadKey();
+                                                    break;
+                                                }
+                                                else if (larvis.QtyTranslation(item2) == 99)
+                                                {
+                                                    break;
+                                                }
+
+                                                Console.Write("\n\nHow many?:");
+                                                int amount2 = Convert.ToInt32(Console.ReadLine());
+                                                Console.Clear();
+                                                if (Zell.ItemTranslation(item2) - amount2 < 0)
+                                                {
+                                                    Console.WriteLine(menu.NotEnoughItems());
+                                                    Console.ReadKey();
+                                                    break;
+                                                }
+
+                                                Console.WriteLine(
+                                                    $"\n\nSale total is : ${menu.PurchasePrice(larvis.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(larvis.WeightTranslation(item2), amount2):0}");
+                                                switch (item2)
+                                                {
+                                                    case 2:
+                                                        Zell.Beryllium += amount2;
+                                                        larvis.Beryllium.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2),
+                                                            amount2);
+                                                        break;
+                                                    case 3:
+                                                        Zell.Carbon += amount2;
+                                                        larvis.Carbon.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2),
+                                                            amount2);
+                                                        break;
+                                                    case 4:
+                                                        Zell.Thorium += amount2;
+                                                        larvis.Thorium.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2),
+                                                            amount2);
+                                                        break;
+                                                    case 5:
+                                                        Zell.WaterIce += amount2;
+                                                        larvis.WaterIce.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2),
+                                                            amount2);
+                                                        break;
+                                                    case 6:
+                                                        Zell.Lead += amount2;
+                                                        larvis.Lead.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2),
+                                                            amount2);
+                                                        break;
+                                                    case 7:
+                                                        Zell.Aether += amount2;
+                                                        larvis.Aether.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2),
+                                                            amount2);
+                                                        break;
+                                                    case 8:
+                                                        Zell.Food += amount2;
+                                                        larvis.Food.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2),
+                                                            amount2);
+                                                        break;
+                                                    case 9:
+                                                        Console.WriteLine(menu.NoSale());
+
+                                                        break;
+                                                    case 10:
+                                                        Console.WriteLine(menu.NoSale());
+
+                                                        break;
+                                                    case 11:
+                                                        Console.WriteLine(menu.NoSale());
+
+                                                        break;
+                                                }
+
+                                                Zell.Credits += menu.PurchasePrice(larvis.ItemTranslation(item2),
+                                                    amount2);
+                                                Console.WriteLine(
+                                                    $"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
+                                                Console.WriteLine(Zell.InventoryDisplay());
+                                                Console.ReadKey();
+
+                                                #endregion
+                                                break;
+                                            case 99:
+                                                marketexit = 1;
+                                                break;
+                                        }
                                     }
-                                    Zell.Credits -= menu.PurchasePrice(larvis.ItemTranslation(item), amount);
-                                    #endregion
-                                    Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
-                                    Console.WriteLine(Zell.InventoryDisplay());
-                                    Console.ReadLine();
-                                    Console.Clear();
 
                                     break;
-                                case 2://Sell
-                                    Console.WriteLine($"{larvis.BuyWelcome()}\n\n");
-                                    Console.ReadLine();
-                                    Console.WriteLine($"Current Prices:\n\n{larvis.DithSellprice()} \n {larvis.Beryllprice()} \n {larvis.CarbonSellprice()} \n {larvis.ThoriumSellprice()} \n " +
-                                                      $"{larvis.WaterIceSellprice()} \n {larvis.LeadSellprice()} \n {larvis.AetherSellprice()} \n {larvis.FoodSellprice()}");
-                                    Console.WriteLine($"\n\nYour Inventory:\n\n {Zell.InventoryDisplay()}");
-                                    Console.Write("\n\nWhat would you like to sell?:"); double item2 = Convert.ToInt32(Console.ReadLine());
-                                    if (larvis.QtyTranslation(item2) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); break; }
-                                    else if (larvis.QtyTranslation(item2) == 99) { break; }
-                                    Console.Write("\n\nHow many?:"); int amount2 = Convert.ToInt32(Console.ReadLine());
-                                    Console.Clear();
-                                    if (Zell.ItemTranslation(item2) - amount2 < 0) { Console.WriteLine(menu.NotEnoughItems()); Console.ReadKey(); break; }
-                                    Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(larvis.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(larvis.WeightTranslation(item2), amount2):0}");
-                                    switch (item2)
+                                case 2://Capital City
+                                    int zhulexit = 0;
+                                    while (zhulexit == 0)
                                     {
-                                        case 2:
-                                            Zell.Beryllium += amount2; larvis.Beryllium.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 3:
-                                            Zell.Carbon += amount2; larvis.Carbon.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 4:
-                                            Zell.Thorium += amount2; larvis.Thorium.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 5:
-                                            Zell.WaterIce += amount2; larvis.WaterIce.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 6:
-                                            Zell.Lead += amount2; larvis.Lead.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 7:
-                                            Zell.Aether += amount2; larvis.Aether.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 8:
-                                            Zell.Food += amount2; larvis.Food.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(larvis.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 9:
-                                            Console.WriteLine(menu.NoSale());
-                                            
-                                            break;
-                                        case 10:
-                                            Console.WriteLine(menu.NoSale());
-                                            
-                                            break;
-                                        case 11:
-                                            Console.WriteLine(menu.NoSale());
-                                            
-                                            break;
+                                        Console.Clear();
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            @"███████ ██   ██ ██    ██ ██           ██████ ██ ████████ ██    ██ 
+   ███  ██   ██ ██    ██ ██          ██      ██    ██     ██  ██  
+  ███   ███████ ██    ██ ██          ██      ██    ██      ████   
+ ███    ██   ██ ██    ██ ██          ██      ██    ██       ██    
+███████ ██   ██  ██████  ███████      ██████ ██    ██       ██ ");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine($"\n\n{natotis.ZhulOptions()}");
+                                        string tempvalue01 = Console.ReadLine();
+                                        double.TryParse(tempvalue01, out tryparse);
+                                        double zhulChoice = tryparse;
+                                        switch (zhulChoice)
+                                        {
+                                            case 1: //Warehouse
+                                                Console.WriteLine(
+                                                    "Warehouse district is large and contains with many factories");
+                                                Console.ReadKey();
+                                                Console.WriteLine(
+                                                    "This area will have corporate espionage missions and sabatoge missions");
+                                                Console.ReadKey();
+                                                break;
+                                            case 2: //Technology District
+                                                Console.WriteLine(
+                                                    "The technology District is where much of the research and business takes place on Natotis..");
+                                                Console.ReadKey();
+                                                Console.WriteLine(
+                                                    "The technology District will have missions where you can invest money and collect later on.like a stock market ");
+                                                Console.ReadKey();
+                                                break;
+                                            case 3: //Cantina
+                                                Console.WriteLine(
+                                                    "The Makiwi Cantina is a small bar the plays host to many world travellers");
+                                                Console.ReadKey();
+                                                Console.WriteLine(
+                                                    "The Cantina will host more illegal missions unlike the normal mission board.");
+                                                Console.ReadKey();
+                                                break;
+                                            case 4: //Senate Building
+                                                Console.WriteLine(
+                                                    "Natotis is the Federatrions political stronghold in the area. This makes the Natotis Senate\n" +
+                                                    "one of the most inportant locations in this system cluster.");
+                                                Console.ReadKey();
+                                                Console.WriteLine(
+                                                    "This will have some of the 'story missions' and possibly where you can become and envoy.");
+                                                Console.ReadKey();
+                                                break;
+                                            case 99:
+                                                zhulexit = 1;
+                                                break;
+                                        }
                                     }
-                                    Zell.Credits += menu.PurchasePrice(larvis.ItemTranslation(item2), amount2);
-                                    Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
-                                    Console.WriteLine(Zell.InventoryDisplay());
-                                    Console.ReadKey();
-
-
+                                    break;
                                     break;
                                 case 3://Mission Board
                                     break;
                                 case 4://Back to Ship
                                     #region Navvi
+                                    Console.WriteLine(@"███    ██  █████  ██    ██ ██    ██ ██     ███████ ██    ██ ███████ ████████ ███████ ███    ███ 
+████   ██ ██   ██ ██    ██ ██    ██ ██     ██       ██  ██  ██         ██    ██      ████  ████ 
+██ ██  ██ ███████ ██    ██ ██    ██ ██     ███████   ████   ███████    ██    █████   ██ ████ ██ 
+██  ██ ██ ██   ██  ██  ██   ██  ██  ██          ██    ██         ██    ██    ██      ██  ██  ██ 
+██   ████ ██   ██   ████     ████   ██     ███████    ██    ███████    ██    ███████ ██      ██ ");
+                                    Console.WriteLine("\n\n");
                                     Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine(@" =================================================================================");
                                     Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
@@ -2866,6 +3141,9 @@ namespace GalaxyBusiness
                                     Console.WriteLine(Zell.InventoryDisplay());
                                     Console.ReadKey();
                                     break;
+                                case 6:
+                                    StockMarket();
+                                    break;
                             }
 
 
@@ -2877,6 +3155,7 @@ namespace GalaxyBusiness
                         Zell.Fuel -= 25;
                         int exit5 = 0;
                         aoclite.ItemCalculation();
+                        StockGen();
                         #region //Ship interaction
                         Console.WriteLine(battle.ShipEmerges(battle.Battlechance(battlechance.Next(0, 100))));
                         Console.ReadKey();
@@ -3134,174 +3413,223 @@ namespace GalaxyBusiness
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n\n{aoclite.Description()}\n\n");
-                            Console.ReadKey();
                             Console.WriteLine($"\n{menu.ShopDialog()}");
                             #endregion 
                             int choice = Convert.ToInt32(Console.ReadLine());
                             Console.Clear();
                             switch (choice)
                             {
-                                case 1://Buy
-
-                                    Console.WriteLine($"{aoclite.BuyWelcome()}\n\n");
-                                    Console.ReadLine();
-
-                                    #region Item sale list
-                                    Console.WriteLine($"Credits: {Zell.Credits}\n\n");
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(aoclite.Dithprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(aoclite.Beryllprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(aoclite.Carbonprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(aoclite.Thoriumprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(aoclite.WaterIceprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(aoclite.Leadprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(aoclite.Aetherprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(aoclite.Foodprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(aoclite.Helium3price());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(aoclite.Neutroniumprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(aoclite.DarkMatterprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(menu.NewShip());
-                                    #endregion
-                                    Console.Write("\n\nWhat would you like to purchase?:"); double item = Convert.ToInt32(Console.ReadLine());
-                                    Console.WriteLine();
-                                    if (aoclite.QtyTranslation(item) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); }
-                                    else if (aoclite.QtyTranslation(item) == 99) { break; }
-                                    Console.Write("\n\nHow many?:"); int amount = Convert.ToInt32(Console.ReadLine());
-                                    if (menu.PurchasePrice(aoclite.ItemTranslation(item), amount) > Zell.Credits)
-                                    { Console.WriteLine(menu.NotEnoughCredits()); Console.ReadLine(); break; }
-                                    Console.Clear();
-                                    Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(aoclite.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(aoclite.WeightTranslation(item), amount):0}");
-                                    #region  //Math to reduce Qty and raise cargo
-                                    switch (item)
+                                case 1://Marketplace
+                                    int marketexit = 0;
+                                    while (marketexit == 0)
                                     {
-                                        case 1:
-                                            Zell.Fuel += amount; aoclite.Dilithium.Qty -= amount;
-                                            break;
-                                        case 2:
-                                            Zell.Beryllium += amount; aoclite.Beryllium.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
-                                            break;
-                                        case 3:
-                                            Zell.Carbon += amount; aoclite.Carbon.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
-                                            break;
-                                        case 4:
-                                            Zell.Thorium += amount; aoclite.Thorium.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
-                                            break;
-                                        case 5:
-                                            Zell.WaterIce += amount; aoclite.WaterIce.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
-                                            break;
-                                        case 6:
-                                            Zell.Lead += amount; aoclite.Lead.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
-                                            break;
-                                        case 7:
-                                            Zell.Aether += amount; aoclite.Aether.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
-                                            break;
-                                        case 8:
-                                            Zell.Food += amount; aoclite.Food.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
-                                            break;
-                                        case 9:
-                                            Zell.Neutronium += amount; aoclite.Neutronium.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
-                                            break;
-                                        case 10:
-                                            Zell.Helium3 += amount; aoclite.Helium3.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
-                                            break;
-                                        case 11:
-                                            Zell.DarkMatter += amount; aoclite.DarkMatter.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
-                                            break;
-                                        case 12:
-                                            Zell.TotalCargo += 100;
-                                            break;
-                                    }
-                                    Zell.Credits -= menu.PurchasePrice(aoclite.ItemTranslation(item), amount);
-                                    #endregion
-                                    Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
-                                    Console.WriteLine(Zell.InventoryDisplay());
-                                    Console.ReadLine();
-                                    Console.Clear();
+                                        Console.Clear();
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine($"\n\n{menu.ShopDialog()}");
+                                        Console.Write("> ");
+                                        string tempvalue0 = Console.ReadLine();
+                                        double.TryParse(tempvalue0, out tryparse);
+                                        Console.Clear();
+                                        double commerceChoice = tryparse;
+                                        switch (commerceChoice)
+                                        {
+                                            case 1:
+                                                #region BUY
 
+
+
+
+                                                Console.WriteLine($"{aoclite.BuyWelcome()}\n\n");
+                                                Console.ReadLine();
+
+                                                #region Item sale list
+                                                Console.WriteLine($"Credits: {Zell.Credits}\n\n Cargo:{Zell.Cargo} / {Zell.TotalCargo}\n\n");
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(aoclite.Dithprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(aoclite.Beryllprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(aoclite.Carbonprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(aoclite.Thoriumprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(aoclite.WaterIceprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(aoclite.Leadprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(aoclite.Aetherprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(aoclite.Foodprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(aoclite.Helium3price());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(aoclite.Neutroniumprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(aoclite.DarkMatterprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(menu.NewShip());
+                                                #endregion
+                                                Console.Write("\n\nWhat would you like to purchase?:"); double item = Convert.ToInt32(Console.ReadLine());
+                                                Console.WriteLine();
+                                                if (aoclite.QtyTranslation(item) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); }
+                                                else if (aoclite.QtyTranslation(item) == 99) { break; }
+                                                Console.Write("\n\nHow many?:"); int amount = Convert.ToInt32(Console.ReadLine());
+                                                if (menu.PurchasePrice(aoclite.ItemTranslation(item), amount) > Zell.Credits)
+                                                { Console.WriteLine(menu.NotEnoughCredits()); Console.ReadLine(); break; }
+                                                if (aoclite.ItemTranslation(item) - amount < 0)
+                                                {
+                                                    Console.WriteLine(menu.OutofStock()); Console.ReadKey();
+                                                    break;
+                                                }
+                                                Console.Clear();
+                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(aoclite.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(aoclite.WeightTranslation(item), amount):0}");
+                                                #region  //Math to reduce Qty and raise cargo
+                                                switch (item)
+                                                {
+                                                    case 1:
+                                                        Zell.Fuel += amount; aoclite.Dilithium.Qty -= amount;
+                                                        break;
+                                                    case 2:
+                                                        Zell.Beryllium += amount; aoclite.Beryllium.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 3:
+                                                        Zell.Carbon += amount; aoclite.Carbon.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 4:
+                                                        Zell.Thorium += amount; aoclite.Thorium.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 5:
+                                                        Zell.WaterIce += amount; aoclite.WaterIce.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 6:
+                                                        Zell.Lead += amount; aoclite.Lead.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 7:
+                                                        Zell.Aether += amount; aoclite.Aether.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 8:
+                                                        Zell.Food += amount; aoclite.Food.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 9:
+                                                        Zell.Neutronium += amount; aoclite.Neutronium.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 10:
+                                                        Zell.Helium3 += amount; aoclite.Helium3.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 11:
+                                                        Zell.DarkMatter += amount; aoclite.DarkMatter.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(aoclite.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 12:
+                                                        Zell.TotalCargo += 100;
+                                                        break;
+                                                }
+                                                Zell.Credits -= menu.PurchasePrice(aoclite.ItemTranslation(item), amount);
+                                                #endregion
+                                                Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
+                                                Console.WriteLine(Zell.InventoryDisplay());
+                                                Console.ReadLine();
+                                                Console.Clear();
+                                                #endregion
+                                                break;
+                                            case 2:
+                                                #region //SELL
+
+
+
+
+                                                Console.WriteLine($"{aoclite.BuyWelcome()}\n\n");
+                                                Console.ReadLine();
+                                                Console.WriteLine($"Current Prices:\n\n{aoclite.DithSellprice()} \n {aoclite.Beryllprice()} \n {aoclite.CarbonSellprice()} \n {aoclite.ThoriumSellprice()} \n " +
+                                                                  $"{aoclite.WaterIceSellprice()} \n {aoclite.LeadSellprice()} \n {aoclite.AetherSellprice()} \n {aoclite.FoodSellprice()} \n {aoclite.NeutroniumSellprice()} \n {aoclite.Helium3Sellprice()} \n " +
+                                                                  $"{aoclite.DarkMatterSellprice()}");
+                                                Console.WriteLine($"\n\nYour Inventory:\n\n {Zell.InventoryDisplay()}");
+                                                Console.Write("\n\nWhat would you like to sell?:"); double item2 = Convert.ToInt32(Console.ReadLine());
+                                                if (aoclite.QtyTranslation(item2) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); break; }
+                                                else if (aoclite.QtyTranslation(item2) == 99) { break; }
+                                                Console.Write("\n\nHow many?:"); int amount2 = Convert.ToInt32(Console.ReadLine());
+                                                Console.Clear();
+                                                if (Zell.ItemTranslation(item2) - amount2 < 0) { Console.WriteLine(menu.NotEnoughItems()); Console.ReadKey(); break; }
+                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(aoclite.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(aoclite.WeightTranslation(item2), amount2):0}");
+                                                switch (item2)
+                                                {
+                                                    case 2:
+                                                        Zell.Beryllium += amount2; aoclite.Beryllium.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 3:
+                                                        Zell.Carbon += amount2; aoclite.Carbon.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 4:
+                                                        Zell.Thorium += amount2; aoclite.Thorium.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 5:
+                                                        Zell.WaterIce += amount2; aoclite.WaterIce.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 6:
+                                                        Zell.Lead += amount2; aoclite.Lead.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 7:
+                                                        Zell.Aether += amount2; aoclite.Aether.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 8:
+                                                        Zell.Food += amount2; aoclite.Food.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 9:
+                                                        Zell.Neutronium += amount2; aoclite.Neutronium.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 10:
+                                                        Zell.Helium3 += amount2; aoclite.Helium3.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 11:
+                                                        Zell.DarkMatter += amount2; aoclite.DarkMatter.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
+                                                        break;
+                                                }
+                                                Zell.Credits += menu.PurchasePrice(aoclite.ItemTranslation(item2), amount2);
+                                                Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
+                                                Console.WriteLine(Zell.InventoryDisplay());
+                                                Console.ReadKey();
+                                                #endregion
+                                                break;
+                                            case 99:
+                                                marketexit = 1;
+                                                break;
+                                        }
+                                    }
+
+                                   
                                     break;
-                                case 2://Sell
-                                    Console.WriteLine($"{aoclite.BuyWelcome()}\n\n");
-                                    Console.ReadLine();
-                                    Console.WriteLine($"Current Prices:\n\n{aoclite.DithSellprice()} \n {aoclite.Beryllprice()} \n {aoclite.CarbonSellprice()} \n {aoclite.ThoriumSellprice()} \n " +
-                                                      $"{aoclite.WaterIceSellprice()} \n {aoclite.LeadSellprice()} \n {aoclite.AetherSellprice()} \n {aoclite.FoodSellprice()} \n {aoclite.NeutroniumSellprice()} \n {aoclite.Helium3Sellprice()} \n " +
-                                                      $"{aoclite.DarkMatterSellprice()}");
-                                    Console.WriteLine($"\n\nYour Inventory:\n\n {Zell.InventoryDisplay()}");
-                                    Console.Write("\n\nWhat would you like to sell?:"); double item2 = Convert.ToInt32(Console.ReadLine());
-                                    if (aoclite.QtyTranslation(item2) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); break; }
-                                    else if (aoclite.QtyTranslation(item2) == 99) { break; }
-                                    Console.Write("\n\nHow many?:"); int amount2 = Convert.ToInt32(Console.ReadLine());
-                                    Console.Clear();
-                                    if (Zell.ItemTranslation(item2) - amount2 < 0) { Console.WriteLine(menu.NotEnoughItems()); Console.ReadKey(); break; }
-                                    Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(aoclite.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(aoclite.WeightTranslation(item2), amount2):0}");
-                                    switch (item2)
-                                    {
-                                        case 2:
-                                            Zell.Beryllium += amount2; aoclite.Beryllium.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 3:
-                                            Zell.Carbon += amount2; aoclite.Carbon.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 4:
-                                            Zell.Thorium += amount2; aoclite.Thorium.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 5:
-                                            Zell.WaterIce += amount2; aoclite.WaterIce.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 6:
-                                            Zell.Lead += amount2; aoclite.Lead.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 7:
-                                            Zell.Aether += amount2; aoclite.Aether.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 8:
-                                            Zell.Food += amount2; aoclite.Food.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 9:
-                                            Zell.Neutronium += amount2; aoclite.Neutronium.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 10:
-                                            Zell.Helium3 += amount2; aoclite.Helium3.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 11:
-                                            Zell.DarkMatter += amount2; aoclite.DarkMatter.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(aoclite.WeightTranslation(item2), amount2);
-                                            break;
-                                    }
-                                    Zell.Credits += menu.PurchasePrice(aoclite.ItemTranslation(item2), amount2);
-                                    Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
-                                    Console.WriteLine(Zell.InventoryDisplay());
-                                    Console.ReadKey();
-
+                                case 2://Capital City
+                                    
+                                   
 
                                     break;
                                 case 3://Mission Board
@@ -3420,6 +3748,12 @@ namespace GalaxyBusiness
                                     break;
                                 case 4://Back to Ship
                                     #region Navvi
+                                    Console.WriteLine(@"███    ██  █████  ██    ██ ██    ██ ██     ███████ ██    ██ ███████ ████████ ███████ ███    ███ 
+████   ██ ██   ██ ██    ██ ██    ██ ██     ██       ██  ██  ██         ██    ██      ████  ████ 
+██ ██  ██ ███████ ██    ██ ██    ██ ██     ███████   ████   ███████    ██    █████   ██ ████ ██ 
+██  ██ ██ ██   ██  ██  ██   ██  ██  ██          ██    ██         ██    ██    ██      ██  ██  ██ 
+██   ████ ██   ██   ████     ████   ██     ███████    ██    ███████    ██    ███████ ██      ██ ");
+                                    Console.WriteLine("\n\n");
                                     Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine(@" =================================================================================");
                                     Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
@@ -3500,6 +3834,9 @@ namespace GalaxyBusiness
                                     Console.WriteLine(Zell.InventoryDisplay());
                                     Console.ReadKey();
                                     break;
+                                case 6:
+                                    StockMarket();
+                                    break;
                             }
 
 
@@ -3516,6 +3853,7 @@ namespace GalaxyBusiness
                         Zell.Credits -= 300;
                         int exit6 = 0;
                         xaenidesStation.ItemCalculation();
+                        StockGen();
                         #region //Ship interaction
                         Console.WriteLine(battle.ShipEmerges(battle.Battlechance(battlechance.Next(0, 100))));
                         Console.ReadKey();
@@ -3774,186 +4112,243 @@ namespace GalaxyBusiness
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n\n{xaenidesStation.Description()}\n\n {xaenidesStation.Tax()}");
-                            Console.ReadKey();
                             Console.WriteLine($"\n{menu.ShopDialog()}");
                             #endregion 
                             int choice = Convert.ToInt32(Console.ReadLine());
                             Console.Clear();
                             switch (choice)
                             {
-                                case 1://Buy
+                                case 1://Market
 
-                                    Console.WriteLine($"{xaenidesStation.BuyWelcome()}\n\n");
-                                    Console.ReadLine();
-
-                                    #region Item for sale list
-                                    Console.WriteLine($"Credits: {Zell.Credits}\n\n");
-                                    Console.WriteLine(xaenidesStation.Dithprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(xaenidesStation.Beryllprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(xaenidesStation.Carbonprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(xaenidesStation.Thoriumprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(xaenidesStation.WaterIceprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(xaenidesStation.Leadprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(xaenidesStation.Aetherprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(xaenidesStation.Foodprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(xaenidesStation.Helium3price());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(xaenidesStation.Neutroniumprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(xaenidesStation.DarkMatterprice());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(menu.NewShip());
-                                    Console.WriteLine(menu.SeperationLine());
-                                    Console.WriteLine(xaenidesStation.StationSellprice());
-                                    #endregion
-                                    Console.Write("\n\nWhat would you like to purchase?:"); double item = Convert.ToInt32(Console.ReadLine());
-                                    Console.WriteLine();
-                                    if (xaenidesStation.QtyTranslation(item) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); }
-                                    else if (xaenidesStation.QtyTranslation(item) == 99) { break; }
-                                    Console.Write("\n\nHow many?:"); int amount = Convert.ToInt32(Console.ReadLine());
-                                    if (menu.PurchasePrice(xaenidesStation.ItemTranslation(item), amount) > Zell.Credits)
-                                    { Console.WriteLine(menu.NotEnoughCredits()); Console.ReadLine(); break; }
-                                    Console.Clear();
-                                    Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(xaenidesStation.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount):0}");
-                                    #region  //Math to reduce Qty and raise cargo
-                                    switch (item)
+                                    int marketexit = 0;
+                                    while (marketexit == 0)
                                     {
-                                        case 1:
-                                            Zell.Fuel += amount; xaenidesStation.Dilithium.Qty -= amount;
-                                            break;
-                                        case 2:
-                                            Zell.Beryllium += amount; xaenidesStation.Beryllium.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
-                                            break;
-                                        case 3:
-                                            Zell.Carbon += amount; xaenidesStation.Carbon.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
-                                            break;
-                                        case 4:
-                                            Zell.Thorium += amount; xaenidesStation.Thorium.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
-                                            break;
-                                        case 5:
-                                            Zell.WaterIce += amount; xaenidesStation.WaterIce.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
-                                            break;
-                                        case 6:
-                                            Zell.Lead += amount; xaenidesStation.Lead.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
-                                            break;
-                                        case 7:
-                                            Zell.Aether += amount; xaenidesStation.Aether.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
-                                            break;
-                                        case 8:
-                                            Zell.Food += amount; xaenidesStation.Food.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
-                                            break;
-                                        case 9:
-                                            Zell.Neutronium += amount; xaenidesStation.Neutronium.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
-                                            break;
-                                        case 10:
-                                            Zell.Helium3 += amount; xaenidesStation.Helium3.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
-                                            break;
-                                        case 11:
-                                            Zell.DarkMatter += amount; xaenidesStation.DarkMatter.Qty -= amount;
-                                            Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
-                                            break;
-                                        case 12:
-                                            Zell.TotalCargo += 100;
-                                            break;
-                                        case 13:
-                                            Console.WriteLine(menu.Win());
-                                            Console.ReadKey();
-                                            Environment.Exit(0);
-                                            break;
-                                    }
-                                    Zell.Credits -= menu.PurchasePrice(xaenidesStation.ItemTranslation(item), amount);
-                                    #endregion
-                                    Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
-                                    Console.WriteLine(Zell.InventoryDisplay());
-                                    Console.ReadLine();
-                                    Console.Clear();
+                                        Console.Clear();
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
+████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
+██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
+██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                        Console.WriteLine($"\n\n{menu.ShopDialog()}");
+                                        Console.Write("> ");
+                                        string tempvalue0 = Console.ReadLine();
+                                        double.TryParse(tempvalue0, out tryparse);
+                                        Console.Clear();
+                                        double commerceChoice = tryparse;
+                                        switch (commerceChoice)
+                                        {
+                                            case 1:
+                                                #region //BUY
 
+
+
+
+                                                Console.WriteLine($"{xaenidesStation.BuyWelcome()}\n\n");
+                                                Console.ReadLine();
+
+                                                #region Item for sale list
+                                                Console.WriteLine($"Credits: {Zell.Credits}\n\n Cargo:{Zell.Cargo} / {Zell.TotalCargo}\n\n");
+                                                Console.WriteLine(xaenidesStation.Dithprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(xaenidesStation.Beryllprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(xaenidesStation.Carbonprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(xaenidesStation.Thoriumprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(xaenidesStation.WaterIceprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(xaenidesStation.Leadprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(xaenidesStation.Aetherprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(xaenidesStation.Foodprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(xaenidesStation.Helium3price());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(xaenidesStation.Neutroniumprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(xaenidesStation.DarkMatterprice());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(menu.NewShip());
+                                                Console.WriteLine(menu.SeperationLine());
+                                                Console.WriteLine(xaenidesStation.StationSellprice());
+                                                #endregion
+                                                Console.Write("\n\nWhat would you like to purchase?:"); double item = Convert.ToInt32(Console.ReadLine());
+                                                Console.WriteLine();
+                                                if (xaenidesStation.QtyTranslation(item) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); }
+                                                else if (xaenidesStation.QtyTranslation(item) == 99) { break; }
+                                                Console.Write("\n\nHow many?:"); int amount = Convert.ToInt32(Console.ReadLine());
+                                                if (menu.PurchasePrice(xaenidesStation.ItemTranslation(item), amount) > Zell.Credits)
+                                                { Console.WriteLine(menu.NotEnoughCredits()); Console.ReadLine(); break; }
+                                                if (xaenidesStation.ItemTranslation(item) - amount < 0)
+                                                {
+                                                    Console.WriteLine(menu.OutofStock()); Console.ReadKey();
+                                                    break;
+                                                }
+                                                Console.Clear();
+                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(xaenidesStation.ItemTranslation(item), amount):0}  Weight:{menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount):0}");
+                                                #region  //Math to reduce Qty and raise cargo
+                                                switch (item)
+                                                {
+                                                    case 1:
+                                                        Zell.Fuel += amount; xaenidesStation.Dilithium.Qty -= amount;
+                                                        break;
+                                                    case 2:
+                                                        Zell.Beryllium += amount; xaenidesStation.Beryllium.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 3:
+                                                        Zell.Carbon += amount; xaenidesStation.Carbon.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 4:
+                                                        Zell.Thorium += amount; xaenidesStation.Thorium.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 5:
+                                                        Zell.WaterIce += amount; xaenidesStation.WaterIce.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 6:
+                                                        Zell.Lead += amount; xaenidesStation.Lead.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 7:
+                                                        Zell.Aether += amount; xaenidesStation.Aether.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 8:
+                                                        Zell.Food += amount; xaenidesStation.Food.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 9:
+                                                        Zell.Neutronium += amount; xaenidesStation.Neutronium.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 10:
+                                                        Zell.Helium3 += amount; xaenidesStation.Helium3.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 11:
+                                                        Zell.DarkMatter += amount; xaenidesStation.DarkMatter.Qty -= amount;
+                                                        Zell.Cargo += menu.TotalCargo(xaenidesStation.WeightTranslation(item), amount);
+                                                        break;
+                                                    case 12:
+                                                        Zell.TotalCargo += 100;
+                                                        break;
+                                                    case 13:
+                                                        Console.WriteLine(menu.Win());
+                                                        Console.ReadKey();
+                                                        Environment.Exit(0);
+                                                        break;
+                                                }
+                                                Zell.Credits -= menu.PurchasePrice(xaenidesStation.ItemTranslation(item), amount);
+                                                #endregion
+                                                Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
+                                                Console.WriteLine(Zell.InventoryDisplay());
+                                                Console.ReadLine();
+                                                Console.Clear();
+                                                #endregion
+                                                break;
+                                            case 2:
+                                                #region MyRegion
+
+
+
+
+                                                Console.WriteLine($"{xaenidesStation.BuyWelcome()}\n\n");
+                                                Console.ReadLine();
+                                                Console.WriteLine($"Current Prices:\n\n{xaenidesStation.DithSellprice()} \n {xaenidesStation.Beryllprice()} \n {xaenidesStation.CarbonSellprice()} \n {xaenidesStation.ThoriumSellprice()} \n " +
+                                                                  $"{xaenidesStation.WaterIceSellprice()} \n {xaenidesStation.LeadSellprice()} \n {xaenidesStation.AetherSellprice()} \n {xaenidesStation.FoodSellprice()} \n {xaenidesStation.NeutroniumSellprice()} \n {xaenidesStation.Helium3Sellprice()} \n " +
+                                                                  $"{xaenidesStation.DarkMatterSellprice()}");
+                                                Console.WriteLine($"\n\nYour Inventory:\n\n {Zell.InventoryDisplay()}");
+                                                Console.Write("\n\nWhat would you like to sell?:"); double item2 = Convert.ToInt32(Console.ReadLine());
+                                                if (xaenidesStation.QtyTranslation(item2) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); break; }
+                                                else if (xaenidesStation.QtyTranslation(item2) == 99) { break; }
+                                                Console.Write("\n\nHow many?:"); int amount2 = Convert.ToInt32(Console.ReadLine());
+                                                Console.Clear();
+                                                if (Zell.ItemTranslation(item2) - amount2 < 0) { Console.WriteLine(menu.NotEnoughItems()); Console.ReadKey(); break; }
+                                                Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(xaenidesStation.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2):0}");
+                                                switch (item2)
+                                                {
+                                                    case 2:
+                                                        Zell.Beryllium += amount2; xaenidesStation.Beryllium.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 3:
+                                                        Zell.Carbon += amount2; xaenidesStation.Carbon.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 4:
+                                                        Zell.Thorium += amount2; xaenidesStation.Thorium.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 5:
+                                                        Zell.WaterIce += amount2; xaenidesStation.WaterIce.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 6:
+                                                        Zell.Lead += amount2; xaenidesStation.Lead.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 7:
+                                                        Zell.Aether += amount2; xaenidesStation.Aether.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 8:
+                                                        Zell.Food += amount2; xaenidesStation.Food.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 9:
+                                                        Zell.Neutronium += amount2; xaenidesStation.Neutronium.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 10:
+                                                        Zell.Helium3 += amount2; xaenidesStation.Helium3.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                                        break;
+                                                    case 11:
+                                                        Zell.DarkMatter += amount2; xaenidesStation.DarkMatter.Qty -= amount2;
+                                                        Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
+                                                        break;
+                                                        //Add station
+                                                }
+                                                Zell.Credits += menu.PurchasePrice(xaenidesStation.ItemTranslation(item2), amount2);
+                                                Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
+                                                Console.WriteLine(Zell.InventoryDisplay());
+                                                Console.ReadKey();
+                                                #endregion
+                                                break;
+                                            case 99:
+                                                marketexit = 1;
+                                                break;
+                                        }
+                                    }
+
+                                   
                                     break;
-                                case 2://Sell
-                                    Console.WriteLine($"{xaenidesStation.BuyWelcome()}\n\n");
-                                    Console.ReadLine();
-                                    Console.WriteLine($"Current Prices:\n\n{xaenidesStation.DithSellprice()} \n {xaenidesStation.Beryllprice()} \n {xaenidesStation.CarbonSellprice()} \n {xaenidesStation.ThoriumSellprice()} \n " +
-                                                      $"{xaenidesStation.WaterIceSellprice()} \n {xaenidesStation.LeadSellprice()} \n {xaenidesStation.AetherSellprice()} \n {xaenidesStation.FoodSellprice()} \n {xaenidesStation.NeutroniumSellprice()} \n {xaenidesStation.Helium3Sellprice()} \n " +
-                                                      $"{xaenidesStation.DarkMatterSellprice()}");
-                                    Console.WriteLine($"\n\nYour Inventory:\n\n {Zell.InventoryDisplay()}");
-                                    Console.Write("\n\nWhat would you like to sell?:"); double item2 = Convert.ToInt32(Console.ReadLine());
-                                    if (xaenidesStation.QtyTranslation(item2) == 0) { Console.WriteLine(menu.OutofStock()); Console.ReadKey(); break; }
-                                    else if (xaenidesStation.QtyTranslation(item2) == 99) { break; }
-                                    Console.Write("\n\nHow many?:"); int amount2 = Convert.ToInt32(Console.ReadLine());
-                                    Console.Clear();
-                                    if (Zell.ItemTranslation(item2) - amount2 < 0) { Console.WriteLine(menu.NotEnoughItems()); Console.ReadKey(); break; }
-                                    Console.WriteLine($"\n\nSale total is : ${menu.PurchasePrice(xaenidesStation.ItemTranslation(item2), amount2):0}  Weight:{menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2):0}");
-                                    switch (item2)
-                                    {
-                                        case 2:
-                                            Zell.Beryllium += amount2; xaenidesStation.Beryllium.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 3:
-                                            Zell.Carbon += amount2; xaenidesStation.Carbon.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 4:
-                                            Zell.Thorium += amount2; xaenidesStation.Thorium.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 5:
-                                            Zell.WaterIce += amount2; xaenidesStation.WaterIce.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 6:
-                                            Zell.Lead += amount2; xaenidesStation.Lead.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 7:
-                                            Zell.Aether += amount2; xaenidesStation.Aether.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 8:
-                                            Zell.Food += amount2; xaenidesStation.Food.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 9:
-                                            Zell.Neutronium += amount2; xaenidesStation.Neutronium.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 10:
-                                            Zell.Helium3 += amount2; xaenidesStation.Helium3.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
-                                            break;
-                                        case 11:
-                                            Zell.DarkMatter += amount2; xaenidesStation.DarkMatter.Qty -= amount2;
-                                            Zell.Cargo -= menu.TotalCargo(xaenidesStation.WeightTranslation(item2), amount2);
-                                            break;
-                                        //Add station
-                                    }
-                                    Zell.Credits += menu.PurchasePrice(xaenidesStation.ItemTranslation(item2), amount2);
-                                    Console.WriteLine($"\nCredits remaining: ${Zell.Credits}\n\nTotal Cargo: {Zell.Cargo} / {Zell.TotalCargo}\n\nFuel Level: {Zell.Fuel}");
-                                    Console.WriteLine(Zell.InventoryDisplay());
-                                    Console.ReadKey();
+                                case 2://Merchants Lounge
+
+                                 
                                     break;
                                 case 3://Mission Board
                                     break;
                                 case 4://Back to Ship
-                                    #region MyRegion
+
                                     #region Navvi
+                                    Console.WriteLine(@"███    ██  █████  ██    ██ ██    ██ ██     ███████ ██    ██ ███████ ████████ ███████ ███    ███ 
+████   ██ ██   ██ ██    ██ ██    ██ ██     ██       ██  ██  ██         ██    ██      ████  ████ 
+██ ██  ██ ███████ ██    ██ ██    ██ ██     ███████   ████   ███████    ██    █████   ██ ████ ██ 
+██  ██ ██ ██   ██  ██  ██   ██  ██  ██          ██    ██         ██    ██    ██      ██  ██  ██ 
+██   ████ ██   ██   ████     ████   ██     ███████    ██    ███████    ██    ███████ ██      ██ ");
+                                    Console.WriteLine("\n\n");
                                     Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine(@" =================================================================================");
                                     Console.WriteLine(@" ||                                    NAVVI SYSTEM                             ||");
@@ -3989,7 +4384,7 @@ namespace GalaxyBusiness
                                     #endregion
 
 
-                                    #endregion
+                                    
 
                                     string tempvaluee = Console.ReadLine();
                                     if (double.TryParse(tempvaluee, out tryparse))
@@ -4035,8 +4430,7 @@ namespace GalaxyBusiness
                         break;
                     case 7:
                         Console.WriteLine(Zell.InventoryDisplay());
-
-                        #region 
+                        #region //Mission log for inventory
                         if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
                             natotisMissions.Mission001success == 2)
                         {
@@ -4053,8 +4447,6 @@ namespace GalaxyBusiness
                         Console.ReadKey();
                         Environment.Exit(0);
                         break;
-
-
                 }
 
                 
@@ -4068,47 +4460,243 @@ namespace GalaxyBusiness
 
             void StockMarket()
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine(@" =================================================================================================================");
-                Console.WriteLine(@" ||                             AZGUAN STOCK SYSTEM                                                               ||");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine(@" ||===============================================================================================================||");
-                Console.WriteLine(@$" ||  Amount Invested:                                                                                            ||");
-                Console.WriteLine(@" ||   Total Return:                                                                                               ||");
-                Console.WriteLine(@" ||                                                                                                               ||");
-                Console.WriteLine(@$" || {ingametime.day}/{ingametime.month}/{ingametime.year}                                                                   ||");
-                Console.WriteLine(@" ||                                                                                                               ||");
-                Console.WriteLine(@" ||===============================================================================================================||");
-                Console.WriteLine(@" ||===============================================================================================================||");
-                Console.WriteLine(@"     Symbol                   Company                           Price                       Percentage          ");
-                Console.WriteLine(@$"  ==============================================================================================================                                                                             ");
-                Console.WriteLine($@"    ZZZL                 Zhul Shuttle Co.                    {Zhul.stockPrice=stock.PriceGen(Zhul.stockPrice)}                                                        ");
-                Console.WriteLine($@"                                                                                                                      ");
-                Console.WriteLine($@"    EMC                  Epsolon Motor Co.                                                                             ");
-                Console.WriteLine($@"                                                                                                                      ");
-                Console.WriteLine($@"    CCL                  Crude Helium                                                                                                        ");
-                Console.WriteLine($@"                                                                                                                       ");
-                Console.WriteLine($@"    TRKL                 Tablet Retailers                                                              ");
-                Console.WriteLine($@"                                                                              ");
-                Console.WriteLine($@"    VLG                  Valkyrie Intelligence                                                         ");
-                Console.WriteLine(@"                                                                              ");
-                Console.WriteLine(@"                                                                              ");
-                Console.WriteLine(@"                                                                              ");
-                Console.WriteLine(@"                                                                              ");
-                Console.WriteLine(@"                                                                              ");
-                Console.WriteLine(@" ||===============================================================================================================||");
-                Console.WriteLine(@" || GNN [What does the Vurik treaty mean for fuel prices in outer colonies? Experts believe Helium prices will fal||");
-                Console.WriteLine(@" ||===============================================================================================================||");
-                Console.ReadKey();
-                
+                int exit = 0;
+                while (exit == 0)
+               {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(
+                        @" =================================================================================================================");
+                    Console.WriteLine(
+                        @" ||                                               AZGUAN STOCK SYSTEM                                             ||");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(
+                        @" ||===============================================================================================================||");
+                    Console.WriteLine(
+                        @$" ||  Amount Invested:                                                                                            ||");
+                    Console.WriteLine(
+                        @" ||   Total Return:                                                                                               ||");
+                    Console.WriteLine(
+                        @" ||                                                                                                               ||");
+                    Console.WriteLine(
+                        @$" || Galactic Date: {ingametime.day}/{ingametime.month}/{ingametime.year}                                                                   ");
+                    Console.WriteLine(
+                        @" ||                                                                                                               ||");
+                    Console.WriteLine(
+                        @" ||===============================================================================================================||");
+                    Console.WriteLine(
+                        @" ||===============================================================================================================||");
+                    Console.WriteLine(
+                        @"     #      Symbol                                      Company                           Price             Qty                   ");
+                    Console.WriteLine(
+                        @$"  ==============================================================================================================                                                                             ");
+                    Console.WriteLine(
+                        $@"    1       ZZZL                                   Zhul Shuttle Co.                        {Zhul.stockPrice}                {Zhul.qty}                          ");
+                    Console.WriteLine(
+                        $@"                                                                                                                      ");
+                    Console.WriteLine(
+                        $@"    2       EMC                                    Epsolon Motor Co.                       {Epsolon.stockPrice}            {Epsolon.qty}                                    ");
+                    Console.WriteLine(
+                        $@"                                                                                                                      ");
+                    Console.WriteLine(
+                        $@"    3       CCL                                     Crude Helium                           {CrudeHelium.stockPrice}              {CrudeHelium.qty}                                                                 ");
+                    Console.WriteLine(
+                        $@"                                                                                                                       ");
+                    Console.WriteLine(
+                        $@"    4       TRKL                                   Tablet Retailers                        {TabletRetailers.stockPrice}               {TabletRetailers.qty}                                  ");
+                    Console.WriteLine(
+                        $@"                                                                                                                       ");
+                    Console.WriteLine(
+                        $@"    5       VLG                                    Valkyrie Intelligence                   {Valkyrie.stockPrice}              {Valkyrie.qty}                    ");
+                    Console.WriteLine(
+                        @"                                                                              ");
+                    Console.WriteLine( 
+                        @"                                                                              ");
+                    Console.WriteLine(
+                        @"                                                                              ");
+                    Console.WriteLine(
+                        @"                                                                              ");
+                    Console.WriteLine(
+                        @"                                                                              ");
+                    Console.WriteLine(
+                        @" ||===============================================================================================================||");
+                    Console.WriteLine(
+                        @" || GNN [What does the Vurik treaty mean for fuel prices in outer colonies? Experts believe Helium prices will fal||");
+                    Console.WriteLine(
+                        @" ||===============================================================================================================||");
+                    
+                    Console.WriteLine(
+                        "Welcome to the AZGUAN STOCK SYSTEM run by the Federation Financial Department (FFD). Stock prices are recalculated every Galactic Day. \n" +
+                        "Please select one of the following options:\n\n" +
+                        "1 - Buy \n\n" +
+                        "2 - Sell \n\n" +
+                        "99 - Exit");
+                    string tempvalue1 = Console.ReadLine();
+                    double.TryParse(tempvalue1, out tryparse);
+                    double choice = tryparse;
+                    switch (choice)
+                    {
+                        case 1:
+                            Console.WriteLine(stock.StockChoice());
+                            string temp = Console.ReadLine();
+                            double.TryParse(temp, out tryparse);
+                            double item = tryparse;
+                            if (item == null)
+                            {
+                                Console.WriteLine("You did not select anything");
+                                break;
+                            }
+                            Console.Write("\n\nHow many?:");
+                            string tempvalue2 = Console.ReadLine();
+                            double.TryParse(tempvalue2, out tryparse);
+                            double amount = tryparse;
+                            if (amount == null)
+                            {
+                                Console.WriteLine("You did not select anything");
+                                break;
+                            }
+                            if (menu.PurchasePrice(ItemTranslation(item), amount) >
+                                Zell.Credits) //sees if you have money to buy more items
+                            {
+                                Console.WriteLine(menu.NotEnoughCredits());
+                                Console.ReadLine();
+
+                            }
+
+                            switch (item)
+                            {
+                                case 1:
+                                    Zhul.qty += amount;
+                                    break;
+                                case 2:
+                                    Epsolon.qty += amount;
+                                    break;
+                                case 3:
+                                    CrudeHelium.qty += amount;
+                                    break;
+                                case 4:
+                                    TabletRetailers.qty += amount;
+                                    break;
+                                case 5:
+                                    Valkyrie.qty += amount;
+                                    break;
+                                case 99:
+                                    break;
+
+                            }
+
+                            Zell.Credits -= (amount * item);
+                            Console.WriteLine(
+                                $"\n\nSale total is : ${menu.PurchasePrice(ItemTranslation(item), amount):0}");
+                            break;
+                        case 2:
+                            Console.WriteLine("\n\nWhat would you like to sell?:");
+                            string tempvalue3 = Console.ReadLine();
+                            double.TryParse(tempvalue3, out tryparse);
+                            double item2 = tryparse;
+                            if (item2 == null)
+                            {
+                                Console.WriteLine("You did not select anything");
+                                break;
+                            }
+                            if (ItemTranslation(item2) == 0)
+                            {
+                                Console.WriteLine(menu.NotEnoughItems());
+                                Console.ReadKey();
+                                break;
+                            }
+                            Console.Write("\n\nHow many?:");
+                            string tempvalue21 = Console.ReadLine();
+                            double.TryParse(tempvalue21, out tryparse);
+                            double amount1 = tryparse;
+                            if (amount1 == null)
+                            {
+                                Console.WriteLine("You did not select anything");
+                                break;
+                            }
+                            if (Zell.ItemTranslation(item2) - amount1 < 0)
+                            {
+                                Console.WriteLine(menu.NotEnoughItems());
+                                Console.ReadKey();
+                                break;
+                            }
+                            switch (item2)
+                            {
+                                case 1:
+                                    Zhul.qty -= amount1;
+                                    break;
+                                case 2:
+                                    Epsolon.qty -= amount1;
+                                    break;
+                                case 3:
+                                    CrudeHelium.qty -= amount1;
+                                    break;
+                                case 4:
+                                    TabletRetailers.qty -= amount1;
+                                    break;
+                                case 5:
+                                    Valkyrie.qty -= amount1;
+                                    break;
+                                case 99:
+                                    break;
+
+                            }
+
+                            Zell.Credits += (amount1 * item2);
+                            Console.WriteLine(
+                                $"\n\nSale total is : ${menu.PurchasePrice(ItemTranslation(item2), amount1):0}");
+                            Console.ReadKey();
+                            break;
+                        case 99:
+                            break;
+                    }
+                }
             }
 
+            void StockGen()
+            {
+                Zhul.stockPrice = stock.PriceGen(Zhul.stockPrice);
+                Epsolon.stockPrice = stock.PriceGen(Epsolon.stockPrice);
+                CrudeHelium.stockPrice = stock.PriceGen(CrudeHelium.stockPrice);
+                TabletRetailers.stockPrice = stock.PriceGen(TabletRetailers.stockPrice);
+                Valkyrie.stockPrice = stock.PriceGen(Valkyrie.stockPrice);
 
-           
-
-
-
+            }
+        double ItemTranslation(double input)
+        {
+            if (input == 1)
+            { return Zhul.stockPrice; }
+            if (input == 2)
+            { return Epsolon.stockPrice; }
+            if (input == 3)
+            { return CrudeHelium.stockPrice; }
+            if (input == 4)
+            { return TabletRetailers.stockPrice; }
+            if (input == 5)
+            { return Valkyrie.stockPrice; }
+            //if (input == 6)
+            //{ return Lead.Price; }
+            //if (input == 7)
+            //{ return Aether.Price; }
+            //if (input == 8)
+            //{ return Food.Price; }
+            //if (input == 9)
+            //{ return Neutronium.Price; }
+            //if (input == 10)
+            //{ return Helium3.Price; }
+            //if (input == 11)
+            //{ return DarkMatter.Price; }
+            return input;
+            if (input == 12)
+            { return 7000; }
+            return input;
         }
+
+
+
+
+
+    }
         static void ShowSimplePercentage()
         {
             for (int i = 0; i <= 100; i++)

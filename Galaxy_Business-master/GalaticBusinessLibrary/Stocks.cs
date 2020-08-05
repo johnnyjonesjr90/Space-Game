@@ -7,17 +7,68 @@ namespace SpaceMerchantLibrary
     public class Stocks
     {
         //Natotis Companies
-
+        public string StockChoice()
+        {
+            string stock = "What would you like to buy?";
+            return stock;
+        }
 
         public double PriceGen(double stock)
         {
+            double newprice = 50;
             Random stockprice = new Random();
-            int ss = stockprice.Next(0, 50);
-
-            if (ss > 45)
+            #region //Normal Stocks
+            int ss = stockprice.Next(0, 100);
+            if (ss > 95)
             {
-                stockFallHighHigh(stock); 
+                newprice=stockraiseHighHigh(stock);
             }
+            if (ss <= 91 && ss >= 95)
+            {
+                newprice = stockraiseMid(stock);
+            }
+            if (ss <= 81 && ss >= 90)
+            {
+                newprice = stockraiseHigh(stock);
+            }
+            if (ss <= 71 && ss >= 80)
+            {
+                newprice = stockraiseMidMid(stock);
+            }
+            if (ss <= 61 && ss >= 70)
+            {
+                newprice = stockraiseMid(stock);
+            }
+            if (ss <= 51 && ss >= 60)
+            {
+                newprice = stockraiseLow(stock);
+            }
+            if (ss >= 45&&ss >=50 )
+            {
+                newprice = stockFallHighHigh(stock); 
+            }
+            if (ss <=44&& ss >= 40)
+            {
+                newprice = stockFallHighMid(stock);
+            }
+            if (ss <= 39 && ss >= 30)
+            {
+                newprice = stockFallHigh(stock);
+            }
+            if (ss <= 29 && ss >= 20)
+            {
+                newprice = stockFallMidMid(stock);
+            }
+            if (ss <= 19 && ss >= 10)
+            {
+                newprice = stockFallMid(stock);
+            }
+            if (ss <= 9 && ss >= 0)
+            {
+                newprice = stockFallLow(stock);
+            }
+#endregion
+            return newprice;
         }
 
         public double stockFallLow(double price)

@@ -16,6 +16,7 @@ namespace SpaceMerchantLibrary
         }
         //3 is not opened,2 is in progress  1 is mission success, 0 is mission failed, 4 Declined
         public int Mission001success = 3;
+        
         #region //ESCORT MISSION 001
         public string Escort001advertisement()
         {
@@ -85,9 +86,28 @@ namespace SpaceMerchantLibrary
         }
         #endregion
 
-        #region //
+        #region //DELIVERY MISSION 002
 
-        
+        public int Mission002food = 0;
+            public int Mission002success = 3;
+        public string Delivery002advertisement()
+        {
+            string advert = "8000 Credits--[ 'Need 100 Food for homeless Vurik on Otov' ]--- Expires 1/5/2457";
+            return advert;
+        }
+        public string Delivery002InProgress()
+        {
+            string advert = "8000 Credits--[ 'Need 100 Food' ] In progress...Expires 1/5/2457";
+            return advert;
+        }
+        public string Delivery002()
+        {
+            string escort = "\n\nHello, theres a lot of Vuriks on Otov that could use your help. Would you be willing to deliver 100 food to the shelter on that planet?\n\n" +
+                            "1 - Accept\n\n" +
+                            "2 - Deny";
+            return escort;
+        }
+
 
         #endregion
     }
