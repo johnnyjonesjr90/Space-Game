@@ -48,85 +48,85 @@ namespace GalaxyBusiness
             menu.planetChoice = 6;
             double tryparse;
 
-//            #region //Game Start
+            #region //Game Start
 
 
-//            Console.WriteLine(@"
-//                    ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
-//                    ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
-//                    ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
-//                         ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
-//                    ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
+            Console.WriteLine(@"
+                    ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
+                    ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
+                    ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
+                         ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
+                    ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
                                                                                                                   
-//");
-//            Console.WriteLine("\n\n\n\n\n\n\n Press Enter...");
-//            var audioPlayer = new BasicAudio.AudioPlayer();
-//            audioPlayer.Filename = @"C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\outer-space-warning.wav";
-//            audioPlayer.Play();
-//            Console.ReadKey();
-//            Console.Clear();
-//            menu.StoryStart();
-//            foreach (var character in menu.StoryStart())
-//            {
-//                Console.Write(character);
-//                Thread.Sleep(10);
-//            }
-//            Console.ReadKey();
-//            int exit01 = 0;
-//            while (exit01 == 0)
-//            {
-//                Console.Clear();
-//                Console.WriteLine(menu.ShipSelection());
-//                string tempship = Console.ReadLine();
-//                double.TryParse(tempship, out tryparse);
-//                double shipselect = tryparse;
-//                if (shipselect == 1)
-//                {
-//                    Zell.TotalCargo = 50;
-//                    Zell.Fuel = 300;
-//                    Zell.Hull = 200;
-//                    Zell.Speed = 500;
-//                    Zell.Credits = 2000;
-//                    Console.Clear();
-//                    Console.WriteLine(
-//                        $"You purchased the Xaenides Cruiser : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-//                        $"\n\n\n\n Press Enter...");
-//                    Console.ReadKey();
-//                    exit01 = 1;
-//                }
+");
+            Console.WriteLine("\n\n\n\n\n\n\n Press Enter...");
+            //var audioPlayer = new BasicAudio.AudioPlayer();
+            //audioPlayer.Filename = @"C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\outer-space-warning.wav";
+            //audioPlayer.Play();
+            Console.ReadKey();
+            Console.Clear();
+            menu.StoryStart();
+            foreach (var character in menu.StoryStart())
+            {
+                Console.Write(character);
+                Thread.Sleep(10);
+            }
+            Console.ReadKey();
+            int exit01 = 0;
+            while (exit01 == 0)
+            {
+                Console.Clear();
+                Console.WriteLine(menu.ShipSelection());
+                string tempship = Console.ReadLine();
+                double.TryParse(tempship, out tryparse);
+                double shipselect = tryparse;
+                if (shipselect == 1)
+                {
+                    Zell.TotalCargo = 50;
+                    Zell.Fuel = 300;
+                    Zell.Hull = 200;
+                    Zell.Speed = 500;
+                    Zell.Credits = 2000;
+                    Console.Clear();
+                    Console.WriteLine(
+                        $"You purchased the Xaenides Cruiser : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+                        $"\n\n\n\n Press Enter...");
+                    Console.ReadKey();
+                    exit01 = 1;
+                }
 
-//                if (shipselect == 2)
-//                {
-//                    Zell.TotalCargo = 350;
-//                    Zell.Fuel = 50;
-//                    Zell.Hull = 300;
-//                    Zell.Speed = 100;
-//                    Zell.Credits = 5000;
-//                    Console.Clear();
-//                    Console.WriteLine(
-//                        $"You purchased the Natotis Hauler : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-//                        $"\n\n\n\n Press Enter...");
-//                    Console.ReadKey();
-//                    exit01 = 1;
-//                }
+                if (shipselect == 2)
+                {
+                    Zell.TotalCargo = 350;
+                    Zell.Fuel = 50;
+                    Zell.Hull = 300;
+                    Zell.Speed = 100;
+                    Zell.Credits = 5000;
+                    Console.Clear();
+                    Console.WriteLine(
+                        $"You purchased the Natotis Hauler : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+                        $"\n\n\n\n Press Enter...");
+                    Console.ReadKey();
+                    exit01 = 1;
+                }
 
-//                if (shipselect == 3)
-//                {
-//                    Zell.TotalCargo = 100;
-//                    Zell.Fuel = 100;
-//                    Zell.Hull = 200;
-//                    Zell.Speed = 300;
-//                    Zell.Credits = 8000;
-//                    Console.Clear();
-//                    Console.WriteLine(
-//                        $"You decided to keep your ship: \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-//                        $"\n\n\n\n Press Enter...");
-//                    Console.ReadKey();
-//                    exit01 = 1;
-//                }
-//            }
+                if (shipselect == 3)
+                {
+                    Zell.TotalCargo = 100;
+                    Zell.Fuel = 100;
+                    Zell.Hull = 200;
+                    Zell.Speed = 300;
+                    Zell.Credits = 8000;
+                    Console.Clear();
+                    Console.WriteLine(
+                        $"You decided to keep your ship: \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+                        $"\n\n\n\n Press Enter...");
+                    Console.ReadKey();
+                    exit01 = 1;
+                }
+            }
 
-//            #endregion
+            #endregion
 
             double fuelchecker = 0;
             double exitt = 0;

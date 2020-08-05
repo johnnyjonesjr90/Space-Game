@@ -13,7 +13,7 @@ namespace SpaceMerchantLibrary
 
         public int Battlechance(int chance)
         {
-            chance = 87;
+            
             if (chance >= 85)
             {
                 chance = 4;

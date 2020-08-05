@@ -1,0 +1,8 @@
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\bin\Release\netcoreapp3.1\win-x86\SpaceMerchantLibrary.deps.json
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\bin\Release\netcoreapp3.1\win-x86\SpaceMerchantLibrary.dll
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\bin\Release\netcoreapp3.1\win-x86\SpaceMerchantLibrary.pdb
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Release\netcoreapp3.1\win-x86\SpaceMerchantLibrary.AssemblyInfoInputs.cache
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Release\netcoreapp3.1\win-x86\SpaceMerchantLibrary.AssemblyInfo.cs
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Release\netcoreapp3.1\win-x86\SpaceMerchantLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Release\netcoreapp3.1\win-x86\SpaceMerchantLibrary.dll
+C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaticBusinessLibrary\obj\Release\netcoreapp3.1\win-x86\SpaceMerchantLibrary.pdb
