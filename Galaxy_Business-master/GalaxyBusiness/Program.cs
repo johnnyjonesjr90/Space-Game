@@ -2609,7 +2609,7 @@ namespace GalaxyBusiness
                                                 Console.ReadKey();
                                                 #endregion
                                                 break;
-                                            case 3:
+                                            case 99:
                                                 marketexit1 = 1;
                                                 break;
                                         }

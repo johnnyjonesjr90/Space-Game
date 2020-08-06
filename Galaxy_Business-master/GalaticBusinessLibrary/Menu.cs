@@ -14,7 +14,6 @@ namespace GalaticBusinessLibrary
         public double planetChoice { get; set; }
 
 
-        
 
         public string StoryStart()
         {
