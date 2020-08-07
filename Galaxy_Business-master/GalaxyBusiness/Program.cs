@@ -48,85 +48,88 @@ namespace GalaxyBusiness
             menu.planetChoice = 6;
             double tryparse;
 
-            #region //Game Start
+//            #region //Game Start
 
 
-            Console.WriteLine(@"
-                    ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
-                    ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
-                    ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
-                         ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
-                    ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
+//            Console.WriteLine(@"
+//                    ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
+//                    ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
+//                    ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
+//                         ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
+//                    ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
                                                                                                                   
-");
-            Console.WriteLine("\n\n\n\n\n\n\n Press Enter...");
-            //var audioPlayer = new BasicAudio.AudioPlayer();
-            //audioPlayer.Filename = @"C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\outer-space-warning.wav";
-            //audioPlayer.Play();
-            Console.ReadKey();
-            Console.Clear();
-            menu.StoryStart();
-            foreach (var character in menu.StoryStart())
-            {
-                Console.Write(character);
-                Thread.Sleep(10);
-            }
-            Console.ReadKey();
-            int exit01 = 0;
-            while (exit01 == 0)
-            {
-                Console.Clear();
-                Console.WriteLine(menu.ShipSelection());
-                string tempship = Console.ReadLine();
-                double.TryParse(tempship, out tryparse);
-                double shipselect = tryparse;
-                if (shipselect == 1)
-                {
-                    Zell.TotalCargo = 50;
-                    Zell.Fuel = 300;
-                    Zell.Hull = 200;
-                    Zell.Speed = 500;
-                    Zell.Credits = 2000;
-                    Console.Clear();
-                    Console.WriteLine(
-                        $"You purchased the Xaenides Cruiser : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-                        $"\n\n\n\n Press Enter...");
-                    Console.ReadKey();
-                    exit01 = 1;
-                }
+//");
+//            Console.WriteLine("\n\n\n\n\n\n\n Press Enter...");
+//            //var audioPlayer = new BasicAudio.AudioPlayer();
+//            //audioPlayer.Filename = @"C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\outer-space-warning.wav";
+//            //audioPlayer.Play();
+//            Console.ReadKey();
+//            Console.Clear();
+//            menu.StoryStart();
+//            foreach (var character in menu.StoryStart())
+//            {
+//                Console.Write(character);
+//                Thread.Sleep(10);
+//            }
+//            Console.ReadKey();
+//            int exit01 = 0;
+//            while (exit01 == 0)
+//            {
+//                Console.Clear();
+//                Console.WriteLine(menu.ShipSelection());
+//                string tempship = Console.ReadLine();
+//                double.TryParse(tempship, out tryparse);
+//                double shipselect = tryparse;
+//                if (shipselect == 1)
+//                {
+//                    Zell.TotalCargo = 50;
+//                    Zell.Fuel = 300;
+//                    Zell.Hull = 200;
+//                    Zell.Attack = 400;
+//                    Zell.Speed = 500;
+//                    Zell.Credits = 2000;
+//                    Console.Clear();
+//                    Console.WriteLine(
+//                        $"You purchased the Xaenides Cruiser : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+//                        $"\n\n\n\n Press Enter...");
+//                    Console.ReadKey();
+//                    exit01 = 1;
+//                }
 
-                if (shipselect == 2)
-                {
-                    Zell.TotalCargo = 350;
-                    Zell.Fuel = 50;
-                    Zell.Hull = 300;
-                    Zell.Speed = 100;
-                    Zell.Credits = 5000;
-                    Console.Clear();
-                    Console.WriteLine(
-                        $"You purchased the Natotis Hauler : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-                        $"\n\n\n\n Press Enter...");
-                    Console.ReadKey();
-                    exit01 = 1;
-                }
+//                if (shipselect == 2)
+//                {
+//                    Zell.TotalCargo = 350;
+//                    Zell.Fuel = 50;
+//                    Zell.Hull = 300;
+//                    Zell.Attack = 200;
+//                    Zell.Speed = 100;
+//                    Zell.Credits = 5000;
+//                    Console.Clear();
+//                    Console.WriteLine(
+//                        $"You purchased the Natotis Hauler : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+//                        $"\n\n\n\n Press Enter...");
+//                    Console.ReadKey();
+//                    exit01 = 1;
+//                }
 
-                if (shipselect == 3)
-                {
-                    Zell.TotalCargo = 100;
-                    Zell.Fuel = 100;
-                    Zell.Hull = 200;
-                    Zell.Speed = 300;
-                    Zell.Credits = 8000;
-                    Console.Clear();
-                    Console.WriteLine(
-                        $"You decided to keep your ship: \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-                        $"\n\n\n\n Press Enter...");
-                    Console.ReadKey();
-                    exit01 = 1;
-                }
-            }
+//                if (shipselect == 3)
+//                {
+//                    Zell.TotalCargo = 100;
+//                    Zell.Fuel = 100;
+//                    Zell.Hull = 200;
+//                    Zell.Attack = 300;
+//                    Zell.Speed = 300;
+//                    Zell.Credits = 8000;
+//                    Console.Clear();
+//                    Console.WriteLine(
+//                        $"You decided to keep your ship: \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+//                        $"\n\n\n\n Press Enter...");
+//                    Console.ReadKey();
+//                    exit01 = 1;
+//                }
+//            }
 
-            #endregion
+//            #endregion
 
             double fuelchecker = 0;
             double exitt = 0;
@@ -206,11 +209,11 @@ namespace GalaxyBusiness
                     }
                     Console.Clear();
                 }
-                ingametime.time(menu.planetChoice);
-                Console.ForegroundColor = ConsoleColor.White;
+               Console.ForegroundColor = ConsoleColor.White;
                 switch (menu.planetChoice)
                 {
                     case 1://Natotis 
+                        ingametime.time(menu.planetChoice);
                         Zell.Fuel -= 30;
                         int exit1 = 0;
                         natotis.ItemCalculation();
@@ -254,6 +257,7 @@ namespace GalaxyBusiness
                                     Zell.Thorium = 0;
                                     Zell.WaterIce = 0;
                                     menu.planetChoice = 6;
+                                    ingametime.month += 3;
                                     break;
                                 }
                             }
@@ -277,6 +281,7 @@ namespace GalaxyBusiness
                                     Zell.Thorium = 0;
                                     Zell.WaterIce = 0;
                                     menu.planetChoice = 6;
+                                    ingametime.month += 3;
                                     break;
                                 }
                             }
@@ -332,6 +337,7 @@ namespace GalaxyBusiness
                                     Zell.Thorium = 0;
                                     Zell.WaterIce = 0;
                                     menu.planetChoice = 6;
+                                    ingametime.month += 3;
                                     break;
                                 }
                             }
@@ -355,6 +361,7 @@ namespace GalaxyBusiness
                                     Zell.Thorium = 0;
                                     Zell.WaterIce = 0;
                                     menu.planetChoice = 6;
+                                    ingametime.month += 3;
                                     break;
                                 }
                             }
@@ -401,7 +408,7 @@ namespace GalaxyBusiness
                                 
                                 if (Zell.Attack < smuggler.Hull)
                                 {
-                                    Zell.Credits = Zell.Credits - (Zell.Credits * 20);
+                                    Zell.Credits = Zell.Credits - (Zell.Credits * .20);
                                 }
                                 
                             }
@@ -889,6 +896,18 @@ namespace GalaxyBusiness
                                                 Console.WriteLine(
                                                     "The Makiwi Cantina is a small bar the plays host to many world travellers");
                                                 Console.ReadKey();
+                                                if (Zell.Weapons > 0)
+                                                {
+                                                    Console.WriteLine("You walk in and have a few drinks, after a while you hear rumbles that there is an arms dealer \n" +
+                                                                      "sitting at the table across the bar. You think about the stock of weapons you have on your ship.\n" +
+                                                                      "You walk over and make conversation and let it 'slip' that you have Federation weapons. He seems\n" +
+                                                                      "interested and you head back to your ship. After inspecting the contents, he offers to pay 600 for\n" +
+                                                                      "each.");
+                                                    Console.ReadKey();
+                                                    Zell.Credits = Zell.Weapons * 600;
+                                                    Zell.Weapons = 0;
+
+                                                }//Sell weapons
                                                 Console.WriteLine(
                                                     "The Cantina will host more illegal missions unlike the normal mission board.");
                                                 Console.ReadKey();
@@ -918,7 +937,20 @@ namespace GalaxyBusiness
                                             Console.WriteLine(natotisMissions.Escort001Ends(natotisMissions.Mission001success));
                                             Console.ReadKey();
                                             Console.Clear();
-
+                                            if (natotisMissions.Mission001success == 1)
+                                            {
+                                                Zell.Credits += 4000;
+                                            }
+                                        }
+                                        if (natotisMissions.Mission002success == 1 || natotisMissions.Mission002success == 0)
+                                        {
+                                            Console.WriteLine(natotisMissions.Delivery002Ends(natotisMissions.Mission002success));
+                                            Console.ReadKey();
+                                            Console.Clear();
+                                            if (natotisMissions.Mission002success == 1)
+                                            {
+                                                Zell.Credits += 8000;
+                                            }
                                         }
 
                                         #endregion
@@ -960,20 +992,20 @@ namespace GalaxyBusiness
                                         if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
                                             natotisMissions.Mission001success ==2)
                                         {
-                                            Console.WriteLine($"   #1 -  {natotisMissions.Escort001InProgress()}");
+                                            Console.WriteLine($"#1 -  {natotisMissions.Escort001InProgress()}");
                                         }
 
                                         Console.WriteLine(
                                             @$" ||                                                                                     ||");
-                                        if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        if (ingametime.month <= 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
                                             natotisMissions.Mission002success == 3)
                                         {
                                             Console.WriteLine($"#2 -  {natotisMissions.Delivery002advertisement()}");
                                         }
-                                        if (ingametime.month == 5 && ingametime.day <= 1 && ingametime.year == 2457 &&
+                                        if (ingametime.month <= 5 && ingametime.day <= 31 && ingametime.year == 2457 &&
                                             natotisMissions.Mission002success == 2)
                                         {
-                                            Console.WriteLine($"   #2 -  {natotisMissions.Delivery002InProgress()}");
+                                            Console.WriteLine($"#2 -  {natotisMissions.Delivery002InProgress()}");
                                         }
                                         Console.WriteLine(
                                             @" ||                                                                                     ||");
@@ -1038,15 +1070,15 @@ namespace GalaxyBusiness
                                         }
                                         if (natotisMissions.Mission002success == 3)
                                         {
-                                            if (mission == 1)
+                                            if (mission == 2)
                                             {
                                                 Console.Clear();
-                                                Console.WriteLine(natotisMissions.Escort001());
+                                                Console.WriteLine(natotisMissions.Delivery002());
                                                 string tempvalu1 = Console.ReadLine();
                                                 Console.Clear();
                                                 double.TryParse(tempvalu1, out tryparse);
                                                 double mission2 = tryparse;
-                                                Console.WriteLine(natotisMissions.Escort001A(mission2));
+                                                Console.WriteLine(natotisMissions.Delivery002A(mission2));
                                                 Console.ReadKey();
                                                 if (mission2 == 2)
                                                 {
@@ -1166,6 +1198,7 @@ namespace GalaxyBusiness
                         }
                         break;
                     case 2://Otov
+                        ingametime.time(menu.planetChoice);
                         Zell.Fuel -= 15;
                         int exit2 = 0;
                         otov.ItemCalculation();
@@ -1355,7 +1388,7 @@ namespace GalaxyBusiness
 
                                 if (Zell.Attack < smuggler.Hull)
                                 {
-                                    Zell.Credits = Zell.Credits - (Zell.Credits * 20);
+                                    Zell.Credits = Zell.Credits - (Zell.Credits * .20);
                                 }
 
                             }
@@ -1816,6 +1849,14 @@ namespace GalaxyBusiness
                                                     "Natotis is the Federatrions political stronghold in the area. This makes the Natotis Senate\n" +
                                                     "one of the most inportant locations in this system cluster.");
                                                 Console.ReadKey();
+                                                if (natotisMissions.Mission002success == 2)
+                                                {
+                                                    natotisMissions.Mission002food += Zell.Food;
+                                                    Zell.Food = 0;
+                                                    natotisMissions.Delivery002DropOff();
+                                                    Console.ReadKey();
+                                                }
+                                               
                                                 Console.WriteLine(
                                                     "This will have some of the 'story missions' and possibly where you can become and envoy.");
                                                 Console.ReadKey();
@@ -2080,6 +2121,7 @@ namespace GalaxyBusiness
                         }
                         break;
                     case 3://Gelara
+                        ingametime.time(menu.planetChoice);
                         Zell.Fuel -= 10;
                         int exit3 = 0;
                         gelara.ItemCalculation();
@@ -2269,7 +2311,7 @@ namespace GalaxyBusiness
 
                                 if (Zell.Attack < smuggler.Hull)
                                 {
-                                    Zell.Credits = Zell.Credits - (Zell.Credits * 20);
+                                    Zell.Credits = Zell.Credits - (Zell.Credits * .20);
                                 }
 
                             }
@@ -2931,6 +2973,7 @@ namespace GalaxyBusiness
                         }
                         break;
                     case 4://Larvis
+                        ingametime.time(menu.planetChoice);
                         Zell.Fuel -= 15;
                         int exit4 = 0;
                         larvis.ItemCalculation();
@@ -3120,7 +3163,7 @@ namespace GalaxyBusiness
 
                                 if (Zell.Attack < smuggler.Hull)
                                 {
-                                    Zell.Credits = Zell.Credits - (Zell.Credits * 20);
+                                    Zell.Credits = Zell.Credits - (Zell.Credits * .20);
                                 }
 
                             }
@@ -3813,6 +3856,7 @@ namespace GalaxyBusiness
                         }
                         break;
                     case 5://Aoclite
+                        ingametime.time(menu.planetChoice);
                         Zell.Fuel -= 25;
                         int exit5 = 0;
                         aoclite.ItemCalculation();
@@ -4002,7 +4046,7 @@ namespace GalaxyBusiness
 
                                 if (Zell.Attack < smuggler.Hull)
                                 {
-                                    Zell.Credits = Zell.Credits - (Zell.Credits * 20);
+                                    Zell.Credits = Zell.Credits - (Zell.Credits * .20);
                                 }
 
                             }
@@ -4063,7 +4107,11 @@ namespace GalaxyBusiness
                         {
                             #region  //Planet welcome dialog
 
-
+                            if (natotisMissions.Mission001success == 2)
+                            {
+                                Console.WriteLine(natotisMissions.Excort001DropOff());
+                                Console.ReadKey();
+                            }
                             Console.Clear();
                             Console.WriteLine(@" █████   ██████   ██████ ██      ██ ████████ ███████ 
 ██   ██ ██    ██ ██      ██      ██    ██    ██      
@@ -4649,6 +4697,7 @@ namespace GalaxyBusiness
                         }
                         break;
                     case 6://XaenidesStation
+                        ingametime.time(menu.planetChoice);
                         Zell.Fuel -= 05;
                         if (Zell.Credits <300){Console.WriteLine(xaenidesStation.NotEnoughCredits());
                             Console.ReadKey();
@@ -4843,7 +4892,7 @@ namespace GalaxyBusiness
 
                                 if (Zell.Attack < smuggler.Hull)
                                 {
-                                    Zell.Credits = Zell.Credits - (Zell.Credits * 20);
+                                    Zell.Credits = Zell.Credits - (Zell.Credits * .20);
                                 }
 
                             }
@@ -5585,8 +5634,7 @@ namespace GalaxyBusiness
                         @"                                                                              ");
                     Console.WriteLine(
                         @" ||===============================================================================================================||");
-                    Console.WriteLine(
-                        @" || GNN [What does the Vurik treaty mean for fuel prices in outer colonies? Experts believe Helium prices will fal||");
+                 ;Console.WriteLine($@" ||{News()}||");   
                     Console.WriteLine(
                         @" ||===============================================================================================================||");
                     
@@ -5728,6 +5776,50 @@ namespace GalaxyBusiness
                 Console.ForegroundColor = ConsoleColor.White;
             }
 
+            string News()
+            {
+                string news;
+                Random rand = new Random();
+                int gg = rand.Next(0, 100);
+                if (gg > 90)
+                {
+                    news = "GNN [What does the Vurik treaty mean for fuel prices in outer colonies? Experts believe Helium prices will fal.";
+                    return news;
+                }
+                if (gg <= 89 && gg>=80 )
+                {
+                    news = "GNN [Many Vuirk believe that the Federation should allow them to vote, many Fed Citizens are hesitant about thi"; return news;
+                }
+                if (gg <= 79 && gg >= 70)
+                {
+                    news = "GNN [Severe storms on Larvis raise concerns about carbon outputs.."; return news;
+                }
+                if (gg <= 69 && gg >= 60)
+                {
+                    news = "GNN [Small child falls into black hole, parents say they think he might be in their bookcase."; return news;
+                }
+                if (gg <= 59 && gg >= 50)
+                {
+                    news = "GNN [Several children found. The discoverers say they they understand why they were missing. Children destroy h"; return news;
+                }
+                if (gg <= 49 && gg >= 40)
+                {
+                    news = "GNN [Are your ships safe to fly? many consumers are curious after several spontanious explosions during takoff."; return news;
+                }
+                if (gg <= 39 && gg >= 30)
+                {
+                    news = "GNN [Epsolon Motor CEO accused of Laundering credits via the baby formula comany black whole fiber. GNN was una"; return news;
+                }
+                if (gg <= 29 && gg >= 20)
+                {
+                    news = "GNN [Xaenides Station going to be for sale? Many wealthy investors are waiting for the news to break. Standby f"; return news;
+                }
+                else 
+                {
+                    news = "GNN [Federation elections will be done electronic due to COVID-57 breakout on Natotis."; return news;
+                }
+                
+            }
             void StockGen()
             {
                 Zhul.stockPrice = stock.PriceGen(Zhul.stockPrice);

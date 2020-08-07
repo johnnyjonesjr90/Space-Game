@@ -405,7 +405,7 @@ namespace SpaceMerchantLibrary
 
                 if (input == 3)
                 {
-                    ShipEngages = "\n\n\n<<<Item # 1 - Weapons   Price: 500   Weight: 0>>>\n\n Choose Item and Press Enter";
+                    ShipEngages = "\n\n\nHe shows you a crate full of military grade weapons <<500 credits>>...\n\n Buy them? \n\n 1 - Yes\n\n 2 - No";
                     return ShipEngages;
                 }
                 
@@ -611,8 +611,10 @@ namespace SpaceMerchantLibrary
 
                 if (input == 3)
                 {
+                    
                     Weapons = 1;
-                    ShipEngages = "\n\n\nYou purchased Black market cargo, dont get caught with it on your ship...";
+                    ShipEngages = "\n\n\nYou look around and realize that his crew looks like they dont want to hear no... you purchase \n" +
+                                  "them thinking you need to turn these around fast so you dont get arrested.";
 
                     return ShipEngages;
                 }

@@ -88,7 +88,7 @@ namespace SpaceMerchantLibrary
 
         #region //DELIVERY MISSION 002
 
-        public int Mission002food = 0;
+        public double Mission002food = 0;
             public int Mission002success = 3;
         public string Delivery002advertisement()
         {
@@ -108,6 +108,49 @@ namespace SpaceMerchantLibrary
             return escort;
         }
 
+        public string Delivery002A(double response)
+        {
+            string answer = "";
+            if (response == 1)//Yes
+            {
+                answer = "\n\nThank you very much! There are so many of them in need because of the Federation and their willingness to let an entire race suffer.";
+                Mission001success = 2;
+                return answer;
+            }
+            if (response == 2)//NO
+            {
+                answer = "\n\nOkay......Well if you wont, hopefully we can figure out a way to help the Vurik.";
+                return answer;
+            }
+             
+            return answer;
+        }
+        public string Delivery002Ends(int result)
+        {
+            string answer2 = "";
+            if (result == 1)//Pass
+            {
+                answer2 = "Mission ['Need 100 Food for homeless Vurik on Otov'] PASSED\n\n.";
+                return answer2;
+            }
+
+            if (result == 2)//Fail
+            {
+                answer2 = "Mission ['Need 100 Food for homeless Vurik on Otov'] FAILED\n\n";
+                return answer2;
+            }
+
+            return answer2;
+        }
+        
+        public string Delivery002DropOff()
+        {
+            
+            string dropoff =
+                $"Thank you. Thank you so much. You are a blessing. This food will allow us to feed many women and children.'  \n\n" +
+                $"{Mission002food} / 100 food";
+            return dropoff;
+        }
 
         #endregion
     }

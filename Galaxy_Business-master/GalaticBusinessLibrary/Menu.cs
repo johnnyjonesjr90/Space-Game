@@ -32,9 +32,9 @@ namespace GalaticBusinessLibrary
         {
             string Shipselect =
                 "\n\nIf you sell your ship you will have 20000 credits and can buy a few different models.\n\n" +
-                "1 - Xaenides Cruiser $18000   Cargo- 50    Fuel - 300   Hull - 200   Speed - 500\n\n" +
-                "2 - Natotis Hauler   $15000   Cargo- 350   Fuel - 50    Hull - 300   Speed - 100\n\n" +
-                "3 - Your Ship        $0       Cargo- 100   Fuel - 100   Hull - 200   Speed - 300\n\n\n\n" +
+                "1 - Xaenides Cruiser $18000   Cargo- 50    Fuel - 300   Hull - 200   Speed - 500  Attack - 400\n\n" +
+                "2 - Natotis Hauler   $15000   Cargo- 350   Fuel - 50    Hull - 300   Speed - 100  Attack - 200 \n\n" +
+                "3 - Your Ship        $0       Cargo- 100   Fuel - 100   Hull - 200   Speed - 300  Attack - 300\n\n\n\n" +
                 "Enter Selection and Press Enter:";
             return Shipselect;
         }
