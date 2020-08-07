@@ -5804,11 +5804,15 @@ namespace GalaxyBusiness
                 }
                 if (gg <= 49 && gg >= 40)
                 {
-                    news = "GNN [Are your ships safe to fly? many consumers are curious after several spontanious explosions during takoff."; return news;
+                    news = "GNN [Are your ships safe to fly? many consumers are curious after several spontanious explosions during takoff."; Epsolon.stockPrice = 100; return news;
+                    
                 }
                 if (gg <= 39 && gg >= 30)
                 {
-                    news = "GNN [Epsolon Motor CEO accused of Laundering credits via the baby formula comany black whole fiber. GNN was una"; return news;
+                    news = "GNN [Epsolon Motor CEO accused of Laundering credits via the baby formula comany black whole fiber. GNN was una"; Epsolon.stockPrice = 4;
+                    ; return news;
+                    
+
                 }
                 if (gg <= 29 && gg >= 20)
                 {
@@ -5816,7 +5820,9 @@ namespace GalaxyBusiness
                 }
                 else 
                 {
-                    news = "GNN [Federation elections will be done electronic due to COVID-57 breakout on Natotis."; return news;
+                    news = "GNN [Federation elections will be done electronic due to COVID-57 breakout on Natotis.";
+                    Zhul.stockPrice = 12; return news;
+
                 }
                 
             }
