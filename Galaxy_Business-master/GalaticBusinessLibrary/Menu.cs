@@ -21,10 +21,10 @@ namespace GalaticBusinessLibrary
             string selection = "" +
                                "\n\nYou worked for a small merchant for years, being his co-pilot and accompanying him on his trips\n" +
                                "throughout the galaxy. He treated you well and encouraged you to seek out your own adventure. But\n" +
-                               "after years of travel he decides to close up his business.. He gives you his ship and moves to the \n" +
+                               "after years of travel he decides to close up his business.. He gives you his ship and moves to the \n\n" +
                                "Xaenides System. You have some money saved from your years of work and you start your business. After\n" +
                                "paying for your merchants license you have some money left. You can sell your ship and put some money\n" +
-                               "towards a new one or you can start out with your ship....\n\n\n\n Press Enter...";
+                               "towards a new one or you can start out with your ship.... \n\nPress Enter...";
             return selection;
         }
 

@@ -49,25 +49,24 @@ namespace GalaxyBusiness
             double tryparse;
 
 //            #region //Game Start
-
-
-//            Console.WriteLine(@"
-//                    ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
-//                    ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
-//                    ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
-//                         ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
-//                    ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
-                                                                                                                  
+//             Console.WriteLine(@"
+//                                                                ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
+//                                                                ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
+//                                                                ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
+//                                                                     ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
+//                                                                ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
+                                                                                                                                          
 //");
-//            Console.WriteLine("\n\n\n\n\n\n\n Press Enter...");
+//             Console.WriteLine("Press Enter..."); Console.ReadKey();
 //            //var audioPlayer = new BasicAudio.AudioPlayer();
 //            //audioPlayer.Filename = @"C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\outer-space-warning.wav";
 //            //audioPlayer.Play();
-//            Console.ReadKey();
+
 //            Console.Clear();
-//            menu.StoryStart();
-//            foreach (var character in menu.StoryStart())
+//             menu.StoryStart();
+//             foreach (var character in menu.StoryStart())
 //            {
+
 //                Console.Write(character);
 //                Thread.Sleep(10);
 //            }
@@ -997,12 +996,12 @@ namespace GalaxyBusiness
 
                                         Console.WriteLine(
                                             @$" ||                                                                                     ||");
-                                        if (ingametime.month <= 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        if (ingametime.month <= 5 &&  ingametime.year == 2457 &&
                                             natotisMissions.Mission002success == 3)
                                         {
                                             Console.WriteLine($"#2 -  {natotisMissions.Delivery002advertisement()}");
                                         }
-                                        if (ingametime.month <= 5 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        if (ingametime.month <= 5 && ingametime.year == 2457 &&
                                             natotisMissions.Mission002success == 2)
                                         {
                                             Console.WriteLine($"#2 -  {natotisMissions.Delivery002InProgress()}");
@@ -1132,7 +1131,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||=============================================================================||");
-                                    Console.WriteLine(@" || Galaxy News Network [Smugglers are being noted in very high quantities in t.||");
+                                    Console.WriteLine($@" ||{News()}||");
                                     Console.WriteLine(@" ||=============================================================================||");
                                     #endregion
                                     
@@ -1840,6 +1839,18 @@ namespace GalaxyBusiness
                                                 Console.WriteLine(
                                                     "The Makiwi Cantina is a small bar the plays host to many world travellers");
                                                 Console.ReadKey();
+                                                if (Zell.Weapons > 0)
+                                                {
+                                                    Console.WriteLine("You walk in and have a few drinks, after a while you hear rumbles that there is an arms dealer \n" +
+                                                                      "sitting at the table across the bar. You think about the stock of weapons you have on your ship.\n" +
+                                                                      "You walk over and make conversation and let it 'slip' that you have Federation weapons. He seems\n" +
+                                                                      "interested and you head back to your ship. After inspecting the contents, he offers to pay 600 for\n" +
+                                                                      "each.");
+                                                    Console.ReadKey();
+                                                    Zell.Credits = Zell.Weapons * 600;
+                                                    Zell.Weapons = 0;
+
+                                                }//Sell weapons
                                                 Console.WriteLine(
                                                     "The Cantina will host more illegal missions unlike the normal mission board.");
                                                 Console.ReadKey();
@@ -2060,7 +2071,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||=============================================================================||");
-                                    Console.WriteLine(@" || Galaxy News Network [Vurik presence growing in surrounding galaxies some wo.||");
+                                    Console.WriteLine($@" ||{News()}||");
                                     Console.WriteLine(@" ||=============================================================================||");
                                     #endregion
                                     string tempvaluea = Console.ReadLine();
@@ -2413,6 +2424,7 @@ namespace GalaxyBusiness
                                     int marketexit1 = 0;
                                     while (marketexit1 == 0)
                                     {
+                                        Console.Clear();
                                         Console.WriteLine();
                                         Console.WriteLine(
                                             @"███    ███  █████  ██████  ██   ██ ███████ ████████ ██████  ██       █████   ██████ ███████ 
@@ -2699,8 +2711,20 @@ namespace GalaxyBusiness
                                                 break;
                                             case 3: //Cantina
                                                 Console.WriteLine(
-                                                    "The Makiwi Cantina is a small bar the plays host to many world travellers");
+                                                    "The Carlaine Cantina is a small bar the plays host to many world travellers");
                                                 Console.ReadKey();
+                                                if (Zell.Weapons > 0)
+                                                {
+                                                    Console.WriteLine("You walk in and have a few drinks, after a while you hear rumbles that there is an arms dealer \n" +
+                                                                      "sitting at the table across the bar. You think about the stock of weapons you have on your ship.\n" +
+                                                                      "You walk over and make conversation and let it 'slip' that you have Federation weapons. He seems\n" +
+                                                                      "interested and you head back to your ship. After inspecting the contents, he offers to pay 600 for\n" +
+                                                                      "each.");
+                                                    Console.ReadKey();
+                                                    Zell.Credits = Zell.Weapons * 600;
+                                                    Zell.Weapons = 0;
+
+                                                }//Sell weapons
                                                 Console.WriteLine(
                                                     "The Cantina will host more illegal missions unlike the normal mission board.");
                                                 Console.ReadKey();
@@ -2912,7 +2936,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||=============================================================================||");
-                                    Console.WriteLine(@" || Galaxy News Network [Federation scouts have located the Laserous Gang Leade.||");
+                                    Console.WriteLine($@" ||{News()}||");
                                     Console.WriteLine(@" ||=============================================================================||");
                                     #endregion
                                     string tempvalueb = Console.ReadLine();
@@ -3585,6 +3609,18 @@ namespace GalaxyBusiness
                                                 Console.WriteLine(
                                                     "The Makiwi Cantina is a small bar the plays host to many world travellers");
                                                 Console.ReadKey();
+                                                if (Zell.Weapons > 0)
+                                                {
+                                                    Console.WriteLine("You walk in and have a few drinks, after a while you hear rumbles that there is an arms dealer \n" +
+                                                                      "sitting at the table across the bar. You think about the stock of weapons you have on your ship.\n" +
+                                                                      "You walk over and make conversation and let it 'slip' that you have Federation weapons. He seems\n" +
+                                                                      "interested and you head back to your ship. After inspecting the contents, he offers to pay 600 for\n" +
+                                                                      "each.");
+                                                    Console.ReadKey();
+                                                    Zell.Credits = Zell.Weapons * 600;
+                                                    Zell.Weapons = 0;
+
+                                                }//Sell weapons
                                                 Console.WriteLine(
                                                     "The Cantina will host more illegal missions unlike the normal mission board.");
                                                 Console.ReadKey();
@@ -3795,7 +3831,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||=============================================================================||");
-                                    Console.WriteLine(@" || Galaxy News Network [Local elections have erupted into planet wide riots as.||");
+                                    Console.WriteLine($@" ||{News()}||");
                                     Console.WriteLine(@" ||=============================================================================||");
                                     #endregion
                                     string tempvaluec = Console.ReadLine();
@@ -4426,6 +4462,18 @@ namespace GalaxyBusiness
                                                 Console.WriteLine(
                                                     "The Aoclite Guest Cantina is a small bar the plays host to many world travellers");
                                                 Console.ReadKey();
+                                                if (Zell.Weapons > 0)
+                                                {
+                                                    Console.WriteLine("You walk in and have a few drinks, after a while you hear rumbles that there is an arms dealer \n" +
+                                                                      "sitting at the table across the bar. You think about the stock of weapons you have on your ship.\n" +
+                                                                      "You walk over and make conversation and let it 'slip' that you have Federation weapons. He seems\n" +
+                                                                      "interested and you head back to your ship. After inspecting the contents, he offers to pay 600 for\n" +
+                                                                      "each.");
+                                                    Console.ReadKey();
+                                                    Zell.Credits = Zell.Weapons * 600;
+                                                    Zell.Weapons = 0;
+
+                                                }//Sell weapons
                                                 Console.WriteLine(
                                                     "The Cantina will host more illegal missions unlike the normal mission board.");
                                                 Console.ReadKey();
@@ -4636,7 +4684,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||=============================================================================||");
-                                    Console.WriteLine(@" || Galaxy News Network [New merchant tax coming in 2458.. is your business rea.||");
+                                    Console.WriteLine($@" ||{News()}||");
                                     Console.WriteLine(@" ||=============================================================================||");
                                     #endregion
                                     string tempvalued = Console.ReadLine();
@@ -5266,12 +5314,12 @@ namespace GalaxyBusiness
                                         double zhulChoice = tryparse;
                                         switch (zhulChoice)
                                         {
-                                            case 1: //Warehouse
+                                            case 1: //
                                                 Console.WriteLine(
                                                     "Under Construction");
                                                 Console.ReadKey();
                                                 break;
-                                            case 2: //Technology District
+                                            case 2: //
                                                 Console.WriteLine(
                                                     "Under Construction");
                                                 Console.ReadKey();
@@ -5280,8 +5328,20 @@ namespace GalaxyBusiness
                                                 Console.WriteLine(
                                                     "Under Construction");
                                                 Console.ReadKey();
+                                                if (Zell.Weapons > 0)
+                                                {
+                                                    Console.WriteLine("You walk in and have a few drinks, after a while you hear rumbles that there is an arms dealer \n" +
+                                                                      "sitting at the table across the bar. You think about the stock of weapons you have on your ship.\n" +
+                                                                      "You walk over and make conversation and let it 'slip' that you have Federation weapons. He seems\n" +
+                                                                      "interested and you head back to your ship. After inspecting the contents, he offers to pay 600 for\n" +
+                                                                      "each.");
+                                                    Console.ReadKey();
+                                                    Zell.Credits = Zell.Weapons * 600;
+                                                    Zell.Weapons = 0;
+
+                                                }//Sell weapons
                                                 break;
-                                            case 4: //Senate Building
+                                            case 4: //
                                                 Console.WriteLine(
                                                     "Under Construction");
                                                 Console.ReadKey();
@@ -5485,7 +5545,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||=============================================================================||");
-                                    Console.WriteLine(@" || Galaxy News Network [Volcanoes in space?? Experts think this can be possibl.||");
+                                    Console.WriteLine($@" ||{News()}||");
                                     Console.WriteLine(@" ||=============================================================================||");
                                     #endregion
 
@@ -5576,7 +5636,10 @@ namespace GalaxyBusiness
                         stock.EpsolonReturn(Epsolon.stockPrice, Epsolon.qty),
                         stock.CrudeReturn(CrudeHelium.stockPrice, CrudeHelium.qty),
                         stock.TabletReturn(TabletRetailers.stockPrice, TabletRetailers.qty),
-                        stock.ValkyrieReturn(Valkyrie.stockPrice, Valkyrie.qty))- stock.AmountInvested;
+                        stock.ValkyrieReturn(Valkyrie.stockPrice, Valkyrie.qty));
+                    if (Zhul.qty == 0 && Epsolon.qty == 0 && CrudeHelium.qty == 0 && TabletRetailers.qty == 0 &&
+                        Valkyrie.qty == 0)
+                    { stock.AmountInvested = 0;}
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine(
@@ -5587,9 +5650,9 @@ namespace GalaxyBusiness
                     Console.WriteLine(
                         @" ||===============================================================================================================||");
                     Console.WriteLine(
-                        $@"     Total Invested: {stock.AmountInvested}                                                                          ");
+                        $@"     Total Invested:   {stock.AmountInvested}                                                                                                 ");
                     Console.WriteLine(
-                        $@"     Total Return:  {totalreturn}                                                                                             ");
+                        $@"     Total Return:  {totalreturn:0}      Gain/Loss: {totalreturn-stock.AmountInvested:0}                                                                                            ");
                     Console.WriteLine(
                         $@"     Credits: {Zell.Credits}                                                                                               ");
                     Console.WriteLine(
@@ -5649,7 +5712,7 @@ namespace GalaxyBusiness
                     double choice = tryparse;
                     switch (choice)
                     {
-                        case 1:
+                        case 1://BUY
                             Console.WriteLine();
                             Console.WriteLine(stock.StockChoice());
                             string temp = Console.ReadLine();
@@ -5658,6 +5721,12 @@ namespace GalaxyBusiness
                             if (item == null)
                             {
                                 Console.WriteLine("You did not select anything");
+                                break;
+                            }
+
+                            if (item > 5)
+                            {
+                                Console.WriteLine("That is not a proper symbol");
                                 break;
                             }
                             Console.Write("\n\nHow many?:");
@@ -5698,16 +5767,17 @@ namespace GalaxyBusiness
                                 case 99:
                                     exit = 1;
                                     break;
+                                
 
                             }
 
-                            Zell.Credits -= (amount * item);
+                            Zell.Credits -= (amount * ItemTranslation(item));
                             Console.WriteLine(
                                 $"\n\nSale total is : ${menu.PurchasePrice(ItemTranslation(item), amount):C}");
                             stock.AmountInvested += menu.PurchasePrice(ItemTranslation(item), amount);
                             Console.ReadKey();
                             break;
-                        case 2:
+                        case 2://SELL
                             Console.WriteLine();
                             Console.WriteLine("\n\nWhat would you like to sell?:");
                             string tempvalue3 = Console.ReadLine();
@@ -5718,7 +5788,12 @@ namespace GalaxyBusiness
                                 Console.WriteLine("You did not select anything");
                                 break;
                             }
-                            if (ItemTranslation(item2) == 0)
+                            if (item2 > 5)
+                            {
+                                Console.WriteLine("That is not a proper symbol");
+                                break;
+                            }
+                            if (ItemTranslation(item2) ==0)
                             {
                                 Console.WriteLine(menu.NotEnoughItems());
                                 Console.ReadKey();
@@ -5733,7 +5808,7 @@ namespace GalaxyBusiness
                                 Console.WriteLine("You did not select anything");
                                 break;
                             }
-                            if (Zell.ItemTranslation(item2) - amount1 < 0)
+                            if (QtyTranslation(item2) - amount1 < 0)
                             {
                                 Console.WriteLine(menu.NotEnoughItems());
                                 Console.ReadKey();
@@ -5762,10 +5837,11 @@ namespace GalaxyBusiness
 
                             }
 
-                            Zell.Credits += (amount1 * item2);
+                            Zell.Credits += (amount1 * ItemTranslation(item2));
                             Console.WriteLine(
                                 $"\n\nSale total is : ${menu.PurchasePrice(ItemTranslation(item2), amount1):C}");
                             stock.AmountInvested -= menu.PurchasePrice(ItemTranslation(item2), amount1);
+                            
                             Console.ReadKey();
                             break;
                         case 99:
@@ -5804,12 +5880,12 @@ namespace GalaxyBusiness
                 }
                 if (gg <= 49 && gg >= 40)
                 {
-                    news = "GNN [Are your ships safe to fly? many consumers are curious after several spontanious explosions during takoff."; Epsolon.stockPrice = 100; return news;
+                    news = "GNN [Are your ships safe to fly? many consumers are curious after several spontanious explosions during takoff.";  return news;
                     
                 }
                 if (gg <= 39 && gg >= 30)
                 {
-                    news = "GNN [Epsolon Motor CEO accused of Laundering credits via the baby formula comany black whole fiber. GNN was una"; Epsolon.stockPrice = 4;
+                    news = "GNN [Epsolon Motor CEO accused of Laundering credits via the baby formula comany black whole fiber. GNN was una"; 
                     ; return news;
                     
 
@@ -5821,7 +5897,7 @@ namespace GalaxyBusiness
                 else 
                 {
                     news = "GNN [Federation elections will be done electronic due to COVID-57 breakout on Natotis.";
-                    Zhul.stockPrice = 12; return news;
+                     return news;
 
                 }
                 
@@ -5847,25 +5923,29 @@ namespace GalaxyBusiness
             { return TabletRetailers.stockPrice; }
             if (input == 5)
             { return Valkyrie.stockPrice; }
-            //if (input == 6)
-            //{ return Lead.Price; }
-            //if (input == 7)
-            //{ return Aether.Price; }
-            //if (input == 8)
-            //{ return Food.Price; }
-            //if (input == 9)
-            //{ return Neutronium.Price; }
-            //if (input == 10)
-            //{ return Helium3.Price; }
-            //if (input == 11)
-            //{ return DarkMatter.Price; }
+          
             return input;
-            if (input == 12)
-            { return 7000; }
-            return input;
+           
         }
 
+        double QtyTranslation(double input2)
+        {
+            if (input2 == 1)
+            { return Zhul.qty; }
+            if (input2 == 2)
+            { return Epsolon.qty; }
+            if (input2 == 3)
+            { return CrudeHelium.qty; }
+            if (input2 == 4)
+            { return TabletRetailers.qty; }
+            if (input2 == 5)
+            { return Valkyrie.qty; }
+                else return 0;
 
+            //else{  double none= 0;
+            //    return none;
+            //}
+        }
 
 
 
