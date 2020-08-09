@@ -9,7 +9,7 @@ namespace GalaticBusinessLibrary
     public class Aoclite : Planet
     {
         public Item Dilithium = new Item() {  };
-        public Item Beryllium = new Item(10, 500) { BaseQty = 1000, BasePrice = 150 };
+        public Item Beryllium = new Item(10, 500) { BaseQty = 1000, BasePrice = 100 };
         public Item Carbon = new Item(50, 350) { BasePrice = 250, };
         public Item Neutronium = new Item(0, 5) { BaseQty = 3, BasePrice = 3000 };
         public Item Thorium = new Item(50, 250) { BasePrice = 250 };

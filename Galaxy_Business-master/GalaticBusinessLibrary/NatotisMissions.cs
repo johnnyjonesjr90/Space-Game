@@ -116,7 +116,8 @@ namespace SpaceMerchantLibrary
             string answer = "";
             if (response == 1)//Yes
             {
-                answer = "\n\nThank you very much! There are so many of them in need because of the Federation and their willingness to let an entire race suffer.";
+                answer = "\n\nThank you very much! There are so many of them in need because of the Federation and their willingness to let an entire race suffer, please take\n" +
+                         "the food to the drive located in the Senate building.";
                 Mission001success = 2;
                 return answer;
             }
@@ -198,8 +199,9 @@ namespace SpaceMerchantLibrary
                             "what feels like an hour. They remove the cover and you are sitting in a very nice room with several guards and a older man sitting\n" +
                             "across from you. 'Son, I need you to listen, I know that you just struck a deal with that very large half-alien in the bar. Let me \n" +
                             "help you with this situation, you will not deliver that package to the rebels, because as a ,currently, law abiding Federation citizen\n" +
-                            "you have loyalties with us. Instead you will deliver this package to them instead. Some of us remember the great war, they killed millions\n" +
-                            "of us, never forget that. Is some change worth it? if so, we will give you some for your loyalty'";
+                            "you have loyalties with us. Instead you will deliver this package to them instead its clothes and food but not the guns thats in yours\n" +
+                            ".Some of us remember the great war, they killed millions of us, never forget that. Is some money worth it forgetting that? if so, we will \n" +
+                            "give you 10,000 for your loyalty.'";
             return escort;
         }
         public string Supply001BB()

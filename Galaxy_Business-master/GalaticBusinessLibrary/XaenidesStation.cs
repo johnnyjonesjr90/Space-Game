@@ -8,7 +8,7 @@ namespace GalaticBusinessLibrary
 {
     public class XaenidesStation : Planet
     {
-        public Item Dilithium = new Item() {Qty = 3000, Price = 200, BaseQty=10000, Weight = 1};
+        public Item Dilithium = new Item(3000, 20000) {Price = 200, BaseQty=10000, Weight = 1};
         public Item Beryllium = new Item(10, 1000) { BaseQty = 900, BasePrice = 150, Weight = 5};
         public Item Carbon = new Item(50 ,250) { BasePrice= 250, Weight = 2};
         public Item Neutronium = new Item(0, 5) {BaseQty = 3, BasePrice=2500, Weight = 25};
@@ -23,7 +23,7 @@ namespace GalaticBusinessLibrary
         {
             string desc =
                 "Xaenides Station is a very large hub that fuels most of the ships going between planets in the\n" +
-                "system. As a penalty for its conveinience they charge to enter the station, and their fuel prices\n" +
+                "system. As a penalty for its convenience they charge to enter the station, and their fuel prices\n" +
                 "are the highest in the system.";
             return desc;
         }

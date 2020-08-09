@@ -29,12 +29,13 @@ namespace GalaxyBusiness
             Larvis larvis = new Larvis();
             XaenidesStation xaenidesStation = new XaenidesStation();
             Otov otov = new Otov(); 
-            Enemy smuggler = new Enemy { Attack = 100, Speed = 2, Hull = 500 }; 
+            Enemy smuggler = new Enemy { Attack = 100, Speed = 300, Hull = 500 }; 
             Enemy pirate = new Enemy { Attack = 200, Speed = 3, Hull = 800 }; 
             Enemy Federationscout = new Enemy { Attack = 400, Speed = 4, Hull = 400 };
             Battle battle = new Battle();
             InGameTime ingametime = new InGameTime {day= 12, month = 3, year = 2457};
             NatotisMissions natotisMissions = new NatotisMissions();
+            OtovMissions otovMissions = new OtovMissions();
             //Companyies
             Stocks stock = new Stocks();
             Companies Zhul = new Companies { companyName = "Zhul Shuttle Co.", stockPrice = 75, symbol = "ZZZL", percentChange = 0};
@@ -53,87 +54,89 @@ namespace GalaxyBusiness
             int otovstatus = 3;
             int larvisstatus = 3;
             int xaendisstatus = 4;
-//            #region //Game Start
-//             Console.WriteLine(@"
-//                                                                ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
-//                                                                ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
-//                                                                ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
-//                                                                     ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
-//                                                                ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
+
+
+            #region //Game Start
+            Console.WriteLine(@"
+                                                                ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
+                                                                ██      ██   ██ ██   ██ ██      ██          ████  ████ ██      ██   ██ ██      ██   ██ ██   ██ ████   ██    ██    
+                                                                ███████ ██████  ███████ ██      █████       ██ ████ ██ █████   ██████  ██      ███████ ███████ ██ ██  ██    ██    
+                                                                     ██ ██      ██   ██ ██      ██          ██  ██  ██ ██      ██   ██ ██      ██   ██ ██   ██ ██  ██ ██    ██    
+                                                                ███████ ██      ██   ██  ██████ ███████     ██      ██ ███████ ██   ██  ██████ ██   ██ ██   ██ ██   ████    ██                                                                                                              
                                                                                                                                           
-//");
-//             Console.WriteLine("Press Enter..."); Console.ReadKey();
-//            //var audioPlayer = new BasicAudio.AudioPlayer();
-//            //audioPlayer.Filename = @"C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\outer-space-warning.wav";
-//            //audioPlayer.Play();
+");
+            Console.WriteLine("Press Enter..."); Console.ReadKey();
+            //var audioPlayer = new BasicAudio.AudioPlayer();
+            //audioPlayer.Filename = @"C:\Users\Johnny\Documents\GitHub\Space-Game\Galaxy_Business-master\GalaxyBusiness\outer-space-warning.wav";
+            //audioPlayer.Play();
 
-//            Console.Clear();
-//             menu.StoryStart();
-//             foreach (var character in menu.StoryStart())
-//            {
+            Console.Clear();
+            menu.StoryStart();
+            foreach (var character in menu.StoryStart())
+            {
 
-//                Console.Write(character);
-//                Thread.Sleep(10);
-//            }
-//            Console.ReadKey();
-//            int exit01 = 0;
-//            while (exit01 == 0)
-//            {
-//                Console.Clear();
-//                Console.WriteLine(menu.ShipSelection());
-//                string tempship = Console.ReadLine();
-//                double.TryParse(tempship, out tryparse);
-//                double shipselect = tryparse;
-//                if (shipselect == 1)
-//                {
-//                    Zell.TotalCargo = 50;
-//                    Zell.Fuel = 300;
-//                    Zell.Hull = 200;
-//                    Zell.Attack = 400;
-//                    Zell.Speed = 500;
-//                    Zell.Credits = 2000;
-//                    Console.Clear();
-//                    Console.WriteLine(
-//                        $"You purchased the Xaenides Cruiser : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-//                        $"\n\n\n\n Press Enter...");
-//                    Console.ReadKey();
-//                    exit01 = 1;
-//                }
+                Console.Write(character);
+                Thread.Sleep(10);
+            }
+            Console.ReadKey();
+            int exit01 = 0;
+            while (exit01 == 0)
+            {
+                Console.Clear();
+                Console.WriteLine(menu.ShipSelection());
+                string tempship = Console.ReadLine();
+                double.TryParse(tempship, out tryparse);
+                double shipselect = tryparse;
+                if (shipselect == 1)
+                {
+                    Zell.TotalCargo = 50;
+                    Zell.Fuel = 300;
+                    Zell.Hull = 200;
+                    Zell.Attack = 400;
+                    Zell.Speed = 500;
+                    Zell.Credits = 2000;
+                    Console.Clear();
+                    Console.WriteLine(
+                        $"You purchased the Xaenides Cruiser : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+                        $"\n\n\n\n Press Enter...");
+                    Console.ReadKey();
+                    exit01 = 1;
+                }
 
-//                if (shipselect == 2)
-//                {
-//                    Zell.TotalCargo = 350;
-//                    Zell.Fuel = 50;
-//                    Zell.Hull = 300;
-//                    Zell.Attack = 200;
-//                    Zell.Speed = 100;
-//                    Zell.Credits = 5000;
-//                    Console.Clear();
-//                    Console.WriteLine(
-//                        $"You purchased the Natotis Hauler : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-//                        $"\n\n\n\n Press Enter...");
-//                    Console.ReadKey();
-//                    exit01 = 1;
-//                }
+                if (shipselect == 2)
+                {
+                    Zell.TotalCargo = 350;
+                    Zell.Fuel = 50;
+                    Zell.Hull = 300;
+                    Zell.Attack = 200;
+                    Zell.Speed = 100;
+                    Zell.Credits = 5000;
+                    Console.Clear();
+                    Console.WriteLine(
+                        $"You purchased the Natotis Hauler : \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+                        $"\n\n\n\n Press Enter...");
+                    Console.ReadKey();
+                    exit01 = 1;
+                }
 
-//                if (shipselect == 3)
-//                {
-//                    Zell.TotalCargo = 100;
-//                    Zell.Fuel = 100;
-//                    Zell.Hull = 200;
-//                    Zell.Attack = 300;
-//                    Zell.Speed = 300;
-//                    Zell.Credits = 8000;
-//                    Console.Clear();
-//                    Console.WriteLine(
-//                        $"You decided to keep your ship: \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
-//                        $"\n\n\n\n Press Enter...");
-//                    Console.ReadKey();
-//                    exit01 = 1;
-//                }
-//            }
+                if (shipselect == 3)
+                {
+                    Zell.TotalCargo = 100;
+                    Zell.Fuel = 100;
+                    Zell.Hull = 200;
+                    Zell.Attack = 300;
+                    Zell.Speed = 300;
+                    Zell.Credits = 8000;
+                    Console.Clear();
+                    Console.WriteLine(
+                        $"You decided to keep your ship: \n\n\nFuel: {Zell.Fuel} \n\nCargo:{Zell.TotalCargo} \n\nHull: {Zell.Hull} \n\nSpeed: {Zell.Speed} \n\nCredits: {Zell.Credits}" +
+                        $"\n\n\n\n Press Enter...");
+                    Console.ReadKey();
+                    exit01 = 1;
+                }
+            }
 
-//            #endregion
+            #endregion
 
             double fuelchecker = 0;
             double exitt = 0;
@@ -412,7 +415,7 @@ namespace GalaxyBusiness
                                 
                                 if (Zell.Attack < smuggler.Hull)
                                 {
-                                    Zell.Credits = Zell.Credits - (Zell.Credits * .20);
+                                    Zell.Credits -= 500;
                                 }
                                 
                             }
@@ -904,20 +907,48 @@ namespace GalaxyBusiness
                                                 switch (cantinaChoice)
                                                 {
                                                     case 1:
-                                                        Console.Clear();
-                                                        Console.WriteLine(natotisMissions.Supply001Mission());
-                                                        Console.ReadKey();
-                                                        Console.Clear();
-                                                        Console.WriteLine(natotisMissions.Supply001AA());
-                                                        Console.ReadKey();
-                                                        Console.Clear();
-                                                        Console.WriteLine(natotisMissions.Supply001BB());
-                                                        Console.ReadKey();
-                                                        Console.Clear();
+                                                        if (natotisMissions.Supply001Success == 3)
+                                                        {
+                                                            Console.Clear();
+                                                            Console.WriteLine(natotisMissions.Supply001Mission());
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                            Console.WriteLine(natotisMissions.Supply001AA());
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                            Console.WriteLine(natotisMissions.Supply001BB());
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                        }
+                                                        else if (natotisMissions.Supply001Success == 1)
+                                                        {
+                                                            Console.WriteLine("You look for him but are told he is in the back room");
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                        }
+                                                        else if (natotisMissions.Supply001Success == 0)
+                                                        {
+                                                            Console.WriteLine("You see the half-Vurik, he is drunk in the corner, he sees you and yells 'hurry my people need you!' \n" +
+                                                                              "afterwards he shuffles to the bar and orders another beer. ");
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                        }
+                                                        else if (natotisMissions.Supply001Success == 0)
+                                                        {
+                                                            Console.WriteLine("After the killing of the resistance member, there arent any resistance fighters around this cantina anymore...");
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                        }
                                                         break;
                                                     case 2:
+                                                        Console.WriteLine("You look for him but are told he is in the back room");
+                                                        Console.ReadKey();
+                                                        Console.Clear();
                                                         break;
                                                     case 3:
+                                                        Console.WriteLine("There are guards at the door to the back room, apparently there is a meeting going on...");
+                                                        Console.ReadKey();
+                                                        Console.Clear();
                                                         break;
                                                     case 99:
                                                         break;
@@ -974,6 +1005,16 @@ namespace GalaxyBusiness
                                         }
 
                                         #endregion
+                                        Console.WriteLine();
+                                        Console.WriteLine(@"███    ███ ██ ███████ ███████ ██  ██████  ███    ██     ██████   ██████   █████  ██████  ██████  
+████  ████ ██ ██      ██      ██ ██    ██ ████   ██     ██   ██ ██    ██ ██   ██ ██   ██ ██   ██ 
+██ ████ ██ ██ ███████ ███████ ██ ██    ██ ██ ██  ██     ██████  ██    ██ ███████ ██████  ██   ██ 
+██  ██  ██ ██      ██      ██ ██ ██    ██ ██  ██ ██     ██   ██ ██    ██ ██   ██ ██   ██ ██   ██ 
+██      ██ ██ ███████ ███████ ██  ██████  ██   ████     ██████   ██████  ██   ██ ██   ██ ██████ ");
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
                                         Console.WriteLine(natotisMissions.MissionBoard());
                                         Console.ReadKey();
 
@@ -1152,7 +1193,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||=============================================================================||");
-                                    Console.WriteLine($@" ||{News()}||");
+                                    Console.WriteLine($@" ||                                                                            ||");
                                     Console.WriteLine(@" ||=============================================================================||");
                                     #endregion
                                     
@@ -1229,6 +1270,40 @@ namespace GalaxyBusiness
                                 case 6:
                                     StockMarket();
                                     break;
+                                case 7:
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    Console.WriteLine(@" =================================================================================");
+                                    Console.WriteLine(@" ||                          Galactic News Network                              ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" ||  Current System: Natotis                                                   ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@$" || {ingametime.month}/{ingametime.day}/{ingametime.year}                                                                   ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine(@$" ||                                                                              ");
+                                    Console.WriteLine(@$" ||                                                                              ");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine($@" ||    {News()}                                                                         ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||                                                                             ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    Console.WriteLine($@" ||                                                                            ||");
+                                    Console.WriteLine(@" ||=============================================================================||");
+                                    break;
+
                             }
 
 
@@ -1489,7 +1564,7 @@ namespace GalaxyBusiness
 
                             Console.Clear();                            
                             
-                            Console.WriteLine(@" ██████  ████████  ██████  ██    ██ 
+                            Console.Write(@" ██████  ████████  ██████  ██    ██ 
 ██    ██    ██    ██    ██ ██    ██ 
 ██    ██    ██    ██    ██ ██    ██ 
 ██    ██    ██    ██    ██  ██  ██  
@@ -1839,6 +1914,8 @@ namespace GalaxyBusiness
                                         switch (XChoice)
                                         {
                                             case 1: //Warehouse
+
+                                                #region Warehouse
                                                 Console.Clear();
                                                 Console.WriteLine();
                                                 Console.WriteLine(@"██   ██ ██  ██████   ██████  ██     ██     ██     ██  █████  ██████  ███████ ██   ██  ██████  ██    ██ ███████ ███████     ██████  ██ ███████ ████████ ██████  ██  ██████ ████████ 
@@ -1933,6 +2010,7 @@ namespace GalaxyBusiness
                                                     }
                                                     
                                                 }
+                                                #endregion
                                                 break;
                                             case 2: //Technology District
                                                 Console.Clear();
@@ -2002,7 +2080,17 @@ namespace GalaxyBusiness
                                         //}
 
                                         #endregion
-                                        //Console.WriteLine(natotisMissions.MissionBoard());  //Add board desc
+                                        Console.WriteLine();
+                                        Console.WriteLine(@"███    ███ ██ ███████ ███████ ██  ██████  ███    ██     ██████   ██████   █████  ██████  ██████  
+████  ████ ██ ██      ██      ██ ██    ██ ████   ██     ██   ██ ██    ██ ██   ██ ██   ██ ██   ██ 
+██ ████ ██ ██ ███████ ███████ ██ ██    ██ ██ ██  ██     ██████  ██    ██ ███████ ██████  ██   ██ 
+██  ██  ██ ██      ██      ██ ██ ██    ██ ██  ██ ██     ██   ██ ██    ██ ██   ██ ██   ██ ██   ██ 
+██      ██ ██ ███████ ███████ ██  ██████  ██   ████     ██████   ██████  ██   ██ ██   ██ ██████ ");
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+                                        Console.WriteLine(otovMissions.MissionBoard());  
                                         Console.ReadKey();
 
                                         #region Mission graphic
@@ -2181,7 +2269,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||=============================================================================||");
-                                    Console.WriteLine($@" ||{News()}||");
+                                    Console.WriteLine($@" ||                                                                            ||");
                                     Console.WriteLine(@" ||=============================================================================||");
                                     #endregion
                                     string tempvaluea = Console.ReadLine();
@@ -2515,7 +2603,7 @@ namespace GalaxyBusiness
                         {
                             #region  //Planet welcome dialog
                             Console.Clear();
-                            Console.WriteLine(@" ██████  ███████ ██       █████  ██████   █████  
+                            Console.Write(@" ██████  ███████ ██       █████  ██████   █████  
 ██       ██      ██      ██   ██ ██   ██ ██   ██ 
 ██   ███ █████   ██      ███████ ██████  ███████ 
 ██    ██ ██      ██      ██   ██ ██   ██ ██   ██ 
@@ -2872,6 +2960,16 @@ namespace GalaxyBusiness
                                         //}
 
                                         #endregion
+                                        Console.WriteLine();
+                                        Console.WriteLine(@"███    ███ ██ ███████ ███████ ██  ██████  ███    ██     ██████   ██████   █████  ██████  ██████  
+████  ████ ██ ██      ██      ██ ██    ██ ████   ██     ██   ██ ██    ██ ██   ██ ██   ██ ██   ██ 
+██ ████ ██ ██ ███████ ███████ ██ ██    ██ ██ ██  ██     ██████  ██    ██ ███████ ██████  ██   ██ 
+██  ██  ██ ██      ██      ██ ██ ██    ██ ██  ██ ██     ██   ██ ██    ██ ██   ██ ██   ██ ██   ██ 
+██      ██ ██ ███████ ███████ ██  ██████  ██   ████     ██████   ██████  ██   ██ ██   ██ ██████ ");
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
                                         //Console.WriteLine(natotisMissions.MissionBoard());  //Add board desc
                                         Console.ReadKey();
 
@@ -3038,7 +3136,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||  0 - Return to Gelara                                                       ||");
                                     Console.WriteLine(@" ||  2 - Natotis (30 Feul)                                                      ||");
-                                    Console.WriteLine(@" ||  3 - Larvis (15 Feul)                                                       ||");
+                                    Console.WriteLine(@" ||  4 - Larvis (15 Feul)                                                       ||");
                                     Console.WriteLine(@" ||  6 - XaenidesStation (5 Feul)                                               ||");
                                     Console.WriteLine(@" ||  99 = Exit Game                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
@@ -3050,7 +3148,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||=============================================================================||");
-                                    Console.WriteLine($@" ||{News()}||");
+                                    Console.WriteLine($@" ||                                                                            ||");
                                     Console.WriteLine(@" ||=============================================================================||");
                                     #endregion
                                     string tempvalueb = Console.ReadLine();
@@ -3073,12 +3171,12 @@ namespace GalaxyBusiness
                                             Console.ForegroundColor = ConsoleColor.White;
                                             break;
                                         }
-                                        if (menu.planetChoice == 2 || menu.planetChoice == 3 || menu.planetChoice == 6 ||
+                                        if (menu.planetChoice == 2 || menu.planetChoice == 4 || menu.planetChoice == 6 ||
                                             menu.planetChoice == 99)
                                         {
                                             exitt = 1;
                                         }
-                                        else if (menu.planetChoice != 2 || menu.planetChoice != 3 || menu.planetChoice != 6 ||
+                                        else if (menu.planetChoice != 2 || menu.planetChoice != 4 || menu.planetChoice != 6 ||
                                                  menu.planetChoice != 99)
                                         {
                                             menu.planetChoice = 1;
@@ -3384,11 +3482,11 @@ namespace GalaxyBusiness
                         {
                             #region  //Planet welcome dialog
                             Console.Clear();
-                            Console.WriteLine(@"██       █████  ██████  ██    ██ ██ ███████ 
+                            Console.Write(@"██       █████  ██████  ██    ██ ██ ███████ 
 ██      ██   ██ ██   ██ ██    ██ ██ ██      
 ██      ███████ ██████  ██    ██ ██ ███████ 
 ██      ██   ██ ██   ██  ██  ██  ██      ██ 
-███████ ██   ██ ██   ██   ████   ██ ███████ "); Console.WriteLine($"\t{menu.Occupation(3)}");
+███████ ██   ██ ██   ██   ████   ██ ███████ "); Console.Write($"\t{menu.Occupation(3)}");
                             Console.WriteLine();
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -3760,6 +3858,16 @@ namespace GalaxyBusiness
                                         //}
 
                                         #endregion
+                                        Console.WriteLine();
+                                        Console.WriteLine(@"███    ███ ██ ███████ ███████ ██  ██████  ███    ██     ██████   ██████   █████  ██████  ██████  
+████  ████ ██ ██      ██      ██ ██    ██ ████   ██     ██   ██ ██    ██ ██   ██ ██   ██ ██   ██ 
+██ ████ ██ ██ ███████ ███████ ██ ██    ██ ██ ██  ██     ██████  ██    ██ ███████ ██████  ██   ██ 
+██  ██  ██ ██      ██      ██ ██ ██    ██ ██  ██ ██     ██   ██ ██    ██ ██   ██ ██   ██ ██   ██ 
+██      ██ ██ ███████ ███████ ██  ██████  ██   ████     ██████   ██████  ██   ██ ██   ██ ██████ ");
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
                                         //Console.WriteLine(natotisMissions.MissionBoard());  //Add board desc
                                         Console.ReadKey();
 
@@ -3926,7 +4034,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||  0 - Return to Larvis                                                       ||");
                                     Console.WriteLine(@" ||  2 - Otov (15 Feul)                                                              ||");
-                                    Console.WriteLine(@" ||  3 - Aoclite (25 Feul)                                                           ||");
+                                    Console.WriteLine(@" ||  5 - Aoclite (25 Feul)                                                           ||");
                                     Console.WriteLine(@" ||  6 - XaenidesStation (5 Feul)                                                    ||");
                                     Console.WriteLine(@" ||  99 = Exit Game                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
@@ -3938,7 +4046,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||=============================================================================||");
-                                    Console.WriteLine($@" ||{News()}||");
+                                    Console.WriteLine($@" ||                                                                            ||");
                                     Console.WriteLine(@" ||=============================================================================||");
                                     #endregion
                                     string tempvaluec = Console.ReadLine();
@@ -3961,12 +4069,12 @@ namespace GalaxyBusiness
                                             Console.ForegroundColor = ConsoleColor.White;
                                             break;
                                         }
-                                        if (menu.planetChoice == 2 || menu.planetChoice == 3 || menu.planetChoice == 6 ||
+                                        if (menu.planetChoice == 2 || menu.planetChoice == 5 || menu.planetChoice == 6 ||
                                             menu.planetChoice == 99)
                                         {
                                             exitt = 1;
                                         }
-                                        else if (menu.planetChoice != 2 || menu.planetChoice != 3 || menu.planetChoice != 6 ||
+                                        else if (menu.planetChoice != 2 || menu.planetChoice != 5 || menu.planetChoice != 6 ||
                                                  menu.planetChoice != 99)
                                         {
                                             menu.planetChoice = 4;
@@ -4278,11 +4386,11 @@ namespace GalaxyBusiness
                                 Console.ReadKey();
                             }
                             Console.Clear();
-                            Console.WriteLine(@" █████   ██████   ██████ ██      ██ ████████ ███████ 
+                            Console.Write(@" █████   ██████   ██████ ██      ██ ████████ ███████ 
 ██   ██ ██    ██ ██      ██      ██    ██    ██      
 ███████ ██    ██ ██      ██      ██    ██    █████   
 ██   ██ ██    ██ ██      ██      ██    ██    ██      
-██   ██  ██████   ██████ ███████ ██    ██    ███████ "); Console.WriteLine($"\t{menu.Occupation(1)}");
+██   ██  ██████   ██████ ███████ ██    ██    ███████ "); Console.Write($"\t{menu.Occupation(1)}");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine(@"          ########*****(((##                              
@@ -4636,6 +4744,16 @@ namespace GalaxyBusiness
                                         //}
 
                                         #endregion
+                                        Console.WriteLine();
+                                        Console.WriteLine(@"███    ███ ██ ███████ ███████ ██  ██████  ███    ██     ██████   ██████   █████  ██████  ██████  
+████  ████ ██ ██      ██      ██ ██    ██ ████   ██     ██   ██ ██    ██ ██   ██ ██   ██ ██   ██ 
+██ ████ ██ ██ ███████ ███████ ██ ██    ██ ██ ██  ██     ██████  ██    ██ ███████ ██████  ██   ██ 
+██  ██  ██ ██      ██      ██ ██ ██    ██ ██  ██ ██     ██   ██ ██    ██ ██   ██ ██   ██ ██   ██ 
+██      ██ ██ ███████ ███████ ██  ██████  ██   ████     ██████   ██████  ██   ██ ██   ██ ██████ ");
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
                                         //Console.WriteLine(natotisMissions.MissionBoard());  //Add board desc
                                         Console.ReadKey();
 
@@ -4814,7 +4932,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||=============================================================================||");
-                                    Console.WriteLine($@" ||{News()}||");
+                                    Console.WriteLine($@" ||                                                                            ||");
                                     Console.WriteLine(@" ||=============================================================================||");
                                     #endregion
                                     string tempvalued = Console.ReadLine();
@@ -5155,7 +5273,7 @@ namespace GalaxyBusiness
 
 
                             Console.Clear();
-                            Console.WriteLine(@"██   ██  █████  ███████ ███    ██ ██ ██████  ███████ ███████     ███████ ████████  █████  ████████ ██  ██████  ███    ██ 
+                            Console.Write(@"██   ██  █████  ███████ ███    ██ ██ ██████  ███████ ███████     ███████ ████████  █████  ████████ ██  ██████  ███    ██ 
  ██ ██  ██   ██ ██      ████   ██ ██ ██   ██ ██      ██          ██         ██    ██   ██    ██    ██ ██    ██ ████   ██ 
   ███   ███████ █████   ██ ██  ██ ██ ██   ██ █████   ███████     ███████    ██    ███████    ██    ██ ██    ██ ██ ██  ██ 
  ██ ██  ██   ██ ██      ██  ██ ██ ██ ██   ██ ██           ██          ██    ██    ██   ██    ██    ██ ██    ██ ██  ██ ██ 
@@ -5488,6 +5606,16 @@ namespace GalaxyBusiness
                                         //}
 
                                         #endregion
+                                        Console.WriteLine();
+                                        Console.WriteLine(@"███    ███ ██ ███████ ███████ ██  ██████  ███    ██     ██████   ██████   █████  ██████  ██████  
+████  ████ ██ ██      ██      ██ ██    ██ ████   ██     ██   ██ ██    ██ ██   ██ ██   ██ ██   ██ 
+██ ████ ██ ██ ███████ ███████ ██ ██    ██ ██ ██  ██     ██████  ██    ██ ███████ ██████  ██   ██ 
+██  ██  ██ ██      ██      ██ ██ ██    ██ ██  ██ ██     ██   ██ ██    ██ ██   ██ ██   ██ ██   ██ 
+██      ██ ██ ███████ ███████ ██  ██████  ██   ████     ██████   ██████  ██   ██ ██   ██ ██████ ");
+                                        Console.WriteLine();
+                                        Console.WriteLine(
+                                            "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
                                         //Console.WriteLine(natotisMissions.MissionBoard());  //Add board desc
                                         Console.ReadKey();
 
@@ -5667,7 +5795,7 @@ namespace GalaxyBusiness
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||                                                                             ||");
                                     Console.WriteLine(@" ||=============================================================================||");
-                                    Console.WriteLine($@" ||{News()}||");
+                                    Console.WriteLine($@" ||                                                                            ||");
                                     Console.WriteLine(@" ||=============================================================================||");
                                     #endregion
 

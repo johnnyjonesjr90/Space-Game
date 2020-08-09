@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Text;
 using GalaticBusinessLibrary;
 
+
 namespace SpaceMerchantLibrary
 {
     public class Battle
@@ -560,12 +561,12 @@ namespace SpaceMerchantLibrary
 
 
                 Random random = new Random();
-                Enemy smuggler = new Enemy { Speed = random.Next(200, 600), Hull = random.Next(100, 300) };
+                Enemy smuggler = new Enemy { Speed = 300, Hull = random.Next(100, 300) };
 
                 if (input == 1)
                 {
 
-                    if (speed > smuggler.Speed)
+                    if (speed >= smuggler.Speed)
                     { ShipEngages = "\n\n\nYou slow down when you reach your destination >>>Im glad this ship has good thrusters..<<<"; }
                     else if (speed < smuggler.Speed)
                     { ShipEngages = "\n\n\nYou try to negotiate but its either your credits or your life...you give them what you can..."; }

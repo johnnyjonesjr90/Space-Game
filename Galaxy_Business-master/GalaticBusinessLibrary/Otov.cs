@@ -10,7 +10,7 @@ namespace GalaticBusinessLibrary
     {
         public Item Dilithium = new Item() { Weight = 1 };
         public Item Beryllium = new Item(10, 1000) { BaseQty = 900, BasePrice = 150, Weight = 5 };
-        public Item Carbon = new Item(50, 250) { BasePrice = 250, Weight = 2 };        
+        public Item Carbon = new Item(50, 250) { BasePrice = 150, Weight = 2 };        
         public Item Thorium = new Item(50, 250) { BasePrice = 250, Weight = 10 };        
         public Item WaterIce = new Item(0, 150) { BasePrice = 500, BaseQty = 75, Weight = 1 };
         public Item Lead = new Item(0, 80) { BasePrice = 500, BaseQty = 60, Weight = 25 };
