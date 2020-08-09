@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Xml.Serialization;
 using System.IO;
+using System.Threading.Channels;
 
 
 namespace GalaticBusinessLibrary
@@ -196,13 +197,230 @@ namespace GalaticBusinessLibrary
             }
 
         }
+        public string XaenidesArt()
+        {
+            string hub = @"                                        
+                                                                                                                                                                                                   
+                                                                                                      ---                                                                                               
+                                                                                                      -c:-                                                                                              
+                                                                                                     -::-                                            -       -`,-                                       
+                                                                                                   `:c,        --                                              -`,,-                                    
+                                                                                   `:::clll,      `oxc-                                                           -,:,-                                 
+                                                                                 ,xXNNXKx:--     -cdo`                                                              -,:,-                               
+                                                                               -oKNKOl:`-        ,oc`-                                                                 `::-                             
+                                                                              :OX0x:-           -co,                                                                     `:,-                           
+                                                                            -dKOxc-            -:dd`                                                                       ,:`                          
+                                                                           :O0xl,-              `oo-                                                                        -::-                        
+                                                                          :OOdc-               -:dc-                                                                          -:,                       
+                                                                        -lOxo:-                `lxl                                                                            -::-                     
+                                                                       -oOdl:-                 -cxc                                                                              ,:-                    
+                                                                      -okoc:-                  `lxo-                                                                              `c-                   
+                                                                     -o0d:,-                  -:okk:                                                                               -:`                  
+                                                                    -lxdl,-                   -cdkOxo,                                                                              -:-                 
+                                                                   -lklc:-                    -codkxkxc-                                                                             -:-                
+                                                                   :xl,:`                     -ldxkdodkd:-                                                                            :c                
+                                                                  ,do,``-                     -lxxkdolodkxc,````-``,,``----``:c,-`---:,-----------                                    -o:               
+                                                                 `okc`--                     --:odxdooooxkkO00xc:coxl:::`----odcc:::cxl``,---:`-``---`:::,-----                        :d-              
+                                                                -lkd:--  ---,::clol:-----````,:lxkxxxxxoddk0ko:---:dkd,---- --------lx,-------`--`-   -::,,:,``--------                -dc              
+                                                               -,odc,`:ldxO00K0Od:,::`-``,-----:cloddddo::oxl::::``l0Kxccc::::````-,O0:-                  --`------`,,`````--           cd-             
+                                                               -:oc:-,xKK0Oxoc,--   `:`-----`:::ldxO0OOkxllxdccoxc`ckxccoo:------``:coxddoc:`-                -  ---`--``-,clc::,-      `x:             
+                                                        -:ld:--`cl:,-`ldc,-          -c,-:cok00KXNX0Okl,``:,-`lodo::odooxKOxdl:,-------`:coO0kdc-                     --`-  -`,,:,-      oo             
+                                                    -:lx0KXk`--,c:,--                 ,doxOXNNNK00Oxdl`---   ----,,,:x00kKNXXNNKkl:`cdc:,--:k0KK0l-                          -``-        cx-            
+                                                  -:xKXXXKk, --`cl,-                 -,:`-,llc,`,:cc:`          --`,ccoxkKXNNNNOO0xxk0xl:``cxk0KK0occ:::,,,,,`````----------`,,,-        ,kl-           
+                                               -lxddk00d:`-  `-`cc`                    ------   ,clc:--------------,c::dxk0KXNk:c:--`::::ok0KKXXX0odOOOOOOOOOOkkkkkxo:clcc:::`--         -kNOl`         
+                                             -:OXK0xdx:    -----cl`                    -`::colc:okxdl::cclo:-`,,,::c::::cdOOOx,-``,:lok0XXXNNNWKo`-,,::cc:clloxdlcc:-                    -xKkdc-        
+                                            `dOk0Oc`--     -   -co:-                   -    -,clloddddddk0xc::cccccllc::dOOdl:--lkkOOO00KXXX0xc-     -`----- ---  ---  --                -xXOo,-        
+                                           -o00Oc:,        -   -:d:-                         --   ---`,:::::cllccccl::,,:`--    --,::colcc:`-                      -----  ------  -     -`kNK0Ol-       
+                                           -:cdo`--       --    :dl`             -`:,-      --    -   -----``-`,,,,`-------- --   ----                                      ----``--   -:dXNXXNN0c-     
+                                     -     --:xOd-       --     `dd:-       --:ldxkkdl::::ldd,  -         -------,`--:cc,:-                                                      -  --`ckXWWWMMWNd-     
+                                            `lk0O:            - -lkd, --`,:cloxxxdollldxOKOl`-     --:`      --`:,`,lxk0xdc-                                                   -,::``cxKNNNNWWWN0:      
+                                             -,ldc-    --  -  -  ,xOdc:cllccloolodlclkKXKl-       -:cdc        -::clodOKKXXc                                                  -oOOxxolxKXXKKXNN0:       
+                                      --       -`:,-   ---       -:kOdc::`---`,,::,lOX0o`         -oxOd-         --`,:lxkxc-                                                --:okO0KOl--:oOXWXd`        
+                                        --         ---------   -  -:k0x:-       ---:c:-            ckkk:           --- --                                              --,:cdk0XNX0O00o-  -`:,          
+                                                 -:l`  ----    -- -,ckKx:      ----                `ldOo-          ---                                          ---`,:codxxOKXXK0KKKKXNk`               
+                                                  `,-          --`::`:xKKo-,:`::-                   -:Ok:             -                        ---``---  --`,:::llcldddxO0KKKXXK0KXKkxo:-               
+                                                               ,l:::`-`cO0xxkdxc-                    -d0d-                                 - -,oolllccccllllc::lddl:okkOKK0KKK0kxdc,--                  
+                                                              -:l,-     ---`,::::,,:::::,,``wwww`,::::cxkcw         wwwwwwwwwwww`,,::::::::::::clc`w  w`codoc:,,:odxkOOOOkdoc,`w                        
+                                                                                  wwwwww`,,,:,::,,:::::::c:::,,,,,,,,,,,,,,:,,,,`,::,,`ww::``w `ld:     w,coddllooooll::`w                              
+                                                                              ww,:w:,www,w,w,wwww,,,,,ww:,w,,,,,,:w,ww,:, wwwwww   w,```w`cc:,`w:ldlw      w:cl::,www                                    
+                                                                               w   :wwww w w w w ww www ww w w w w www:wwwwww,www  www`,,`,::::::::c:w     wwwww                                          
+                                                                                    wwwwww        w          wwwwwwwwww,,,``wwww`,,,:::::::,,,`wwww                                                     
+                                                                                                  ww  wwwwwwwwww``wwwwwwwwwwwwwwwww                                                            - 
+                                                                                                               -                                                             
+                                                                           
+   
 
+";
+            return hub;
+        }
+        public string OtovArt()
+        {
+            string otov = @"             
+                                                               ----`````,`:xXXkc:dkO00Oxdlc::,``--       
+                                                           ------``,,,,,:lxKNKxclxdloooooollolllc:,`--- -
+                                                        --------`,:::::::o0NXOxk00xoodddddddddddooolllc
+                                                     ------`::::,,,,,:::cldO0Okkxdddxxddddxxxkkkkxxddddolc:,`      
+                                                   --------`cddc,`-`:looooxxdxodxxxkxxxxxxkkOOOOOOkkkkkxxdolc:`-  
+                                                 -``----```:dO0kxdocoxxxxddxOkxxkkkOOOOkkkOOOOOOOOOkOOOkxxxddxd:,          
+                                               -,,``--`--:okKXK0kxoloxxxxxdxkkdxkkOO0OOOOOOOO0OOOOOOOOOOOkkkxdOOd:`      
+                                             --,::`---`-`d0OxxOxolclcoddkOxdodxxkkkOOOOO0000000OO0000000000OkkOKKOl,              -,:~}`:-
+                                            --,,`,`--``--,::-,coddkdoxxdkOkxdkkkkOkO0000000OO000000000000OOOOkkk0NKo:,           ::&&#{}8:- 
+                                           --`:,`---------`-`::ldkN0odOkOOkkkOkxk0OO000OOOOO000000000KK00OOkxxxk0K0ko            {0:~&&*%::
+                                         ----,,`,,:,--- -:ol:c::lkXXkxOkkkkkkkkkOOOO00OOkkkOOO0000000KKOOOOkkxxkkkO0Oo            ~:XpPP)}`
+                                        ----`::::::,-----,oc:ll:cxKXkccddxkkkOkkOOOO0OOkkkkOOO00000000OOOkkkkkxxkkk0Kkd:``          ~--`~
+                                        ----`::,`-``------:ccodc:dOxllccdxxxkOOxxO0OO00OkkO00000000000OkkkkkkxxxxkxkOOOx
+                                       -- ---:,----`------::lddl:oxxdxOOOkxOOkxxdxO0OKXK0OOOO000000000OkkkkkxkOOOKKkk0K0x
+                                      --  -------  -------`,:clcooldOO0XNXKXNXKKK0O0K00K0kOOOOOO000000OOOkkOO0XNNWWXO0XK0o
+                                      --  - -- ---   -- ----`:c:cddx0K0k0NNWWWWWWWXK00kxxk00OOOOO0OOO00OO0OOXWWWWWWWXXNWNOc
+                                     --   -    -------------,ll:cxOXNK0kdx0NXK0KXXNNNXOkk0XK0OO0OOOOkkO0KXKkKWNK00NWWWWWWKo
+                                     --      ---------------`cc:lxkOXKOxdooxkdooodOXWN0kkKXOOOkkOkkO0OO0KXX0KKK0kxONWWWNNXd::,
+                                    ---   ---`,--------------:c:::lk00OxlllcloooddxO0kxxxkxxkkkxkOOkkOK0OKXWXKOddkKNWWWXXNkc
+                                    ---    ---,,-------------`,``-:dlllc::ccloooodxxkkxxxkxxkkkkkkkkOOOOKKK0Oxdx0XNNWWNNNNOl                             
+                                    -`-    ----`-- ---------------`,:c::::::clodxddddxxdxxxkkkxxxxxkxxOX0xdxOXKKWWWWWWNNNX0oc         
+                                    -`-       ---- ------------------`,::cc::clodddoooodxkkkxkkxdxdddxkkdddkKXWWWWWWWWNNXX0d:,,
+                                     --       ----  ------------------`,,,:,,,:::clooddxxxxxdddkkxdddddoxdxO0XNWWWWNWNKKKKx
+                                     --       ---   -------------------```,`,,`,::ldodxdoloooooddooddddolloOK0OOkkOOkddOKOc`-`
+                                     ---       ---     -  ---------------------,ldodddxxddlllolodolloodlc::colc:::::::d0Kx #
+                                      --        ---      ----------------``,`- -cdodoolooolc::::llc::lo:::::::::,,::clxOkc`   ,,
+                                      ---        ----   ---------------------- -,ldxdoolc:,``,`,::,,`:c:::::::,``,:::clol`   (&%:
+                                       --          ---    ---------------``-----,:cloddo:- -----`--``:c:::::::,`:cc::::c #    ~`
+                                       ---                ----------------,,----`,,::cod:-------`----,,,,,,,``-,::`-`:c #
+                                        ---                -------  ----------------,,,cc:,-------------------`,,`--:l:` 
+                                        ----                     --  ---------------:,``,cc`- ---------------------`::`# 
+                                         ------                          -- --------:ll:-``--  ---------``--------``::`` 
+                                           ----                          ------------`:,-   -----------`,`----:ll::```` 
+                                              -----       ,-~~--,         ------------ -,--------  -----`::--`,:c::,` 
+                                               -----   ,,:codxdlc:,-      -,,`,---,:`- ---    --   ----`-----,,`,,,`` 
+                                                ------,::clolcccc::,-     ----- ---             -`,---------`,,,,`` 
+                                                  ---::::ccc::::::::-    ----                -`::`----  --,::`` 
+                                                     ::,,!#:c:Nn,::::`     -                ------- -  --,:::, 
+                                                     :::,,::ccWw-,:`:                          ------ --,`` 
+                           
+";
+            return otov;
+        }
 
+        public string GelaraArt()
+        {
+            string aoclite = @"                  
+                                                                                                                 ########*****(((##                              
+                                                                                                         #####################*((((((((%#                       
+                                                                                                    *(#############################((((((((%%                   
+                                                                                                ,***********(#########################((((((((%%/               
+                                                                                              ##########(**********#######################(((((((%%             
+                                                                                          *####################*********###################(((((((%%#          
+                                                                                        ,***********(###############*********(################(((((#%%(        
+                                                                                       ********************/#############********###############(((((%%%       
+                                                                                      .***************************############******((#############((((%%%#     
+                                                                                      *****%%%%%%%%%%%%***************############***((((###########((((%%%#    
+                                                                                     *****%%%%%%%%%%%%%%%%%***************############((((((##########(((%%%#   
+                                                                                     *******%%%%%%%%%%%%%%%%%%****************(###########((((((#########((%%%   
+                                                                                    **********%%%%%%%%%%%%%%%%********************###########(((((#########%%%#  
+                                                                                    ##************(##%%#*****************************##########(((((#######%%%%  
+                                                                                    ########******************************************((##########((((######%%%  
+                                                                                    (##################********************************(((((#########((((####%%%/ 
+                                                                                     #############################/********************(((((((#########(((##%%%%  
+                                                                                     #####################################*************((((((((((########(((%%%%  
+                                                                                     ,*************############################********(((((((((((((######((%%%#  
+                                                                                       *******************##########################***/(((((((((((((((#####%%%%   
+                                                                                       ***********************#########################(((((((((((((((((###%%%    
+                                                                                        **************************#########################(((((((((((((((%%%     
+                                                                                         *****************************########################(((((((((((%%#      
+                                                                                          .*******************************#######################((((((%%%(       
+                                                                                            *********************************######################(((%%#         
+                                                                                               **********************************/###################%%(           
+                                                                                                  **********************************(#############%%%              
+                                                                                                    ******************************((((#########%%                 
+                                                                                                          ************************(((((((((##%%                     
+                                                                                                               .*****************(((((((##                          
+                                                                                                                      ************##   
+                                                                                                                                                  
 
+";
+            return aoclite;
+        }
 
+        public string LarvisArt()
+        {
+            string larvis = @"                                                                                                                             
+                                                                                                         #@@@#&@@@@@@@@%@@@@@@%%@@@@                          
+                                                                                                   .&(%@&&@%@@@@#@@@@@@%@@@@@@@%#@@@@@@@@*                    
+                                                                                               .%%&&%@&#@@@@@@@#@@%/&@%%@@@@@@@@@@@%@@@@@@@@@.                
+                                                                                             (%/&%@&@@@(@@@&#@@@@@@&%(#(@@@@@@@@@@@@@@#@@@@@@@@@/             
+                                                                                          (##%&%&&@@@@@&@@&@@@@@@@@%@@@(*@@&(#@@@@@@&#%(&@@@@%((@@@           
+                                                                                        //%(&%&@&@@@@@@##@@##@@@#@@@@@@@@/@@#%@&&@@@@@@@@@%@@@%(@@@&@.        
+                                                                                        **(#%%%&@@@@@@@%@@@@@@@@@&@@@@@@@@@/&&@@@@#@@@@@@@@@@@/*/#%@@@@&@       
+                                                                                     ,((#%#&&@@@@@@@@#@@@@@@@@#@@@@###((/*,&@@@@@@%@@@@@@@@@@@@((*&@@@@@@&     
+                                                                                    //(%&%&%@@@@@@@(@#@@@@@@&%@@@@@@@@@@@@@/#@@@@@%&@@@@@@@@&(*@*@/&&@@@@&@    
+                                                                                   **%(%#%&@@@@@@#@@@@%@#&@@@@@@@@@@@@@@@@//(@@@@@@(#/&@@@@@@@@@@*%,*/%#/%@@   
+                                                                                  **((#%(%@&@@@%@@@@@@@&@@@@@@@@@@@@@@@@@@@/**(##@@&/@@@@@@@@@@@@(/#.%.(@@@@@  
+                                                                                 ,/((%#%&&&&&@(@@@@&&@@@&@@@@@@@@@@@@@@@@@@#((@@@@@@@*@@@@@@@@*&@@@@@#@(@@@@@# 
+                                                                                 */###%%&&@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@&(@@*&@*#/&@##,(@@@@@((@@@@@@@/@@@@@@& 
+                                                                                .*(*(#%&%@&@&#@@@@@@@@@&@@@@@@&@@@@(&@@@@@@@%./@@@@@@@@@@//,&@@&@@@@@@@#@@@@@%*
+                                                                                ,/*(#%#&&&&@@@@@@@@@@@@&@@#/%%@@@@@@@@@@@@@@@@#,@@@@@@&@@,@@@@@@@@@@@@@(@@@@@#&
+                                                                                ,*/(###%&&&&@@@@@@@#(%&%@@@@@@@@@@*@@@@@@@@@@@@&.%@@@@&/@&.*@@@@@@@@@@@&(@@@(%%
+                                                                                */*/##%%&&&@&@@@/#@@@@@&#@@@@@@@@&@@(@@@@@@@@@@@@,*@@&*@@@@@#*&@@@@@@@@&,/%@(#&
+                                                                                 ,*/###&%&&&@@%@@@&@@@@@@@@@&@@@@@@@@@@&@@@@@@@@@@(*.&@@@@@@@@@/&@@@@@*@@@@@(#,
+                                                                                 ,*///###&%&&(@&@@@@(@@@@@@/@@@@@%@@@@@@#@@@@@@@@@%*&@@@@@@@@@@@@/&*&@&(@@@@%% 
+                                                                                  **/((###%%&&@@@@@@@%#@@@@@@@##(&@@@@@@#@(&@@@@@/@@@@@&@@@@@@@%/@/@@@@@@/@#@, 
+                                                                                  ,,/*#####%&&@@@@@@@@@&(%@@@@@@@@(@@@@@@@@@@@@@&.@@@@@@@@@@@&/@@@#@@@@@@@#@(  
+                                                                                   .,,/#(#%%%@&&@@@@@@#@@&@@@@@@@@@@(@@@@@@@@@@@/*@@@@@@@&*(#@@@@@%%@@@@@@(%   
+                                                                                    .(*/(((%&%#@&@&@&%@@@@@#@@@@@@@@@@(@@@@@@@@&.@,*/#@@@@@#@@@@@@&%@@@(/&/    
+                                                                                       ,///###%%%%#@&@@@@@@@@@@#@@@@@@@@@@(@@&(/%@@@@@@@@@%/@@@@@@@@&,%@@&      
+                                                                                       ./,,(#%#&%%&@&@@@@@@@@@@@@&@@@@@@@*@@@&&/@@@@@@@@@*@@&**%@@@@(#&(       
+                                                                                         ,,**(%##%%(&@@@&@@@@@@@@@%(@@@(@@@@@@@@@@@@&/@@(@@@@@@@@@%&%#         
+                                                                                             ///&(%#%%%&&&@&/@@@@@@@&@@@&@@@@@@@@@@@@@@@@(@@@@@@@%&/*           
+                                                                                               ,(/#(%#%%&%@&&&@@(@@@@@@@@@@#@@@@@@@@@@@%*@@@@@%(@%              
+                                                                                                   ((#/##%&%&&@&@@&#&@@@@%#@@@#@@&@@@@@&@*&@&&,                 
+                                                                                                       //*((#(%#%#&&&@%&&%&&@@#@@@@%/@&@@@                      
+                                                                                                            /**/%#%&&&#%(/%@@%(#%@#                            
+                                                                                                                                                             
+";
+            return larvis;
+        }
 
+        public string NatotisArt()
+        {
+            string natotis = @"                      
+                                                                                                                 .:=iiiiii=+=
+                                                                                                                 .=i))=;::+)i=+,
+                                                                                                              ,=i);)I)))I):=i=;
+                                                                                                           .=i==))))ii)))I:i++
+                                                                                                         +)+))iiiiiiii))I=i+:'
+                                                                                    .,:;;++++++;:,.       )iii+:::;iii))+i='
+                                                                                 .:;++=iiiiiiiiii=++;.    =::,,,:::=i));=+'
+                                                                               ,;+==ii)))))))))))ii==+;,      ,,,:=i))+=:
+                                                                             ,;+=ii))))))IIIIII))))ii===;.    ,,:=i)=i+
+                                                                            ;+=ii)))IIIIITIIIIII))))iiii=+,   ,:=));=,
+                                                                          ,+=i))IIIIIITTTTTITIIIIII)))I)i=+,,:+i)=i+
+                                                                         ,+i))IIIIIITTTTTTTTTTTTI))IIII))i=::i))i='
+                                                                        ,=i))IIIIITLLTTTTTTTTTTIITTTTIII)+;+i)+i`
+                                                                        =i))IIITTLTLTTTTTTTTTIITTLLTTTII+:i)ii:'
+                                                                       +i))IITTTLLLTTTTTTTTTTTTLLLTTTT+:i)))=,
+                                                                       =))ITTTTTTTTTTTLTTTTTTLLLLLLTi:=)IIiii;
+                                                                      .i)IIITTTTTTTTLTTTITLLLLLLLT);=)I)))))i;
+                                                                      :))IIITTTTTLTTTTTTLLHLLLLL);=)II)IIIIi=:
+                                                                      :i)IIITTTTTTTTTLLLHLLHLL)+=)II)ITTTI)i=
+                                                                      .i)IIITTTTITTLLLHHLLLL);=)II)ITTTTII)i+
+                                                                      =i)IIIIIITTLLLLLLHLL=:i)II)TTTTTTIII)i'
+                                                                    +i)i)))IITTLLLLLLLLT=:i)II)TTTTLTTIII)i;
+                                                                  +ii)i:)IITTLLTLLLLT=;+i)I)ITTTTLTTTII))i;
+                                                                 =;)i=:,=)ITTTTLTTI=:i))I)TTTLLLTTTTTII)i;
+                                                               +i)ii::,  +)IIITI+:+i)I))TTTTLLTTTTTII))=,
+                                                             :=;)i=:,,    ,i++::i))I)ITTTTTTTTTTIIII)=+'
+                                                           .+ii)i=::,,   ,,::=i)))iIITTTTTTTTIIIII)=+
+                                                          ,==)ii=;:,,,,:::=ii)i)iIIIITIIITIIII))i+:'
+                                                         +=:))i==;:::;=iii)+)=  `:i)))IIIII)ii+'
+                                                       .+=:))iiiiiiii)))+ii;
+                                                      .+=;))iiiiii)));ii+
+                                                     .+=i:)))))))=+ii+
+                                                    .;==i+::::=)i=;
+                                                    ,+==iiiiii+,
+                                                    `+=+++;
+";
+            return natotis;
+        }
 
-
-
+        
     }
 }

@@ -14,7 +14,7 @@ namespace GalaxyBusiness
 {
     class Program
     {
-
+        
 
         
         static void Main(string[] args)
@@ -47,7 +47,12 @@ namespace GalaxyBusiness
             int exit = 0;
             menu.planetChoice = 6;
             double tryparse;
-
+            int natotisstatus = 1;
+            int gelarastatus = 1;
+            int acolitestatus = 1;
+            int otovstatus = 3;
+            int larvisstatus = 3;
+            int xaendisstatus = 4;
 //            #region //Game Start
 //             Console.WriteLine(@"
 //                                                                ███████ ██████   █████   ██████ ███████     ███    ███ ███████ ██████   ██████ ██   ██  █████  ███    ██ ████████ 
@@ -472,46 +477,11 @@ namespace GalaxyBusiness
 ████   ██ ██   ██    ██    ██    ██    ██    ██ ██      
 ██ ██  ██ ███████    ██    ██    ██    ██    ██ ███████ 
 ██  ██ ██ ██   ██    ██    ██    ██    ██    ██      ██ 
-██   ████ ██   ██    ██     ██████     ██    ██ ███████"); Console.WriteLine($"\t{menu.Occupation(1)}");
-
+██   ████ ██   ██    ██     ██████     ██    ██ ███████"); Console.Write($"\t{menu.Occupation(1)}");
+                            Console.WriteLine();
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                            Console.WriteLine(@"                                                                                            
-                                                                                                                    .:=iiiiii=+=
-                                                                                                                 .=i))=;::+)i=+,
-                                                                                                              ,=i);)I)))I):=i=;
-                                                                                                           .=i==))))ii)))I:i++
-                                                                                                         +)+))iiiiiiii))I=i+:'
-                                                                                    .,:;;++++++;:,.       )iii+:::;iii))+i='
-                                                                                 .:;++=iiiiiiiiii=++;.    =::,,,:::=i));=+'
-                                                                               ,;+==ii)))))))))))ii==+;,      ,,,:=i))+=:
-                                                                             ,;+=ii))))))IIIIII))))ii===;.    ,,:=i)=i+
-                                                                            ;+=ii)))IIIIITIIIIII))))iiii=+,   ,:=));=,
-                                                                          ,+=i))IIIIIITTTTTITIIIIII)))I)i=+,,:+i)=i+
-                                                                         ,+i))IIIIIITTTTTTTTTTTTI))IIII))i=::i))i='
-                                                                        ,=i))IIIIITLLTTTTTTTTTTIITTTTIII)+;+i)+i`
-                                                                        =i))IIITTLTLTTTTTTTTTIITTLLTTTII+:i)ii:'
-                                                                       +i))IITTTLLLTTTTTTTTTTTTLLLTTTT+:i)))=,
-                                                                       =))ITTTTTTTTTTTLTTTTTTLLLLLLTi:=)IIiii;
-                                                                      .i)IIITTTTTTTTLTTTITLLLLLLLT);=)I)))))i;
-                                                                      :))IIITTTTTLTTTTTTLLHLLLLL);=)II)IIIIi=:
-                                                                      :i)IIITTTTTTTTTLLLHLLHLL)+=)II)ITTTI)i=
-                                                                      .i)IIITTTTITTLLLHHLLLL);=)II)ITTTTII)i+
-                                                                      =i)IIIIIITTLLLLLLHLL=:i)II)TTTTTTIII)i'
-                                                                    +i)i)))IITTLLLLLLLLT=:i)II)TTTTLTTIII)i;
-                                                                  +ii)i:)IITTLLTLLLLT=;+i)I)ITTTTLTTTII))i;
-                                                                 =;)i=:,=)ITTTTLTTI=:i))I)TTTLLLTTTTTII)i;
-                                                               +i)ii::,  +)IIITI+:+i)I))TTTTLLTTTTTII))=,
-                                                             :=;)i=:,,    ,i++::i))I)ITTTTTTTTTTIIII)=+'
-                                                           .+ii)i=::,,   ,,::=i)))iIITTTTTTTTIIIII)=+
-                                                          ,==)ii=;:,,,,:::=ii)i)iIIIITIIITIIII))i+:'
-                                                         +=:))i==;:::;=iii)+)=  `:i)))IIIII)ii+'
-                                                       .+=:))iiiiiiii)))+ii;
-                                                      .+=;))iiiiii)));ii+
-                                                     .+=i:)))))))=+ii+
-                                                    .;==i+::::=)i=;
-                                                    ,+==iiiiii+,
-                                                    `+=+++;`");
+                            Console.WriteLine(menu.NatotisArt());
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"{natotis.Description()}\n\n\n");
@@ -876,42 +846,86 @@ namespace GalaxyBusiness
                                         switch (zhulChoice)
                                         {
                                             case 1: //Warehouse
+                                                #region //Warehouse
                                                 Console.WriteLine(
                                                     "Warehouse district is large and contains with many factories");
                                                 Console.ReadKey();
                                                 Console.WriteLine(
                                                     "This area will have corporate espionage missions and sabatoge missions");
                                                 Console.ReadKey();
+                                                #endregion
                                                 break;
                                             case 2: //Technology District
+                                                #region //Tech
                                                 Console.WriteLine(
                                                     "The technology District is where much of the research and business takes place on Natotis..");
                                                 Console.ReadKey();
                                                 Console.WriteLine(
                                                     "The technology District will have missions where you can invest money and collect later on.like a stock market ");
                                                 Console.ReadKey();
+                                                #endregion
                                                 break;
                                             case 3: //Cantina
+                                                #region //Cantina
+                                                Console.Clear();
+                                                Console.WriteLine();
+                                                Console.WriteLine(@"███    ███  █████  ██   ██ ██ ██     ██ ██      ██████  █████  ███    ██ ████████ ██ ███    ██  █████  
+████  ████ ██   ██ ██  ██  ██ ██     ██ ██     ██      ██   ██ ████   ██    ██    ██ ████   ██ ██   ██ 
+██ ████ ██ ███████ █████   ██ ██  █  ██ ██     ██      ███████ ██ ██  ██    ██    ██ ██ ██  ██ ███████ 
+██  ██  ██ ██   ██ ██  ██  ██ ██ ███ ██ ██     ██      ██   ██ ██  ██ ██    ██    ██ ██  ██ ██ ██   ██ 
+██      ██ ██   ██ ██   ██ ██  ███ ███  ██      ██████ ██   ██ ██   ████    ██    ██ ██   ████ ██   ██");
                                                 Console.WriteLine(
-                                                    "The Makiwi Cantina is a small bar the plays host to many world travellers");
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                                                Console.WriteLine(
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+                                                Console.WriteLine(
+                                                    "The Makiwi Cantina is a small bar the plays host to many world travelers");
                                                 Console.ReadKey();
+                                                Console.Clear();
                                                 if (Zell.Weapons > 0)
                                                 {
+                                                    
                                                     Console.WriteLine("You walk in and have a few drinks, after a while you hear rumbles that there is an arms dealer \n" +
                                                                       "sitting at the table across the bar. You think about the stock of weapons you have on your ship.\n" +
                                                                       "You walk over and make conversation and let it 'slip' that you have Federation weapons. He seems\n" +
                                                                       "interested and you head back to your ship. After inspecting the contents, he offers to pay 600 for\n" +
                                                                       "each.");
                                                     Console.ReadKey();
+                                                    Console.Clear();
                                                     Zell.Credits = Zell.Weapons * 600;
                                                     Zell.Weapons = 0;
 
                                                 }//Sell weapons
-                                                Console.WriteLine(
-                                                    "The Cantina will host more illegal missions unlike the normal mission board.");
-                                                Console.ReadKey();
+                                                Console.WriteLine(natotisMissions.CantinaEntry());
+                                                string tempchoice = Console.ReadLine();
+                                                double.TryParse(tempchoice, out tryparse);
+                                                double cantinaChoice = tryparse;
+                                                switch (cantinaChoice)
+                                                {
+                                                    case 1:
+                                                        Console.Clear();
+                                                        Console.WriteLine(natotisMissions.Supply001Mission());
+                                                        Console.ReadKey();
+                                                        Console.Clear();
+                                                        Console.WriteLine(natotisMissions.Supply001AA());
+                                                        Console.ReadKey();
+                                                        Console.Clear();
+                                                        Console.WriteLine(natotisMissions.Supply001BB());
+                                                        Console.ReadKey();
+                                                        Console.Clear();
+                                                        break;
+                                                    case 2:
+                                                        break;
+                                                    case 3:
+                                                        break;
+                                                    case 99:
+                                                        break;
+                                                }
+                                                #endregion
                                                 break;
                                             case 4: //Senate Building
+                                                #region //Senate
                                                 Console.WriteLine(
                                                     "Natotis is the Federatrions political stronghold in the area. This makes the Natotis Senate\n" +
                                                     "one of the most inportant locations in this system cluster.");
@@ -919,6 +933,7 @@ namespace GalaxyBusiness
                                                 Console.WriteLine(
                                                     "This will have some of the 'story missions' and possibly where you can become and envoy.");
                                                 Console.ReadKey();
+                                                #endregion
                                                 break;
                                             case 99:
                                                 zhulexit = 1;
@@ -939,6 +954,9 @@ namespace GalaxyBusiness
                                             if (natotisMissions.Mission001success == 1)
                                             {
                                                 Zell.Credits += 4000;
+                                                Zell.Reputation -= 2;
+                                                Zell.FederationFavor += 1;
+                                                Zell.VurikFavor -= 2;
                                             }
                                         }
                                         if (natotisMissions.Mission002success == 1 || natotisMissions.Mission002success == 0)
@@ -949,6 +967,9 @@ namespace GalaxyBusiness
                                             if (natotisMissions.Mission002success == 1)
                                             {
                                                 Zell.Credits += 8000;
+                                                Zell.Reputation += 2;
+                                                Zell.FederationFavor -= 2;
+                                                Zell.VurikFavor += 3;
                                             }
                                         }
 
@@ -1185,6 +1206,24 @@ namespace GalaxyBusiness
                                     if (Zell.Weapons > 0)
                                     {
                                         Console.WriteLine($"Weapons: {Zell.Weapons}");}
+                                    #region //Mission log for inventory
+                                    if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        natotisMissions.Mission001success == 2)
+                                    {
+                                        Console.WriteLine($"\n\nNatotis #1 -  {natotisMissions.Escort001InProgress()}");
+                                    }
+                                    if (ingametime.month <= 5 && ingametime.year == 2457 &&
+                                        natotisMissions.Mission002success == 2)
+                                    {
+                                        Console.WriteLine($"\nNatotis #2 -  {natotisMissions.Delivery002InProgress()}");
+                                    }
+                                    if (natotisMissions.Supply001Success == 2)
+                                    {
+                                        Console.WriteLine($"\nNatotis -  {natotisMissions.Supply001InProgress()}");
+                                    }
+
+
+                                    #endregion
                                     Console.ReadKey();
                                     break;
                                 case 6:
@@ -1454,31 +1493,11 @@ namespace GalaxyBusiness
 ██    ██    ██    ██    ██ ██    ██ 
 ██    ██    ██    ██    ██ ██    ██ 
 ██    ██    ██    ██    ██  ██  ██  
- ██████     ██     ██████    ████  ");
+ ██████     ██     ██████    ████  "); Console.Write($"\t{menu.Occupation(3)}");
+                            Console.WriteLine();
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                            Console.WriteLine(@"                .                                            .
-                                                     *   .                  .              .        .   *          .
-                                                  .         .                     .       .           .      .        .
-                                                        o                             .                   .
-                                                         .              .                  .           .
-                                                          0     .
-                                                                 .          .                 ,                ,    ,
-                                                 .          \          .                         .
-                                                      .      \   ,
-                                                   .          o     .                 .                   .            .
-                                                     .         \                 ,             .                .
-                                                               #\##\#      .                              .        .
-                                                             #  #O##\###                .                        .
-                                                   .        #*#  #\##\###                       .                     ,
-                                                        .   ##*#  #\##\##               .                     .
-                                                      .      ##*#  #o##\#         .                             ,       .
-                                                          .     *#  #\#     .                    .             .          ,
-                                                                      \          .                         .
-                                                ____^/\___^--____/\____O______________/\/\---/\___________---______________
-                                                   /\^   ^  ^    ^                  ^^ ^  '\ ^          ^       ---
-                                                         --           -            --  -      -         ---  __       ^
-                                                   --  __                      ___--  ^  ^                         --  __");
+                            Console.WriteLine(menu.OtovArt());
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n{otov.OtovDesc()}\n\n");
@@ -1820,14 +1839,103 @@ namespace GalaxyBusiness
                                         switch (XChoice)
                                         {
                                             case 1: //Warehouse
+                                                Console.Clear();
+                                                Console.WriteLine();
+                                                Console.WriteLine(@"██   ██ ██  ██████   ██████  ██     ██     ██     ██  █████  ██████  ███████ ██   ██  ██████  ██    ██ ███████ ███████     ██████  ██ ███████ ████████ ██████  ██  ██████ ████████ 
+ ██ ██  ██ ██       ██    ██ ██     ██     ██     ██ ██   ██ ██   ██ ██      ██   ██ ██    ██ ██    ██ ██      ██          ██   ██ ██ ██         ██    ██   ██ ██ ██         ██    
+  ███   ██ ██   ███ ██    ██ ██  █  ██     ██  █  ██ ███████ ██████  █████   ███████ ██    ██ ██    ██ ███████ █████       ██   ██ ██ ███████    ██    ██████  ██ ██         ██    
+ ██ ██  ██ ██    ██ ██    ██ ██ ███ ██     ██ ███ ██ ██   ██ ██   ██ ██      ██   ██ ██    ██ ██    ██      ██ ██          ██   ██ ██      ██    ██    ██   ██ ██ ██         ██    
+██   ██ ██  ██████   ██████   ███ ███       ███ ███  ██   ██ ██   ██ ███████ ██   ██  ██████   ██████  ███████ ███████     ██████  ██ ███████    ██    ██   ██ ██  ██████    ██ ");
                                                 Console.WriteLine(
-                                                    "Warehouse district is large and contains with many factories");
-                                                Console.ReadKey();
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                                 Console.WriteLine(
-                                                    "This area will have corporate espionage missions and sabatoge missions");
+                                                    "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+                                                Console.WriteLine(
+                                                    "Warehouse district is large and contains with many factories, it is famed for being thge Epsolon Motor Company's HQ ");
                                                 Console.ReadKey();
+                                                if (natotisMissions.Supply001Success == 2)
+                                                {
+                                                    Console.Clear();
+                                                    Console.WriteLine(natotisMissions.Supply001CC());
+                                                    Console.ReadKey();
+                                                    Console.Clear();
+                                                    int exquestions = 0;
+                                                    while (exquestions == 0)
+                                                    {
+                                                        Console.WriteLine(natotisMissions.SupplyQuestions());
+                                                        string tempvalue01a = Console.ReadLine();
+                                                        double.TryParse(tempvalue01a, out tryparse);
+                                                        double answers = tryparse;
+                                                        Console.WriteLine();
+                                                        if (answers ==1)
+                                                        {
+                                                            Console.WriteLine(natotisMissions.SupplyAnswer1());
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                        }
+                                                        if (answers == 2) {
+                                                            Console.WriteLine(natotisMissions.SupplyAnswer2());
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                        }
+                                                        if (answers == 3) {
+                                                            Console.WriteLine(natotisMissions.SupplyAnswer3());
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                        }
+                                                        if (answers == 4)
+                                                        {
+                                                            exquestions = 1;
+                                                        }
+                                                    }
+                                                    
+                                                    
+                                                    int exot = 1;
+                                                    while (exot == 1)
+                                                    {
+                                                        Console.Clear();
+                                                        Console.WriteLine(natotisMissions.Supply001DD());
+                                                        string tempvalue011 = Console.ReadLine();
+                                                        double.TryParse(tempvalue011, out tryparse);
+                                                        double supplyChoice = tryparse;
+                                                        if (supplyChoice ==1)
+                                                        {
+                                                            Console.Clear();
+                                                            Console.WriteLine(natotisMissions.Supply001A(1));
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                            Console.WriteLine(natotisMissions.Supply0012DropOff(1));
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                            Console.WriteLine(natotisMissions.Supply001Ends(1));
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                            Zell.Credits += 4000;
+                                                            Zell.FederationFavor -= 10;
+                                                            Zell.VurikFavor += 10;
+                                                            exot = 0;
+                                                        }
+                                                        if (supplyChoice== 2){ Console.WriteLine(natotisMissions.Supply001A(2));
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                            Console.WriteLine(natotisMissions.Supply0012DropOff(2));
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                            Console.WriteLine(natotisMissions.Supply001Ends(2));
+                                                            Console.ReadKey();
+                                                            Console.Clear();
+                                                            Zell.Credits += 10000;
+                                                            Zell.FederationFavor += 20;
+                                                            Zell.VurikFavor -= 30;
+                                                            exot = 0;
+                                                        }
+                                                    }
+                                                    
+                                                }
                                                 break;
                                             case 2: //Technology District
+                                                Console.Clear();
                                                 Console.WriteLine(
                                                     "The technology District is where much of the research and business takes place on Natotis..");
                                                 Console.ReadKey();
@@ -1836,6 +1944,7 @@ namespace GalaxyBusiness
                                                 Console.ReadKey();
                                                 break;
                                             case 3: //Cantina
+                                                Console.Clear();
                                                 Console.WriteLine(
                                                     "The Makiwi Cantina is a small bar the plays host to many world travellers");
                                                 Console.ReadKey();
@@ -1856,6 +1965,7 @@ namespace GalaxyBusiness
                                                 Console.ReadKey();
                                                 break;
                                             case 4: //Senate Building
+                                                Console.Clear();
                                                 Console.WriteLine(
                                                     "Natotis is the Federatrions political stronghold in the area. This makes the Natotis Senate\n" +
                                                     "one of the most inportant locations in this system cluster.");
@@ -2119,6 +2229,28 @@ namespace GalaxyBusiness
                                     break;
                                 case 5:
                                     Console.WriteLine(Zell.InventoryDisplay());
+                                    if (Zell.Weapons > 0)
+                                    {
+                                        Console.WriteLine($"Weapons: {Zell.Weapons}");
+                                    }
+                                    #region //Mission log for inventory
+                                    if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        natotisMissions.Mission001success == 2)
+                                    {
+                                        Console.WriteLine($"\n\nNatotis #1 -  {natotisMissions.Escort001InProgress()}");
+                                    }
+                                    if (ingametime.month <= 5 && ingametime.year == 2457 &&
+                                        natotisMissions.Mission002success == 2)
+                                    {
+                                        Console.WriteLine($"\nNatotis #2 -  {natotisMissions.Delivery002InProgress()}");
+                                    }
+                                    if (natotisMissions.Supply001Success == 2)
+                                    {
+                                        Console.WriteLine($"\nNatotis -  {natotisMissions.Supply001InProgress()}");
+                                    }
+
+
+                                    #endregion
                                     Console.ReadKey();
                                     break;
                                 case 6:
@@ -2387,29 +2519,11 @@ namespace GalaxyBusiness
 ██       ██      ██      ██   ██ ██   ██ ██   ██ 
 ██   ███ █████   ██      ███████ ██████  ███████ 
 ██    ██ ██      ██      ██   ██ ██   ██ ██   ██ 
- ██████  ███████ ███████ ██   ██ ██   ██ ██   ██ ");
+ ██████  ███████ ███████ ██   ██ ██   ██ ██   ██ "); Console.Write($"\t{menu.Occupation(1)}");
+                            Console.WriteLine();
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                            Console.WriteLine(@"                                  
-                                                                         ::: =,;
-                                                                     ;;=;;=== M
-                                                        ,=YVRMBBMMR=,   :i=
-                                                      :iVRRMMMMMMBMMM :=;  ==;======
-                                                     =tYMMMMMMBBMMM;=Y ,::;==iMMMMMMMMMM
-                                                    ;tYVBBMMVMMMM =; .,,,::;;=YVBBMMMMMMMMM
-                                                    ;tYVVYRMMM;=ti ...,,,;::==iMVMMMMMMMMMMMM
-                                                    ,=tYRBM;;tVB, ....,  ,::;====YVBMMMMMMMMMM
-                                                ..   ,=t =tYVRB, .....,,,,=:;:;;i=VYMMRMMMMMMMM
-                                               ;;..  ,===iYVVRY .....,,,;,,,,,:;;==t=RBMMMMMMMMM
-                                             :;;:;=;,...       .......,,,,,,,,,:;;==Y=tYMMMMMMMM
-                                            ;.,:,.....         ....,,,,,,,,,,,,,:;;;==YYMRMMMMMM;
-                                            .......             .,,,,,,,,,,,,,,,,::;;;=YtVBMMMMM
-                                          ;t ...                .,,,,,,,,,,,,,,,,,::;;i=RiRMMMMM
-                                          ,=..                    .,,,,,,,,,,,,,,,:::;;=iYBBMM
-                                                                   .,,,,,,,,,,,,,,,,::;;;;tVB
-                                                  :VMM               .,,,,,,,,,,,,:,,,::;;=
-                                                 ,;VBM                 .,,,,,,,,,,,,,:,::
-                                                 ,,==                      `,,,,,,,   ");
+                            Console.WriteLine(menu.GelaraArt());
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
@@ -2984,6 +3098,28 @@ namespace GalaxyBusiness
                                     break;
                                 case 5:
                                     Console.WriteLine(Zell.InventoryDisplay());
+                                    if (Zell.Weapons > 0)
+                                    {
+                                        Console.WriteLine($"Weapons: {Zell.Weapons}");
+                                    }
+                                    #region //Mission log for inventory
+                                    if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        natotisMissions.Mission001success == 2)
+                                    {
+                                        Console.WriteLine($"\n\nNatotis #1 -  {natotisMissions.Escort001InProgress()}");
+                                    }
+                                    if (ingametime.month <= 5 && ingametime.year == 2457 &&
+                                        natotisMissions.Mission002success == 2)
+                                    {
+                                        Console.WriteLine($"\nNatotis #2 -  {natotisMissions.Delivery002InProgress()}");
+                                    }
+                                    if (natotisMissions.Supply001Success == 2)
+                                    {
+                                        Console.WriteLine($"\nNatotis -  {natotisMissions.Supply001InProgress()}");
+                                    }
+
+
+                                    #endregion
                                     Console.ReadKey();
                                     break;
                                 case 6:
@@ -3252,40 +3388,11 @@ namespace GalaxyBusiness
 ██      ██   ██ ██   ██ ██    ██ ██ ██      
 ██      ███████ ██████  ██    ██ ██ ███████ 
 ██      ██   ██ ██   ██  ██  ██  ██      ██ 
-███████ ██   ██ ██   ██   ████   ██ ███████ ");
+███████ ██   ██ ██   ██   ████   ██ ███████ "); Console.WriteLine($"\t{menu.Occupation(3)}");
+                            Console.WriteLine();
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                            Console.WriteLine(@"               #@@@#&@@@@@@@@%@@@@@@%%@@@@                          
-                                                                                                   .&(%@&&@%@@@@#@@@@@@%@@@@@@@%#@@@@@@@@*                    
-                                                                                               .%%&&%@&#@@@@@@@#@@%/&@%%@@@@@@@@@@@%@@@@@@@@@.                
-                                                                                             (%/&%@&@@@(@@@&#@@@@@@&%(#(@@@@@@@@@@@@@@#@@@@@@@@@/             
-                                                                                          (##%&%&&@@@@@&@@&@@@@@@@@%@@@(*@@&(#@@@@@@&#%(&@@@@%((@@@           
-                                                                                        //%(&%&@&@@@@@@##@@##@@@#@@@@@@@@/@@#%@&&@@@@@@@@@%@@@%(@@@&@.        
-                                                                                        **(#%%%&@@@@@@@%@@@@@@@@@&@@@@@@@@@/&&@@@@#@@@@@@@@@@@/*/#%@@@@&@       
-                                                                                     ,((#%#&&@@@@@@@@#@@@@@@@@#@@@@###((/*,&@@@@@@%@@@@@@@@@@@@((*&@@@@@@&     
-                                                                                    //(%&%&%@@@@@@@(@#@@@@@@&%@@@@@@@@@@@@@/#@@@@@%&@@@@@@@@&(*@*@/&&@@@@&@    
-                                                                                   **%(%#%&@@@@@@#@@@@%@#&@@@@@@@@@@@@@@@@//(@@@@@@(#/&@@@@@@@@@@*%,*/%#/%@@   
-                                                                                  **((#%(%@&@@@%@@@@@@@&@@@@@@@@@@@@@@@@@@@/**(##@@&/@@@@@@@@@@@@(/#.%.(@@@@@  
-                                                                                 ,/((%#%&&&&&@(@@@@&&@@@&@@@@@@@@@@@@@@@@@@#((@@@@@@@*@@@@@@@@*&@@@@@#@(@@@@@# 
-                                                                                 */###%%&&@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@&(@@*&@*#/&@##,(@@@@@((@@@@@@@/@@@@@@& 
-                                                                                .*(*(#%&%@&@&#@@@@@@@@@&@@@@@@&@@@@(&@@@@@@@%./@@@@@@@@@@//,&@@&@@@@@@@#@@@@@%*
-                                                                                ,/*(#%#&&&&@@@@@@@@@@@@&@@#/%%@@@@@@@@@@@@@@@@#,@@@@@@&@@,@@@@@@@@@@@@@(@@@@@#&
-                                                                                ,*/(###%&&&&@@@@@@@#(%&%@@@@@@@@@@*@@@@@@@@@@@@&.%@@@@&/@&.*@@@@@@@@@@@&(@@@(%%
-                                                                                */*/##%%&&&@&@@@/#@@@@@&#@@@@@@@@&@@(@@@@@@@@@@@@,*@@&*@@@@@#*&@@@@@@@@&,/%@(#&
-                                                                                 ,*/###&%&&&@@%@@@&@@@@@@@@@&@@@@@@@@@@&@@@@@@@@@@(*.&@@@@@@@@@/&@@@@@*@@@@@(#,
-                                                                                 ,*///###&%&&(@&@@@@(@@@@@@/@@@@@%@@@@@@#@@@@@@@@@%*&@@@@@@@@@@@@/&*&@&(@@@@%% 
-                                                                                  **/((###%%&&@@@@@@@%#@@@@@@@##(&@@@@@@#@(&@@@@@/@@@@@&@@@@@@@%/@/@@@@@@/@#@, 
-                                                                                  ,,/*#####%&&@@@@@@@@@&(%@@@@@@@@(@@@@@@@@@@@@@&.@@@@@@@@@@@&/@@@#@@@@@@@#@(  
-                                                                                   .,,/#(#%%%@&&@@@@@@#@@&@@@@@@@@@@(@@@@@@@@@@@/*@@@@@@@&*(#@@@@@%%@@@@@@(%   
-                                                                                    .(*/(((%&%#@&@&@&%@@@@@#@@@@@@@@@@(@@@@@@@@&.@,*/#@@@@@#@@@@@@&%@@@(/&/    
-                                                                                       ,///###%%%%#@&@@@@@@@@@@#@@@@@@@@@@(@@&(/%@@@@@@@@@%/@@@@@@@@&,%@@&      
-                                                                                       ./,,(#%#&%%&@&@@@@@@@@@@@@&@@@@@@@*@@@&&/@@@@@@@@@*@@&**%@@@@(#&(       
-                                                                                         ,,**(%##%%(&@@@&@@@@@@@@@%(@@@(@@@@@@@@@@@@&/@@(@@@@@@@@@%&%#         
-                                                                                             ///&(%#%%%&&&@&/@@@@@@@&@@@&@@@@@@@@@@@@@@@@(@@@@@@@%&/*           
-                                                                                               ,(/#(%#%%&%@&&&@@(@@@@@@@@@@#@@@@@@@@@@@%*@@@@@%(@%              
-                                                                                                   ((#/##%&%&&@&@@&#&@@@@%#@@@#@@&@@@@@&@*&@&&,                 
-                                                                                                       //*((#(%#%#&&&@%&&%&&@@#@@@@%/@&@@@                      
-                                                                                                            /**/%#%&&&#%(/%@@%(#%@# ");
+                            Console.WriteLine(menu.LarvisArt());
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n\n{larvis.Description()}\n\n");
@@ -3879,6 +3986,28 @@ namespace GalaxyBusiness
                                     break;
                                 case 5:
                                     Console.WriteLine(Zell.InventoryDisplay());
+                                    if (Zell.Weapons > 0)
+                                    {
+                                        Console.WriteLine($"Weapons: {Zell.Weapons}");
+                                    }
+                                    #region //Mission log for inventory
+                                    if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        natotisMissions.Mission001success == 2)
+                                    {
+                                        Console.WriteLine($"\n\nNatotis #1 -  {natotisMissions.Escort001InProgress()}");
+                                    }
+                                    if (ingametime.month <= 5 && ingametime.year == 2457 &&
+                                        natotisMissions.Mission002success == 2)
+                                    {
+                                        Console.WriteLine($"\nNatotis #2 -  {natotisMissions.Delivery002InProgress()}");
+                                    }
+                                    if (natotisMissions.Supply001Success == 2)
+                                    {
+                                        Console.WriteLine($"\nNatotis -  {natotisMissions.Supply001InProgress()}");
+                                    }
+
+
+                                    #endregion
                                     Console.ReadKey();
                                     break;
                                 case 6:
@@ -4153,7 +4282,7 @@ namespace GalaxyBusiness
 ██   ██ ██    ██ ██      ██      ██    ██    ██      
 ███████ ██    ██ ██      ██      ██    ██    █████   
 ██   ██ ██    ██ ██      ██      ██    ██    ██      
-██   ██  ██████   ██████ ███████ ██    ██    ███████ ");
+██   ██  ██████   ██████ ███████ ██    ██    ███████ "); Console.WriteLine($"\t{menu.Occupation(1)}");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine(@"          ########*****(((##                              
@@ -4207,7 +4336,8 @@ namespace GalaxyBusiness
 ████  ████ ██   ██ ██   ██ ██  ██  ██         ██    ██   ██ ██      ██   ██ ██      ██      
 ██ ████ ██ ███████ ██████  █████   █████      ██    ██████  ██      ███████ ██      █████   
 ██  ██  ██ ██   ██ ██   ██ ██  ██  ██         ██    ██      ██      ██   ██ ██      ██      
-██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████");
+██      ██ ██   ██ ██   ██ ██   ██ ███████    ██    ██      ███████ ██   ██  ██████ ███████"); Console.Write($"\t{menu.Occupation(3)}");
+                                        Console.WriteLine();
                                         Console.WriteLine(
                                             "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                                         Console.WriteLine(
@@ -4732,6 +4862,28 @@ namespace GalaxyBusiness
                                     break;
                                 case 5:
                                     Console.WriteLine(Zell.InventoryDisplay());
+                                    if (Zell.Weapons > 0)
+                                    {
+                                        Console.WriteLine($"Weapons: {Zell.Weapons}");
+                                    }
+                                    #region //Mission log for inventory
+                                    if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        natotisMissions.Mission001success == 2)
+                                    {
+                                        Console.WriteLine($"\n\nNatotis #1 -  {natotisMissions.Escort001InProgress()}");
+                                    }
+                                    if (ingametime.month <= 5 && ingametime.year == 2457 &&
+                                        natotisMissions.Mission002success == 2)
+                                    {
+                                        Console.WriteLine($"\nNatotis #2 -  {natotisMissions.Delivery002InProgress()}");
+                                    }
+                                    if (natotisMissions.Supply001Success == 2)
+                                    {
+                                        Console.WriteLine($"\nNatotis -  {natotisMissions.Supply001InProgress()}");
+                                    }
+
+
+                                    #endregion
                                     Console.ReadKey();
                                     break;
                                 case 6:
@@ -5007,41 +5159,11 @@ namespace GalaxyBusiness
  ██ ██  ██   ██ ██      ████   ██ ██ ██   ██ ██      ██          ██         ██    ██   ██    ██    ██ ██    ██ ████   ██ 
   ███   ███████ █████   ██ ██  ██ ██ ██   ██ █████   ███████     ███████    ██    ███████    ██    ██ ██    ██ ██ ██  ██ 
  ██ ██  ██   ██ ██      ██  ██ ██ ██ ██   ██ ██           ██          ██    ██    ██   ██    ██    ██ ██    ██ ██  ██ ██ 
-██   ██ ██   ██ ███████ ██   ████ ██ ██████  ███████ ███████     ███████    ██    ██   ██    ██    ██  ██████  ██   ████ ");
+██   ██ ██   ██ ███████ ██   ████ ██ ██████  ███████ ███████     ███████    ██    ██   ██    ██    ██  ██████  ██   ████ "); Console.Write($"\t{menu.Occupation(5)}");
+                            Console.WriteLine();
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                            Console.WriteLine(@"             ,(&@@%(,                                                
-                /@@@@@@@@@@@@@@@@@@@@@@@@(                                      
-             @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.                                
-          ,@@@@@@@@@@@@.           #@@@@@@@@@@@@@@@#                            
-         @@@@@@@@@.     ,@@*              (@@@@@@@@@@@@,    ./,                 
-        @@@@@@@@         .@@@                  &@@@@@#    ,@@@@@@@@             
-       @@@@@@@/            &@@&                        @   @@@@@@@@@@           
-      *@@@@@@#               @@@.                   ,@@@@   &@@@@@@@@@          
-      &@@@@@@.  @@@@.         *@@@                &@@@@@@@(   .@@@@@@@          
-      &@@@@@@     ,@@@@@        @@@#           ,@@@@@@@@@@@@@,                  
-      #@@@@@@.        *@@@@&      @@@        @@@@@@@@@@@@@@@@@@@@    &.         
-       @@@@@@#            (@@@@#   /@@(   ,@@@@@@@@@@@@@@@@@@@#   .@@@@@        
-       %@@@@@@                %@@@@/     /@@@@@@@@@@@@@@@@@@.     @@@@@@@#      
-        @@@@@@@                      ,@   @@@@@@@@@@@@@@@%         #@@@@@@@     
-         @@@@@@@                   &@@@@   *@@@@@@@@@@@.             @@@@@@@    
-          @@@@@@@                 #@@@@@@@    (@@@@@%                 @@@@@@@.  
-           @@@@@@@*           &@   &@@@@@@@@&                          @@@@@@@  
-            &@@@@@@@       *@@@@@.   @@@@@@@@@@%   .@@(                 @@@@@@@ 
-             .@@@@@@@%   #@@@@@@@@@,    (@@@@.   &*  %@@@@*             ,@@@@@@(
-               #@@@@@@@(   %@@@@@@@@@@%         ,@@@     @@@@@,          @@@@@@@                
-                 @@@@@@@@%   ,@@@@@@@@@@.         &@@%      ,@@@@&       (@@@@@@
-                   &@@@@@@@@    %@@@@%              @@@.        *@@@@%   (@@@@@@
-               &@(   (@@@@@@@@&    .                 *@@@           (@   @@@@@@@
-             (@@@@@&    @@@@@@@@@&                     @@@#             /@@@@@@@
-          &  .@@@@@@@@.   *@@@@@@@@@@*                  .@@@           (@@@@@@@ 
-       *@@@&   @@@@@@@@@@    *@@@@@@@@@@@#                (@@@       .@@@@@@@@  
-      &@@@@@@.   (@@@@@@@        @@@@@@@@@@@@@@/                  (@@@@@@@@@@   
-  *@   @@@@@@@@@                     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     
-*@@@@   %@@@@@@@@@@@                     .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                         
-*@@@@@%    @@@@@@%                              .@@@@@@@@@@@@@@@@@@.            
- *@@@@@@@%                                                                      
-   ,@@@@@@@@%  ");
+                            Console.WriteLine(menu.XaenidesArt());
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                             Console.WriteLine($"\n\n{xaenidesStation.Description()}\n\n {xaenidesStation.Tax()}");
@@ -5585,6 +5707,28 @@ namespace GalaxyBusiness
                                     break;
                                 case 5:
                                     Console.WriteLine(Zell.InventoryDisplay());
+                                    if (Zell.Weapons > 0)
+                                    {
+                                        Console.WriteLine($"Weapons: {Zell.Weapons}");
+                                    }
+                                    #region //Mission log for inventory
+                                    if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
+                                        natotisMissions.Mission001success == 2)
+                                    {
+                                        Console.WriteLine($"\n\nNatotis #1 -  {natotisMissions.Escort001InProgress()}");
+                                    }
+                                    if (ingametime.month <= 5 && ingametime.year == 2457 &&
+                                        natotisMissions.Mission002success == 2)
+                                    {
+                                        Console.WriteLine($"\nNatotis #2 -  {natotisMissions.Delivery002InProgress()}");
+                                    }
+                                    if (natotisMissions.Supply001Success == 2)
+                                    {
+                                        Console.WriteLine($"\nNatotis -  {natotisMissions.Supply001InProgress()}");
+                                    }
+
+
+                                    #endregion
                                     Console.ReadKey();
                                     break;
                                 case 6:
@@ -5603,8 +5747,19 @@ namespace GalaxyBusiness
                         if (ingametime.month == 3 && ingametime.day <= 31 && ingametime.year == 2457 &&
                             natotisMissions.Mission001success == 2)
                         {
-                            Console.WriteLine($"\n\n   #1 -  {natotisMissions.Escort001InProgress()}");
+                            Console.WriteLine($"\n\nNatotis #1 -  {natotisMissions.Escort001InProgress()}");
                         }
+                        if (ingametime.month <= 5 && ingametime.year == 2457 &&
+                            natotisMissions.Mission002success == 2)
+                        {
+                            Console.WriteLine($"\nNatotis #2 -  {natotisMissions.Delivery002InProgress()}");
+                        }
+                        if (natotisMissions.Supply001Success == 2)
+                        {
+                            Console.WriteLine($"\nNatotis -  {natotisMissions.Supply001InProgress()}");
+                        }
+
+
                         #endregion
                         Console.ReadKey();
                         break;
@@ -5650,9 +5805,9 @@ namespace GalaxyBusiness
                     Console.WriteLine(
                         @" ||===============================================================================================================||");
                     Console.WriteLine(
-                        $@"     Total Invested:   {stock.AmountInvested}                                                                                                 ");
+                        $@"     Total Invested:   {stock.AmountInvested:C}                                                                                                 ");
                     Console.WriteLine(
-                        $@"     Total Return:  {totalreturn:0}      Gain/Loss: {totalreturn-stock.AmountInvested:0}                                                                                            ");
+                        $@"     Total Return:  {totalreturn:C}      Gain/Loss: {totalreturn-stock.AmountInvested:C}                                                                                            ");
                     Console.WriteLine(
                         $@"     Credits: {Zell.Credits}                                                                                               ");
                     Console.WriteLine(

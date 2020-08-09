@@ -29,6 +29,10 @@ namespace GalaticBusinessLibrary
         public double Hull = 100;
         public double Speed = 100;
         public double Attack = 100;
+        public int Reputation = 0;
+        public int FederationFavor { get; set; }
+        public int VurikFavor { get; set; }
+
         public double Beryllium { get; set; }
         public double Carbon { get; set; }
         public double Neutronium { get; set; }
