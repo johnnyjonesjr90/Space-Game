@@ -1208,6 +1208,7 @@ namespace GalaxyBusiness
                                         menu.planetChoice = 1;
                                         Console.WriteLine(menu.NotEnoughFuel());
                                         Console.ReadKey();
+                                        break;
                                     }
                                     Console.Clear();
                                     if (fuelchecker == 1)
@@ -1221,6 +1222,14 @@ namespace GalaxyBusiness
                                             menu.planetChoice == 99)
                                         {
                                             exitt = 1;
+                                            Console.WriteLine(menu.ThrustersCharging());
+                                            ShowSimplePercentage();
+                                            int milliseconds = 600;
+                                            Thread.Sleep(milliseconds);
+                                            Console.WriteLine();
+                                            Console.WriteLine(menu.ThrustersCharged());
+                                            Console.ReadKey();
+                                            Console.Clear();
                                         }
                                         else if (menu.planetChoice != 2 || menu.planetChoice != 3 || menu.planetChoice != 6 ||
                                                  menu.planetChoice != 99)
@@ -1230,15 +1239,13 @@ namespace GalaxyBusiness
                                             exitt = 0;
                                         }
                                     }
-                                    Console.WriteLine(menu.ThrustersCharging());
-                                    ShowSimplePercentage();
-                                    int milliseconds = 600;
-                                    Thread.Sleep(milliseconds);
-                                    Console.WriteLine();
-                                    Console.WriteLine(menu.ThrustersCharged());
-                                    Console.ReadKey();
-                                    Console.Clear();
-                                    exit1 = 1;
+
+                                    if (Zell.Credits == 0 && Zell.Fuel == 0 || Zell.Credits == 0 && Zell.Cargo == 0|| Zell.Fuel==0 && natotis.Dilithium.Qty==0)
+                                    {
+                                        Console.WriteLine(menu.GameOver());
+                                        Console.ReadKey();
+                                        Environment.Exit(0);
+                                    }
                                     Console.ForegroundColor = ConsoleColor.White;
                                     #endregion
                                     break;
